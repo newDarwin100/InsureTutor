@@ -59,6 +59,28 @@ def input_reasons(question):
     return list(dict.fromkeys(reasons))
 
 
+# Review flags describe a disputed field, not every fact in the paragraph.
+CONFLICT_FIELDS = {
+    'p011-b009': r'65|\bage\b|birthday|年龄|年齡|岁|歲|生日|年龄条件|年齡條件',
+    'p011-b015': r'65|\bage\b|birthday|年龄|年齡|岁|歲|生日',
+    'p017-b001-t1-r6': r'\d|minimum|amount|最低|最少|金额|金額|额度|額度',
+}
+
+
+def conflict_applies(evidence, text):
+    if 'SOURCE_CONFLICT' not in evidence['review_flags']:
+        return False
+    pattern = CONFLICT_FIELDS.get(evidence['evidence_id'])
+    if pattern is None:
+        return True  # Unknown review issues remain conservative.
+    return bool(re.search(pattern + r'|conflict|discrepancy|冲突|衝突|不一致', text, re.IGNORECASE))
+
+
+def relevant_conflict_ids(draft, evidence):
+    return {citation.evidence_id for claim in draft.claims for citation in claim.citations
+            if citation.evidence_id in evidence and conflict_applies(evidence[citation.evidence_id], claim.text)}
+
+
 def output_reason(draft, evidence, paired=None):
     if any(SECRET.search(claim.text) for claim in draft.claims):
         return Reason.SECRET_OR_PRIVATE_DATA_REQUEST
@@ -69,11 +91,12 @@ def output_reason(draft, evidence, paired=None):
     cited = {c.evidence_id for claim in draft.claims for c in claim.citations}
     if any(i not in evidence for i in cited):
         return Reason.INVALID_CITATION
-    if draft.action != 'source_conflict' and any('SOURCE_CONFLICT' in evidence[i]['review_flags'] for i in cited):
+    relevant = relevant_conflict_ids(draft, evidence)
+    if draft.action != 'source_conflict' and relevant:
         return Reason.SOURCE_CONFLICT
     if draft.action == 'source_conflict' and paired:
-        for eid in cited:
-            if 'SOURCE_CONFLICT' in evidence[eid]['review_flags'] and not set(paired.get(eid, [])) <= cited:
+        for eid in relevant:
+            if not set(paired.get(eid, [])) <= cited:
                 return Reason.SOURCE_CONFLICT
     return None
 

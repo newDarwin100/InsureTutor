@@ -53,6 +53,26 @@ class GuardrailTests(unittest.TestCase):
         self.assertEqual(result['guardrail']['reasons'], ['SOURCE_CONFLICT'])
         self.assertEqual(result['claims'], [])
 
+    def test_unemployment_answer_ignores_unrelated_age_conflict_in_retrieval(self):
+        index = Index()
+        index.by_id = {'fake': {'evidence_ids': ['p011-b003', 'p012-b009', 'p011-b009']}}
+        response = Draft(action='source_conflict', reasons=[Reason.SOURCE_CONFLICT], claims=[
+            {'text': '被裁员后特惠宽限期最长365日，只适用于基本计划，不适用于附加保障。',
+             'citations': [{'evidence_id': 'p011-b003'}, {'evidence_id': 'p012-b009'}]}])
+        result = answer('被裁员后能停缴多久？附加保障也适用吗？', 'zh-Hans', index=index, model=Model(response))
+        self.assertEqual(result['action'], 'answered')
+        self.assertNotIn('SOURCE_CONFLICT', result['guardrail']['reasons'])
+
+    def test_uncontested_fact_in_flagged_paragraph_is_allowed(self):
+        index = Index()
+        index.by_id = {'fake': {'evidence_ids': ['p011-b009']}}
+        result = answer('豁免保费的连续伤残期限？', 'zh-Hans', index=index,
+                        model=Model(draft(text='连续不能工作至少6个月。', eid='p011-b009')))
+        self.assertEqual(result['action'], 'answered')
+        english = answer('What disability duration applies to coverage?', 'en', index=index,
+                         model=Model(draft(text='Coverage requires six months of disability.', eid='p011-b009')))
+        self.assertEqual(english['action'], 'answered')
+
     def test_model_scope_and_false_premise_reasons_are_preserved(self):
         corrected = draft()
         corrected.reasons = [Reason.FALSE_PREMISE]
