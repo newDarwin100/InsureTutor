@@ -158,12 +158,15 @@ These small development sets measure retrieval, not overall answer correctness. 
 
 The dashboard includes **38 historical rows**, including failures and two unexecuted safety cases. One answer passed the model check but human review found missing withdrawal conditions. This prompted context expansion; that run is not an independently verified correct answer. See [answer checks](evaluation/results/single-turn.md).
 
+A later [demo-example regression](evaluation/results/demo-answers.md) covers six fixed examples: the compound rate/withdrawal question in all three languages, unemployment, withdrawal conditions and an annual-withdrawal follow-up. The first batch returned five answers and one mistaken rejection; targeted fixes and reruns are preserved. Each case now has an answered result with key facts manually checked. This is a development regression, not an overall quality score.
+
 Paid evaluations are separate, explicit commands:
 
 ```bash
 .venv/bin/python scripts/run_retrieval_pilot.py
 .venv/bin/python scripts/run_full_retrieval.py
 .venv/bin/python scripts/check_answers.py --run
+.venv/bin/python scripts/check_demo_examples.py --run
 ```
 
 They send fixed questions and/or brochure text to OpenAI and may incur usage. Retrieval scripts reuse index/query caches; check cache fields before treating a run as a fresh latency measurement.

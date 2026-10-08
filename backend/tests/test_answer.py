@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'backend'))
-from app.services.answer import Draft, Verification, answer, gather_evidence, load_evidence, validate_citations
+from app.services.answer import Draft, Verification, answer, gather_evidence, grounded_draft_type, load_evidence, validate_citations
 
 
 class Index:
@@ -30,7 +30,7 @@ class Model:
         self.calls = 0
     def structured(self, instructions, payload, output_type):
         self.calls += 1
-        result = self.response if output_type == Draft else Verification(
+        result = self.response if issubclass(output_type, Draft) else Verification(
             supported=self.supported, explanation='fixture', reason='supported' if self.supported else 'unsupported_claim')
         return result, {'ms': 15, 'input_tokens': 30, 'output_tokens': 10}
 
@@ -38,6 +38,19 @@ class Model:
 class AnswerTests(unittest.TestCase):
     def setUp(self):
         self.evidence, self.paired = load_evidence(Index.knowledge)
+
+    def test_generation_schema_restricts_ids_to_this_requests_evidence(self):
+        output = grounded_draft_type(['p008-b003', 'p008-b014', 'p008-b003'])
+        schema = output.model_json_schema()
+        self.assertEqual(schema['$defs']['GroundedReference']['properties']['evidence_id']['enum'],
+                         ['p008-b003', 'p008-b014'])
+        self.assertEqual(output.model_validate(draft().model_dump()).claims[0].citations[0].evidence_id,
+                         'p008-b003')
+        for eid in ['invented', 'p008-b003,p008-b014', 'p008-b003 ', 'p012-b007']:
+            with self.subTest(eid=eid), self.assertRaises(ValueError):
+                output.model_validate(draft(eid=eid).model_dump())
+        with self.assertRaises(ValueError):
+            grounded_draft_type([])
 
     def test_unknown_id_is_rejected_and_model_cannot_supply_quote(self):
         with self.assertRaises(ValueError):

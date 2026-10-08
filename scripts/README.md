@@ -11,6 +11,7 @@
 | `search_knowledge.py "问题"` | 查询当前索引 | 查询 embedding |
 | `run_retrieval_pilot.py` / `run_full_retrieval.py` | 小库 / 全文检索评测 | 缺失索引或查询缓存时调用 |
 | `check_answers.py --run` | 固定题真实生成与核对 | 是 |
+| `check_demo_examples.py --run` | 6道页面示例与追问真实回归；重测保留前次结果 | 是 |
 | `smoke_test.py` | API 连通性测试 | 是 |
 | `check_local.py` | 页面、健康、PDF Range、路径隔离 | 否 |
 | `check_full_alignment.py` / `check_alignment.py` | 全文 / 小样本来源与对应检查 | 否 |

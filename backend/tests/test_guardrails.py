@@ -90,7 +90,7 @@ class GuardrailTests(unittest.TestCase):
                 self.fix = fix
             def structured(self, instructions, payload, output_type):
                 self.calls += 1
-                if output_type is Draft:
+                if issubclass(output_type, Draft):
                     value = draft(eid='invented') if self.calls == 1 or not self.fix else draft()
                 else:
                     value = Verification(supported=True, reason='supported', explanation='mock audit')
