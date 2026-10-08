@@ -66,3 +66,17 @@ dt { color: #778880; } dd { margin: 0; }
 .metrics p { margin-top: 6px; line-height: 1.7; }
 .language-label { display: flex; gap: 8px; align-items: center; font-size: 13px; margin-bottom: 8px; }
 .language-label select { padding: 5px; border: 1px solid #cbd9d0; border-radius: 5px; background: white; }
+
+.evaluation { margin-top: 22px; }
+.evaluation > summary { cursor: pointer; font-weight: 600; }
+.evaluation-summaries { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 20px 0; }
+.evaluation-summaries article { background: #f4f6f1; border-radius: 10px; padding: 16px; }
+.evaluation-summaries h3 { font-size: 14px; margin-bottom: 10px; }
+.evaluation-summaries p { font-size: 13px; margin: 6px 0; }
+.evaluation small { color: #778880; font-size: 11px; overflow-wrap: anywhere; }
+.evaluation-table { overflow-x: auto; }
+.evaluation table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.evaluation th, .evaluation td { padding: 12px 10px; border-bottom: 1px solid #e2e7df; text-align: left; vertical-align: top; }
+.evaluation th { white-space: nowrap; }
+.evaluation td:first-child { min-width: 230px; max-width: 360px; }
+.evaluation td p { margin: 6px 0; line-height: 1.6; }

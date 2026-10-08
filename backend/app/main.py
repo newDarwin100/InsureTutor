@@ -13,6 +13,7 @@ from app.services.answer import Language, answer, readiness
 from app.services.responses import ModelError
 from app.services.conversations import Conversations, ConversationError
 from app.services.followup import conversational_answer
+from app.services.evaluations import dashboard
 
 ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(ROOT / ".env", override=False)
@@ -89,6 +90,11 @@ def chat(body: ChatRequest, conversation_token: str | None = Header(default=None
     except (RuntimeError, ValueError, OSError, KeyError):
         raise HTTPException(status_code=503, detail={"code": "RAG_UNAVAILABLE",
             "message": "资料或索引未就绪，或问题超出上下文预算。请检查索引或缩小问题范围。"}) from None
+
+
+@app.get('/api/evaluations')
+def evaluations():
+    return dashboard()
 
 
 @app.post('/api/conversations', status_code=201)
