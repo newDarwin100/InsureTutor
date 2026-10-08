@@ -1,5 +1,7 @@
 {
   "comparison": "preproc text/html spans against normalized para + discarded text/html, whitespace ignored",
   "unmapped_spans": [],
-  "page_count": 20
+  "page_count": 20,
+  "raw_mineru_sha256": "2af30cd58262ab3b6b39fba068641a19bfb1008a3c94713d8854b8ac5b37fff8",
+  "normalized_sha256": "31bd05710301ff26721181daba2e90f9a836ee99fc4037f055ec3c17df3e72ea"
 }
