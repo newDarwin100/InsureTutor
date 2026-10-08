@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { nextTick, onMounted, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
+import { presentReply } from './api/presentation'
 import { getStatus, askQuestion, type AppStatus, type ChatReply, type Language } from './api/client'
 
 const status = ref<AppStatus | null>(null)
@@ -10,6 +11,18 @@ const page = ref(8)
 const language = ref<Language>('zh-Hans')
 const messages = ref<{ role: 'user' | 'assistant'; text: string; reply?: ChatReply }[]>([])
 const messageArea = ref<HTMLElement | null>(null)
+const displayMessages = computed(() => messages.value.map(message => ({
+  ...message, presentation: message.reply ? presentReply(message.reply) : null,
+})))
+
+function revealSource(index: number, number: number) {
+  const group = document.getElementById(`source-${index}-${number}`) as HTMLDetailsElement | null
+  if (!group) return
+  const sources = group.closest('.sources') as HTMLDetailsElement | null
+  if (sources) sources.open = true
+  group.open = true
+  group.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+}
 
 async function refresh() {
   error.value = ''
@@ -80,20 +93,30 @@ onMounted(refresh)
         <div class="chat-header"><div><h2>保险资料问答</h2><p>每次提问独立检索，暂不记住之前的对话</p></div><button class="text-button" :disabled="busy" @click="messages = []">清空</button></div>
         <div ref="messageArea" class="messages" aria-live="polite">
           <div v-if="!messages.length" class="empty-state"><span class="empty-icon">↗</span><h3>从一个条款问题开始</h3><p>例如：4% 的利率是保证的吗？定期提款有什么条件？</p><p class="small-note">仅依据这份产品资料回答；资料中的历史数字不代表当前利率。</p></div>
-          <div v-for="(message, index) in messages" :key="index" class="message" :class="message.role"><span class="message-label">{{ message.role === 'user' ? '你' : 'InsureTutor' }}</span><p v-if="message.text">{{ message.text }}</p>
-            <template v-if="message.reply">
-              <p v-for="(claim, ci) in message.reply.claims" :key="ci">{{ claim.text }}
-                <a v-for="number in claim.citation_numbers" :key="number" class="citation-number" :href="`#source-${index}-${number}`">[{{ number }}]</a>
-              </p>
-              <div v-if="message.reply.citations.length" class="sources">
-                <details v-for="source in message.reply.citations" :id="`source-${index}-${source.number}`" :key="source.number">
-                  <summary>[{{ source.number }}] {{ source.document_name }} · 第 {{ source.pdf_page }} 页</summary>
-                  <blockquote>{{ source.quote }}</blockquote>
-                  <a :href="source.url" target="_blank" rel="noopener noreferrer">打开此页 PDF ↗</a>
-                  <details><summary>完整证据（整理后的原文）</summary><p>{{ source.text }}</p><small>{{ source.evidence_id }}</small></details>
+          <div v-for="(message, index) in displayMessages" :key="index" class="message" :class="message.role">
+            <span class="message-label">{{ message.role === 'user' ? '你' : 'InsureTutor' }}</span>
+            <div class="answer-bubble">
+              <p v-if="message.text">{{ message.text }}</p>
+              <template v-if="message.reply && message.presentation">
+                <p v-for="(paragraph, ci) in message.presentation.paragraphs" :key="ci">{{ paragraph.text }}
+                  <a v-for="number in paragraph.references" :key="number" class="citation-number" :href="`#source-${index}-${number}`" :aria-label="`查看引用 ${number}`" @click.prevent="revealSource(index, number)">[{{ number }}]</a>
+                </p>
+              </template>
+            </div>
+            <template v-if="message.reply && message.presentation">
+              <details v-if="message.presentation.groups.length" class="sources">
+                <summary>查看依据 · {{ message.presentation.groups.length }} 页</summary>
+                <details v-for="group in message.presentation.groups" :id="`source-${index}-${group.number}`" :key="group.number" class="source-group">
+                  <summary>[{{ group.number }}] 第 {{ group.page }} 页 · {{ group.sources.length }} 段原文</summary>
+                  <div class="source-heading"><span>{{ group.documentName }}</span><a :href="group.url" target="_blank" rel="noopener noreferrer">打开 PDF 此页 ↗</a></div>
+                  <p class="source-note">整理后的原文，保留资料原来的语言</p>
+                  <blockquote v-for="source in group.sources" :key="source.evidence_id">{{ source.text }}</blockquote>
                 </details>
-              </div>
-              <p class="small-note metrics">Retrieval: {{ message.reply.metrics.retrieval_ms }} ms · LLM: {{ (message.reply.metrics.llm_ms / 1000).toFixed(2) }} s · Total: {{ (message.reply.metrics.total_ms / 1000).toFixed(2) }} s<br />Chunks: {{ message.reply.metrics.retrieved_chunks }} · LLM tokens: {{ message.reply.metrics.llm_input_tokens }} in / {{ message.reply.metrics.llm_output_tokens }} out · Embedding: {{ message.reply.metrics.embedding_input_tokens }}</p>
+              </details>
+              <details class="metrics">
+                <summary>耗时 {{ (message.reply.metrics.total_ms / 1000).toFixed(1) }} 秒 · 查看运行数据</summary>
+                <p>Retrieval: {{ message.reply.metrics.retrieval_ms }} ms · LLM: {{ (message.reply.metrics.llm_ms / 1000).toFixed(2) }} s · Total: {{ (message.reply.metrics.total_ms / 1000).toFixed(2) }} s<br />Chunks: {{ message.reply.metrics.retrieved_chunks }} · LLM tokens: {{ message.reply.metrics.llm_input_tokens }} in / {{ message.reply.metrics.llm_output_tokens }} out · Embedding: {{ message.reply.metrics.embedding_input_tokens }}</p>
+              </details>
             </template>
           </div>
           <p v-if="busy" class="small-note">正在检索资料、生成回答并检查依据…</p>
