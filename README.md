@@ -42,7 +42,7 @@ Language selection changes the interface and subsequent answers. Earlier message
 
 Each page gets a separate session. “Clear conversation” deletes backend history. Sessions expire after 30 idle minutes and disappear on restart; credentials stay in page memory.
 
-The evaluation panel reads saved reports. Opening it does not call a model or record your conversation.
+The Performance tab shows per-request latency, its cumulative average, a latency histogram and average/median/minimum/maximum values. Switch between returned requests on this page and separate saved test sets; timing stages can be filtered. Request details and token usage are collapsed by default. Page measurements stay in browser memory (latest 200, reset on refresh); opening the tab does not call a model or persist conversations.
 
 ## Architecture
 

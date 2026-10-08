@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import EvaluationPanel from './components/EvaluationPanel.vue'
 import { copies } from './copy'
 import { presentReply } from './api/presentation'
-import { getStatus, askQuestion, createConversation, deleteConversation, ApiError, type AppStatus, type ChatReply, type Language } from './api/client'
+import { askQuestion, createConversation, deleteConversation, ApiError, type ChatReply, type EvaluationRow, type Language } from './api/client'
 
-const status = ref<AppStatus | null>(null)
+const activeView = ref('chat')
+const runs = ref<EvaluationRow[]>([])
 const error = ref('')
 const input = ref('')
 const busy = ref(false)
@@ -46,12 +47,6 @@ function localizedError(err: unknown, fallback: string) {
   return fallback
 }
 
-async function refresh() {
-  error.value = ''
-  try { status.value = await getStatus() }
-  catch { error.value = t.value.connectionError }
-}
-
 async function send() {
   const value = input.value.trim()
   if (!value || busy.value) return
@@ -63,6 +58,14 @@ async function send() {
     if (!conversationToken.value) conversationToken.value = (await createConversation()).token
     const reply = await askQuestion(value, language.value, conversationToken.value)
     messages.value.push({ role: 'assistant', text: reply.message, reply })
+    runs.value.push({ id: reply.request_id ?? `live-${Date.now()}-${runs.value.length}`, group: 'live',
+      source: 'live', kind: 'answer', provenance: 'real', question: value, language: language.value,
+      status: reply.action, measured_at: new Date().toISOString(), model: null,
+      retrieval_ms: reply.metrics.retrieval_ms, llm_ms: reply.metrics.llm_ms, total_ms: reply.metrics.total_ms,
+      chunks: reply.metrics.retrieved_chunks, embedding_input_tokens: reply.metrics.embedding_input_tokens,
+      llm_input_tokens: reply.metrics.llm_input_tokens, llm_output_tokens: reply.metrics.llm_output_tokens,
+      direct_recall: null, expanded_coverage: null, query_cached: false })
+    if (runs.value.length > 200) runs.value.shift()
   } catch (err) {
     input.value = value
     error.value = localizedError(err, t.value.requestError)
@@ -91,7 +94,6 @@ function documentUrl() {
   return `/api/documents/flexi-ulife-prime-saver#page=${selected}`
 }
 
-onMounted(refresh)
 </script>
 
 <template>
@@ -101,30 +103,18 @@ onMounted(refresh)
       <span class="badge">{{ t.preview }}</span>
     </header>
 
-    <div class="layout">
-      <aside class="sidebar">
-        <section class="panel">
-          <h2>{{ t.projectStatus }}</h2>
-          <dl>
-            <div><dt>{{ t.backend }}</dt><dd>{{ status ? t.connected : t.disconnected }}</dd></div>
-            <div><dt>{{ t.material }}</dt><dd>{{ status?.document_available ? t.pdfReady : t.checking }}</dd></div>
-            <div><dt>{{ t.evidence }}</dt><dd>{{ status?.knowledge_counts.evidence ?? '—' }}</dd></div>
-            <div><dt>{{ t.chunks }}</dt><dd>{{ status?.knowledge_counts.chunks ?? '—' }}</dd></div>
-            <div><dt>{{ t.tutor }}</dt><dd>{{ status?.rag_ready ? t.ready : t.notReady }}</dd></div>
-          </dl>
-          <button class="text-button" @click="refresh">{{ t.refresh }}</button>
-        </section>
-        <section class="panel document-panel">
-          <span class="eyebrow">{{ t.knowledge }}</span>
-          <h2>FLEXI-ULife<br />Prime Saver</h2>
-          <p>{{ t.originalPdf }}</p>
-          <label for="pdf-page">{{ t.pdfPage }}</label>
-          <input id="pdf-page" v-model.number="page" type="number" min="1" max="20" step="1" />
-          <a class="document-link" :href="documentUrl()" target="_blank" rel="noopener noreferrer">{{ t.openPdf }}</a>
-          <p class="small-note">{{ t.pdfNote }}</p>
-        </section>
-      </aside>
-
+    <div class="workspace-nav">
+      <div class="view-tabs" role="tablist" :aria-label="t.tutor">
+        <button id="chat-tab" role="tab" :aria-selected="activeView === 'chat'" aria-controls="chat-view" :class="{ active: activeView === 'chat' }" @click="activeView = 'chat'">{{ t.conversation }}</button>
+        <button id="performance-tab" role="tab" :aria-selected="activeView === 'performance'" aria-controls="performance-view" :class="{ active: activeView === 'performance' }" @click="activeView = 'performance'">{{ t.performance }}<span v-if="runs.length" class="tab-count">{{ runs.length }}</span></button>
+      </div>
+      <label class="language-label">{{ t.language }} <select v-model="language" :disabled="busy"><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></label>
+    </div>
+    <div id="chat-view" v-show="activeView === 'chat'" role="tabpanel" aria-labelledby="chat-tab">
+      <section class="source-strip">
+        <div><span class="eyebrow">{{ t.knowledge }}</span><h2>FLEXI-ULife Prime Saver <small>PDF · 20 {{ t.pages }}</small></h2></div>
+        <div class="source-actions"><label class="sr-only" for="pdf-page">{{ t.pdfPage }}</label><span>{{ t.page }}</span><input id="pdf-page" v-model.number="page" type="number" min="1" max="20" step="1"/><a class="document-link" :href="documentUrl()" target="_blank" rel="noopener noreferrer">{{ t.openPdf }}</a></div>
+      </section>
       <section class="chat-panel" :aria-label="t.tutor">
         <div class="chat-header"><div><h2>{{ t.chatTitle }}</h2><p>{{ t.memory }}</p></div><button class="text-button" :disabled="busy" @click="clearChat">{{ t.clear }}</button></div>
         <div ref="messageArea" class="messages" aria-live="polite">
@@ -165,11 +155,10 @@ onMounted(refresh)
         <form class="composer" @submit.prevent="send">
           <p v-if="error" class="error" role="alert">{{ error }}</p>
           <label class="sr-only" for="message">{{ t.question }}</label>
-          <label class="language-label">{{ t.language }} <select v-model="language" :disabled="busy"><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></label>
           <div class="input-row"><input id="message" v-model="input" maxlength="2000" :placeholder="t.placeholder" autocomplete="off" :disabled="busy" /><button type="submit" :disabled="busy || !input.trim()">{{ busy ? t.answering : t.send }}</button></div>
         </form>
       </section>
     </div>
-    <EvaluationPanel :language="language" />
+    <EvaluationPanel id="performance-view" v-show="activeView === 'performance'" role="tabpanel" aria-labelledby="performance-tab" :language="language" :runs="runs" />
   </main>
 </template>
