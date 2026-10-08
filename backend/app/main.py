@@ -40,7 +40,7 @@ def status():
             pass
     key = os.getenv("OPENAI_API_KEY", "").strip()
     return {"stage": "single_turn", "backend_ready": True, "rag_ready": readiness(),
-            "model_probed": False, "session_memory": False, "full_guardrails": False,
+            "model_probed": False, "session_memory": False, "full_guardrails": False, "guardrail_mode": "rules_and_model_checks",
             "document_available": PDF.is_file(), "knowledge_counts": counts,
             "api_key_configured": bool(key and key != "your_openai_api_key_here")}
 

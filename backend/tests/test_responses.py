@@ -27,7 +27,7 @@ class ResponsesTests(unittest.TestCase):
 
     def test_completed_structured_response(self):
         parsed, usage = self.invoke({'status': 'completed', 'output': [{'content': [{'type': 'output_text',
-            'text': '{"action":"no_evidence","claims":[]}'}]}], 'usage': {'input_tokens': 20, 'output_tokens': 8}})
+            'text': '{"action":"no_evidence","reasons":[],"claims":[]}'}]}], 'usage': {'input_tokens': 20, 'output_tokens': 8}})
         self.assertEqual(parsed.action, 'no_evidence')
         self.assertEqual(usage['input_tokens'], 20)
 

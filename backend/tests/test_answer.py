@@ -20,7 +20,7 @@ class Index:
 
 
 def draft(text='Charges are deducted before premiums are credited.', eid='p008-b003'):
-    return Draft.model_validate({'action': 'answered', 'claims': [{'text': text,
+    return Draft.model_validate({'action': 'answered', 'reasons': [], 'claims': [{'text': text,
                                 'citations': [{'evidence_id': eid}]}]})
 
 
@@ -43,7 +43,7 @@ class AnswerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_citations(draft(eid='invented'), self.evidence)
         with self.assertRaises(ValueError):
-            Draft.model_validate({'action': 'answered', 'claims': [{'text': 'bad', 'citations': [
+            Draft.model_validate({'action': 'answered', 'reasons': [], 'claims': [{'text': 'bad', 'citations': [
                 {'evidence_id': 'p008-b003', 'quote': 'translated or invented'}]}]})
 
     def test_footnotes_and_conflicting_counterpart_are_included(self):
