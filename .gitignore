@@ -15,3 +15,4 @@ data/chroma/*
 !data/chroma/.gitkeep
 .pytest_cache/
 tmp/
+.DS_Store

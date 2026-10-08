@@ -315,6 +315,7 @@ flowchart TD
 - Dockerfile、Compose、.dockerignore 与 start.sh 已写好，采用多阶段构建、非root运行、单服务和索引volume。当前机器未检测到 Docker，尚未验证容器构建和启动，不能标记 Docker 验收通过。
 - 当前 live=200，ready=503；Docker health 使用 live，只表示网页可用，不能冒充 RAG 已就绪。
 - 取舍：先完成真实前后端链路与资料访问，连接测试单独接口，保险 chat 暂返回503，避免假回答掩盖未实现功能。
+- 本地增量提交：62cd277（文档处理与可运行应用骨架）；未推送远程。
 
 下一步接 embedding、Chroma 和首批实际检索评测；Docker 实机验收待本机 Docker 可用后补做。每步完成时记录实际文件、运行证据、调整理由、局限与真实提交标识；简单功能不另建文档。
 
