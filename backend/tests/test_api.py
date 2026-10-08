@@ -64,7 +64,7 @@ class ApiTests(unittest.TestCase):
         self.assertIsInstance(data["api_key_configured"], bool)
         self.assertNotIn("OPENAI_API_KEY", data)
         self.assertNotIn("api_key", data)
-        self.assertEqual(data["knowledge_counts"]["chunks"], 139)
+        self.assertEqual(data["knowledge_counts"]["chunks"], 143)
 
     def test_pdf_range_and_document_whitelist(self):
         status, headers, body = self.request("/api/documents/flexi-ulife-prime-saver", headers=[(b"range", b"bytes=0-4")])

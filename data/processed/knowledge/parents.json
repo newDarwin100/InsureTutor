@@ -1374,5 +1374,41 @@
     "pdf_pages": [
       20
     ]
+  },
+  {
+    "parent_id": "restored-p001-d002",
+    "evidence_ids": [
+      "p001-d002"
+    ],
+    "pdf_pages": [
+      1
+    ]
+  },
+  {
+    "parent_id": "restored-p003-d001",
+    "evidence_ids": [
+      "p003-d001"
+    ],
+    "pdf_pages": [
+      3
+    ]
+  },
+  {
+    "parent_id": "restored-p019-d001",
+    "evidence_ids": [
+      "p019-d001"
+    ],
+    "pdf_pages": [
+      19
+    ]
+  },
+  {
+    "parent_id": "restored-p020-d001",
+    "evidence_ids": [
+      "p020-d001"
+    ],
+    "pdf_pages": [
+      20
+    ]
   }
 ]

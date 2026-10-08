@@ -1,6 +1,6 @@
 # 清洗与规则分块：第一版
 
-统计：{'evidence': 288, 'parents': 136, 'chunks': 139, 'alignment': 10, 'changes': 7, 'omitted_blocks': 32}。
+统计：{'evidence': 292, 'parents': 140, 'chunks': 143, 'alignment': 10, 'changes': 7, 'omitted_blocks': 32}。
 
 原始数据保持不变；source_text 是原始提取，text 是排版清洗或有依据修复后的文本。
 表格的 source_text 保留完整原始 HTML，实际引用仍需回 PDF 核对。
@@ -19,6 +19,8 @@
 
 ## 仍需注意
 
+- PDF 第 11 页 / p011-b009：['SOURCE_CONFLICT']；豁免保费年龄边界：中文65岁或以前，英文before the age of 65；65岁生日边界需核对正式保单，不自行统一。
+- PDF 第 11 页 / p011-b015：['SOURCE_CONFLICT']；豁免保费年龄边界：中文65岁或以前，英文before the age of 65；65岁生日边界需核对正式保单，不自行统一。
 - PDF 第 17 页 / p017-b001-t1-r6：['SOURCE_CONFLICT']；原 PDF 第17页中英金额确实冲突：中文港币40,000/澳门币400,000；英文港币400,000/澳门币40,000。两者原样保留，回答需提示冲突。
 
 未提取出文字的图片/图表块保留在原 JSON；omitted_blocks.json 记录列表，不能宣称全部图示已覆盖。

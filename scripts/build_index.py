@@ -21,6 +21,9 @@ if __name__ == '__main__':
         parser.error('--full and --limit cannot be combined')
     if args.limit is not None and args.index_dir is None:
         parser.error('--limit requires --index-dir so the full index is not replaced')
+    if args.full:
+        from evaluation.full_alignment import load_full_review
+        load_full_review()
     load_dotenv(ROOT / '.env', override=False)
     try:
         print(json.dumps(VectorIndex(directory=args.index_dir, limit=args.limit).build(), indent=2))

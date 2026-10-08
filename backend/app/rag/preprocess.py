@@ -146,6 +146,8 @@ def build(pages, config, source_sha256, max_chars=1200, overlap_chars=120):
                         context = unique
                     if r == 0:
                         context = unique
+                    if r == 0 and block_id in config.get("table_first_row_is_content", []):
+                        context = []  # First item is content, not a header for later items.
                     # Stable row pointer; keep source HTML for original citation/review.
                     row_text = " | ".join(unique)
                     prefix = " / ".join(context)
@@ -190,6 +192,24 @@ def build(pages, config, source_sha256, max_chars=1200, overlap_chars=120):
                 parent_map.setdefault(pid, []).append(eid)
                 if kind == "footnote":
                     notes.setdefault(int(note_match[1]), []).append(eid)
+
+    # MinerU's discarded flag is a layout decision, not proof of irrelevance.
+    # Restore explicitly reviewed substantive blocks, appended so old IDs stay stable.
+    discarded = {b["block_id"]: b for page in pages for b in page["discarded_blocks"]}
+    for eid, reason in config.get("retained_discarded_blocks", {}).items():
+        if eid not in discarded or not discarded[eid]["text"].strip():
+            raise ValueError("Retained discarded block is missing or empty")
+        block = discarded[eid]
+        pid = f"restored-{eid}"
+        evidence.append({"evidence_id": eid, "document_id": "flexi-ulife-prime-saver",
+                         "document_name": "FLEXI-ULife Prime Saver.pdf", "pdf_page": block["pdf_page"],
+                         "bbox": block["bbox"], "source_pointer": block["source_pointer"],
+                         "source_block_id": eid, "source_text": block["text"],
+                         "text": clean_text(block["text"]), "section": reason, "parent_id": pid,
+                         "kind": "restored_discarded", "language_hint": lang(block["text"]),
+                         "footnote_numbers": [], "related_evidence_ids": [], "review_flags": [],
+                         "review_note": reason, "review_status": "SOURCE_RESTORED"})
+        parent_map[pid] = [eid]
 
     by_id = {e["evidence_id"]: e for e in evidence}
     if not set(config["explicit_links"]).issubset(by_id):

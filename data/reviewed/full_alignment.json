@@ -1,0 +1,3347 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-08",
+  "review_basis": "MinerU para_blocks + discarded_blocks + table cells; prior PDF checks only for known extraction/wording issues.",
+  "pdf_page_count": 20,
+  "source_hashes": {
+    "pdf": "2043de40845267fdb1f657280438f3ded04edda6692791960415116a5668a475",
+    "evidence": "12e64ae2cbaff33b92ef4e796220706094d7eb47cadbf2fbe52dcb5392912852",
+    "normalized": "31bd05710301ff26721181daba2e90f9a836ee99fc4037f055ec3c17df3e72ea"
+  },
+  "source_languages": [
+    "zh-Hant",
+    "en"
+  ],
+  "simplified_chinese_source": false,
+  "groups": [
+    {
+      "clause_group_id": "premium-deductions",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b002"
+        ],
+        "en": [
+          "p008-b003"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "account-value-floor",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b002"
+        ],
+        "en": [
+          "p008-b004"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "中文一段对应英文两段：费用和保证机制分别关联，不按段落数量硬配对。"
+    },
+    {
+      "clause_group_id": "assumed-interest-rates",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b005",
+          "p008-b007",
+          "p008-b008",
+          "p008-b009"
+        ],
+        "en": [
+          "p008-b005",
+          "p008-b007",
+          "p008-b008",
+          "p008-b009"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "图示是同一组双语标签和共享数字，不复制成两份来源。"
+    },
+    {
+      "clause_group_id": "assumed-rate-disclaimer",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b011"
+        ],
+        "en": [
+          "p008-b014"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "additional-interest-first-credit",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b012"
+        ],
+        "en": [
+          "p008-b015"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "additional-interest-later-credit",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b013"
+        ],
+        "en": [
+          "p008-b016"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "unemployment-special-grace",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p011-b003"
+        ],
+        "en": [
+          "p011-b004"
+        ]
+      },
+      "pdf_pages": [
+        11
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "unemployment-basic-only",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b009"
+        ],
+        "en": [
+          "p012-b020"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "periodic-withdrawal-option",
+      "status": "WORDING_DIFFERENCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p010-b005"
+        ],
+        "en": [
+          "p010-b006"
+        ]
+      },
+      "pdf_pages": [
+        10
+      ],
+      "review_note": "中文明确写足够的现金价值，英文未出现 sufficient。保留各自原文；不能声称逐字等价，也不能据英文推断任意金额均可提款。"
+    },
+    {
+      "clause_group_id": "periodic-withdrawal-conditions",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b007"
+        ],
+        "en": [
+          "p012-b018"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": "英文HK$4,000已在之前按PDF视觉核对修复；原始提取仍保留。"
+    },
+    {
+      "clause_group_id": "ordinary-withdrawal-fee",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b008"
+        ],
+        "en": [
+          "p012-b019"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "charges-can-cause-lapse",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p010-b013"
+        ],
+        "en": [
+          "p010-b014"
+        ]
+      },
+      "pdf_pages": [
+        10
+      ],
+      "review_note": "这里只核对本页警示；若回答具体宽限期，还需检索第14页。英文提取有 afect/suficient 拼写漏字，不改保险含义。"
+    },
+    {
+      "clause_group_id": "fees-can-change",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b011"
+        ],
+        "en": [
+          "p012-b022"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-02-clause-1",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p002-b001"
+        ],
+        "en": [
+          "p002-b002"
+        ]
+      },
+      "pdf_pages": [
+        2
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-03-clause-1",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p003-b001"
+        ],
+        "en": [
+          "p003-b002"
+        ]
+      },
+      "pdf_pages": [
+        3
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-04-clause-2",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p004-b002"
+        ],
+        "en": [
+          "p004-b003"
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-04-clause-4",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p004-b004"
+        ],
+        "en": [
+          "p004-b005"
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-04-clause-7",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p004-b007"
+        ],
+        "en": [
+          "p004-b008"
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-04-clause-10",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p004-b010"
+        ],
+        "en": [
+          "p004-b011"
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-04-clause-13",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p004-b013"
+        ],
+        "en": [
+          "p004-b014"
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-04-clause-16",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p004-b016"
+        ],
+        "en": [
+          "p004-b017"
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-04-clause-19",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p004-b019"
+        ],
+        "en": [
+          "p004-b020"
+        ]
+      },
+      "pdf_pages": [
+        4
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-06-clause-2",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p006-b002"
+        ],
+        "en": [
+          "p006-b003"
+        ]
+      },
+      "pdf_pages": [
+        6
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-06-clause-5",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p006-b005"
+        ],
+        "en": [
+          "p006-b006"
+        ]
+      },
+      "pdf_pages": [
+        6
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-06-clause-8",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p006-b008"
+        ],
+        "en": [
+          "p006-b009"
+        ]
+      },
+      "pdf_pages": [
+        6
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-07-clause-3",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b003"
+        ],
+        "en": [
+          "p007-b005"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-09-clause-2",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b002"
+        ],
+        "en": [
+          "p009-b003"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-09-clause-15",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b015"
+        ],
+        "en": [
+          "p009-b016"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-09-clause-22",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b022"
+        ],
+        "en": [
+          "p009-b023"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-10-clause-2",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p010-b002"
+        ],
+        "en": [
+          "p010-b003"
+        ]
+      },
+      "pdf_pages": [
+        10
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-11-clause-6",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p011-b006"
+        ],
+        "en": [
+          "p011-b007"
+        ]
+      },
+      "pdf_pages": [
+        11
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-11-clause-11",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p011-b011"
+        ],
+        "en": [
+          "p011-b016"
+        ]
+      },
+      "pdf_pages": [
+        11
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-3",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b003"
+        ],
+        "en": [
+          "p013-b024"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-4",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b004"
+        ],
+        "en": [
+          "p013-b025"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-5",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b005"
+        ],
+        "en": [
+          "p013-b026"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-6",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b006"
+        ],
+        "en": [
+          "p013-b027"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-7",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b007"
+        ],
+        "en": [
+          "p013-b028"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-8",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b008"
+        ],
+        "en": [
+          "p013-b029"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-10",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b010"
+        ],
+        "en": [
+          "p013-b031"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-11",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b011"
+        ],
+        "en": [
+          "p013-b032"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-12",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b012"
+        ],
+        "en": [
+          "p013-b033"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-14",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b014"
+        ],
+        "en": [
+          "p013-b035"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-13-clause-15",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b015"
+        ],
+        "en": [
+          "p013-b036"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-3",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b003"
+        ],
+        "en": [
+          "p014-b031"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-5",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b005"
+        ],
+        "en": [
+          "p014-b033"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-6",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b006"
+        ],
+        "en": [
+          "p014-b034"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-7",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b007"
+        ],
+        "en": [
+          "p014-b035"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-8",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b008"
+        ],
+        "en": [
+          "p014-b036"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-9",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b009"
+        ],
+        "en": [
+          "p014-b037"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-10",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b010"
+        ],
+        "en": [
+          "p014-b038"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-12",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b012"
+        ],
+        "en": [
+          "p014-b040"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-14",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b014"
+        ],
+        "en": [
+          "p014-b042"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-16",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b016"
+        ],
+        "en": [
+          "p014-b044"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-18",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b018"
+        ],
+        "en": [
+          "p014-b046"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-20",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b020"
+        ],
+        "en": [
+          "p014-b048"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-22",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b022"
+        ],
+        "en": [
+          "p014-b050"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-23",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b023"
+        ],
+        "en": [
+          "p014-b051"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-24",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b024"
+        ],
+        "en": [
+          "p014-b052"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-25",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b025"
+        ],
+        "en": [
+          "p014-b053"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-26",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b026"
+        ],
+        "en": [
+          "p014-b054"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-27",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b027"
+        ],
+        "en": [
+          "p014-b055"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-14-clause-28",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p014-b028"
+        ],
+        "en": [
+          "p014-b056"
+        ]
+      },
+      "pdf_pages": [
+        14
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-15-clause-2",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p015-b002"
+        ],
+        "en": [
+          "p015-b018"
+        ]
+      },
+      "pdf_pages": [
+        15
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-15-clause-7",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p015-b007"
+        ],
+        "en": [
+          "p015-b021"
+        ]
+      },
+      "pdf_pages": [
+        15
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-15-clause-9",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p015-b009"
+        ],
+        "en": [
+          "p015-b023"
+        ]
+      },
+      "pdf_pages": [
+        15
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-15-clause-13",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p015-b013"
+        ],
+        "en": [
+          "p015-b027"
+        ]
+      },
+      "pdf_pages": [
+        15
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-15-clause-14",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p015-b014"
+        ],
+        "en": [
+          "p015-b028"
+        ]
+      },
+      "pdf_pages": [
+        15
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-15-clause-16",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p015-b016"
+        ],
+        "en": [
+          "p015-b030"
+        ]
+      },
+      "pdf_pages": [
+        15
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-20-clause-2",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p020-b002"
+        ],
+        "en": [
+          "p020-b004"
+        ]
+      },
+      "pdf_pages": [
+        20
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-20-clause-3",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p020-b003"
+        ],
+        "en": [
+          "p020-b005"
+        ]
+      },
+      "pdf_pages": [
+        20
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-20-clause-11",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p020-b011"
+        ],
+        "en": [
+          "p020-b013"
+        ]
+      },
+      "pdf_pages": [
+        20
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-20-clause-12",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p020-b012"
+        ],
+        "en": [
+          "p020-b014"
+        ]
+      },
+      "pdf_pages": [
+        20
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "page-10-clause-8",
+      "status": "WORDING_DIFFERENCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p010-b008"
+        ],
+        "en": [
+          "p010-b009"
+        ]
+      },
+      "pdf_pages": [
+        10
+      ],
+      "review_note": "中文强调足够现金价值，英文只写已累积现金价值；结合每月费用及失效风险说明。"
+    },
+    {
+      "clause_group_id": "page-11-clause-9",
+      "status": "CONFLICT",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p011-b009"
+        ],
+        "en": [
+          "p011-b015"
+        ]
+      },
+      "pdf_pages": [
+        11
+      ],
+      "review_note": "中文65岁或以前包含65岁，英文before the age of 65不包含65岁；不能确认65岁生日边界，需核对正式保单。"
+    },
+    {
+      "clause_group_id": "page-13-clause-16",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b016"
+        ],
+        "en": [
+          "p013-b037",
+          "p013-b038"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": "中文合并了投资策略变化和官网资料提示，英文拆成两段。"
+    },
+    {
+      "clause_group_id": "page-13-clause-17",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b017",
+          "p013-b019"
+        ],
+        "en": [
+          "p013-b040",
+          "p013-b041"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": "香港官网链接分别使用tc/en路径；只引用册子地址，不声称链接内容已验证。"
+    },
+    {
+      "clause_group_id": "page-13-clause-21",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b021"
+        ],
+        "en": [
+          "p013-b043"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": "澳门官网链接分别使用tc/en路径。"
+    },
+    {
+      "clause_group_id": "page-15-clause-4",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p015-b004",
+          "p015-b005",
+          "p015-b006"
+        ],
+        "en": [
+          "p015-b020"
+        ]
+      },
+      "pdf_pages": [
+        15
+      ],
+      "review_note": "索偿流程只有官网链接，不含实际流程步骤。"
+    },
+    {
+      "clause_group_id": "page-15-clause-11",
+      "status": "WORDING_DIFFERENCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p015-b011"
+        ],
+        "en": [
+          "p015-b025"
+        ]
+      },
+      "pdf_pages": [
+        15
+      ],
+      "review_note": "中文写曾获或将获赔偿不退款，英文另外明确impending；回答保留英文完整限制。21日以交付保单或通知较早者计，退保费与冷静期不混同。"
+    },
+    {
+      "clause_group_id": "brochure-scope",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p019-b001"
+        ],
+        "en": [
+          "p019-d001"
+        ]
+      },
+      "pdf_pages": [
+        19
+      ],
+      "review_note": "英文免责声明来自原JSON discarded_blocks，原文不是我们翻译。"
+    },
+    {
+      "clause_group_id": "full-note-01",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b002"
+        ],
+        "en": [
+          "p012-b013"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": "核对附注双方数字和适用条件；不把正文标题当作完整条款。"
+    },
+    {
+      "clause_group_id": "full-note-02",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b003"
+        ],
+        "en": [
+          "p012-b014"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": "核对附注双方数字和适用条件；不把正文标题当作完整条款。"
+    },
+    {
+      "clause_group_id": "full-note-03",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b004"
+        ],
+        "en": [
+          "p012-b015"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": "核对附注双方数字和适用条件；不把正文标题当作完整条款。"
+    },
+    {
+      "clause_group_id": "full-note-04",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b005"
+        ],
+        "en": [
+          "p012-b016"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": "核对附注双方数字和适用条件；不把正文标题当作完整条款。"
+    },
+    {
+      "clause_group_id": "full-note-05",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b006"
+        ],
+        "en": [
+          "p012-b017"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": "核对附注双方数字和适用条件；不把正文标题当作完整条款。"
+    },
+    {
+      "clause_group_id": "full-note-07",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b008"
+        ],
+        "en": [
+          "p012-b019"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": "核对附注双方数字和适用条件；不把正文标题当作完整条款。"
+    },
+    {
+      "clause_group_id": "full-note-09",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b010"
+        ],
+        "en": [
+          "p012-b021"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "review_note": "核对附注双方数字和适用条件；不把正文标题当作完整条款。"
+    },
+    {
+      "clause_group_id": "shared-p001-d002",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p001-d002"
+        ],
+        "en": [
+          "p001-d002"
+        ]
+      },
+      "pdf_pages": [
+        1
+      ],
+      "review_note": "产品类型：非投资相连万用寿险。"
+    },
+    {
+      "clause_group_id": "shared-p003-d001",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p003-d001"
+        ],
+        "en": [
+          "p003-d001"
+        ]
+      },
+      "pdf_pages": [
+        3
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "shared-p020-d001",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p020-d001"
+        ],
+        "en": [
+          "p020-d001"
+        ]
+      },
+      "pdf_pages": [
+        20
+      ],
+      "review_note": "客服地址是册子历史信息，与第15页取消保单收件地址不同，不合并成一个地址。"
+    },
+    {
+      "clause_group_id": "shared-p002-b004",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p002-b004"
+        ],
+        "en": [
+          "p002-b004"
+        ]
+      },
+      "pdf_pages": [
+        2
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p002-b005",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p002-b005"
+        ],
+        "en": [
+          "p002-b005"
+        ]
+      },
+      "pdf_pages": [
+        2
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p002-b006",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p002-b006"
+        ],
+        "en": [
+          "p002-b006"
+        ]
+      },
+      "pdf_pages": [
+        2
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p002-b007",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p002-b007"
+        ],
+        "en": [
+          "p002-b007"
+        ]
+      },
+      "pdf_pages": [
+        2
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p003-b004",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p003-b004"
+        ],
+        "en": [
+          "p003-b004"
+        ]
+      },
+      "pdf_pages": [
+        3
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p003-b006",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p003-b006"
+        ],
+        "en": [
+          "p003-b006"
+        ]
+      },
+      "pdf_pages": [
+        3
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p003-b009",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p003-b009"
+        ],
+        "en": [
+          "p003-b009"
+        ]
+      },
+      "pdf_pages": [
+        3
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b004",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b004"
+        ],
+        "en": [
+          "p005-b004"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b005",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b005"
+        ],
+        "en": [
+          "p005-b005"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b008",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b008"
+        ],
+        "en": [
+          "p005-b008"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b010",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b010"
+        ],
+        "en": [
+          "p005-b010"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b011",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b011"
+        ],
+        "en": [
+          "p005-b011"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b015",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b015"
+        ],
+        "en": [
+          "p005-b015"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b016",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b016"
+        ],
+        "en": [
+          "p005-b016"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b017",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b017"
+        ],
+        "en": [
+          "p005-b017"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b021",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b021"
+        ],
+        "en": [
+          "p005-b021"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b022",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b022"
+        ],
+        "en": [
+          "p005-b022"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b023",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b023"
+        ],
+        "en": [
+          "p005-b023"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p005-b030",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b030"
+        ],
+        "en": [
+          "p005-b030"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p006-b011",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p006-b011"
+        ],
+        "en": [
+          "p006-b011"
+        ]
+      },
+      "pdf_pages": [
+        6
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p007-b011",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b011"
+        ],
+        "en": [
+          "p007-b011"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p007-b012",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b012"
+        ],
+        "en": [
+          "p007-b012"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p007-b013",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b013"
+        ],
+        "en": [
+          "p007-b013"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p007-b015",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b015"
+        ],
+        "en": [
+          "p007-b015"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b004",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b004"
+        ],
+        "en": [
+          "p009-b004"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b006",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b006"
+        ],
+        "en": [
+          "p009-b006"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b007",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b007"
+        ],
+        "en": [
+          "p009-b007"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b008",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b008"
+        ],
+        "en": [
+          "p009-b008"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b009",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b009"
+        ],
+        "en": [
+          "p009-b009"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b010",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b010"
+        ],
+        "en": [
+          "p009-b010"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b011",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b011"
+        ],
+        "en": [
+          "p009-b011"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b012",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b012"
+        ],
+        "en": [
+          "p009-b012"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b013",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b013"
+        ],
+        "en": [
+          "p009-b013"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b018",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b018"
+        ],
+        "en": [
+          "p009-b018"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b019",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b019"
+        ],
+        "en": [
+          "p009-b019"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b020",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b020"
+        ],
+        "en": [
+          "p009-b020"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p009-b021",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b021"
+        ],
+        "en": [
+          "p009-b021"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "shared-p020-b015",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p020-b015"
+        ],
+        "en": [
+          "p020-b015"
+        ]
+      },
+      "pdf_pages": [
+        20
+      ],
+      "review_note": "共享双语标签或数字；必要条件按正文/脚注补齐。"
+    },
+    {
+      "clause_group_id": "page-05-clause-27",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p005-b027"
+        ],
+        "en": [
+          "p005-b028"
+        ]
+      },
+      "pdf_pages": [
+        5
+      ],
+      "review_note": ""
+    },
+    {
+      "clause_group_id": "shared-p007-b001-t1-r1",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b001-t1-r1"
+        ],
+        "en": [
+          "p007-b001-t1-r1"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p007-b001-t1-r2",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b001-t1-r2"
+        ],
+        "en": [
+          "p007-b001-t1-r2"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p007-b001-t1-r3",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b001-t1-r3"
+        ],
+        "en": [
+          "p007-b001-t1-r3"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p007-b001-t1-r4",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p007-b001-t1-r4"
+        ],
+        "en": [
+          "p007-b001-t1-r4"
+        ]
+      },
+      "pdf_pages": [
+        7
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r1",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r1"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "shared-p008-b001-t1-r2",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b001-t1-r2"
+        ],
+        "en": [
+          "p008-b001-t1-r2"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p008-b001-t1-r3",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b001-t1-r3"
+        ],
+        "en": [
+          "p008-b001-t1-r3"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p008-b001-t1-r4",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b001-t1-r4"
+        ],
+        "en": [
+          "p008-b001-t1-r4"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r5",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r5"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r6",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r6"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r7",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r7"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r8",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r8"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r9",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r9"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r10",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r10"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r11",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r11"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r12",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r12"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "context-p008-b001-t1-r13",
+      "status": "CONTEXT_ONLY",
+      "source_evidence_ids": {},
+      "context_evidence_ids": [
+        "p008-b001-t1-r13"
+      ],
+      "pdf_pages": [
+        8
+      ],
+      "review_note": "表格标题或省略号，不构成独立保险结论。"
+    },
+    {
+      "clause_group_id": "shared-p009-b017-t1-r1",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b017-t1-r1"
+        ],
+        "en": [
+          "p009-b017-t1-r1"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p009-b017-t1-r2",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b017-t1-r2"
+        ],
+        "en": [
+          "p009-b017-t1-r2"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p009-b017-t1-r3",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b017-t1-r3"
+        ],
+        "en": [
+          "p009-b017-t1-r3"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p009-b017-t1-r4",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b017-t1-r4"
+        ],
+        "en": [
+          "p009-b017-t1-r4"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p009-b017-t1-r5",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b017-t1-r5"
+        ],
+        "en": [
+          "p009-b017-t1-r5"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p009-b017-t1-r6",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p009-b017-t1-r6"
+        ],
+        "en": [
+          "p009-b017-t1-r6"
+        ]
+      },
+      "pdf_pages": [
+        9
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r1",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r1"
+        ],
+        "en": [
+          "p016-b002-t1-r1"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r2",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r2"
+        ],
+        "en": [
+          "p016-b002-t1-r2"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r3",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r3"
+        ],
+        "en": [
+          "p016-b002-t1-r3"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r4",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r4"
+        ],
+        "en": [
+          "p016-b002-t1-r4"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r5",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r5"
+        ],
+        "en": [
+          "p016-b002-t1-r5"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r6",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r6"
+        ],
+        "en": [
+          "p016-b002-t1-r6"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r7",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r7"
+        ],
+        "en": [
+          "p016-b002-t1-r7"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r8",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r8"
+        ],
+        "en": [
+          "p016-b002-t1-r8"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r9",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r9"
+        ],
+        "en": [
+          "p016-b002-t1-r9"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r10",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r10"
+        ],
+        "en": [
+          "p016-b002-t1-r10"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "terminal-summary",
+      "status": "WORDING_DIFFERENCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r11"
+        ],
+        "en": [
+          "p016-b002-t1-r11"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "中文摘要写附加保障如适用，英文摘要未重复条件；第11页正文及附注9保留if any和终止条件。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r12",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r12"
+        ],
+        "en": [
+          "p016-b002-t1-r12"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r13",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r13"
+        ],
+        "en": [
+          "p016-b002-t1-r13"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r14",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r14"
+        ],
+        "en": [
+          "p016-b002-t1-r14"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r15",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r15"
+        ],
+        "en": [
+          "p016-b002-t1-r15"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p016-b002-t1-r16",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p016-b002-t1-r16"
+        ],
+        "en": [
+          "p016-b002-t1-r16"
+        ]
+      },
+      "pdf_pages": [
+        16
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p017-b001-t1-r1",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r1"
+        ],
+        "en": [
+          "p017-b001-t1-r1"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p017-b001-t1-r2",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r2"
+        ],
+        "en": [
+          "p017-b001-t1-r2"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p017-b001-t1-r3",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r3"
+        ],
+        "en": [
+          "p017-b001-t1-r3"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p017-b001-t1-r4",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r4"
+        ],
+        "en": [
+          "p017-b001-t1-r4"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p017-b001-t1-r5",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r5"
+        ],
+        "en": [
+          "p017-b001-t1-r5"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "sum-insured-change-conflict",
+      "status": "CONFLICT",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r6"
+        ],
+        "en": [
+          "p017-b001-t1-r6"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "中文HKD40,000/MOP400,000；英文HKD400,000/MOP40,000，保留两种说法。"
+    },
+    {
+      "clause_group_id": "shared-p017-b001-t1-r7",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r7"
+        ],
+        "en": [
+          "p017-b001-t1-r7"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p017-b001-t1-r8",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r8"
+        ],
+        "en": [
+          "p017-b001-t1-r8"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p017-b001-t1-r9",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p017-b001-t1-r9"
+        ],
+        "en": [
+          "p017-b001-t1-r9"
+        ]
+      },
+      "pdf_pages": [
+        17
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p018-b001-t1-r1",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p018-b001-t1-r1"
+        ],
+        "en": [
+          "p018-b001-t1-r1"
+        ]
+      },
+      "pdf_pages": [
+        18
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p018-b001-t1-r2",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p018-b001-t1-r2"
+        ],
+        "en": [
+          "p018-b001-t1-r2"
+        ]
+      },
+      "pdf_pages": [
+        18
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p018-b002-t1-r1",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p018-b002-t1-r1"
+        ],
+        "en": [
+          "p018-b002-t1-r1"
+        ]
+      },
+      "pdf_pages": [
+        18
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p018-b002-t1-r2",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p018-b002-t1-r2"
+        ],
+        "en": [
+          "p018-b002-t1-r2"
+        ]
+      },
+      "pdf_pages": [
+        18
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "shared-p018-b002-t1-r3",
+      "status": "SHARED_BILINGUAL_SOURCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p018-b002-t1-r3"
+        ],
+        "en": [
+          "p018-b002-t1-r3"
+        ]
+      },
+      "pdf_pages": [
+        18
+      ],
+      "review_note": "表格已保留行和列关系；金额、利率、年限按共享数字解释，不能从币种缩写推断汇率。"
+    },
+    {
+      "clause_group_id": "investment-allocation-1",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b013-t1-r1"
+        ],
+        "en": [
+          "p013-b034-t1-r1"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": "债券及其他固定收益80–100%，股票类0–20%；这是目标资产组合，不是投资收益率。"
+    },
+    {
+      "clause_group_id": "investment-allocation-2",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b013-t1-r2"
+        ],
+        "en": [
+          "p013-b034-t1-r2"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": "债券及其他固定收益80–100%，股票类0–20%；这是目标资产组合，不是投资收益率。"
+    },
+    {
+      "clause_group_id": "investment-allocation-3",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p013-b013-t1-r3"
+        ],
+        "en": [
+          "p013-b034-t1-r3"
+        ]
+      },
+      "pdf_pages": [
+        13
+      ],
+      "review_note": "债券及其他固定收益80–100%，股票类0–20%；这是目标资产组合，不是投资收益率。"
+    }
+  ],
+  "context_only": [
+    {
+      "evidence_id": "p001-b003",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 1,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p001-b004",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 1,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p005-b026",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 5,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p010-b010",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 10,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p010-b011",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 10,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p011-b002",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 11,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p011-b014",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 11,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p018-b001",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 18,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p018-b002",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 18,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p020-b006",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 20,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p020-b007",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 20,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    },
+    {
+      "evidence_id": "p020-b009",
+      "status": "CONTEXT_ONLY",
+      "pdf_page": 20,
+      "reason": "品牌、标题、图示标签或社交媒体名称；不用于单独推断保障。"
+    }
+  ],
+  "discarded_block_audit": [
+    {
+      "block_id": "p001-d001",
+      "pdf_page": 1,
+      "type": "footer",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p001-d002",
+      "pdf_page": 1,
+      "type": "header",
+      "disposition": "RESTORED",
+      "reason": "按正文/语义恢复"
+    },
+    {
+      "block_id": "p001-d003",
+      "pdf_page": 1,
+      "type": "footer",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p001-d004",
+      "pdf_page": 1,
+      "type": "footer",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p001-d005",
+      "pdf_page": 1,
+      "type": "footer",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p001-d006",
+      "pdf_page": 1,
+      "type": "footer",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p002-d001",
+      "pdf_page": 2,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p003-d001",
+      "pdf_page": 3,
+      "type": "footer",
+      "disposition": "RESTORED",
+      "reason": "按正文/语义恢复"
+    },
+    {
+      "block_id": "p003-d002",
+      "pdf_page": 3,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p004-d001",
+      "pdf_page": 4,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p005-d001",
+      "pdf_page": 5,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p006-d001",
+      "pdf_page": 6,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p006-d002",
+      "pdf_page": 6,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p006-d003",
+      "pdf_page": 6,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p007-d001",
+      "pdf_page": 7,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p007-d002",
+      "pdf_page": 7,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p008-d001",
+      "pdf_page": 8,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p008-d002",
+      "pdf_page": 8,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p008-d003",
+      "pdf_page": 8,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p008-d004",
+      "pdf_page": 8,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p010-d001",
+      "pdf_page": 10,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p010-d002",
+      "pdf_page": 10,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p010-d003",
+      "pdf_page": 10,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p010-d004",
+      "pdf_page": 10,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p011-d001",
+      "pdf_page": 11,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p011-d002",
+      "pdf_page": 11,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p011-d003",
+      "pdf_page": 11,
+      "type": "header",
+      "disposition": "SECTION_CONTEXT",
+      "reason": "用于章节上下文"
+    },
+    {
+      "block_id": "p011-d004",
+      "pdf_page": 11,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p012-d001",
+      "pdf_page": 12,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p013-d001",
+      "pdf_page": 13,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p014-d001",
+      "pdf_page": 14,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p015-d001",
+      "pdf_page": 15,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p016-d001",
+      "pdf_page": 16,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p017-d001",
+      "pdf_page": 17,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p018-d001",
+      "pdf_page": 18,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p019-d001",
+      "pdf_page": 19,
+      "type": "page_footnote",
+      "disposition": "RESTORED",
+      "reason": "按正文/语义恢复"
+    },
+    {
+      "block_id": "p019-d002",
+      "pdf_page": 19,
+      "type": "page_number",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p020-d001",
+      "pdf_page": 20,
+      "type": "footer",
+      "disposition": "RESTORED",
+      "reason": "按正文/语义恢复"
+    },
+    {
+      "block_id": "p020-d002",
+      "pdf_page": 20,
+      "type": "aside_text",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    },
+    {
+      "block_id": "p020-d003",
+      "pdf_page": 20,
+      "type": "footer",
+      "disposition": "NOT_INDEXED",
+      "reason": "页码、奖项宣传、标语、纸张标记或出版代码；保留原JSON，不作保险条款证据。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "chart-market-share",
+      "pdf_page": 3,
+      "block_id": "p003-b007",
+      "status": "NOT_INDEXED",
+      "note": "JSON将条形图保留为图片，图中的43/36/21%未进入文本；历史图表数据不得补猜。"
+    },
+    {
+      "id": "life-timeline",
+      "pdf_page": 7,
+      "block_id": "p007-b008",
+      "status": "PARTIALLY_INDEXED",
+      "note": "JSON提供部分时间线文字，但年龄/阶段对应未完全结构化；不根据残片给完整人生阶段表。"
+    },
+    {
+      "id": "comparison-icons",
+      "pdf_page": 4,
+      "status": "NOT_INDEXED",
+      "note": "比较表的勾叉属于图片，正文保留；不将万用寿险与传统寿险图示差异推断为本产品条款。"
+    },
+    {
+      "id": "extra-bonus-example",
+      "pdf_page": 9,
+      "status": "ILLUSTRATION_ONLY",
+      "note": "708,800×2.75%=19,492是示例；共享美元符号未指定币种，不自行改成港币。"
+    },
+    {
+      "id": "historical-mixed-dates",
+      "pdf_pages": [
+        8,
+        20
+      ],
+      "status": "HISTORICAL_SOURCE",
+      "note": "利率说明为2022年1月，公司介绍有2025年排名信息；不能用一个日期覆盖所有内容，也不能说是今天的利率/地址。"
+    }
+  ],
+  "limitations": [
+    "覆盖当前292条提取证据的对应关系与用途，不宣称PDF所有图像文字已提取。",
+    "原文冲突仍存在，简体中文不是第三份PDF原文。",
+    "开发助手核对，不是保险专业人员审校；最终回答还需模型输出检查和人工案例核验。"
+  ]
+}

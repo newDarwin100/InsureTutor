@@ -1,22 +1,22 @@
 {
   "input_sha256": "31bd05710301ff26721181daba2e90f9a836ee99fc4037f055ec3c17df3e72ea",
-  "corrections_sha256": "ee1b0ad69be2a7daf03d24b4bc404afe63f021e414bd1f8ee866e0c98cbaff1c",
+  "corrections_sha256": "40f3750f69308defec79fb6932a55c678a5d1809942b75f079238a30c2200e27",
   "preprocessor_version": "1",
   "max_chars": 1200,
   "overlap_chars": 120,
   "counts": {
-    "evidence": 288,
-    "parents": 136,
-    "chunks": 139,
+    "evidence": 292,
+    "parents": 140,
+    "chunks": 143,
     "alignment": 10,
     "changes": 7,
     "omitted_blocks": 32
   },
   "language_hints": {
     "und": 13,
-    "mixed": 93,
+    "mixed": 96,
     "zh": 82,
-    "en": 100
+    "en": 101
   },
   "stage": "RULE_BASELINE_NOT_RETRIEVAL_EVALUATED",
   "limitations": [

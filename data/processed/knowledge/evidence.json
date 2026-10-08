@@ -869,7 +869,12 @@
     "kind": "paragraph",
     "language_hint": "mixed",
     "footnote_numbers": [],
-    "related_evidence_ids": [],
+    "related_evidence_ids": [
+      "p008-b002",
+      "p008-b004",
+      "p008-b011",
+      "p008-b014"
+    ],
     "review_flags": [],
     "review_note": null,
     "review_status": "NOT_FULLY_REVIEWED"
@@ -3310,7 +3315,21 @@
     ],
     "related_evidence_ids": [
       "p012-b010",
-      "p012-b021"
+      "p012-b021",
+      "p014-b022",
+      "p014-b023",
+      "p014-b024",
+      "p014-b025",
+      "p014-b026",
+      "p014-b027",
+      "p014-b028",
+      "p014-b050",
+      "p014-b051",
+      "p014-b052",
+      "p014-b053",
+      "p014-b054",
+      "p014-b055",
+      "p014-b056"
     ],
     "review_flags": [],
     "review_note": null,
@@ -3340,7 +3359,21 @@
     ],
     "related_evidence_ids": [
       "p012-b010",
-      "p012-b021"
+      "p012-b021",
+      "p014-b022",
+      "p014-b023",
+      "p014-b024",
+      "p014-b025",
+      "p014-b026",
+      "p014-b027",
+      "p014-b028",
+      "p014-b050",
+      "p014-b051",
+      "p014-b052",
+      "p014-b053",
+      "p014-b054",
+      "p014-b055",
+      "p014-b056"
     ],
     "review_flags": [],
     "review_note": null,
@@ -3367,9 +3400,11 @@
     "language_hint": "zh",
     "footnote_numbers": [],
     "related_evidence_ids": [],
-    "review_flags": [],
-    "review_note": null,
-    "review_status": "NOT_FULLY_REVIEWED"
+    "review_flags": [
+      "SOURCE_CONFLICT"
+    ],
+    "review_note": "豁免保费年龄边界：中文65岁或以前，英文before the age of 65；65岁生日边界需核对正式保单，不自行统一。",
+    "review_status": "NEEDS_REVIEW"
   },
   {
     "evidence_id": "p011-b011",
@@ -3442,9 +3477,11 @@
     "language_hint": "en",
     "footnote_numbers": [],
     "related_evidence_ids": [],
-    "review_flags": [],
-    "review_note": null,
-    "review_status": "NOT_FULLY_REVIEWED"
+    "review_flags": [
+      "SOURCE_CONFLICT"
+    ],
+    "review_note": "豁免保费年龄边界：中文65岁或以前，英文before the age of 65；65岁生日边界需核对正式保单，不自行统一。",
+    "review_status": "NEEDS_REVIEW"
   },
   {
     "evidence_id": "p011-b016",
@@ -6608,7 +6645,21 @@
     ],
     "related_evidence_ids": [
       "p012-b010",
-      "p012-b021"
+      "p012-b021",
+      "p014-b022",
+      "p014-b023",
+      "p014-b024",
+      "p014-b025",
+      "p014-b026",
+      "p014-b027",
+      "p014-b028",
+      "p014-b050",
+      "p014-b051",
+      "p014-b052",
+      "p014-b053",
+      "p014-b054",
+      "p014-b055",
+      "p014-b056"
     ],
     "review_flags": [],
     "review_note": null,
@@ -7020,7 +7071,7 @@
     "source_pointer": "/pdf_info/17/para_blocks/0",
     "source_block_id": "p018-b001",
     "source_text": "<table><tr><td>退保費用10Surrender Charge10</td><td>按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect</td></tr><tr><td>提取現金價值Cash Value Withdrawal</td><td>次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option</td></tr></table>",
-    "text": "退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 退保費用10Surrender Charge10 | 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect",
+    "text": "退保費用10Surrender Charge10 | 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect",
     "section": "額外安心保障 Extra Protections for Total Peace of Mind",
     "parent_id": "row-p018-b001-t1-r1",
     "kind": "table_row",
@@ -7045,7 +7096,7 @@
     "source_pointer": "/pdf_info/17/para_blocks/0",
     "source_block_id": "p018-b001",
     "source_text": "<table><tr><td>退保費用10Surrender Charge10</td><td>按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect</td></tr><tr><td>提取現金價值Cash Value Withdrawal</td><td>次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option</td></tr></table>",
-    "text": "退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+    "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
     "section": "額外安心保障 Extra Protections for Total Peace of Mind",
     "parent_id": "row-p018-b001-t1-r2",
     "kind": "table_row",
@@ -7095,7 +7146,7 @@
     "source_pointer": "/pdf_info/17/para_blocks/1",
     "source_block_id": "p018-b002",
     "source_text": "<table><tr><td>投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday)</td><td>0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)</td></tr><tr><td>保障年期Benefit Term</td><td>至100歲To Age 100</td></tr><tr><td>繳付保費年期Premium Payment Term</td><td>至100歲To Age 100</td></tr></table>",
-    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) | 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)",
+    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) | 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)",
     "section": "額外安心保障 Extra Protections for Total Peace of Mind",
     "parent_id": "row-p018-b002-t1-r1",
     "kind": "table_row",
@@ -7120,7 +7171,7 @@
     "source_pointer": "/pdf_info/17/para_blocks/1",
     "source_block_id": "p018-b002",
     "source_text": "<table><tr><td>投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday)</td><td>0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)</td></tr><tr><td>保障年期Benefit Term</td><td>至100歲To Age 100</td></tr><tr><td>繳付保費年期Premium Payment Term</td><td>至100歲To Age 100</td></tr></table>",
-    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 保障年期Benefit Term | 至100歲To Age 100",
+    "text": "保障年期Benefit Term | 至100歲To Age 100",
     "section": "額外安心保障 Extra Protections for Total Peace of Mind",
     "parent_id": "row-p018-b002-t1-r2",
     "kind": "table_row",
@@ -7145,7 +7196,7 @@
     "source_pointer": "/pdf_info/17/para_blocks/1",
     "source_block_id": "p018-b002",
     "source_text": "<table><tr><td>投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday)</td><td>0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)</td></tr><tr><td>保障年期Benefit Term</td><td>至100歲To Age 100</td></tr><tr><td>繳付保費年期Premium Payment Term</td><td>至100歲To Age 100</td></tr></table>",
-    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 繳付保費年期Premium Payment Term | 至100歲To Age 100",
+    "text": "繳付保費年期Premium Payment Term | 至100歲To Age 100",
     "section": "額外安心保障 Extra Protections for Total Peace of Mind",
     "parent_id": "row-p018-b002-t1-r3",
     "kind": "table_row",
@@ -7480,5 +7531,105 @@
     "review_flags": [],
     "review_note": null,
     "review_status": "NOT_FULLY_REVIEWED"
+  },
+  {
+    "evidence_id": "p001-d002",
+    "document_id": "flexi-ulife-prime-saver",
+    "document_name": "FLEXI-ULife Prime Saver.pdf",
+    "pdf_page": 1,
+    "bbox": [
+      392,
+      39,
+      555,
+      83
+    ],
+    "source_pointer": "/pdf_info/0/discarded_blocks/1",
+    "source_block_id": "p001-d002",
+    "source_text": "｜ 人壽 Life ｜\n萬用壽險（非投資相連）產品\nUniversal Life Insurance (Non-Linked) Product",
+    "text": "｜ 人壽 Life ｜ 萬用壽險（非投資相連）產品 Universal Life Insurance (Non-Linked) Product",
+    "section": "产品类别：非投资相连万用寿险；按原JSON恢复。",
+    "parent_id": "restored-p001-d002",
+    "kind": "restored_discarded",
+    "language_hint": "mixed",
+    "footnote_numbers": [],
+    "related_evidence_ids": [],
+    "review_flags": [],
+    "review_note": "产品类别：非投资相连万用寿险；按原JSON恢复。",
+    "review_status": "SOURCE_RESTORED"
+  },
+  {
+    "evidence_id": "p003-d001",
+    "document_id": "flexi-ulife-prime-saver",
+    "document_name": "FLEXI-ULife Prime Saver.pdf",
+    "pdf_page": 3,
+    "bbox": [
+      17,
+      453,
+      95,
+      496
+    ],
+    "source_pointer": "/pdf_info/2/discarded_blocks/0",
+    "source_block_id": "p003-d001",
+    "source_text": "豐盛退休生活\nEnjoyable\nRetirement",
+    "text": "豐盛退休生活 Enjoyable Retirement",
+    "section": "双语退休用途标签；保留来源。",
+    "parent_id": "restored-p003-d001",
+    "kind": "restored_discarded",
+    "language_hint": "mixed",
+    "footnote_numbers": [],
+    "related_evidence_ids": [],
+    "review_flags": [],
+    "review_note": "双语退休用途标签；保留来源。",
+    "review_status": "SOURCE_RESTORED"
+  },
+  {
+    "evidence_id": "p019-d001",
+    "document_id": "flexi-ulife-prime-saver",
+    "document_name": "FLEXI-ULife Prime Saver.pdf",
+    "pdf_page": 19,
+    "bbox": [
+      38,
+      723,
+      552,
+      773
+    ],
+    "source_pointer": "/pdf_info/18/discarded_blocks/0",
+    "source_block_id": "p019-d001",
+    "source_text": "The above contains general information and is for reference only. It does not form part of the Policy and does not contain the\nfull terms of the policy. Please refer to the Policy document for benefit coverage, exact terms and conditions and exclusions\nFor enquiries or to obtain a sample policy document, please contact our consultants, franchised agents or brokers. For other\nenquiries, please call our Customer Service Hotline: Hong Kong (852) 2533 5555 / Macau (853) 2832 2622.",
+    "text": "The above contains general information and is for reference only. It does not form part of the Policy and does not contain the full terms of the policy. Please refer to the Policy document for benefit coverage, exact terms and conditions and exclusions For enquiries or to obtain a sample policy document, please contact our consultants, franchised agents or brokers. For other enquiries, please call our Customer Service Hotline: Hong Kong (852) 2533 5555 / Macau (853) 2832 2622.",
+    "section": "英文免责声明被识别为页脚；与本页中文对应。",
+    "parent_id": "restored-p019-d001",
+    "kind": "restored_discarded",
+    "language_hint": "en",
+    "footnote_numbers": [],
+    "related_evidence_ids": [],
+    "review_flags": [],
+    "review_note": "英文免责声明被识别为页脚；与本页中文对应。",
+    "review_status": "SOURCE_RESTORED"
+  },
+  {
+    "evidence_id": "p020-d001",
+    "document_id": "flexi-ulife-prime-saver",
+    "document_name": "FLEXI-ULife Prime Saver.pdf",
+    "pdf_page": 20,
+    "bbox": [
+      232,
+      770,
+      477,
+      827
+    ],
+    "source_pointer": "/pdf_info/19/discarded_blocks/0",
+    "source_block_id": "p020-d001",
+    "source_text": "客戶服務：\n香港尖沙咀廣東道9號港威大廈6座12樓1211室\n澳門蘇亞利斯博士大馬路320號澳門財富中心8樓A座\nCustomer Service:\nSuite 1211, 12/F, Tower 6, The Gateway, 9 Canton Road, Tsimshatsui, Hong Kong\nAvenida Doutor Mario Soares No. 320, Finance and IT Center of Macau,\n8 Andar A, Macau",
+    "text": "客戶服務： 香港尖沙咀廣東道9號港威大廈6座12樓1211室澳門蘇亞利斯博士大馬路320號澳門財富中心8樓A座 Customer Service: Suite 1211, 12/F, Tower 6, The Gateway, 9 Canton Road, Tsimshatsui, Hong Kong Avenida Doutor Mario Soares No. 320, Finance and IT Center of Macau, 8 Andar A, Macau",
+    "section": "双语客服地址，按原JSON恢复；只代表册子所列历史信息。",
+    "parent_id": "restored-p020-d001",
+    "kind": "restored_discarded",
+    "language_hint": "mixed",
+    "footnote_numbers": [],
+    "related_evidence_ids": [],
+    "review_flags": [],
+    "review_note": "双语客服地址，按原JSON恢复；只代表册子所列历史信息。",
+    "review_status": "SOURCE_RESTORED"
   }
 ]

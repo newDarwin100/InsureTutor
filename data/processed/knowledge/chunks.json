@@ -157,7 +157,12 @@
     "language_hint": "mixed",
     "text": "■ 每月派息並以複式計算，帶來穩定而豐厚的回報 Interest credited monthly at a compound rate\n■ 額外利息及額外回報 Retrospective additional interest and Extra bonus\n■ 2.5%長線利率保證 2.5% long-term guaranteed interest rate",
     "retrieval_text": "財富增值優勢 Value-creating Advantages\n■ 每月派息並以複式計算，帶來穩定而豐厚的回報 Interest credited monthly at a compound rate\n■ 額外利息及額外回報 Retrospective additional interest and Extra bonus\n■ 2.5%長線利率保證 2.5% long-term guaranteed interest rate",
-    "related_evidence_ids": [],
+    "related_evidence_ids": [
+      "p008-b002",
+      "p008-b004",
+      "p008-b011",
+      "p008-b014"
+    ],
     "review_flags": []
   },
   {
@@ -977,7 +982,21 @@
     "retrieval_text": "末期病症保障 Terminal Illness Benefit\n若受保人不幸被首次確診患上末期病症9，便可獲得末期病症保障賠償，即基本計劃及附加保障（如適用）的身故保障，以紓緩經濟上的壓力。\nIn the event of the Insured being first diagnosed with Terminal Illness9, a sum of Terminal Illness Benefit will be paid, which is the Death Benefit of the basic plan and supplementary benefit(s) (if any), to help relieve the financial burden.",
     "related_evidence_ids": [
       "p012-b010",
-      "p012-b021"
+      "p012-b021",
+      "p014-b022",
+      "p014-b023",
+      "p014-b024",
+      "p014-b025",
+      "p014-b026",
+      "p014-b027",
+      "p014-b028",
+      "p014-b050",
+      "p014-b051",
+      "p014-b052",
+      "p014-b053",
+      "p014-b054",
+      "p014-b055",
+      "p014-b056"
     ],
     "review_flags": []
   },
@@ -994,7 +1013,9 @@
     "text": "■ 豁免保費計劃 – 若受保人不幸於65歲或以前因患病或意外受傷引致連續6個月或以上不能工作，計劃會代付傷殘期間所需的保費。",
     "retrieval_text": "此外，您亦可以小額保費享有一系列附加保障：\n■ 豁免保費計劃 – 若受保人不幸於65歲或以前因患病或意外受傷引致連續6個月或以上不能工作，計劃會代付傷殘期間所需的保費。",
     "related_evidence_ids": [],
-    "review_flags": []
+    "review_flags": [
+      "SOURCE_CONFLICT"
+    ]
   },
   {
     "chunk_id": "section-p011-b010-c054",
@@ -1026,7 +1047,9 @@
     "text": "The plan also ofers you a full spectrum of supplementary benefits at an additional premium:\n■ Waiver of Premium Benefit – If the Insured sufers from total disability for a continuous period of not less than 6 months resulting from disease or bodily injury before the age of 65, the premiums required during the period of disability will be payable by the benefit.\n■ Other supplementary benefits – Critical Illness Benefit, Accident Benefit, etc.",
     "retrieval_text": "Benefits\nThe plan also ofers you a full spectrum of supplementary benefits at an additional premium:\n■ Waiver of Premium Benefit – If the Insured sufers from total disability for a continuous period of not less than 6 months resulting from disease or bodily injury before the age of 65, the premiums required during the period of disability will be payable by the benefit.\n■ Other supplementary benefits – Critical Illness Benefit, Accident Benefit, etc.",
     "related_evidence_ids": [],
-    "review_flags": []
+    "review_flags": [
+      "SOURCE_CONFLICT"
+    ]
   },
   {
     "chunk_id": "note-01-c056",
@@ -2039,7 +2062,21 @@
     "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 末期病症保障^{9}Terminal Illness Benefit^{9} | 基本計劃及附加保障(如適用)的身故保障The Death Benefit of the Basic Plan and supplementary benefit(s)",
     "related_evidence_ids": [
       "p012-b010",
-      "p012-b021"
+      "p012-b021",
+      "p014-b022",
+      "p014-b023",
+      "p014-b024",
+      "p014-b025",
+      "p014-b026",
+      "p014-b027",
+      "p014-b028",
+      "p014-b050",
+      "p014-b051",
+      "p014-b052",
+      "p014-b053",
+      "p014-b054",
+      "p014-b055",
+      "p014-b056"
     ],
     "review_flags": []
   },
@@ -2290,8 +2327,8 @@
       18
     ],
     "language_hint": "mixed",
-    "text": "退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 退保費用10Surrender Charge10 | 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect",
-    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 退保費用10Surrender Charge10 | 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect",
+    "text": "退保費用10Surrender Charge10 | 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n退保費用10Surrender Charge10 | 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect",
     "related_evidence_ids": [],
     "review_flags": []
   },
@@ -2305,8 +2342,8 @@
       18
     ],
     "language_hint": "mixed",
-    "text": "退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
-    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+    "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
     "related_evidence_ids": [],
     "review_flags": []
   },
@@ -2320,8 +2357,8 @@
       18
     ],
     "language_hint": "mixed",
-    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) | 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)",
-    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) | 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)",
+    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) | 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) | 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)",
     "related_evidence_ids": [],
     "review_flags": []
   },
@@ -2335,8 +2372,8 @@
       18
     ],
     "language_hint": "mixed",
-    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 保障年期Benefit Term | 至100歲To Age 100",
-    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 保障年期Benefit Term | 至100歲To Age 100",
+    "text": "保障年期Benefit Term | 至100歲To Age 100",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n保障年期Benefit Term | 至100歲To Age 100",
     "related_evidence_ids": [],
     "review_flags": []
   },
@@ -2350,8 +2387,8 @@
       18
     ],
     "language_hint": "mixed",
-    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 繳付保費年期Premium Payment Term | 至100歲To Age 100",
-    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 繳付保費年期Premium Payment Term | 至100歲To Age 100",
+    "text": "繳付保費年期Premium Payment Term | 至100歲To Age 100",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n繳付保費年期Premium Payment Term | 至100歲To Age 100",
     "related_evidence_ids": [],
     "review_flags": []
   },
@@ -2407,6 +2444,66 @@
     "language_hint": "mixed",
     "text": "** The “Five Largest US Life Insurance Companies” are ranked according to the results of “Insurance: Life, Health (Mutual)” and “Insurance: Life, Health (Stock)” on total revenues for 2024, and based on the FORTUNE 500 as published on June 2, 2025.\n萬通保險國際有限公司 YF Life Insurance International Ltd. www.yflife.com",
     "retrieval_text": "YFLife 萬通保險\n** The “Five Largest US Life Insurance Companies” are ranked according to the results of “Insurance: Life, Health (Mutual)” and “Insurance: Life, Health (Stock)” on total revenues for 2024, and based on the FORTUNE 500 as published on June 2, 2025.\n萬通保險國際有限公司 YF Life Insurance International Ltd. www.yflife.com",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "restored-p001-d002-c140",
+    "evidence_ids": [
+      "p001-d002"
+    ],
+    "parent_id": "restored-p001-d002",
+    "pdf_pages": [
+      1
+    ],
+    "language_hint": "mixed",
+    "text": "｜ 人壽 Life ｜ 萬用壽險（非投資相連）產品 Universal Life Insurance (Non-Linked) Product",
+    "retrieval_text": "产品类别：非投资相连万用寿险；按原JSON恢复。\n｜ 人壽 Life ｜ 萬用壽險（非投資相連）產品 Universal Life Insurance (Non-Linked) Product",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "restored-p003-d001-c141",
+    "evidence_ids": [
+      "p003-d001"
+    ],
+    "parent_id": "restored-p003-d001",
+    "pdf_pages": [
+      3
+    ],
+    "language_hint": "mixed",
+    "text": "豐盛退休生活 Enjoyable Retirement",
+    "retrieval_text": "双语退休用途标签；保留来源。\n豐盛退休生活 Enjoyable Retirement",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "restored-p019-d001-c142",
+    "evidence_ids": [
+      "p019-d001"
+    ],
+    "parent_id": "restored-p019-d001",
+    "pdf_pages": [
+      19
+    ],
+    "language_hint": "en",
+    "text": "The above contains general information and is for reference only. It does not form part of the Policy and does not contain the full terms of the policy. Please refer to the Policy document for benefit coverage, exact terms and conditions and exclusions For enquiries or to obtain a sample policy document, please contact our consultants, franchised agents or brokers. For other enquiries, please call our Customer Service Hotline: Hong Kong (852) 2533 5555 / Macau (853) 2832 2622.",
+    "retrieval_text": "英文免责声明被识别为页脚；与本页中文对应。\nThe above contains general information and is for reference only. It does not form part of the Policy and does not contain the full terms of the policy. Please refer to the Policy document for benefit coverage, exact terms and conditions and exclusions For enquiries or to obtain a sample policy document, please contact our consultants, franchised agents or brokers. For other enquiries, please call our Customer Service Hotline: Hong Kong (852) 2533 5555 / Macau (853) 2832 2622.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "restored-p020-d001-c143",
+    "evidence_ids": [
+      "p020-d001"
+    ],
+    "parent_id": "restored-p020-d001",
+    "pdf_pages": [
+      20
+    ],
+    "language_hint": "mixed",
+    "text": "客戶服務： 香港尖沙咀廣東道9號港威大廈6座12樓1211室澳門蘇亞利斯博士大馬路320號澳門財富中心8樓A座 Customer Service: Suite 1211, 12/F, Tower 6, The Gateway, 9 Canton Road, Tsimshatsui, Hong Kong Avenida Doutor Mario Soares No. 320, Finance and IT Center of Macau, 8 Andar A, Macau",
+    "retrieval_text": "双语客服地址，按原JSON恢复；只代表册子所列历史信息。\n客戶服務： 香港尖沙咀廣東道9號港威大廈6座12樓1211室澳門蘇亞利斯博士大馬路320號澳門財富中心8樓A座 Customer Service: Suite 1211, 12/F, Tower 6, The Gateway, 9 Canton Road, Tsimshatsui, Hong Kong Avenida Doutor Mario Soares No. 320, Finance and IT Center of Macau, 8 Andar A, Macau",
     "related_evidence_ids": [],
     "review_flags": []
   }

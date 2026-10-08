@@ -35,3 +35,5 @@
 运行 `.venv/bin/python scripts/check_alignment.py` 检查来源哈希、证据和页码、关键条件及三语言测试问题，并生成同目录的可读核对记录 `pilot_alignment.md`。哈希或关键条件变了，检查会失败，需要重新对照PDF核对。脚本只检查记录有效性，不自动判断双语含义。
 
 小样本块和问题放在 `evaluation/retrieval_pilot.json`；准备好不等于已向量化或通过检索。
+
+全文提取文本核对见 `reviewed/full_alignment.json` / `.md`。292条证据、143个检索块，每条有对应关系或上下文用途说明；40个discarded块均检查去向。两处原文冲突与图像提取限制仍保留。运行 `.venv/bin/python scripts/check_full_alignment.py` 验证来源和覆盖，不能把它理解为自动语义审校。
