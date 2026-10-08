@@ -25,6 +25,8 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
   return response.json() as Promise<T>
 }
 export const getStatus = () => request<AppStatus>('/api/status')
-export const askQuestion = (message: string, language: Language) => request<ChatReply>(
-  '/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message, language }) },
+export const createConversation = () => request<{ token: string }>('/api/conversations', { method: 'POST' })
+export const deleteConversation = (token: string) => request('/api/conversations/current', { method: 'DELETE', headers: { 'X-Conversation-Token': token } })
+export const askQuestion = (message: string, language: Language, token: string) => request<ChatReply>(
+  '/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Conversation-Token': token }, body: JSON.stringify({ message, language }) },
 )

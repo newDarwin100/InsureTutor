@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref } from 'vue'
 import { presentReply } from './api/presentation'
-import { getStatus, askQuestion, type AppStatus, type ChatReply, type Language } from './api/client'
+import { getStatus, askQuestion, createConversation, deleteConversation, type AppStatus, type ChatReply, type Language } from './api/client'
 
 const status = ref<AppStatus | null>(null)
 const error = ref('')
@@ -9,6 +9,7 @@ const input = ref('')
 const busy = ref(false)
 const page = ref(8)
 const language = ref<Language>('zh-Hans')
+const conversationToken = ref<string | null>(null)
 const messages = ref<{ role: 'user' | 'assistant'; text: string; reply?: ChatReply }[]>([])
 const messageArea = ref<HTMLElement | null>(null)
 const displayMessages = computed(() => messages.value.map(message => ({
@@ -38,7 +39,8 @@ async function send() {
   messages.value.push({ role: 'user', text: value })
   input.value = ''
   try {
-    const reply = await askQuestion(value, language.value)
+    if (!conversationToken.value) conversationToken.value = (await createConversation()).token
+    const reply = await askQuestion(value, language.value, conversationToken.value)
     messages.value.push({ role: 'assistant', text: reply.message, reply })
   } catch (err) {
     input.value = value
@@ -48,6 +50,19 @@ async function send() {
     await nextTick()
     messageArea.value?.scrollTo({ top: messageArea.value.scrollHeight, behavior: 'smooth' })
   }
+}
+
+async function clearChat() {
+  if (busy.value) return
+  busy.value = true
+  error.value = ''
+  try {
+    if (conversationToken.value) await deleteConversation(conversationToken.value)
+    conversationToken.value = null
+    messages.value = []
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : '清空失败，请重试。'
+  } finally { busy.value = false }
 }
 
 function documentUrl() {
@@ -62,7 +77,7 @@ onMounted(refresh)
   <main class="app-shell">
     <header class="header">
       <div class="brand"><span class="brand-icon">IT</span><div><h1>InsureTutor</h1><p>读懂条款，找到依据</p></div></div>
-      <span class="badge">开发预览 · 单轮问答</span>
+      <span class="badge">开发预览 · 多轮问答</span>
     </header>
 
     <div class="layout">
@@ -74,7 +89,7 @@ onMounted(refresh)
             <div><dt>资料</dt><dd>{{ status?.document_available ? 'PDF 已就绪' : '检查中' }}</dd></div>
             <div><dt>来源证据</dt><dd>{{ status?.knowledge_counts.evidence ?? '—' }}</dd></div>
             <div><dt>检索分块</dt><dd>{{ status?.knowledge_counts.chunks ?? '—' }}</dd></div>
-            <div><dt>保险问答</dt><dd>{{ status?.rag_ready ? '单轮已就绪' : '未就绪' }}</dd></div>
+            <div><dt>保险问答</dt><dd>{{ status?.rag_ready ? '问答已就绪' : '未就绪' }}</dd></div>
           </dl>
           <button class="text-button" @click="refresh">刷新状态</button>
         </section>
@@ -90,7 +105,7 @@ onMounted(refresh)
       </aside>
 
       <section class="chat-panel" aria-label="保险问答">
-        <div class="chat-header"><div><h2>保险资料问答</h2><p>每次提问独立检索，暂不记住之前的对话</p></div><button class="text-button" :disabled="busy" @click="messages = []">清空</button></div>
+        <div class="chat-header"><div><h2>保险资料问答</h2><p>支持接着追问 · 清空会同时删除会话记忆</p></div><button class="text-button" :disabled="busy" @click="clearChat">清空</button></div>
         <div ref="messageArea" class="messages" aria-live="polite">
           <div v-if="!messages.length" class="empty-state"><span class="empty-icon">↗</span><h3>从一个条款问题开始</h3><p>例如：4% 的利率是保证的吗？定期提款有什么条件？</p><p class="small-note">仅依据这份产品资料回答；资料中的历史数字不代表当前利率。</p></div>
           <div v-for="(message, index) in displayMessages" :key="index" class="message" :class="message.role">
