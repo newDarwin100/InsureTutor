@@ -10,7 +10,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 from app.rag.index import VectorIndex
-from app.guardrails.rules import Action as GuardAction, Reason, guard_result, input_reasons, output_reason
+from app.guardrails.rules import Action as GuardAction, Reason, SECRET, guard_result, input_reasons, output_reason
 from app.services.responses import Responses
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -80,7 +80,9 @@ source is used, both wordings must be explained as unresolved and the action mus
 Do not accept personal recommendations, instructions to disclose secrets or unrelated answers. Otherwise
 supported=false and choose the most relevant failure reason. Explain the specific unsupported claim or
 missing condition with its evidence ID in explanation; when supported, keep explanation brief.
-Do not require irrelevant brochure details.
+For questions about periodic withdrawal conditions, check sufficient cash value, the 10-year eligibility,
+minimum amounts/periods, and charges/lapse risks when applicable. Read the linked body paragraphs as well
+as footnote 6. Do not require irrelevant brochure details.
 """
 MESSAGES = {
     'en': {'no_evidence': 'The retrieved brochure text is insufficient to answer this question.',
@@ -117,6 +119,11 @@ def load_evidence(knowledge):
     return evidence, paired
 
 
+# Footnote-first hits must also carry the prerequisites and risks explained in the body.
+WITHDRAWAL_CONTEXT = ['p010-b005', 'p010-b006', 'p010-b013', 'p010-b014', 'p012-b011', 'p012-b022']
+WITHDRAWAL_ANCHORS = {'p012-b007', 'p012-b018', 'p018-b001-t1-r2'}
+
+
 def gather_evidence(index, retrieved, evidence, paired, max_chars=26000):
     direct = list(dict.fromkeys(e for cid in retrieved['ranked_chunk_ids'] for e in index.by_id[cid]['evidence_ids']))
     ids = list(direct)
@@ -125,6 +132,8 @@ def gather_evidence(index, retrieved, evidence, paired, max_chars=26000):
     for eid in direct:
         ids.extend(evidence[eid].get('related_evidence_ids', []))
         ids.extend(sorted(paired.get(eid, [])))
+    if WITHDRAWAL_ANCHORS.intersection(ids):
+        ids.extend(WITHDRAWAL_CONTEXT)
     ids = list(dict.fromkeys(ids))
     if len(ids) > 80 or sum(len(evidence[i]['text']) for i in ids) > max_chars:
         raise RuntimeError('Evidence exceeds the answer budget; narrow the question')
@@ -141,6 +150,31 @@ def validate_citations(draft, evidence):
         for citation in claim.citations:
             if citation.evidence_id not in evidence:
                 raise ValueError('Citation does not belong to this request')
+
+
+def verification_message(language, failure, check=None):
+    reason = check.reason if check else {Reason.INVALID_CITATION: 'invalid_citation',
+        Reason.SOURCE_CONFLICT: 'source_conflict', Reason.INSURANCE_CONDITION_MISMATCH: 'missing_condition'}.get(failure, failure.value)
+    messages = {
+        'zh-Hans': {
+            'invalid_citation': '这次回答的引用未能对应原文，已停止展示。可以重试；你的问题本身可以正常提问。',
+            'missing_condition': '这次回答有条款条件未通过核对，已停止展示。可以重试，不需要缩小问题范围。',
+            'unanswered_question': '这次回答没能覆盖你问的全部内容，已停止展示。可以重试。',
+            'source_conflict': '相关原文存在冲突，这次回答未能清楚说明双方差异，已停止展示。',
+            'default': '这次生成的部分结论未能通过原文核对，已停止展示。可以重试；并不是你的问题不合法。'},
+        'zh-Hant': {
+            'invalid_citation': '這次回答的引用未能對應原文，已停止展示。可以重試；你的問題本身可以正常提問。',
+            'missing_condition': '這次回答有條款條件未通過核對，已停止展示。可以重試，不需要縮小問題範圍。',
+            'unanswered_question': '這次回答未能涵蓋你問的全部內容，已停止展示。可以重試。',
+            'source_conflict': '相關原文存在衝突，這次回答未能清楚說明雙方差異，已停止展示。',
+            'default': '這次生成的部分結論未能通過原文核對，已停止展示。可以重試；並非你的問題不合法。'},
+        'en': {
+            'invalid_citation': 'The generated references could not be matched to the source. Please retry; your question is valid.',
+            'missing_condition': 'Some policy conditions did not pass verification. Please retry; you do not need to narrow the question.',
+            'unanswered_question': 'The answer did not cover your whole question. Please retry.',
+            'source_conflict': 'The source contains conflicting wording that the draft did not explain clearly.',
+            'default': 'Some generated claims did not pass the source check. Please retry; your question is valid.'}}
+    return messages[language].get(reason, messages[language]['default'])
 
 
 def blocked_reply(language, reasons, started):
@@ -204,6 +238,7 @@ def answer(question, language, index=None, model=None):
             'repair_feedback': {'reason': failure.value, 'detail': check.explanation if check else failure.value}}, Draft)
     passed = failure is None
     action = draft.action if passed else 'verification_failed'
+    message = MESSAGES[language].get(action, '') if passed else verification_message(language, failure, check)
     citations = []
     claims = []
     for claim in draft.claims if passed else []:
@@ -222,9 +257,10 @@ def answer(question, language, index=None, model=None):
             numbers.append(number)
         claims.append({'text': claim.text, 'citation_numbers': list(dict.fromkeys(numbers))})
     return {'request_id': uuid.uuid4().hex, 'action': action, 'language': language, 'claims': claims, 'citations': citations,
-            'message': MESSAGES[language].get(action, ''), 'mode': 'single_turn',
+            'message': message, 'mode': 'single_turn',
             'verification': {'status': ('failed' if not passed else 'passed' if check else 'not_applicable'),
-                             'reason': 'invalid_citation' if failure == Reason.INVALID_CITATION else check.reason if check else failure.value if failure else None},
+                             'reason': 'invalid_citation' if failure == Reason.INVALID_CITATION else check.reason if check else failure.value if failure else None,
+                             'detail': SECRET.sub('[redacted]', check.explanation)[:600] if not passed and check else None},
             'guardrail': guard_result(
                 [failure] if failure else draft.reasons or ({'no_evidence': [Reason.INSUFFICIENT_EVIDENCE],
                     'out_of_scope': [Reason.OUT_OF_SCOPE_GENERAL], 'unsafe_request': [Reason.UNSUPPORTED_OUTPUT],
@@ -232,7 +268,7 @@ def answer(question, language, index=None, model=None):
                 GuardAction.REFUSE if not passed or action in ['out_of_scope', 'unsafe_request'] else
                 GuardAction.CLARIFY if action in ['no_evidence', 'source_conflict'] else
                 GuardAction.CORRECT if Reason.FALSE_PREMISE in draft.reasons else GuardAction.ANSWER,
-                MESSAGES[language].get(action, 'Evidence check passed.'), attempts),
+                message or 'Evidence check passed.', attempts),
             'metrics': {'guardrail_ms': guard_ms, 'repair_ms': repair['ms'], 'retrieval_ms': retrieved['retrieval_ms'], 'query_embedding_ms': retrieved['query_embedding_ms'],
                         'vector_search_ms': retrieved['vector_search_ms'], 'generation_ms': generation['ms'],
                         'verification_ms': verification['ms'], 'llm_ms': round(generation['ms']+verification['ms']+repair['ms'], 2),

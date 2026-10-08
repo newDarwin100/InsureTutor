@@ -1,0 +1,225 @@
+{
+  "mode": "real_single_question_before_context_fix",
+  "question": "4% 的利率是保证的吗？定期提款有什么条件？",
+  "language": "zh-Hans",
+  "response": {
+    "request_id": "21c5f2b259cd4f05a428c61b4fed0ecc",
+    "action": "answered",
+    "language": "zh-Hans",
+    "claims": [
+      {
+        "text": "不是。小册子列出的4%是“现时假设基本派息率”，并注明该数值以2022年1月印刷时为准、并非保证，日后可能更改；另列出的0.25%现时假设额外利息同样不保证。小册子所述的长期保证，是保单生效满15年或以上时，账户价值（包括已拨入的利息及额外回报）保证不少于按每年2.5%派息率累积的账户价值。",
+        "citation_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "text": "定期提款权益只适用于保单已生效至少10年，并可获豁免提款费。按小册子列出的现行规定，每月提款最低为500美元／4,000港元／4,000澳门元，提款期最短一年；每年提款最低为6,000美元／48,000港元／48,000澳门元，提款期最短三年。申请确认后如要更改定期提款权益，须支付手续费。",
+        "citation_numbers": [
+          7
+        ]
+      }
+    ],
+    "citations": [
+      {
+        "number": 1,
+        "evidence_id": "p008-b005",
+        "quote": "基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)",
+        "document_name": "FLEXI-ULife Prime Saver.pdf",
+        "pdf_page": 8,
+        "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+        "text": "基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)",
+        "source_pointer": "/pdf_info/7/para_blocks/4",
+        "review_flags": []
+      },
+      {
+        "number": 2,
+        "evidence_id": "p008-b007",
+        "quote": "4% 每年 p.a.",
+        "document_name": "FLEXI-ULife Prime Saver.pdf",
+        "pdf_page": 8,
+        "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+        "text": "4% 每年 p.a.",
+        "source_pointer": "/pdf_info/7/para_blocks/6",
+        "review_flags": []
+      },
+      {
+        "number": 3,
+        "evidence_id": "p008-b008",
+        "quote": "額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)",
+        "document_name": "FLEXI-ULife Prime Saver.pdf",
+        "pdf_page": 8,
+        "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+        "text": "額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)",
+        "source_pointer": "/pdf_info/7/para_blocks/7",
+        "review_flags": []
+      },
+      {
+        "number": 4,
+        "evidence_id": "p008-b009",
+        "quote": "0.25% 每年 p.a.",
+        "document_name": "FLEXI-ULife Prime Saver.pdf",
+        "pdf_page": 8,
+        "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+        "text": "0.25% 每年 p.a.",
+        "source_pointer": "/pdf_info/7/para_blocks/8",
+        "review_flags": []
+      },
+      {
+        "number": 5,
+        "evidence_id": "p008-b011",
+        "quote": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。",
+        "document_name": "FLEXI-ULife Prime Saver.pdf",
+        "pdf_page": 8,
+        "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+        "text": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。",
+        "source_pointer": "/pdf_info/7/para_blocks/10",
+        "review_flags": []
+      },
+      {
+        "number": 6,
+        "evidence_id": "p008-b002",
+        "quote": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。",
+        "document_name": "FLEXI-ULife Prime Saver.pdf",
+        "pdf_page": 8,
+        "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+        "text": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。",
+        "source_pointer": "/pdf_info/7/para_blocks/1",
+        "review_flags": []
+      },
+      {
+        "number": 7,
+        "evidence_id": "p012-b007",
+        "quote": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+        "document_name": "FLEXI-ULife Prime Saver.pdf",
+        "pdf_page": 12,
+        "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+        "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+        "source_pointer": "/pdf_info/11/para_blocks/6",
+        "review_flags": []
+      }
+    ],
+    "message": "",
+    "mode": "single_turn",
+    "verification": {
+      "status": "passed",
+      "reason": "supported"
+    },
+    "guardrail": {
+      "reasons": [],
+      "action": "ANSWER",
+      "explanation": "Evidence check passed.",
+      "repair_attempts": 0
+    },
+    "metrics": {
+      "guardrail_ms": 0.55,
+      "repair_ms": 0,
+      "retrieval_ms": 1478.77,
+      "query_embedding_ms": 1477.25,
+      "vector_search_ms": 1.52,
+      "generation_ms": 5458.73,
+      "verification_ms": 2811.87,
+      "llm_ms": 8270.6,
+      "total_ms": 9801.58,
+      "retrieved_chunks": 5,
+      "direct_evidence": 14,
+      "context_evidence": 20,
+      "embedding_input_tokens": 22,
+      "llm_input_tokens": 4595,
+      "llm_output_tokens": 434
+    },
+    "models": {
+      "llm": "gpt-5.6-luna",
+      "embedding": "text-embedding-3-large"
+    },
+    "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+  },
+  "diagnostics": [
+    {
+      "type": "Draft",
+      "output": {
+        "action": "answered",
+        "reasons": [],
+        "claims": [
+          {
+            "text": "不是。小册子列出的4%是“现时假设基本派息率”，并注明该数值以2022年1月印刷时为准、并非保证，日后可能更改；另列出的0.25%现时假设额外利息同样不保证。小册子所述的长期保证，是保单生效满15年或以上时，账户价值（包括已拨入的利息及额外回报）保证不少于按每年2.5%派息率累积的账户价值。",
+            "citations": [
+              {
+                "evidence_id": "p008-b005"
+              },
+              {
+                "evidence_id": "p008-b007"
+              },
+              {
+                "evidence_id": "p008-b008"
+              },
+              {
+                "evidence_id": "p008-b009"
+              },
+              {
+                "evidence_id": "p008-b011"
+              },
+              {
+                "evidence_id": "p008-b002"
+              }
+            ]
+          },
+          {
+            "text": "定期提款权益只适用于保单已生效至少10年，并可获豁免提款费。按小册子列出的现行规定，每月提款最低为500美元／4,000港元／4,000澳门元，提款期最短一年；每年提款最低为6,000美元／48,000港元／48,000澳门元，提款期最短三年。申请确认后如要更改定期提款权益，须支付手续费。",
+            "citations": [
+              {
+                "evidence_id": "p012-b007"
+              }
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "ms": 5458.73,
+        "input_tokens": 2359,
+        "output_tokens": 326
+      }
+    },
+    {
+      "type": "Verification",
+      "output": {
+        "supported": true,
+        "explanation": "证据明确说明4%及0.25%均为2022年1月时的现时假设利率、并非保证；保证部分为保单生效满15年后账户价值至少按2.5%年利率累积。定期提款的生效年限、最低金额、最短期限、提款费豁免及更改手续费条件均已完整列出。",
+        "reason": "supported"
+      },
+      "usage": {
+        "ms": 2811.87,
+        "input_tokens": 2236,
+        "output_tokens": 108
+      }
+    }
+  ],
+  "context_evidence_ids": [
+    "p005-b015",
+    "p005-b016",
+    "p005-b017",
+    "p012-b007",
+    "p012-b018",
+    "p008-b002",
+    "p008-b003",
+    "p008-b004",
+    "p008-b005",
+    "p008-b007",
+    "p008-b008",
+    "p008-b009",
+    "p018-b001-t1-r2",
+    "p016-b002-t1-r7",
+    "p008-b011",
+    "p008-b014",
+    "p008-b012",
+    "p008-b013",
+    "p008-b015",
+    "p008-b016"
+  ],
+  "limitations": "This reproduction passed, so the original failure was not reproduced. No original failure trace exists. Manual review found cash-value prerequisites missing from the retrieved context and answer. Context and failure messages were then fixed and tested offline, not rerun against the API."
+}

@@ -57,6 +57,22 @@ class AnswerTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             gather_evidence(index, {'ranked_chunk_ids': ['fake']}, self.evidence, self.paired, max_chars=10)
 
+    def test_withdrawal_footnote_hit_includes_cash_value_and_fee_limits(self):
+        index = Index()
+        index.by_id = {'fake': {'evidence_ids': ['p012-b007']}}
+        context, _ = gather_evidence(index, {'ranked_chunk_ids': ['fake']}, self.evidence, self.paired)
+        self.assertIn('p010-b005', context)
+        self.assertIn('p010-b013', context)
+        self.assertIn('p012-b011', context)
+
+    def test_failure_message_explains_the_check_without_blaming_the_question(self):
+        from app.services.answer import verification_message
+        from app.guardrails.rules import Reason
+        check = Verification(supported=False, reason='missing_condition', explanation='mock detail')
+        message = verification_message('zh-Hans', Reason.INSURANCE_CONDITION_MISMATCH, check)
+        self.assertIn('条款条件', message)
+        self.assertIn('不需要缩小', message)
+
     def test_server_owns_page_and_link_and_separate_usage(self):
         result = answer('How are premiums credited?', 'en', index=Index(), model=Model(draft()))
         self.assertEqual(result['citations'][0]['quote'], self.evidence['p008-b003']['text'])

@@ -104,6 +104,11 @@ onMounted(refresh)
               </template>
             </div>
             <template v-if="message.reply && message.presentation">
+              <details v-if="message.reply.verification?.status === 'failed'" class="metrics">
+                <summary>查看未通过原因</summary>
+                <p v-if="message.reply.verification.detail">核对说明（模型判断，可能误判）：{{ message.reply.verification.detail }}</p>
+                <p>分类：{{ message.reply.verification.reason }} · 请求：{{ message.reply.request_id?.slice(0, 8) }}</p>
+              </details>
               <details v-if="message.presentation.groups.length" class="sources">
                 <summary>查看依据 · {{ message.presentation.groups.length }} 页</summary>
                 <details v-for="group in message.presentation.groups" :id="`source-${index}-${group.number}`" :key="group.number" class="source-group">

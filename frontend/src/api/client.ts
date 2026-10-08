@@ -8,6 +8,8 @@ export interface AppStatus {
 }
 export type Language = 'en' | 'zh-Hans' | 'zh-Hant'
 export interface ChatReply {
+  request_id?: string
+  verification?: { status: string; reason: string | null; detail?: string | null }
   action: string
   message: string
   claims: { text: string; citation_numbers: number[] }[]
