@@ -1,0 +1,30 @@
+{
+  "source_file": "data/raw/MinerU_FLEXI-ULife Prime Saver__20261008094732.json",
+  "source_sha256": "2af30cd58262ab3b6b39fba068641a19bfb1008a3c94713d8854b8ac5b37fff8",
+  "pdf_file": "docs/FLEXI-ULife Prime Saver.pdf",
+  "pdf_sha256": "2043de40845267fdb1f657280438f3ded04edda6692791960415116a5668a475",
+  "normalizer_version": "1",
+  "mineru_metadata": {
+    "_backend": "hybrid",
+    "_effort": "medium",
+    "_ocr_enable": false,
+    "_version_name": "3.4.4"
+  },
+  "page_count": 20,
+  "content_block_types": {
+    "image": 32,
+    "title": 72,
+    "text": 226,
+    "chart": 1,
+    "table": 9
+  },
+  "discarded_blocks_preserved": 40,
+  "flagged_blocks": 6,
+  "stage": "NORMALIZED_NOT_CLEANED",
+  "limitations": [
+    "Preserves MinerU block order, not a verified reading order.",
+    "Language hints are not verified bilingual clause alignment.",
+    "No source character or currency repair has been applied.",
+    "No remote images have been downloaded."
+  ]
+}

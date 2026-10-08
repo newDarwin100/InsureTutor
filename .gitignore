@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.idea/
+.venv/
+__pycache__/
+node_modules/
+dist/
+.next/
+
+# Generated extraction output and vector indexes
+data/raw/*
+!data/raw/.gitkeep
+data/chroma/*
+!data/chroma/.gitkeep
+.pytest_cache/
+tmp/

@@ -1,0 +1,13 @@
+.git
+.idea
+.venv
+.env
+.env.*
+**/__pycache__
+**/node_modules
+**/dist
+**/.pytest_cache
+data/raw
+data/chroma
+tmp
+evaluation/results

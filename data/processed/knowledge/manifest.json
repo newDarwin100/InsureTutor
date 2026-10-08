@@ -1,0 +1,28 @@
+{
+  "input_sha256": "31bd05710301ff26721181daba2e90f9a836ee99fc4037f055ec3c17df3e72ea",
+  "corrections_sha256": "ee1b0ad69be2a7daf03d24b4bc404afe63f021e414bd1f8ee866e0c98cbaff1c",
+  "preprocessor_version": "1",
+  "max_chars": 1200,
+  "overlap_chars": 120,
+  "counts": {
+    "evidence": 288,
+    "parents": 136,
+    "chunks": 139,
+    "alignment": 10,
+    "changes": 7,
+    "omitted_blocks": 32
+  },
+  "language_hints": {
+    "und": 13,
+    "mixed": 93,
+    "zh": 82,
+    "en": 100
+  },
+  "stage": "RULE_BASELINE_NOT_RETRIEVAL_EVALUATED",
+  "limitations": [
+    "Bilingual numbered footnotes are paired; other clauses need alignment review.",
+    "No OCR or semantic rewriting; images with no extracted text are not indexed.",
+    "Reading order is inherited from MinerU; contextual section grouping needs review.",
+    "Length measured in characters, not tokens; no embedding or model calls."
+  ]
+}

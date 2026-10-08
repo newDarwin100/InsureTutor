@@ -1,0 +1,2413 @@
+[
+  {
+    "chunk_id": "section-p001-b002-c001",
+    "evidence_ids": [
+      "p001-b003",
+      "p001-b004"
+    ],
+    "parent_id": "section-p001-b002",
+    "pdf_pages": [
+      1
+    ],
+    "language_hint": "mixed",
+    "text": "FP\nYFLife 萬通保險",
+    "retrieval_text": "首選靈活萬用壽險計劃 FLEXI-ULife Prime Saver\nFP\nYFLife 萬通保險",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "page-002-intro-c002",
+    "evidence_ids": [
+      "p002-b001",
+      "p002-b002",
+      "p002-b004",
+      "p002-b005",
+      "p002-b006",
+      "p002-b007"
+    ],
+    "parent_id": "page-002-intro",
+    "pdf_pages": [
+      2
+    ],
+    "language_hint": "mixed",
+    "text": "您可創造更豐厚的財富，盡享更精彩人生，只要您及早作出妥善的理財規劃。一份兼具靈活彈性和回報增長的萬用壽險計劃，正是伴您一生的最佳保障及理財方案。\nWith proper financial planning, you can achieve better wealth creation and enjoy a brighter future. A universal life insurance plan combining high flexibility and value growth is the best solution for your life protection and wealth management.\n靈活方案配合您一生的需要 Flexible solutions to cater for your lifelong needs\n子女成才教育基金 Education Funds\n家人的生活保障 Protection for Family\n財富增值 Wealth Appreciation",
+    "retrieval_text": "｜ 人壽 Life ｜ 萬用壽險（非投資相連）產品 Universal Life Insurance (Non-Linked) Product\n您可創造更豐厚的財富，盡享更精彩人生，只要您及早作出妥善的理財規劃。一份兼具靈活彈性和回報增長的萬用壽險計劃，正是伴您一生的最佳保障及理財方案。\nWith proper financial planning, you can achieve better wealth creation and enjoy a brighter future. A universal life insurance plan combining high flexibility and value growth is the best solution for your life protection and wealth management.\n靈活方案配合您一生的需要 Flexible solutions to cater for your lifelong needs\n子女成才教育基金 Education Funds\n家人的生活保障 Protection for Family\n財富增值 Wealth Appreciation",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "page-003-intro-c003",
+    "evidence_ids": [
+      "p003-b001",
+      "p003-b002",
+      "p003-b004"
+    ],
+    "parent_id": "page-003-intro",
+    "pdf_pages": [
+      3
+    ],
+    "language_hint": "mixed",
+    "text": "萬用壽險在成熟市場已超越傳統壽險，成為客戶的壽險首選。\nUniversal Life has taken over Traditional Life to become the preferred option in developed markets.\n妥善的財產分配 Wealth Preservation & Distribution",
+    "retrieval_text": "｜ 人壽 Life ｜ 萬用壽險（非投資相連）產品 Universal Life Insurance (Non-Linked) Product\n萬用壽險在成熟市場已超越傳統壽險，成為客戶的壽險首選。\nUniversal Life has taken over Traditional Life to become the preferred option in developed markets.\n妥善的財產分配 Wealth Preservation & Distribution",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p003-b005-c004",
+    "evidence_ids": [
+      "p003-b006"
+    ],
+    "parent_id": "section-p003-b005",
+    "pdf_pages": [
+      3
+    ],
+    "language_hint": "mixed",
+    "text": "傳統壽險 Traditional Life Insurance",
+    "retrieval_text": "萬用壽險 Universal Life Insurance\n傳統壽險 Traditional Life Insurance",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p003-b008-c005",
+    "evidence_ids": [
+      "p003-b009"
+    ],
+    "parent_id": "section-p003-b008",
+    "pdf_pages": [
+      3
+    ],
+    "language_hint": "mixed",
+    "text": "資料來源：LIMRA International Inc. – 2016年美國壽險市場佔有率數據（2017年3月出版） Source: LIMRA International Inc. – 2016 Life Insurance Penetration Rate in USA (Published in Mar 2017)",
+    "retrieval_text": "其他 Others\n資料來源：LIMRA International Inc. – 2016年美國壽險市場佔有率數據（2017年3月出版） Source: LIMRA International Inc. – 2016 Life Insurance Penetration Rate in USA (Published in Mar 2017)",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "page-004-intro-c006",
+    "evidence_ids": [
+      "p004-b002",
+      "p004-b003",
+      "p004-b004",
+      "p004-b005",
+      "p004-b007",
+      "p004-b008",
+      "p004-b010",
+      "p004-b011",
+      "p004-b013",
+      "p004-b014",
+      "p004-b016",
+      "p004-b017",
+      "p004-b019",
+      "p004-b020"
+    ],
+    "parent_id": "page-004-intro",
+    "pdf_pages": [
+      4
+    ],
+    "language_hint": "mixed",
+    "text": "萬用壽險 — 真正為客戶度身訂造的保險計劃\nUniversal Life Insurance – a tailor-made insurance plan\n靈活增減保障額可於原有保單內增加保障額，無須另購新保單，省卻額外保單 Flexible費用。\nCoverageSimply adjust the original Policy to increase the sum insured. No need to apply for a new Policy, thus saving additional policy charges.\n優惠保費率加保時仍按最初投保時年齡計算保費率。\nPreferentialThe premium rate for new coverage will be based on the insured's Premium Ratesage when the Policy was first issued instead of current age.\n繳款彈性如保單已累積現金價值，便可暫停繳交保費，而無須支付貸款 Premium利息。\nFlexibilityAllows you to skip payments if the Policy has accumulated a cash value, without any loan interest.\n每月派息複式計算\nMonthly interest at a compound rate\n靈活提取現金繼續享有保障，無須減低保障額。\nFlexible cashStill enjoy protection without the need to reduce the sum insured. withdrawal\n註: 以上資料僅供參考，關於個別計劃的保障範圍，請參閱有關保單文件。\nRemarks: The above information is for reference only. Please refer to policy document for detailed benefit coverage.",
+    "retrieval_text": "｜ 人壽 Life ｜ 萬用壽險（非投資相連）產品 Universal Life Insurance (Non-Linked) Product\n萬用壽險 — 真正為客戶度身訂造的保險計劃\nUniversal Life Insurance – a tailor-made insurance plan\n靈活增減保障額可於原有保單內增加保障額，無須另購新保單，省卻額外保單 Flexible費用。\nCoverageSimply adjust the original Policy to increase the sum insured. No need to apply for a new Policy, thus saving additional policy charges.\n優惠保費率加保時仍按最初投保時年齡計算保費率。\nPreferentialThe premium rate for new coverage will be based on the insured's Premium Ratesage when the Policy was first issued instead of current age.\n繳款彈性如保單已累積現金價值，便可暫停繳交保費，而無須支付貸款 Premium利息。\nFlexibilityAllows you to skip payments if the Policy has accumulated a cash value, without any loan interest.\n每月派息複式計算\nMonthly interest at a compound rate\n靈活提取現金繼續享有保障，無須減低保障額。\nFlexible cashStill enjoy protection without the need to reduce the sum insured. withdrawal\n註: 以上資料僅供參考，關於個別計劃的保障範圍，請參閱有關保單文件。\nRemarks: The above information is for reference only. Please refer to policy document for detailed benefit coverage.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p005-b002-c007",
+    "evidence_ids": [
+      "p005-b004",
+      "p005-b005"
+    ],
+    "parent_id": "section-p005-b002",
+    "pdf_pages": [
+      5
+    ],
+    "language_hint": "mixed",
+    "text": "可於同一保單增加保障額，無須另購新單 Simply adjust the original Policy to increase the Sum Insured without applying for a new Policy\n■ 保單增值權益及保證可保權益 Policy Enhancement Option and Guaranteed Insurability Option",
+    "retrieval_text": "靈活保障 Flexible Protections\n可於同一保單增加保障額，無須另購新單 Simply adjust the original Policy to increase the Sum Insured without applying for a new Policy\n■ 保單增值權益及保證可保權益 Policy Enhancement Option and Guaranteed Insurability Option",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p005-b007-c008",
+    "evidence_ids": [
+      "p005-b008",
+      "p005-b010",
+      "p005-b011"
+    ],
+    "parent_id": "section-p005-b007",
+    "pdf_pages": [
+      5
+    ],
+    "language_hint": "mixed",
+    "text": "■ 儲蓄成份較高的固定壽險保障 Level Benefit – with more savings\n■ 保障成份較高的遞增壽險保障 / 特級遞增壽險保障 Increasing Benefit / Increasing Benefit Plus – both with more protection\n■ 平衡保障及儲蓄的漸進壽險保障 Incremental Benefit – balancing savings and protection",
+    "retrieval_text": "壽險保障選擇 Life Protection Options\n■ 儲蓄成份較高的固定壽險保障 Level Benefit – with more savings\n■ 保障成份較高的遞增壽險保障 / 特級遞增壽險保障 Increasing Benefit / Increasing Benefit Plus – both with more protection\n■ 平衡保障及儲蓄的漸進壽險保障 Incremental Benefit – balancing savings and protection",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p005-b013-c009",
+    "evidence_ids": [
+      "p005-b015",
+      "p005-b016",
+      "p005-b017"
+    ],
+    "parent_id": "section-p005-b013",
+    "pdf_pages": [
+      5
+    ],
+    "language_hint": "mixed",
+    "text": "■ 每月派息並以複式計算，帶來穩定而豐厚的回報 Interest credited monthly at a compound rate\n■ 額外利息及額外回報 Retrospective additional interest and Extra bonus\n■ 2.5%長線利率保證 2.5% long-term guaranteed interest rate",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n■ 每月派息並以複式計算，帶來穩定而豐厚的回報 Interest credited monthly at a compound rate\n■ 額外利息及額外回報 Retrospective additional interest and Extra bonus\n■ 2.5%長線利率保證 2.5% long-term guaranteed interest rate",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p005-b019-c010",
+    "evidence_ids": [
+      "p005-b021",
+      "p005-b022",
+      "p005-b023"
+    ],
+    "parent_id": "section-p005-b019",
+    "pdf_pages": [
+      5
+    ],
+    "language_hint": "mixed",
+    "text": "■ 靈活增加保費 Flexible increase in premium\n■ 定期提款權益 Automatic periodic withdrawal option\n■ 暫停繳付保費 Skip premium payments",
+    "retrieval_text": "提存彈性 Financial Flexibilities\n■ 靈活增加保費 Flexible increase in premium\n■ 定期提款權益 Automatic periodic withdrawal option\n■ 暫停繳付保費 Skip premium payments",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p005-b024-c011",
+    "evidence_ids": [
+      "p005-b026",
+      "p005-b027",
+      "p005-b028",
+      "p005-b030"
+    ],
+    "parent_id": "section-p005-b024",
+    "pdf_pages": [
+      5
+    ],
+    "language_hint": "mixed",
+    "text": "Extra Protections for Total Peace of Mind\n■ 失業保障\nUnemployment Protection\n■ 自選附加保障 Optional Supplementary Benefits",
+    "retrieval_text": "額外安心保障\nExtra Protections for Total Peace of Mind\n■ 失業保障\nUnemployment Protection\n■ 自選附加保障 Optional Supplementary Benefits",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p006-b001-c012",
+    "evidence_ids": [
+      "p006-b002",
+      "p006-b003"
+    ],
+    "parent_id": "section-p006-b001",
+    "pdf_pages": [
+      6
+    ],
+    "language_hint": "mixed",
+    "text": "可於同一保單增加基本保障額， 無須另購新單，省卻額外的保單費用。如有需要，亦可調低基本保障額，惟須於賬戶價值中扣除適用的退保費用1。\nSimply adjust the original Policy to increase the Basic Sum Insured. There's no need to apply for a new Policy, thus saving additional policy charges. You may also decrease the Basic Sum Insured if necessary. However, this may be subject to the deduction of a surrender charge 1 from the Account Value.",
+    "retrieval_text": "增加投保額 Increase Coverage\n可於同一保單增加基本保障額， 無須另購新單，省卻額外的保單費用。如有需要，亦可調低基本保障額，惟須於賬戶價值中扣除適用的退保費用1。\nSimply adjust the original Policy to increase the Basic Sum Insured. There's no need to apply for a new Policy, thus saving additional policy charges. You may also decrease the Basic Sum Insured if necessary. However, this may be subject to the deduction of a surrender charge 1 from the Account Value.",
+    "related_evidence_ids": [
+      "p012-b002",
+      "p012-b013"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p006-b004-c013",
+    "evidence_ids": [
+      "p006-b005",
+      "p006-b006"
+    ],
+    "parent_id": "section-p006-b004",
+    "pdf_pages": [
+      6
+    ],
+    "language_hint": "mixed",
+    "text": "於每個保單週年，獲自動增加基本保障額，無須提交任何投保資料證明（可於投保時同時申請）。\nThe Basic Sum Insured will be automatically increased on each policy anniversary without being required to provide evidence of insurability (can be elected at the time of application).",
+    "retrieval_text": "保單增值權益2 Policy Enhancement Option2\n於每個保單週年，獲自動增加基本保障額，無須提交任何投保資料證明（可於投保時同時申請）。\nThe Basic Sum Insured will be automatically increased on each policy anniversary without being required to provide evidence of insurability (can be elected at the time of application).",
+    "related_evidence_ids": [
+      "p012-b003",
+      "p012-b014"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p006-b007-c014",
+    "evidence_ids": [
+      "p006-b008",
+      "p006-b009"
+    ],
+    "parent_id": "section-p006-b007",
+    "pdf_pages": [
+      6
+    ],
+    "language_hint": "mixed",
+    "text": "註冊結婚或子女出世時，可於無須提供任何投保資料證明的情況下， 選擇增加基本保障額，保證受保。\nUpon registering a marriage or the birth of your child, you may choose to increase the Basic Sum Insured without being required to provide evidence of insurability.",
+    "retrieval_text": "保證可保權益3 Guaranteed Insurability Option3\n註冊結婚或子女出世時，可於無須提供任何投保資料證明的情況下， 選擇增加基本保障額，保證受保。\nUpon registering a marriage or the birth of your child, you may choose to increase the Basic Sum Insured without being required to provide evidence of insurability.",
+    "related_evidence_ids": [
+      "p012-b004",
+      "p012-b015"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p006-b010-c015",
+    "evidence_ids": [
+      "p006-b011"
+    ],
+    "parent_id": "section-p006-b010",
+    "pdf_pages": [
+      6
+    ],
+    "language_hint": "mixed",
+    "text": "於原有保單增加基本保障額時，計劃會按您最初投保時的年齡計算保費率。 Premium rate for the increased Basic Sum Insured will be based on your age when the Policy was first issued.",
+    "retrieval_text": "優惠保費率 Preferential Premium Rate\n於原有保單增加基本保障額時，計劃會按您最初投保時的年齡計算保費率。 Premium rate for the increased Basic Sum Insured will be based on your age when the Policy was first issued.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p007-b001-t1-r1-c016",
+    "evidence_ids": [
+      "p007-b001-t1-r1"
+    ],
+    "parent_id": "row-p007-b001-t1-r1",
+    "pdf_pages": [
+      7
+    ],
+    "language_hint": "mixed",
+    "text": "選擇 Options / 特點 Feature / 身故保障 Death Benefit 選擇 Options | 特點 Feature | 身故保障 Death Benefit",
+    "retrieval_text": "2壽險保障選擇 Life Protection Options\n選擇 Options / 特點 Feature / 身故保障 Death Benefit 選擇 Options | 特點 Feature | 身故保障 Death Benefit",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p007-b001-t1-r2-c017",
+    "evidence_ids": [
+      "p007-b001-t1-r2"
+    ],
+    "parent_id": "row-p007-b001-t1-r2",
+    "pdf_pages": [
+      7
+    ],
+    "language_hint": "mixed",
+    "text": "選擇 Options / 特點 Feature / 身故保障 Death Benefit 固定壽險保障 Level Benefit | 儲蓄成份較高 With more savings | 「賬戶價值」或「基本保障額」4 (兩者取其較高者) \"Account Value\" OR \"Basic Sum Insured\"4 (whichever is higher)",
+    "retrieval_text": "2壽險保障選擇 Life Protection Options\n選擇 Options / 特點 Feature / 身故保障 Death Benefit 固定壽險保障 Level Benefit | 儲蓄成份較高 With more savings | 「賬戶價值」或「基本保障額」4 (兩者取其較高者) \"Account Value\" OR \"Basic Sum Insured\"4 (whichever is higher)",
+    "related_evidence_ids": [
+      "p012-b005",
+      "p012-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p007-b001-t1-r3-c018",
+    "evidence_ids": [
+      "p007-b001-t1-r3"
+    ],
+    "parent_id": "row-p007-b001-t1-r3",
+    "pdf_pages": [
+      7
+    ],
+    "language_hint": "mixed",
+    "text": "選擇 Options / 特點 Feature / 身故保障 Death Benefit 遞增壽險保障/ 特級遞增壽險保障 Increasing Benefit/ Increasing Benefit Plus | 兩者的保障成份較高。遞增壽險保障的短線資金增長較快，而特級遞增壽險保障的長線資金增長則較佳。 With more protection for both. Increasing Benefit provides a faster capital growth in the short term, while Increasing Benefit Plus provides better capital growth in the long term. | 「賬戶價值」+「基本保障額」 \"Account Value\" + \"Basic Sum Insured\"",
+    "retrieval_text": "2壽險保障選擇 Life Protection Options\n選擇 Options / 特點 Feature / 身故保障 Death Benefit 遞增壽險保障/ 特級遞增壽險保障 Increasing Benefit/ Increasing Benefit Plus | 兩者的保障成份較高。遞增壽險保障的短線資金增長較快，而特級遞增壽險保障的長線資金增長則較佳。 With more protection for both. Increasing Benefit provides a faster capital growth in the short term, while Increasing Benefit Plus provides better capital growth in the long term. | 「賬戶價值」+「基本保障額」 \"Account Value\" + \"Basic Sum Insured\"",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p007-b001-t1-r4-c019",
+    "evidence_ids": [
+      "p007-b001-t1-r4"
+    ],
+    "parent_id": "row-p007-b001-t1-r4",
+    "pdf_pages": [
+      7
+    ],
+    "language_hint": "mixed",
+    "text": "選擇 Options / 特點 Feature / 身故保障 Death Benefit 漸進壽險保障 Incremental Benefit | 平衡保障及儲蓄 Balancing savings and protection | 「賬戶價值」或「基本保障額 + 賬戶價值的50%」5 (兩者取其較高者) \"Account Value\" OR \"Basic Sum Insured + 50% of Account Value\"5 (whichever is higher)",
+    "retrieval_text": "2壽險保障選擇 Life Protection Options\n選擇 Options / 特點 Feature / 身故保障 Death Benefit 漸進壽險保障 Incremental Benefit | 平衡保障及儲蓄 Balancing savings and protection | 「賬戶價值」或「基本保障額 + 賬戶價值的50%」5 (兩者取其較高者) \"Account Value\" OR \"Basic Sum Insured + 50% of Account Value\"5 (whichever is higher)",
+    "related_evidence_ids": [
+      "p012-b006",
+      "p012-b017"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p007-b002-c020",
+    "evidence_ids": [
+      "p007-b003"
+    ],
+    "parent_id": "section-p007-b002",
+    "pdf_pages": [
+      7
+    ],
+    "language_hint": "zh",
+    "text": "陳先生於22歲時投保首選靈活萬用壽險計劃， 度身訂造的計劃讓他可以靈活應變人生各階段的不同需要。",
+    "retrieval_text": "例子\n陳先生於22歲時投保首選靈活萬用壽險計劃， 度身訂造的計劃讓他可以靈活應變人生各階段的不同需要。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p007-b004-c021",
+    "evidence_ids": [
+      "p007-b005"
+    ],
+    "parent_id": "section-p007-b004",
+    "pdf_pages": [
+      7
+    ],
+    "language_hint": "en",
+    "text": "Mr. Chan insured with FLEXI-ULife Prime Saver at age 22. The tailor-made plan caters to his changing needs at diferent stages of life.",
+    "retrieval_text": "Example\nMr. Chan insured with FLEXI-ULife Prime Saver at age 22. The tailor-made plan caters to his changing needs at diferent stages of life.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p007-b010-c022",
+    "evidence_ids": [
+      "p007-b011",
+      "p007-b012",
+      "p007-b013"
+    ],
+    "parent_id": "section-p007-b010",
+    "pdf_pages": [
+      7
+    ],
+    "language_hint": "mixed",
+    "text": "更改為遞增壽險保障， 享有更多保障 Changes to Increasing Benefit to enjoy more protection\n兒子出世，但陳先生不幸確診患上腦血管瘤 When the son was born, Mr. Chan was unfortunately diagnosed with Cerebral Aneurysm\n行使保證可保權益，為家人增加保障 Exercises the Guaranteed Insurability Option to provide more protection for his family",
+    "retrieval_text": "結婚 Getting married\n更改為遞增壽險保障， 享有更多保障 Changes to Increasing Benefit to enjoy more protection\n兒子出世，但陳先生不幸確診患上腦血管瘤 When the son was born, Mr. Chan was unfortunately diagnosed with Cerebral Aneurysm\n行使保證可保權益，為家人增加保障 Exercises the Guaranteed Insurability Option to provide more protection for his family",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p007-b014-c023",
+    "evidence_ids": [
+      "p007-b015"
+    ],
+    "parent_id": "section-p007-b014",
+    "pdf_pages": [
+      7
+    ],
+    "language_hint": "mixed",
+    "text": "更改為固定壽險保障以繼續累積財富 Changes to Level Benefit for more savings",
+    "retrieval_text": "兒子大學畢業 University Graduation of Mr. Chan’s son\n更改為固定壽險保障以繼續累積財富 Changes to Level Benefit for more savings",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r1-c024",
+    "evidence_ids": [
+      "p008-b001-t1-r1"
+    ],
+    "parent_id": "row-p008-b001-t1-r1",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 保單年Policy Year | 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate | 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 保單年Policy Year | 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate | 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r2-c025",
+    "evidence_ids": [
+      "p008-b001-t1-r2"
+    ],
+    "parent_id": "row-p008-b001-t1-r2",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 1 | 4% | 0.25%",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 1 | 4% | 0.25%",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r3-c026",
+    "evidence_ids": [
+      "p008-b001-t1-r3"
+    ],
+    "parent_id": "row-p008-b001-t1-r3",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 2 | 4% | 0.25%",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 2 | 4% | 0.25%",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r4-c027",
+    "evidence_ids": [
+      "p008-b001-t1-r4"
+    ],
+    "parent_id": "row-p008-b001-t1-r4",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 3 | 4% | 0.25%",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 3 | 4% | 0.25%",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r5-c028",
+    "evidence_ids": [
+      "p008-b001-t1-r5"
+    ],
+    "parent_id": "row-p008-b001-t1-r5",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· ·",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· ·",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r6-c029",
+    "evidence_ids": [
+      "p008-b001-t1-r6"
+    ],
+    "parent_id": "row-p008-b001-t1-r6",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· ·",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· ·",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r7-c030",
+    "evidence_ids": [
+      "p008-b001-t1-r7"
+    ],
+    "parent_id": "row-p008-b001-t1-r7",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· ·",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· ·",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r8-c031",
+    "evidence_ids": [
+      "p008-b001-t1-r8"
+    ],
+    "parent_id": "row-p008-b001-t1-r8",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· 19 | 4% | 0.25%",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· 19 | 4% | 0.25%",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r9-c032",
+    "evidence_ids": [
+      "p008-b001-t1-r9"
+    ],
+    "parent_id": "row-p008-b001-t1-r9",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· 20 | 4% | 0.25%",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· 20 | 4% | 0.25%",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r10-c033",
+    "evidence_ids": [
+      "p008-b001-t1-r10"
+    ],
+    "parent_id": "row-p008-b001-t1-r10",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· 21 | 4% | 0.25%",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· 21 | 4% | 0.25%",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r11-c034",
+    "evidence_ids": [
+      "p008-b001-t1-r11"
+    ],
+    "parent_id": "row-p008-b001-t1-r11",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· ·",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· ·",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r12-c035",
+    "evidence_ids": [
+      "p008-b001-t1-r12"
+    ],
+    "parent_id": "row-p008-b001-t1-r12",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· ·",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· ·",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p008-b001-t1-r13-c036",
+    "evidence_ids": [
+      "p008-b001-t1-r13"
+    ],
+    "parent_id": "row-p008-b001-t1-r13",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "und",
+    "text": "· 25 | 4% | 0.25%",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n· 25 | 4% | 0.25%",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "page-008-intro-c037",
+    "evidence_ids": [
+      "p008-b002",
+      "p008-b003",
+      "p008-b004",
+      "p008-b005",
+      "p008-b007",
+      "p008-b008",
+      "p008-b009"
+    ],
+    "parent_id": "page-008-intro",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "mixed",
+    "text": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。\nYour premium will be credited to the Account Value after deduction of any applicable charges and you will enjoy a relatively higher rate of return than most bank deposits.\nIn addition, when a Policy has been in force for 15 years or more, the total interest and Extra Bonus credited to the Policy will be such that the Account Value is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a., regardless of the economic situation.\n基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)\n4% 每年 p.a.\n額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)\n0.25% 每年 p.a.",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。\nYour premium will be credited to the Account Value after deduction of any applicable charges and you will enjoy a relatively higher rate of return than most bank deposits.\nIn addition, when a Policy has been in force for 15 years or more, the total interest and Extra Bonus credited to the Policy will be such that the Account Value is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a., regardless of the economic situation.\n基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)\n4% 每年 p.a.\n額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)\n0.25% 每年 p.a.",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "page-008-rate-notes-c038",
+    "evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "parent_id": "page-008-rate-notes",
+    "pdf_pages": [
+      8
+    ],
+    "language_hint": "mixed",
+    "text": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。\n^ 自保單第1年起計算至第20年，並於第20年年終撥入賬戶價值內。\n而由第20年起，其後每5年派發一次，將由每5年期的第1年起計算至第5年，並於第5年年終時撥入賬戶價值內。\n* The current assumed base crediting interest rate and the current assumed retrospective additional interest rate are quoted as of the print date of this brochure in January 2022, and are not guaranteed. They are subject to change.\n^ This will be credited to the Account Value at the end of the 20th policy year, calculated from year 1 through 20.\n# For every 5 years thereafter, this interest will be credited to the Account Value at the end of the 5-year period, calculated from year 1 through 5 of each period.",
+    "retrieval_text": "例子 Example\n* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。\n^ 自保單第1年起計算至第20年，並於第20年年終撥入賬戶價值內。\n而由第20年起，其後每5年派發一次，將由每5年期的第1年起計算至第5年，並於第5年年終時撥入賬戶價值內。\n* The current assumed base crediting interest rate and the current assumed retrospective additional interest rate are quoted as of the print date of this brochure in January 2022, and are not guaranteed. They are subject to change.\n^ This will be credited to the Account Value at the end of the 20th policy year, calculated from year 1 through 20.\n# For every 5 years thereafter, this interest will be credited to the Account Value at the end of the 5-year period, calculated from year 1 through 5 of each period.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "page-009-intro-c039",
+    "evidence_ids": [
+      "p009-b002",
+      "p009-b003",
+      "p009-b004",
+      "p009-b006",
+      "p009-b007",
+      "p009-b008",
+      "p009-b009",
+      "p009-b010",
+      "p009-b011",
+      "p009-b012",
+      "p009-b013"
+    ],
+    "parent_id": "page-009-intro",
+    "pdf_pages": [
+      9
+    ],
+    "language_hint": "mixed",
+    "text": "額外回報於第15個保單週年日及其後每5年派發。\nExtra Bonus will be credited to the Policy at the end of the 15th policy year and for every 5 years thereafter.\n額外回報計算方法 Extra Bonus calculation 過往5年的平均每月賬戶價值 Average Monthly Account Value of the preceding 5 years\n額外回報率 Extra Bonus rate\n保單年 Policy Year\n現時假設額外回報率 The current assumed Extra Bonus rate\n額外回報 Extra Bonus\n第15年、20年及25年 15th year, 20th year and 25th year\n2.75%\n第30年及其後每5年 The 30th year and every 5 years thereafter\n5.5%",
+    "retrieval_text": "財富增值優勢 Value-creating Advantages\n額外回報於第15個保單週年日及其後每5年派發。\nExtra Bonus will be credited to the Policy at the end of the 15th policy year and for every 5 years thereafter.\n額外回報計算方法 Extra Bonus calculation 過往5年的平均每月賬戶價值 Average Monthly Account Value of the preceding 5 years\n額外回報率 Extra Bonus rate\n保單年 Policy Year\n現時假設額外回報率 The current assumed Extra Bonus rate\n額外回報 Extra Bonus\n第15年、20年及25年 15th year, 20th year and 25th year\n2.75%\n第30年及其後每5年 The 30th year and every 5 years thereafter\n5.5%",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p009-b014-c040",
+    "evidence_ids": [
+      "p009-b015",
+      "p009-b016",
+      "p009-b018",
+      "p009-b019",
+      "p009-b020",
+      "p009-b021",
+      "p009-b022",
+      "p009-b023"
+    ],
+    "parent_id": "section-p009-b014",
+    "pdf_pages": [
+      9
+    ],
+    "language_hint": "mixed",
+    "text": "於第15個保單週年日派發之「額外回報」：\nExtra Bonus to be credited to the Policy at the end of the 15th policy year:\n過往5年平均每月賬戶價值 Average Account Value of the preceding 5 years$708,800\n過往5年的平均每月賬戶價值額外回報率額外回報 Average Monthly Account Value ofExtra Bonus rateExtra Bonus the preceding 5 years\n$708,800x 2.75% = $19,492\n（以派發時適用的額外回報率為準） (subject to the Extra Bonus rate at distribution)\n以上假設數字僅供舉例之用，並非實際數字。\nThe above figures are not actual and are for illustrative purposes only.",
+    "retrieval_text": "例子 Example\n於第15個保單週年日派發之「額外回報」：\nExtra Bonus to be credited to the Policy at the end of the 15th policy year:\n過往5年平均每月賬戶價值 Average Account Value of the preceding 5 years$708,800\n過往5年的平均每月賬戶價值額外回報率額外回報 Average Monthly Account Value ofExtra Bonus rateExtra Bonus the preceding 5 years\n$708,800x 2.75% = $19,492\n（以派發時適用的額外回報率為準） (subject to the Extra Bonus rate at distribution)\n以上假設數字僅供舉例之用，並非實際數字。\nThe above figures are not actual and are for illustrative purposes only.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p009-b017-t1-r1-c041",
+    "evidence_ids": [
+      "p009-b017-t1-r1"
+    ],
+    "parent_id": "row-p009-b017-t1-r1",
+    "pdf_pages": [
+      9
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 保單年Policy Year | 平均每月賬戶價值Average Monthly Account Value",
+    "retrieval_text": "例子 Example\n保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 保單年Policy Year | 平均每月賬戶價值Average Monthly Account Value",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p009-b017-t1-r2-c042",
+    "evidence_ids": [
+      "p009-b017-t1-r2"
+    ],
+    "parent_id": "row-p009-b017-t1-r2",
+    "pdf_pages": [
+      9
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 11 | $566,000",
+    "retrieval_text": "例子 Example\n保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 11 | $566,000",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p009-b017-t1-r3-c043",
+    "evidence_ids": [
+      "p009-b017-t1-r3"
+    ],
+    "parent_id": "row-p009-b017-t1-r3",
+    "pdf_pages": [
+      9
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 12 | $633,000",
+    "retrieval_text": "例子 Example\n保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 12 | $633,000",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p009-b017-t1-r4-c044",
+    "evidence_ids": [
+      "p009-b017-t1-r4"
+    ],
+    "parent_id": "row-p009-b017-t1-r4",
+    "pdf_pages": [
+      9
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 13 | $702,000",
+    "retrieval_text": "例子 Example\n保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 13 | $702,000",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p009-b017-t1-r5-c045",
+    "evidence_ids": [
+      "p009-b017-t1-r5"
+    ],
+    "parent_id": "row-p009-b017-t1-r5",
+    "pdf_pages": [
+      9
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 14 | $774,000",
+    "retrieval_text": "例子 Example\n保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 14 | $774,000",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p009-b017-t1-r6-c046",
+    "evidence_ids": [
+      "p009-b017-t1-r6"
+    ],
+    "parent_id": "row-p009-b017-t1-r6",
+    "pdf_pages": [
+      9
+    ],
+    "language_hint": "mixed",
+    "text": "保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 15 | $869,000",
+    "retrieval_text": "例子 Example\n保單年Policy Year / 平均每月賬戶價值Average Monthly Account Value 15 | $869,000",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p010-b001-c047",
+    "evidence_ids": [
+      "p010-b002",
+      "p010-b003"
+    ],
+    "parent_id": "section-p010-b001",
+    "pdf_pages": [
+      10
+    ],
+    "language_hint": "mixed",
+    "text": "為賺取更豐厚利息及回報，更快達至理財目標，您可隨時增加定期 / 非定期供款以累積財富。\nTo achieve your financial goals faster with higher returns, you can increase regular or unscheduled premiums at any time to accumulate wealth.",
+    "retrieval_text": "靈活增加保費 Flexible Increase of Premium\n為賺取更豐厚利息及回報，更快達至理財目標，您可隨時增加定期 / 非定期供款以累積財富。\nTo achieve your financial goals faster with higher returns, you can increase regular or unscheduled premiums at any time to accumulate wealth.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p010-b004-c048",
+    "evidence_ids": [
+      "p010-b005",
+      "p010-b006"
+    ],
+    "parent_id": "section-p010-b004",
+    "pdf_pages": [
+      10
+    ],
+    "language_hint": "mixed",
+    "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。\nWhen your Policy has accumulated a Cash Value, you can exercise the automatic periodic withdrawal option6 to withdraw a specified amount of Cash Value monthly / annually at preset time intervals, so that you can easily map out your financial needs, e.g. children's university education funds and retirement expenses. In addition, you can withdraw a portion of the Cash Value7 at any time to cope with emergencies.",
+    "retrieval_text": "靈活套現 Greater Liquidity\n只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。\nWhen your Policy has accumulated a Cash Value, you can exercise the automatic periodic withdrawal option6 to withdraw a specified amount of Cash Value monthly / annually at preset time intervals, so that you can easily map out your financial needs, e.g. children's university education funds and retirement expenses. In addition, you can withdraw a portion of the Cash Value7 at any time to cope with emergencies.",
+    "related_evidence_ids": [
+      "p010-b013",
+      "p010-b014",
+      "p012-b007",
+      "p012-b008",
+      "p012-b018",
+      "p012-b019"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p010-b007-c049",
+    "evidence_ids": [
+      "p010-b008",
+      "p010-b009",
+      "p010-b010",
+      "p010-b011"
+    ],
+    "parent_id": "section-p010-b007",
+    "pdf_pages": [
+      10
+    ],
+    "language_hint": "mixed",
+    "text": "若需要應急，只要保單內已累積有足夠的現金價值，您可暫停繳付保費，令理財更具彈性。\nWhen your Policy has accumulated a Cash Value, you may skip premium payments to cope with emergencies.\nCash Value\nAccount Value",
+    "retrieval_text": "暫停繳付保費 Skip Premium Payments\n若需要應急，只要保單內已累積有足夠的現金價值，您可暫停繳付保費，令理財更具彈性。\nWhen your Policy has accumulated a Cash Value, you may skip premium payments to cope with emergencies.\nCash Value\nAccount Value",
+    "related_evidence_ids": [
+      "p010-b013",
+      "p010-b014"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p010-b012-c050",
+    "evidence_ids": [
+      "p010-b013",
+      "p010-b014"
+    ],
+    "parent_id": "section-p010-b012",
+    "pdf_pages": [
+      10
+    ],
+    "language_hint": "mixed",
+    "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。\nCash withdrawal, reducing the premium amount, or skipping premium payments will afect the accumulation of the Cash Value, while the monthly charges are still deductible. If the Cash Value is not suficient to cover the monthly charges, the Policy will lapse with zero value.",
+    "retrieval_text": "適用的退保費用 Applicable surrender charge\n提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。\nCash withdrawal, reducing the premium amount, or skipping premium payments will afect the accumulation of the Cash Value, while the monthly charges are still deductible. If the Cash Value is not suficient to cover the monthly charges, the Policy will lapse with zero value.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p011-b001-c051",
+    "evidence_ids": [
+      "p011-b002",
+      "p011-b003",
+      "p011-b004"
+    ],
+    "parent_id": "section-p011-b001",
+    "pdf_pages": [
+      11
+    ],
+    "language_hint": "mixed",
+    "text": "Unemployment Protection\n萬一投保人於保單有效期內不幸遭裁員或遣散，即可享有長達365日的「特惠寬限期」，於該期限內仍可繼續享有十足保障8。\nShould the Policy Owner be made redundant, there is an option which allows suspension of premium payments for 365 days. During this entire \"Special Grace Period\", you will remain fully covered by the insurance8.",
+    "retrieval_text": "失業保障\nUnemployment Protection\n萬一投保人於保單有效期內不幸遭裁員或遣散，即可享有長達365日的「特惠寬限期」，於該期限內仍可繼續享有十足保障8。\nShould the Policy Owner be made redundant, there is an option which allows suspension of premium payments for 365 days. During this entire \"Special Grace Period\", you will remain fully covered by the insurance8.",
+    "related_evidence_ids": [
+      "p012-b009",
+      "p012-b020"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p011-b005-c052",
+    "evidence_ids": [
+      "p011-b006",
+      "p011-b007"
+    ],
+    "parent_id": "section-p011-b005",
+    "pdf_pages": [
+      11
+    ],
+    "language_hint": "mixed",
+    "text": "若受保人不幸被首次確診患上末期病症9，便可獲得末期病症保障賠償，即基本計劃及附加保障（如適用）的身故保障，以紓緩經濟上的壓力。\nIn the event of the Insured being first diagnosed with Terminal Illness9, a sum of Terminal Illness Benefit will be paid, which is the Death Benefit of the basic plan and supplementary benefit(s) (if any), to help relieve the financial burden.",
+    "retrieval_text": "末期病症保障 Terminal Illness Benefit\n若受保人不幸被首次確診患上末期病症9，便可獲得末期病症保障賠償，即基本計劃及附加保障（如適用）的身故保障，以紓緩經濟上的壓力。\nIn the event of the Insured being first diagnosed with Terminal Illness9, a sum of Terminal Illness Benefit will be paid, which is the Death Benefit of the basic plan and supplementary benefit(s) (if any), to help relieve the financial burden.",
+    "related_evidence_ids": [
+      "p012-b010",
+      "p012-b021"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p011-b008-c053",
+    "evidence_ids": [
+      "p011-b009"
+    ],
+    "parent_id": "section-p011-b008",
+    "pdf_pages": [
+      11
+    ],
+    "language_hint": "zh",
+    "text": "■ 豁免保費計劃 – 若受保人不幸於65歲或以前因患病或意外受傷引致連續6個月或以上不能工作，計劃會代付傷殘期間所需的保費。",
+    "retrieval_text": "此外，您亦可以小額保費享有一系列附加保障：\n■ 豁免保費計劃 – 若受保人不幸於65歲或以前因患病或意外受傷引致連續6個月或以上不能工作，計劃會代付傷殘期間所需的保費。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p011-b010-c054",
+    "evidence_ids": [
+      "p011-b011"
+    ],
+    "parent_id": "section-p011-b010",
+    "pdf_pages": [
+      11
+    ],
+    "language_hint": "zh",
+    "text": "■ 其他附加保障 – 嚴重疾病保障、意外保障等。",
+    "retrieval_text": "附加保障\n■ 其他附加保障 – 嚴重疾病保障、意外保障等。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p011-b013-c055",
+    "evidence_ids": [
+      "p011-b014",
+      "p011-b015",
+      "p011-b016"
+    ],
+    "parent_id": "section-p011-b013",
+    "pdf_pages": [
+      11
+    ],
+    "language_hint": "en",
+    "text": "The plan also ofers you a full spectrum of supplementary benefits at an additional premium:\n■ Waiver of Premium Benefit – If the Insured sufers from total disability for a continuous period of not less than 6 months resulting from disease or bodily injury before the age of 65, the premiums required during the period of disability will be payable by the benefit.\n■ Other supplementary benefits – Critical Illness Benefit, Accident Benefit, etc.",
+    "retrieval_text": "Benefits\nThe plan also ofers you a full spectrum of supplementary benefits at an additional premium:\n■ Waiver of Premium Benefit – If the Insured sufers from total disability for a continuous period of not less than 6 months resulting from disease or bodily injury before the age of 65, the premiums required during the period of disability will be payable by the benefit.\n■ Other supplementary benefits – Critical Illness Benefit, Accident Benefit, etc.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-01-c056",
+    "evidence_ids": [
+      "p012-b002",
+      "p012-b013"
+    ],
+    "parent_id": "note-01",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "1. 調低基本保障額時，會以後進先出方式先扣除最近期生效的基本保障額，並會按此計算適用的退保費用。\n1.Decrease in the Basic Sum Insured will be implemented on a last-infirst-out basis, where the most recently commenced layer of Basic Sum Insured will be deducted first and the applicable surrender charge will be calculated accordingly.",
+    "retrieval_text": "附註\n1. 調低基本保障額時，會以後進先出方式先扣除最近期生效的基本保障額，並會按此計算適用的退保費用。\n1.Decrease in the Basic Sum Insured will be implemented on a last-infirst-out basis, where the most recently commenced layer of Basic Sum Insured will be deducted first and the applicable surrender charge will be calculated accordingly.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-02-c057",
+    "evidence_ids": [
+      "p012-b003",
+      "p012-b014"
+    ],
+    "parent_id": "note-02",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "2. 保單增值權益有效至受保人51歲的保單週年日止。有關其他條款及細則，請參閱保單文件。\n2. Policy Enhancement Option will terminate on the policy anniversary following the Insured's 51st birthday. Please refer to the policy document for other terms and conditions.",
+    "retrieval_text": "附註\n2. 保單增值權益有效至受保人51歲的保單週年日止。有關其他條款及細則，請參閱保單文件。\n2. Policy Enhancement Option will terminate on the policy anniversary following the Insured's 51st birthday. Please refer to the policy document for other terms and conditions.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-03-c058",
+    "evidence_ids": [
+      "p012-b004",
+      "p012-b015"
+    ],
+    "parent_id": "note-03",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "3. 保證可保權益只適用於保障生效日期一年後行使，至受保人51歲的保單週年日止。權益亦適用於合法領養 18歲以下子女。於每次行使權益時，所增加的基本保障額最高為行使權益前基本保障額的25%，而受保人的所有首選靈活萬用壽險計劃保單，因每次行使保證可保權益所增加的基本保障額合共最高為50,000美元/400,000港元/400,000澳門元；此權益最多只可行使兩次。有關詳情及條款，請參閱保單文件。\n3. The Guaranteed Insurability Option can be exercised one year after the Efective Date of Coverage, and will terminate on the policy anniversary following the Insured's 51st birthday. This option is also applicable to lega adoption of a child under the age of 18. For each time the Guaranteed Insurability Option is exercised, the increase in Basic Sum Insured shall not exceed 25% of the Basic Sum Insured before exercising the option, the aggregate increase in Basic Sum Insured of all FLEXI-ULife Prime Saver policies under the Insured by this option shall not exceed US$50,000/ HK$400,000/MOP400,000, and this option can at most be exercised twice. Please refer to the policy document for the relevant terms and conditions.",
+    "retrieval_text": "附註\n3. 保證可保權益只適用於保障生效日期一年後行使，至受保人51歲的保單週年日止。權益亦適用於合法領養 18歲以下子女。於每次行使權益時，所增加的基本保障額最高為行使權益前基本保障額的25%，而受保人的所有首選靈活萬用壽險計劃保單，因每次行使保證可保權益所增加的基本保障額合共最高為50,000美元/400,000港元/400,000澳門元；此權益最多只可行使兩次。有關詳情及條款，請參閱保單文件。\n3. The Guaranteed Insurability Option can be exercised one year after the Efective Date of Coverage, and will terminate on the policy anniversary following the Insured's 51st birthday. This option is also applicable to lega adoption of a child under the age of 18. For each time the Guaranteed Insurability Option is exercised, the increase in Basic Sum Insured shall not exceed 25% of the Basic Sum Insured before exercising the option, the aggregate increase in Basic Sum Insured of all FLEXI-ULife Prime Saver policies under the Insured by this option shall not exceed US$50,000/ HK$400,000/MOP400,000, and this option can at most be exercised twice. Please refer to the policy document for the relevant terms and conditions.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-04-c059",
+    "evidence_ids": [
+      "p012-b005",
+      "p012-b016"
+    ],
+    "parent_id": "note-04",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "4. 基本保障額須扣除受保人身故日前12個月內曾提取的總金額。\n4. The Basic Sum Insured will be net of all withdrawals made in the 12-month period preceding the date of the Insured's death.",
+    "retrieval_text": "附註\n4. 基本保障額須扣除受保人身故日前12個月內曾提取的總金額。\n4. The Basic Sum Insured will be net of all withdrawals made in the 12-month period preceding the date of the Insured's death.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-05-c060",
+    "evidence_ids": [
+      "p012-b006",
+      "p012-b017"
+    ],
+    "parent_id": "note-05",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "5. 基本保障額及賬戶價值的50%之總額須扣除受保人身故日前12個月內曾提取的總額的50%。\n5. The sum of the Basic Sum Insured and 50% of Account Value will be net of 50% of all withdrawals made in the 12-month period preceding the date of the Insured's death.",
+    "retrieval_text": "附註\n5. 基本保障額及賬戶價值的50%之總額須扣除受保人身故日前12個月內曾提取的總額的50%。\n5. The sum of the Basic Sum Insured and 50% of Account Value will be net of 50% of all withdrawals made in the 12-month period preceding the date of the Insured's death.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-06-c061",
+    "evidence_ids": [
+      "p012-b007",
+      "p012-b018"
+    ],
+    "parent_id": "note-06",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。\n6. Automatic periodic withdrawal option is only applicable if the Policy has been in force for at least 10 years, the withdrawal charge will be waived. Current requirement on minimum monthly withdrawal amount is US$500/HK$4,000/MOP4,000, with minimum withdrawal period of one year; and the minimum annual withdrawal amount is US$6,000/HK$48,000/ MOP48,000, with minimum withdrawal period of three years. For any change after the application has been confirmed, a nominal fee will be levied.",
+    "retrieval_text": "附註\n6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。\n6. Automatic periodic withdrawal option is only applicable if the Policy has been in force for at least 10 years, the withdrawal charge will be waived. Current requirement on minimum monthly withdrawal amount is US$500/HK$4,000/MOP4,000, with minimum withdrawal period of one year; and the minimum annual withdrawal amount is US$6,000/HK$48,000/ MOP48,000, with minimum withdrawal period of three years. For any change after the application has been confirmed, a nominal fee will be levied.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-07-c062",
+    "evidence_ids": [
+      "p012-b008",
+      "p012-b019"
+    ],
+    "parent_id": "note-07",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "7. 現時提款費用每次25美元/200港元/200澳門元。\n7. The current charge for each withdrawal is US$25/HK$ 200/MOP200.",
+    "retrieval_text": "附註\n7. 現時提款費用每次25美元/200港元/200澳門元。\n7. The current charge for each withdrawal is US$25/HK$ 200/MOP200.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-08-c063",
+    "evidence_ids": [
+      "p012-b009",
+      "p012-b020"
+    ],
+    "parent_id": "note-08",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "8. 失業保障只適用於基本計劃。\n8. Unemployment Protection is only applicable to the Basic Plan.",
+    "retrieval_text": "附註\n8. 失業保障只適用於基本計劃。\n8. Unemployment Protection is only applicable to the Basic Plan.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-09-c064",
+    "evidence_ids": [
+      "p012-b010",
+      "p012-b021"
+    ],
+    "parent_id": "note-09",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "9. 末期病症指根據本公司委任醫療顧問的意見，受保人因患病以致其壽命很可能不會多於十二個月。於作出末期病症保障賠償後，有關的保單及附加保障將自動終止。有關詳情及條款，請參閱保單文件。\n9. Terminal Illness means a disease of the Insured, which in the opinion of our appointed medical consultant is likely to lead to death of the Insured within twelve months. Upon payment of the Terminal Illness Benefit, the related policies and all the supplementary benefit(s) attached will automatically be terminated. Please refer to the policy document for the relevant terms and conditions.",
+    "retrieval_text": "附註\n9. 末期病症指根據本公司委任醫療顧問的意見，受保人因患病以致其壽命很可能不會多於十二個月。於作出末期病症保障賠償後，有關的保單及附加保障將自動終止。有關詳情及條款，請參閱保單文件。\n9. Terminal Illness means a disease of the Insured, which in the opinion of our appointed medical consultant is likely to lead to death of the Insured within twelve months. Upon payment of the Terminal Illness Benefit, the related policies and all the supplementary benefit(s) attached will automatically be terminated. Please refer to the policy document for the relevant terms and conditions.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "note-10-c065",
+    "evidence_ids": [
+      "p012-b011",
+      "p012-b022"
+    ],
+    "parent_id": "note-10",
+    "pdf_pages": [
+      12
+    ],
+    "language_hint": "mixed",
+    "text": "10. 現時的收費標準並非保證，以及受制於本公司在提前一個月以書面通知後作出改變的全權酌情決定權。\n10. The current scale of fees and charges is not guaranteed and is subject to the Company’s sole discretion to change with one-month prior written notice.",
+    "retrieval_text": "附註\n10. 現時的收費標準並非保證，以及受制於本公司在提前一個月以書面通知後作出改變的全權酌情決定權。\n10. The current scale of fees and charges is not guaranteed and is subject to the Company’s sole discretion to change with one-month prior written notice.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p013-b002-c066",
+    "evidence_ids": [
+      "p013-b003",
+      "p013-b004",
+      "p013-b005",
+      "p013-b006",
+      "p013-b007",
+      "p013-b008"
+    ],
+    "parent_id": "section-p013-b002",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "zh",
+    "text": "我們將不時檢視及釐定派息率及 / 或非保證回報。派息率及 / 或非保證回報會根據當時的回報率、最佳估算假設的長線回報率及我們每年0% - 1.5%的目標利差（視乎保單年期）而釐定。部份的投資回報在扣除利差後，將會以派息率及 / 或非保證回報派發給保單持有人。\n我們已成立一個委員會，在釐定派息率及 / 或非保證回報時向公司董事會提供獨立意見。實際派息率及 / 或非保證回報會先由委任精算師建議，然後經此委員會審議決定，最後由公司董事會（包括一個或以上獨立非執行董事）批准。\n我們將會參考包括但不限於以下因素的過往經驗和預期未來展望，以釐定派息率及 / 或非保證回報。\n：包括所投資的資產賺取的利息 / 紅利收入及市場價格變動。投資表現會受利息 / 紅利收入之波動以及各種市場風險因素如信貸息差、違約風險、股票價格、 房地產價格及商品價格之波動及滙率而影響。\n：包括保單失效、退保、部分退保及其他扣減項目及保障支付，以及其對投資的相關影響。\n為了提供更平穩的派息率及 / 或非保證回報，我們或會在投資表現強勁的時期保留回報，用作在投資表現較弱的時期支持或維持較高之派息率及 / 或非保證回報。",
+    "retrieval_text": "派息率理念\n我們將不時檢視及釐定派息率及 / 或非保證回報。派息率及 / 或非保證回報會根據當時的回報率、最佳估算假設的長線回報率及我們每年0% - 1.5%的目標利差（視乎保單年期）而釐定。部份的投資回報在扣除利差後，將會以派息率及 / 或非保證回報派發給保單持有人。\n我們已成立一個委員會，在釐定派息率及 / 或非保證回報時向公司董事會提供獨立意見。實際派息率及 / 或非保證回報會先由委任精算師建議，然後經此委員會審議決定，最後由公司董事會（包括一個或以上獨立非執行董事）批准。\n我們將會參考包括但不限於以下因素的過往經驗和預期未來展望，以釐定派息率及 / 或非保證回報。\n：包括所投資的資產賺取的利息 / 紅利收入及市場價格變動。投資表現會受利息 / 紅利收入之波動以及各種市場風險因素如信貸息差、違約風險、股票價格、 房地產價格及商品價格之波動及滙率而影響。\n：包括保單失效、退保、部分退保及其他扣減項目及保障支付，以及其對投資的相關影響。\n為了提供更平穩的派息率及 / 或非保證回報，我們或會在投資表現強勁的時期保留回報，用作在投資表現較弱的時期支持或維持較高之派息率及 / 或非保證回報。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p013-b009-c067",
+    "evidence_ids": [
+      "p013-b010",
+      "p013-b011",
+      "p013-b012",
+      "p013-b014",
+      "p013-b015",
+      "p013-b016",
+      "p013-b017",
+      "p013-b019",
+      "p013-b021"
+    ],
+    "parent_id": "section-p013-b009",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "mixed",
+    "text": "萬通保險國際有限公司（「萬通保險」）的投資目標是優化保單持有人的長線回報並維持風險於可接受的水平。 資產會被投放於不同類型的投資工具，可能包括環球股票、債券及其他固定收益資產、房地產和商品市場。此多元化之投資組合目的在於達到可觀且穩定的長線投資回報。\n我們會根據投資的資產之過往及預期的表現、波幅及相關風險去選擇投資的資產及管理我們的投資組合。\n為達至長線目標回報，萬通保險採用一套以固定收益資產及股票類資產為組合的投資策略。現時的長線投資策略按以下分配，投資在以下資產：\n債券及其他固定收益資產主要包括擁有高信用評級的政府債券及不同行業的企業債券（主要投資於美國市場）， 提供一個多元化及高質素之債券投資組合。\n股票類資產可能包括環球股票（公共及 / 或私募股權）、 互惠基金、交易所交易基金、高息債券、房地產及商品市場。投資遍佈於不同地區及涉及不同的行業。另外，我們或會使用衍生工具作為資產風險管理。\n投資策略或會不時根據市場環境及經濟展望而作變動。 相關詳情及過往派息率資料請瀏覽本公司網頁：\n香港：\nhttps://www.yflife.com/tc/Hong-Kong/ Individual/Services/Useful-Information/ Investment-Strategy\n澳門： https://www.yflife.com/tc/Macau/ Individual/Services/Useful-Information/ Investment-Strategy",
+    "retrieval_text": "投資政策、目標及策略\n萬通保險國際有限公司（「萬通保險」）的投資目標是優化保單持有人的長線回報並維持風險於可接受的水平。 資產會被投放於不同類型的投資工具，可能包括環球股票、債券及其他固定收益資產、房地產和商品市場。此多元化之投資組合目的在於達到可觀且穩定的長線投資回報。\n我們會根據投資的資產之過往及預期的表現、波幅及相關風險去選擇投資的資產及管理我們的投資組合。\n為達至長線目標回報，萬通保險採用一套以固定收益資產及股票類資產為組合的投資策略。現時的長線投資策略按以下分配，投資在以下資產：\n債券及其他固定收益資產主要包括擁有高信用評級的政府債券及不同行業的企業債券（主要投資於美國市場）， 提供一個多元化及高質素之債券投資組合。\n股票類資產可能包括環球股票（公共及 / 或私募股權）、 互惠基金、交易所交易基金、高息債券、房地產及商品市場。投資遍佈於不同地區及涉及不同的行業。另外，我們或會使用衍生工具作為資產風險管理。\n投資策略或會不時根據市場環境及經濟展望而作變動。 相關詳情及過往派息率資料請瀏覽本公司網頁：\n香港：\nhttps://www.yflife.com/tc/Hong-Kong/ Individual/Services/Useful-Information/ Investment-Strategy\n澳門： https://www.yflife.com/tc/Macau/ Individual/Services/Useful-Information/ Investment-Strategy",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p013-b013-t1-r1-c068",
+    "evidence_ids": [
+      "p013-b013-t1-r1"
+    ],
+    "parent_id": "row-p013-b013-t1-r1",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "zh",
+    "text": "資產類別 / 目標資產組合 (%) 資產類別 | 目標資產組合 (%)",
+    "retrieval_text": "投資政策、目標及策略\n資產類別 / 目標資產組合 (%) 資產類別 | 目標資產組合 (%)",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p013-b013-t1-r2-c069",
+    "evidence_ids": [
+      "p013-b013-t1-r2"
+    ],
+    "parent_id": "row-p013-b013-t1-r2",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "zh",
+    "text": "資產類別 / 目標資產組合 (%) 債券及其他固定收益資產 | 80% – 100%",
+    "retrieval_text": "投資政策、目標及策略\n資產類別 / 目標資產組合 (%) 債券及其他固定收益資產 | 80% – 100%",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p013-b013-t1-r3-c070",
+    "evidence_ids": [
+      "p013-b013-t1-r3"
+    ],
+    "parent_id": "row-p013-b013-t1-r3",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "zh",
+    "text": "資產類別 / 目標資產組合 (%) 股票類資產 | 0% – 20%",
+    "retrieval_text": "投資政策、目標及策略\n資產類別 / 目標資產組合 (%) 股票類資產 | 0% – 20%",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p013-b023-c071",
+    "evidence_ids": [
+      "p013-b024",
+      "p013-b025",
+      "p013-b026"
+    ],
+    "parent_id": "section-p013-b023",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "en",
+    "text": "The crediting interest rate and/or non-guaranteed bonuses will be reviewed and determined by us from time to time. The crediting interest rate and/or nonguaranteed bonuses will be determined based on the current earned rate, the best estimate long term earned rate and our target interest spread of 0% - 1.5% p.a. depends on the policy duration. Policy Owners will receive a portion of the investment returns, net of interest spread, in the form of crediting interest rate and/or bonuses.\nA committee has been set up to provide independent advice on the determination of the crediting interest rates and/or non-guaranteed bonuses to the Board of the Company. The actual crediting interest rates and/or non-guaranteed bonuses, which are recommended by the Appointed Actuary, will be decided upon the deliberation of the committee and finally approved by the Board of Directors of the Company, including one or more Independent Non-Executive Directors.\nIn determining the crediting interest rate and/or non-guaranteed bonuses, we will take into account both past experience and expected future outlooks for factors including, but not limited to, the following.",
+    "retrieval_text": "Crediting Interest Rate Philosophy\nThe crediting interest rate and/or non-guaranteed bonuses will be reviewed and determined by us from time to time. The crediting interest rate and/or nonguaranteed bonuses will be determined based on the current earned rate, the best estimate long term earned rate and our target interest spread of 0% - 1.5% p.a. depends on the policy duration. Policy Owners will receive a portion of the investment returns, net of interest spread, in the form of crediting interest rate and/or bonuses.\nA committee has been set up to provide independent advice on the determination of the crediting interest rates and/or non-guaranteed bonuses to the Board of the Company. The actual crediting interest rates and/or non-guaranteed bonuses, which are recommended by the Appointed Actuary, will be decided upon the deliberation of the committee and finally approved by the Board of Directors of the Company, including one or more Independent Non-Executive Directors.\nIn determining the crediting interest rate and/or non-guaranteed bonuses, we will take into account both past experience and expected future outlooks for factors including, but not limited to, the following.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p013-b023-c072",
+    "evidence_ids": [
+      "p013-b027",
+      "p013-b028",
+      "p013-b029"
+    ],
+    "parent_id": "section-p013-b023",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "en",
+    "text": "Investment performance: This includes interest / dividend income and changes in the market value of the invested assets. Investment performance could be afected by fluctuations in interest / dividend income and various market risk factors, such as credit spread, default risk, fluctuations in equity prices, property prices, commodity prices, exchange rates, etc.\nSurrenders: These may include policy lapses, surrenders, partial surrenders and other deductions and benefit payments; and the corresponding impact on investments.\nTo provide more stable crediting interest rate and/or non-guaranteed bonuses, we may retain returns during periods of strong investment performance to support or maintain stronger crediting interest rate and/or non-guaranteed bonuses during periods of less favourable investment performance.",
+    "retrieval_text": "Crediting Interest Rate Philosophy\nInvestment performance: This includes interest / dividend income and changes in the market value of the invested assets. Investment performance could be afected by fluctuations in interest / dividend income and various market risk factors, such as credit spread, default risk, fluctuations in equity prices, property prices, commodity prices, exchange rates, etc.\nSurrenders: These may include policy lapses, surrenders, partial surrenders and other deductions and benefit payments; and the corresponding impact on investments.\nTo provide more stable crediting interest rate and/or non-guaranteed bonuses, we may retain returns during periods of strong investment performance to support or maintain stronger crediting interest rate and/or non-guaranteed bonuses during periods of less favourable investment performance.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p013-b030-c073",
+    "evidence_ids": [
+      "p013-b031",
+      "p013-b032",
+      "p013-b033",
+      "p013-b035"
+    ],
+    "parent_id": "section-p013-b030",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "en",
+    "text": "YF Life Insurance International Ltd.’s investment objective is to optimize Policy Owners’ returns over the long-term with an acceptable level of risk. Assets are invested in a broad range of investment vehicles, which may include global equities, bonds and other fixed-income instruments, properties and commodities. This diversified investment portfolio aims to achieve attractive and stable long-term returns.\nPast and expected future performance, volatility, and the associated risks of investment assets are considered in selecting investment assets and managing our investment portfolio.\nTo achieve the long-term target returns, YF Life Insurance International Ltd. implements a strategy utilizing a mix of fixed-income and equity-like investments. The current long-term target strategy is to allocate assets as follows:\nBonds and other fixed-income investments mainly include high credit rating government bonds and corporate bonds (which are mainly invested in the geographical region of the United States) across a variety of industries, making up a diversified bond portfolio with high asset quality.",
+    "retrieval_text": "Investment Policy, Objective and Strategy\nYF Life Insurance International Ltd.’s investment objective is to optimize Policy Owners’ returns over the long-term with an acceptable level of risk. Assets are invested in a broad range of investment vehicles, which may include global equities, bonds and other fixed-income instruments, properties and commodities. This diversified investment portfolio aims to achieve attractive and stable long-term returns.\nPast and expected future performance, volatility, and the associated risks of investment assets are considered in selecting investment assets and managing our investment portfolio.\nTo achieve the long-term target returns, YF Life Insurance International Ltd. implements a strategy utilizing a mix of fixed-income and equity-like investments. The current long-term target strategy is to allocate assets as follows:\nBonds and other fixed-income investments mainly include high credit rating government bonds and corporate bonds (which are mainly invested in the geographical region of the United States) across a variety of industries, making up a diversified bond portfolio with high asset quality.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p013-b030-c074",
+    "evidence_ids": [
+      "p013-b036",
+      "p013-b037",
+      "p013-b038",
+      "p013-b040",
+      "p013-b041",
+      "p013-b043"
+    ],
+    "parent_id": "section-p013-b030",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "en",
+    "text": "Equity-like assets may include global equities (public and / or private), mutual funds, exchange-traded funds, high yield debts, properties and commodities. Investments are diversified across various geographical areas and industries. Derivatives may also be used for risk-management purposes.\nThis investment strategy may be subject to change, depending on the prevailing market conditions and economic outlook.\nFor relevant details and historical crediting interest rate, please visit our website:\nHong Kong:\nhttps://www.yflife.com/en/Hong-Kong/Individual/Services/ Useful-Information/Investment-Strategy\nhttps://www.yflife.com/en/Macau/Individual/Services/Useful- Information/Investment-Strategy",
+    "retrieval_text": "Investment Policy, Objective and Strategy\nEquity-like assets may include global equities (public and / or private), mutual funds, exchange-traded funds, high yield debts, properties and commodities. Investments are diversified across various geographical areas and industries. Derivatives may also be used for risk-management purposes.\nThis investment strategy may be subject to change, depending on the prevailing market conditions and economic outlook.\nFor relevant details and historical crediting interest rate, please visit our website:\nHong Kong:\nhttps://www.yflife.com/en/Hong-Kong/Individual/Services/ Useful-Information/Investment-Strategy\nhttps://www.yflife.com/en/Macau/Individual/Services/Useful- Information/Investment-Strategy",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p013-b034-t1-r1-c075",
+    "evidence_ids": [
+      "p013-b034-t1-r1"
+    ],
+    "parent_id": "row-p013-b034-t1-r1",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "en",
+    "text": "Asset Class / Target Asset Mix (%) Asset Class | Target Asset Mix (%)",
+    "retrieval_text": "Investment Policy, Objective and Strategy\nAsset Class / Target Asset Mix (%) Asset Class | Target Asset Mix (%)",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p013-b034-t1-r2-c076",
+    "evidence_ids": [
+      "p013-b034-t1-r2"
+    ],
+    "parent_id": "row-p013-b034-t1-r2",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "en",
+    "text": "Asset Class / Target Asset Mix (%) Bonds and other fixed-income instruments | 80% - 100%",
+    "retrieval_text": "Investment Policy, Objective and Strategy\nAsset Class / Target Asset Mix (%) Bonds and other fixed-income instruments | 80% - 100%",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p013-b034-t1-r3-c077",
+    "evidence_ids": [
+      "p013-b034-t1-r3"
+    ],
+    "parent_id": "row-p013-b034-t1-r3",
+    "pdf_pages": [
+      13
+    ],
+    "language_hint": "en",
+    "text": "Asset Class / Target Asset Mix (%) Equity-like assets | 0% - 20%",
+    "retrieval_text": "Investment Policy, Objective and Strategy\nAsset Class / Target Asset Mix (%) Equity-like assets | 0% - 20%",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b002-c078",
+    "evidence_ids": [
+      "p014-b003"
+    ],
+    "parent_id": "section-p014-b002",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "zh",
+    "text": "繳付保費年期及保障年期最長可至受保人100歲。提取現金、減低或暫停繳付保費（如適用），將會減少計劃所累積的現金價值，而每月費用仍會被扣除。我們將至少每年檢視非保證之費用，於需要時非保證之費用可能會被調整，並會提前一個月以書面通知您有關更改。我們將會參考包括但不限於理賠、支出費用、投資回報及退保等因素的過往經驗和預期未來展望，以釐定任何非保證費用的調整。如現金價值不足以支付每月費用，而在保費到期日起計31天寬限期屆滿前仍未繳付保費，保單便會終止而沒有任何價值。",
+    "retrieval_text": "繳付保費年期及保障年期\n繳付保費年期及保障年期最長可至受保人100歲。提取現金、減低或暫停繳付保費（如適用），將會減少計劃所累積的現金價值，而每月費用仍會被扣除。我們將至少每年檢視非保證之費用，於需要時非保證之費用可能會被調整，並會提前一個月以書面通知您有關更改。我們將會參考包括但不限於理賠、支出費用、投資回報及退保等因素的過往經驗和預期未來展望，以釐定任何非保證費用的調整。如現金價值不足以支付每月費用，而在保費到期日起計31天寬限期屆滿前仍未繳付保費，保單便會終止而沒有任何價值。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b004-c079",
+    "evidence_ids": [
+      "p014-b005",
+      "p014-b006",
+      "p014-b007",
+      "p014-b008",
+      "p014-b009",
+      "p014-b010"
+    ],
+    "parent_id": "section-p014-b004",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "zh",
+    "text": "在下列任何情況下，保單將會終止：\n• 於保障到期日當日\n• 寬限期屆滿\n• 保單持有人呈交書面要求終止保單\n• 在受保人經確診患上末期病症而需要作出末期病症保障賠償後\n• 受保人身故",
+    "retrieval_text": "終止\n在下列任何情況下，保單將會終止：\n• 於保障到期日當日\n• 寬限期屆滿\n• 保單持有人呈交書面要求終止保單\n• 在受保人經確診患上末期病症而需要作出末期病症保障賠償後\n• 受保人身故",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b011-c080",
+    "evidence_ids": [
+      "p014-b012"
+    ],
+    "parent_id": "section-p014-b011",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "zh",
+    "text": "如受保人在保單期滿日仍然在生，您將獲得相等於保單期滿日的賬戶價值的期滿價值。",
+    "retrieval_text": "期滿價值\n如受保人在保單期滿日仍然在生，您將獲得相等於保單期滿日的賬戶價值的期滿價值。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b013-c081",
+    "evidence_ids": [
+      "p014-b014"
+    ],
+    "parent_id": "section-p014-b013",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "zh",
+    "text": "本產品是為長線持有而設。如提早終止保單，您所獲得的現金價值或會遠低於您的已繳保費。",
+    "retrieval_text": "提早退保\n本產品是為長線持有而設。如提早終止保單，您所獲得的現金價值或會遠低於您的已繳保費。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b015-c082",
+    "evidence_ids": [
+      "p014-b016"
+    ],
+    "parent_id": "section-p014-b015",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "zh",
+    "text": "當實際通脹率較預期為高，即使萬通保險按保單條款履行合約義務，保單持有人獲得的金額的實質價值可能較少。",
+    "retrieval_text": "通脹風險\n當實際通脹率較預期為高，即使萬通保險按保單條款履行合約義務，保單持有人獲得的金額的實質價值可能較少。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b017-c083",
+    "evidence_ids": [
+      "p014-b018"
+    ],
+    "parent_id": "section-p014-b017",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "zh",
+    "text": "本計劃由萬通保險承保及負責，保單持有人的保單權益會受其信貸風險所影響。",
+    "retrieval_text": "信貸風險\n本計劃由萬通保險承保及負責，保單持有人的保單權益會受其信貸風險所影響。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b019-c084",
+    "evidence_ids": [
+      "p014-b020"
+    ],
+    "parent_id": "section-p014-b019",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "zh",
+    "text": "受保人若在保單日期起計一年內自殺，無論其是否在神智清醒的情況下，我們的全部責任將只限於退還直至受保人身故當天在保單所累積的賬戶價值的金額加上已扣除的保險成本（不包括利息）。",
+    "retrieval_text": "主要不保事項\n受保人若在保單日期起計一年內自殺，無論其是否在神智清醒的情況下，我們的全部責任將只限於退還直至受保人身故當天在保單所累積的賬戶價值的金額加上已扣除的保險成本（不包括利息）。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b021-c085",
+    "evidence_ids": [
+      "p014-b022",
+      "p014-b023",
+      "p014-b024",
+      "p014-b025",
+      "p014-b026",
+      "p014-b027",
+      "p014-b028"
+    ],
+    "parent_id": "section-p014-b021",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "zh",
+    "text": "末期病症保障將不會支付任何保障的賠償予因以下一種或多種情況而直接或間接引致的末期病症：\n• 在保障生效日期或批准復效日期（以較後日期爲準）的六十日內出現的疾病；\n• 在保障生效日期或批准復效日期（以較後日期爲準） 前，所有受保人本身已存在的情況及按受保人已呈現的病徵及病狀，受保人已知悉或據常理應該已知悉的情況；\n• 自殺、企圖自殺或因神智不清醒、自殘或精神狀態異常的狀況下受傷；\n• 藥癮、酗酒或因酒精或藥物中毒（除非由醫生處方）；\n• 任何人類免疫力缺乏症病毒及 / 或與此有關之病症， 包括愛滋病及 / 或任何由此而產生的病症；或\n• 任何在十八歲前因患上或出現之先天性畸形或反常的情況而引致的疾病或病患。",
+    "retrieval_text": "適用於末期病症保障\n末期病症保障將不會支付任何保障的賠償予因以下一種或多種情況而直接或間接引致的末期病症：\n• 在保障生效日期或批准復效日期（以較後日期爲準）的六十日內出現的疾病；\n• 在保障生效日期或批准復效日期（以較後日期爲準） 前，所有受保人本身已存在的情況及按受保人已呈現的病徵及病狀，受保人已知悉或據常理應該已知悉的情況；\n• 自殺、企圖自殺或因神智不清醒、自殘或精神狀態異常的狀況下受傷；\n• 藥癮、酗酒或因酒精或藥物中毒（除非由醫生處方）；\n• 任何人類免疫力缺乏症病毒及 / 或與此有關之病症， 包括愛滋病及 / 或任何由此而產生的病症；或\n• 任何在十八歲前因患上或出現之先天性畸形或反常的情況而引致的疾病或病患。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b030-c086",
+    "evidence_ids": [
+      "p014-b031"
+    ],
+    "parent_id": "section-p014-b030",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "en",
+    "text": "The premium payment term and the benefit term are up to age 100 of the Insured. Cash withdrawals, reducing the premium amount, or skipping premium payments (if applicable) will reduce the accumulation of the Cash Value, while the monthly charges are still deductible. Non-guaranteed charges will be reviewed at least annually and may be adjusted if necessary. You will be notified the related changes with prior written notice 1 month before efective. In determining any changes in charges, we will take reference to both past experience and expected future outlooks for factors including, but not limited to, claims, expenses, investment performance and surrenders. If the Cash Value is not suficient to cover the monthly charges and no premiums are made before the end of the 31-day Grace Period from such premium due date, the Policy will lapse with zero value.",
+    "retrieval_text": "Premium Payment Term and Benefit Term\nThe premium payment term and the benefit term are up to age 100 of the Insured. Cash withdrawals, reducing the premium amount, or skipping premium payments (if applicable) will reduce the accumulation of the Cash Value, while the monthly charges are still deductible. Non-guaranteed charges will be reviewed at least annually and may be adjusted if necessary. You will be notified the related changes with prior written notice 1 month before efective. In determining any changes in charges, we will take reference to both past experience and expected future outlooks for factors including, but not limited to, claims, expenses, investment performance and surrenders. If the Cash Value is not suficient to cover the monthly charges and no premiums are made before the end of the 31-day Grace Period from such premium due date, the Policy will lapse with zero value.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b032-c087",
+    "evidence_ids": [
+      "p014-b033",
+      "p014-b034",
+      "p014-b035",
+      "p014-b036",
+      "p014-b037",
+      "p014-b038"
+    ],
+    "parent_id": "section-p014-b032",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "en",
+    "text": "The Policy will be terminated when one of the following events occurs:\n• On the Benefit Expiry Date\n• The Grace Period ends\n• The Policy Owner submits a written request to terminate the Policy\n• The Insured is diagnosed with terminal illness giving rise to the payment of Terminal Illness Benefit\n• The Insured dies",
+    "retrieval_text": "Termination\nThe Policy will be terminated when one of the following events occurs:\n• On the Benefit Expiry Date\n• The Grace Period ends\n• The Policy Owner submits a written request to terminate the Policy\n• The Insured is diagnosed with terminal illness giving rise to the payment of Terminal Illness Benefit\n• The Insured dies",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b039-c088",
+    "evidence_ids": [
+      "p014-b040"
+    ],
+    "parent_id": "section-p014-b039",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "en",
+    "text": "If the Insured were living on the Maturity Date of the Policy, you will receive a maturity benefit equals to the Account Value on the Maturity Date.",
+    "retrieval_text": "Maturity Benefit\nIf the Insured were living on the Maturity Date of the Policy, you will receive a maturity benefit equals to the Account Value on the Maturity Date.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b041-c089",
+    "evidence_ids": [
+      "p014-b042"
+    ],
+    "parent_id": "section-p014-b041",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "en",
+    "text": "The product is intended to be held in the long-term. Should you terminate the Policy early, you may receive a Cash Value considerably less than the total premiums paid.",
+    "retrieval_text": "Early Surrender\nThe product is intended to be held in the long-term. Should you terminate the Policy early, you may receive a Cash Value considerably less than the total premiums paid.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b043-c090",
+    "evidence_ids": [
+      "p014-b044"
+    ],
+    "parent_id": "section-p014-b043",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "en",
+    "text": "Where the actual rate of inflation is higher than expected, the Policy Owner might receive less in real terms even if YF Life Insurance International Ltd. meets all of its contractual obligations.",
+    "retrieval_text": "Inflation Risk\nWhere the actual rate of inflation is higher than expected, the Policy Owner might receive less in real terms even if YF Life Insurance International Ltd. meets all of its contractual obligations.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b045-c091",
+    "evidence_ids": [
+      "p014-b046"
+    ],
+    "parent_id": "section-p014-b045",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "en",
+    "text": "This plan is underwritten by YF Life Insurance International Ltd. The insurance benefits are held solely responsible by the company and subject to its credit risk.",
+    "retrieval_text": "Credit Risk\nThis plan is underwritten by YF Life Insurance International Ltd. The insurance benefits are held solely responsible by the company and subject to its credit risk.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b047-c092",
+    "evidence_ids": [
+      "p014-b048"
+    ],
+    "parent_id": "section-p014-b047",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "en",
+    "text": "If the Insured commits suicide, whether sane or insane, within one year from the Policy Date, our total liability shall be limited to the aggregate of the Account Value on the date of death of the Insured and the Cost of Insurance deducted (without any interest).",
+    "retrieval_text": "Key Exclusions\nIf the Insured commits suicide, whether sane or insane, within one year from the Policy Date, our total liability shall be limited to the aggregate of the Account Value on the date of death of the Insured and the Cost of Insurance deducted (without any interest).",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p014-b049-c093",
+    "evidence_ids": [
+      "p014-b050",
+      "p014-b051",
+      "p014-b052",
+      "p014-b053",
+      "p014-b054",
+      "p014-b055",
+      "p014-b056"
+    ],
+    "parent_id": "section-p014-b049",
+    "pdf_pages": [
+      14
+    ],
+    "language_hint": "en",
+    "text": "The Terminal Illness Benefit will not be paid for Terminal Illness caused, directly or indirectly, by or resulted from one or more of the following:\n• Any diseases or illnesses which occurred within 60 days after the Efective Date of Coverage or the approval date of reinstatement, whichever is later;\n• All pre-existing conditions in respect of the Insured existed before the Efective Date of Coverage or the approval date of reinstatement, whichever is later, and presented signs and symptoms of which the Insured has been aware or should reasonably have been aware;\n• Suicide, attempted suicide or injuries due to insanity, self-infliction or functional disorder of mind;\n• Drug addiction, alcoholism or intoxication by alcohol or drugs not prescribed by a Doctor;\n• Any Human Immunodeficiency Virus (HIV) and/or any HIV-related illnesses including Acquired Immune Deficiency Syndrome (AIDS) and/or any mutations, derivation or variations thereof; or\n• Any diseases or illnesses which are due to congenital defect or condition and occurred before the Insured reaches 18 years of age.",
+    "retrieval_text": "For Terminal Illness Benefit\nThe Terminal Illness Benefit will not be paid for Terminal Illness caused, directly or indirectly, by or resulted from one or more of the following:\n• Any diseases or illnesses which occurred within 60 days after the Efective Date of Coverage or the approval date of reinstatement, whichever is later;\n• All pre-existing conditions in respect of the Insured existed before the Efective Date of Coverage or the approval date of reinstatement, whichever is later, and presented signs and symptoms of which the Insured has been aware or should reasonably have been aware;\n• Suicide, attempted suicide or injuries due to insanity, self-infliction or functional disorder of mind;\n• Drug addiction, alcoholism or intoxication by alcohol or drugs not prescribed by a Doctor;\n• Any Human Immunodeficiency Virus (HIV) and/or any HIV-related illnesses including Acquired Immune Deficiency Syndrome (AIDS) and/or any mutations, derivation or variations thereof; or\n• Any diseases or illnesses which are due to congenital defect or condition and occurred before the Insured reaches 18 years of age.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b001-c094",
+    "evidence_ids": [
+      "p015-b002"
+    ],
+    "parent_id": "section-p015-b001",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "zh",
+    "text": "在投保時，您 / 你們必須提供一切知悉或據常理知悉的資料，因萬通保險會按照所提供的資料評核接受投保及決定保險條款。提供資料的責任將會在投保申請表的簽署日期或任何補充文件的簽署日期（以較後日期為準）完成。 您 / 你們若不清楚某一事項是否重要，請將該事項填寫於申請書內。若未符合以上要求，該保單可能因此而作廢。",
+    "retrieval_text": "提供資料責任及未符合這要求的後果\n在投保時，您 / 你們必須提供一切知悉或據常理知悉的資料，因萬通保險會按照所提供的資料評核接受投保及決定保險條款。提供資料的責任將會在投保申請表的簽署日期或任何補充文件的簽署日期（以較後日期為準）完成。 您 / 你們若不清楚某一事項是否重要，請將該事項填寫於申請書內。若未符合以上要求，該保單可能因此而作廢。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b003-c095",
+    "evidence_ids": [
+      "p015-b004",
+      "p015-b005",
+      "p015-b006",
+      "p015-b007"
+    ],
+    "parent_id": "section-p015-b003",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "mixed",
+    "text": "有關索償程序，請瀏覽本公司網頁：\n香港：https://www.yflife.com/tc/Hong-Kong/\nIndividual/Services/Claims-Corner\n澳門：https://www.yflife.com/tc/Macau/Individual/ Services/Claims-Corner",
+    "retrieval_text": "索償程序\n有關索償程序，請瀏覽本公司網頁：\n香港：https://www.yflife.com/tc/Hong-Kong/\nIndividual/Services/Claims-Corner\n澳門：https://www.yflife.com/tc/Macau/Individual/ Services/Claims-Corner",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b008-c096",
+    "evidence_ids": [
+      "p015-b009"
+    ],
+    "parent_id": "section-p015-b008",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "mixed",
+    "text": "保監局會透過保險公司向所有保單持有人，為其於香港繕發之保單，於每次繳付保費時收取徵費。有關徵費之詳情，請瀏覽保監局網站專頁www.ia.org.hk/tc/levy。",
+    "retrieval_text": "保費徵費（只適用於香港）\n保監局會透過保險公司向所有保單持有人，為其於香港繕發之保單，於每次繳付保費時收取徵費。有關徵費之詳情，請瀏覽保監局網站專頁www.ia.org.hk/tc/levy。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b010-c097",
+    "evidence_ids": [
+      "p015-b011"
+    ],
+    "parent_id": "section-p015-b010",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "zh",
+    "text": "如保單未能滿足您的要求，您可以書面方式要求取消保單，連同保單退回本公司（香港：香港灣仔駱克道33號萬通保險大廈27樓 / 澳門：澳門蘇亞利斯博士大馬路 320號澳門財富中心8樓A座），並確保本公司的辦事處於交付保單的21個曆日內，或向您 / 您的代表人交付 《通知書》（說明已經可以領取保單和冷靜期屆滿日）後起計的21個曆日內（以較早者為準）收到書面要求。於收妥書面要求後，保單將被取消，您將可獲退回已繳保費金額及您所繳付的徵費（適用於香港），但不包括任何利息。若曾獲賠償或將獲得賠償，則不獲發還保費。",
+    "retrieval_text": "保單冷靜期及取消保單的權利\n如保單未能滿足您的要求，您可以書面方式要求取消保單，連同保單退回本公司（香港：香港灣仔駱克道33號萬通保險大廈27樓 / 澳門：澳門蘇亞利斯博士大馬路 320號澳門財富中心8樓A座），並確保本公司的辦事處於交付保單的21個曆日內，或向您 / 您的代表人交付 《通知書》（說明已經可以領取保單和冷靜期屆滿日）後起計的21個曆日內（以較早者為準）收到書面要求。於收妥書面要求後，保單將被取消，您將可獲退回已繳保費金額及您所繳付的徵費（適用於香港），但不包括任何利息。若曾獲賠償或將獲得賠償，則不獲發還保費。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b012-c098",
+    "evidence_ids": [
+      "p015-b013",
+      "p015-b014"
+    ],
+    "parent_id": "section-p015-b012",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "zh",
+    "text": "如需申請退保，您只需填妥、簽署並寄回由本公司提供的特定表格，本公司將安排退保事宜。\n於保單期滿時，本公司將致函通知您，安排保單終止事宜。",
+    "retrieval_text": "期滿及退保\n如需申請退保，您只需填妥、簽署並寄回由本公司提供的特定表格，本公司將安排退保事宜。\n於保單期滿時，本公司將致函通知您，安排保單終止事宜。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b015-c099",
+    "evidence_ids": [
+      "p015-b016"
+    ],
+    "parent_id": "section-p015-b015",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "zh",
+    "text": "我們保留押後支付退保價值之權利，最長不超過接獲退保要求後六個月。",
+    "retrieval_text": "延遲付款期\n我們保留押後支付退保價值之權利，最長不超過接獲退保要求後六個月。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b017-c100",
+    "evidence_ids": [
+      "p015-b018"
+    ],
+    "parent_id": "section-p015-b017",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "en",
+    "text": "You are required to disclose in the application all information you know or could reasonably be expected to know because YF Life Insurance International Ltd. will rely on what you have disclosed in this application to accept the risk and the terms of insurance. Your duty of disclosure ends on the signing date of application or the supplementary form(s), whichever is later. If you are in doubt as to whether a fact is material, please disclose it in the application. Failure to comply with this requirement may render the Policy issued voidable.",
+    "retrieval_text": "Duty of Disclosure and the Consequences of Not Making Full Disclosure\nYou are required to disclose in the application all information you know or could reasonably be expected to know because YF Life Insurance International Ltd. will rely on what you have disclosed in this application to accept the risk and the terms of insurance. Your duty of disclosure ends on the signing date of application or the supplementary form(s), whichever is later. If you are in doubt as to whether a fact is material, please disclose it in the application. Failure to comply with this requirement may render the Policy issued voidable.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b019-c101",
+    "evidence_ids": [
+      "p015-b020",
+      "p015-b021"
+    ],
+    "parent_id": "section-p015-b019",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "en",
+    "text": "For details of the procedures for making claims, please refer to our website at: Hong Kong: https://www.yflife.com/en/Hong-Kong/Individual/Services/ Claims-Corner\nMacau: https://www.yflife.com/en/Macau/Individual/Services/Claims-Corner",
+    "retrieval_text": "Claims Procedures\nFor details of the procedures for making claims, please refer to our website at: Hong Kong: https://www.yflife.com/en/Hong-Kong/Individual/Services/ Claims-Corner\nMacau: https://www.yflife.com/en/Macau/Individual/Services/Claims-Corner",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b022-c102",
+    "evidence_ids": [
+      "p015-b023"
+    ],
+    "parent_id": "section-p015-b022",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "en",
+    "text": "The Insurance Authority (IA) collects levy on insurance premiums from policy holders through the Company for insurance policies issued in Hong Kong. For details about the levy, please visit the dedicated IA webpage at www.ia.org.hk/en/levy.",
+    "retrieval_text": "Premium Levy (Applicable to Hong Kong only)\nThe Insurance Authority (IA) collects levy on insurance premiums from policy holders through the Company for insurance policies issued in Hong Kong. For details about the levy, please visit the dedicated IA webpage at www.ia.org.hk/en/levy.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b024-c103",
+    "evidence_ids": [
+      "p015-b025"
+    ],
+    "parent_id": "section-p015-b024",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "en",
+    "text": "If you are not satisfied with the Policy, you may return it under a signed covering letter to us (Hong Kong: 27/F, YF Life Tower, 33 Lockhart Road, Wanchai, Hong Kong / Macau: Avenida Doutor Mario Soares No. 320, Finance and IT Center of Macau, 8 Andar A, Macau) within 21 calendar days after the delivery of the Policy or delivery of the Notice (which states that the Policy is available for collection and the expiry date of the cooling-of period) to you or your representative, whichever is earlier. We will cancel the Policy upon receipt of your written request and refund all premiums and the levy you paid (applicable to Hong Kong only), without any interest. No refund can be made if a benefit payment has been made, is to be made or impending.",
+    "retrieval_text": "Cooling-of Period and Right of Cancellation\nIf you are not satisfied with the Policy, you may return it under a signed covering letter to us (Hong Kong: 27/F, YF Life Tower, 33 Lockhart Road, Wanchai, Hong Kong / Macau: Avenida Doutor Mario Soares No. 320, Finance and IT Center of Macau, 8 Andar A, Macau) within 21 calendar days after the delivery of the Policy or delivery of the Notice (which states that the Policy is available for collection and the expiry date of the cooling-of period) to you or your representative, whichever is earlier. We will cancel the Policy upon receipt of your written request and refund all premiums and the levy you paid (applicable to Hong Kong only), without any interest. No refund can be made if a benefit payment has been made, is to be made or impending.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b026-c104",
+    "evidence_ids": [
+      "p015-b027",
+      "p015-b028"
+    ],
+    "parent_id": "section-p015-b026",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "en",
+    "text": "You may surrender the Policy by submitting a written request on the forms prepared for such purposes. We will arrange the policy surrender.\nUpon policy maturity, we will send a notification letter to you and will arrange policy termination accordingly.",
+    "retrieval_text": "Maturity and Surrender\nYou may surrender the Policy by submitting a written request on the forms prepared for such purposes. We will arrange the policy surrender.\nUpon policy maturity, we will send a notification letter to you and will arrange policy termination accordingly.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p015-b029-c105",
+    "evidence_ids": [
+      "p015-b030"
+    ],
+    "parent_id": "section-p015-b029",
+    "pdf_pages": [
+      15
+    ],
+    "language_hint": "en",
+    "text": "We may defer payment of any Surrender Value for the period up to six months from the date we receive the surrender request.",
+    "retrieval_text": "Deferred Payment Period\nWe may defer payment of any Surrender Value for the period up to six months from the date we receive the surrender request.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r1-c106",
+    "evidence_ids": [
+      "p016-b002-t1-r1"
+    ],
+    "parent_id": "row-p016-b002-t1-r1",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 利益項目 Benefits",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 利益項目 Benefits",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r2-c107",
+    "evidence_ids": [
+      "p016-b002-t1-r2"
+    ],
+    "parent_id": "row-p016-b002-t1-r2",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 基本派息率*Base crediting interest rate* | 現時假設基本派息率為每年4.0%。基本派息會每月派發,並撥入賬戶價值,以複式計算Current assumed base crediting interest rate is 4.0% p.a. The base crediting interest will be credited monthly to the Account Value at a compound rate",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 基本派息率*Base crediting interest rate* | 現時假設基本派息率為每年4.0%。基本派息會每月派發,並撥入賬戶價值,以複式計算Current assumed base crediting interest rate is 4.0% p.a. The base crediting interest will be credited monthly to the Account Value at a compound rate",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r3-c108",
+    "evidence_ids": [
+      "p016-b002-t1-r3"
+    ],
+    "parent_id": "row-p016-b002-t1-r3",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 額外利息*Retrospective additional interest* | 於保單第20個保單週年日及其後每5年派發,現時假設額外利息率為每年0.25%Credited to the Account Value at the end of the 20^{th} policy year and for every 5 years thereafter. The current assumed retrospective additional interest rate is 0.25% p.a.",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 額外利息*Retrospective additional interest* | 於保單第20個保單週年日及其後每5年派發,現時假設額外利息率為每年0.25%Credited to the Account Value at the end of the 20^{th} policy year and for every 5 years thereafter. The current assumed retrospective additional interest rate is 0.25% p.a.",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r4-c109",
+    "evidence_ids": [
+      "p016-b002-t1-r4"
+    ],
+    "parent_id": "row-p016-b002-t1-r4",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 額外回報Extra Bonus | 於保單第15個保單週年日及其後每5年派發Credited to the Policy at the end of the 15^{th} policy year and for every 5 years thereafter",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 額外回報Extra Bonus | 於保單第15個保單週年日及其後每5年派發Credited to the Policy at the end of the 15^{th} policy year and for every 5 years thereafter",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r5-c110",
+    "evidence_ids": [
+      "p016-b002-t1-r5"
+    ],
+    "parent_id": "row-p016-b002-t1-r5",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 額外回報Extra Bonus | 現時假設額外回報率The current assumed Extra Bonus rate | 保單年Policy Year",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 額外回報Extra Bonus | 現時假設額外回報率The current assumed Extra Bonus rate | 保單年Policy Year",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r6-c111",
+    "evidence_ids": [
+      "p016-b002-t1-r6"
+    ],
+    "parent_id": "row-p016-b002-t1-r6",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 額外回報Extra Bonus | 2.75% (15/20/25); 5.5% (30及其後每5年 / The 30th year and every 5 years thereafter) | 15/20/25; 30及其後每5年 / The 30th year and every 5 years thereafter",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 額外回報Extra Bonus | 2.75% (15/20/25); 5.5% (30及其後每5年 / The 30th year and every 5 years thereafter) | 15/20/25; 30及其後每5年 / The 30th year and every 5 years thereafter",
+    "related_evidence_ids": [
+      "p008-b011",
+      "p008-b012",
+      "p008-b013",
+      "p008-b014",
+      "p008-b015",
+      "p008-b016"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r7-c112",
+    "evidence_ids": [
+      "p016-b002-t1-r7"
+    ],
+    "parent_id": "row-p016-b002-t1-r7",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 利息保證Guaranteed interest | 賬戶價值(包括已撥入保單的利息及額外回報的總額)保證不會少於每年以派息率2.5%計算而累積的賬戶價值(適用於已生效滿15年或以上的保單)Account Value (including the total interest and Extra Bonus credited to the Policy) is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a. (Applicable to a Policy that has been in force for 15 years or more)",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 利息保證Guaranteed interest | 賬戶價值(包括已撥入保單的利息及額外回報的總額)保證不會少於每年以派息率2.5%計算而累積的賬戶價值(適用於已生效滿15年或以上的保單)Account Value (including the total interest and Extra Bonus credited to the Policy) is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a. (Applicable to a Policy that has been in force for 15 years or more)",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r8-c113",
+    "evidence_ids": [
+      "p016-b002-t1-r8"
+    ],
+    "parent_id": "row-p016-b002-t1-r8",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 身故保障選擇Death Benefit Options | 固定壽險保障/遞增壽險保障/特級遞增壽險保障/漸進壽險保障Level Benefit / Increasing Benefit / Increasing Benefit Plus / Incremental Benefit",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 身故保障選擇Death Benefit Options | 固定壽險保障/遞增壽險保障/特級遞增壽險保障/漸進壽險保障Level Benefit / Increasing Benefit / Increasing Benefit Plus / Incremental Benefit",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r9-c114",
+    "evidence_ids": [
+      "p016-b002-t1-r9"
+    ],
+    "parent_id": "row-p016-b002-t1-r9",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 保證可保權益^{3}Guaranteed Insurability Option^{3} | 每次增加之基本保障額為行使權益前基本保障額的25%或50,000美元/400,000港元/400,000澳門元(以較低者為準);最多可行使權益兩次For each exercise, the increase in Basic Sum Insured shall not exceed 25% of the Basic Sum Insured before exercising this option or US$50,000/HK$400,000/MOP400,000 (whichever is lower). This option can be exercised up to two times",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 保證可保權益^{3}Guaranteed Insurability Option^{3} | 每次增加之基本保障額為行使權益前基本保障額的25%或50,000美元/400,000港元/400,000澳門元(以較低者為準);最多可行使權益兩次For each exercise, the increase in Basic Sum Insured shall not exceed 25% of the Basic Sum Insured before exercising this option or US$50,000/HK$400,000/MOP400,000 (whichever is lower). This option can be exercised up to two times",
+    "related_evidence_ids": [
+      "p012-b004",
+      "p012-b015"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r10-c115",
+    "evidence_ids": [
+      "p016-b002-t1-r10"
+    ],
+    "parent_id": "row-p016-b002-t1-r10",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 失業保障^{8}Unemployment Benefit^{8} | 可享有長達365日的特惠寬限期A Special Grace Period of up to 365 days",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 失業保障^{8}Unemployment Benefit^{8} | 可享有長達365日的特惠寬限期A Special Grace Period of up to 365 days",
+    "related_evidence_ids": [
+      "p012-b009",
+      "p012-b020"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r11-c116",
+    "evidence_ids": [
+      "p016-b002-t1-r11"
+    ],
+    "parent_id": "row-p016-b002-t1-r11",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 末期病症保障^{9}Terminal Illness Benefit^{9} | 基本計劃及附加保障(如適用)的身故保障The Death Benefit of the Basic Plan and supplementary benefit(s)",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 末期病症保障^{9}Terminal Illness Benefit^{9} | 基本計劃及附加保障(如適用)的身故保障The Death Benefit of the Basic Plan and supplementary benefit(s)",
+    "related_evidence_ids": [
+      "p012-b010",
+      "p012-b021"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r12-c117",
+    "evidence_ids": [
+      "p016-b002-t1-r12"
+    ],
+    "parent_id": "row-p016-b002-t1-r12",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "利益項目 Benefits 附加保障Supplementary Benefits | 豁免保費計劃、嚴重疾病保障、意外保障等Waiver of Premium Benefit, Critical Illness Benefit, Accident Benefit, etc.",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n利益項目 Benefits 附加保障Supplementary Benefits | 豁免保費計劃、嚴重疾病保障、意外保障等Waiver of Premium Benefit, Critical Illness Benefit, Accident Benefit, etc.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r13-c118",
+    "evidence_ids": [
+      "p016-b002-t1-r13"
+    ],
+    "parent_id": "row-p016-b002-t1-r13",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "保單資料 Policy Information 保單資料 Policy Information",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n保單資料 Policy Information 保單資料 Policy Information",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r14-c119",
+    "evidence_ids": [
+      "p016-b002-t1-r14"
+    ],
+    "parent_id": "row-p016-b002-t1-r14",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "保單資料 Policy Information 保單類別Plan Type | 基本計劃Basic Plan",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n保單資料 Policy Information 保單類別Plan Type | 基本計劃Basic Plan",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r15-c120",
+    "evidence_ids": [
+      "p016-b002-t1-r15"
+    ],
+    "parent_id": "row-p016-b002-t1-r15",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "保單資料 Policy Information 保單貨幣單位Currency | 香港保單:美元/港元澳門保單:美元/澳門元/港元Policy issued in Hong Kong: US$ / HK$Policy issued in Macau: US$ / MOP / HK$",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n保單資料 Policy Information 保單貨幣單位Currency | 香港保單:美元/港元澳門保單:美元/澳門元/港元Policy issued in Hong Kong: US$ / HK$Policy issued in Macau: US$ / MOP / HK$",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p016-b002-t1-r16-c121",
+    "evidence_ids": [
+      "p016-b002-t1-r16"
+    ],
+    "parent_id": "row-p016-b002-t1-r16",
+    "pdf_pages": [
+      16
+    ],
+    "language_hint": "mixed",
+    "text": "保單資料 Policy Information 繳費方式Payment Mode | 每年/每半年/每季/每月繳付Annual / Semi-annual / Quarterly / Monthly Payment",
+    "retrieval_text": "「首選靈活萬用壽險計劃」一覽表 FLEXI-ULife Prime Saver – at a glance\n保單資料 Policy Information 繳費方式Payment Mode | 每年/每半年/每季/每月繳付Annual / Semi-annual / Quarterly / Monthly Payment",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r1-c122",
+    "evidence_ids": [
+      "p017-b001-t1-r1"
+    ],
+    "parent_id": "row-p017-b001-t1-r1",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "最低保障額Minimum Sum Insured / < Age 45 歲 / ≥ Age 45 歲最低保障額Minimum Sum Insured | < Age 45 歲 | ≥ Age 45 歲",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n最低保障額Minimum Sum Insured / < Age 45 歲 / ≥ Age 45 歲最低保障額Minimum Sum Insured | < Age 45 歲 | ≥ Age 45 歲",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r2-c123",
+    "evidence_ids": [
+      "p017-b001-t1-r2"
+    ],
+    "parent_id": "row-p017-b001-t1-r2",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "最低保障額Minimum Sum Insured / < Age 45 歲 / ≥ Age 45 歲最低保障額Minimum Sum Insured | FP80/100/130 | 香港保單Hong Kong PoliciesUS$30,000美元 /HK$240,000港元澳門保單Macau PoliciesUS$25,000美元 /MOP / HK$200,000澳門元 / 港元 | US$15,000美元 /HK$ / MOP120,000港元 / 澳門元",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n最低保障額Minimum Sum Insured / < Age 45 歲 / ≥ Age 45 歲最低保障額Minimum Sum Insured | FP80/100/130 | 香港保單Hong Kong PoliciesUS$30,000美元 /HK$240,000港元澳門保單Macau PoliciesUS$25,000美元 /MOP / HK$200,000澳門元 / 港元 | US$15,000美元 /HK$ / MOP120,000港元 / 澳門元",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r3-c124",
+    "evidence_ids": [
+      "p017-b001-t1-r3"
+    ],
+    "parent_id": "row-p017-b001-t1-r3",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "最低保障額Minimum Sum Insured / < Age 45 歲 / ≥ Age 45 歲最低保障額Minimum Sum Insured | FP180/280 | US$15,000美元 /HK$ / MOP120,000港元 / 澳門元 | US$8,000美元 /HK$ / MOP64,000港元 / 澳門元",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n最低保障額Minimum Sum Insured / < Age 45 歲 / ≥ Age 45 歲最低保障額Minimum Sum Insured | FP180/280 | US$15,000美元 /HK$ / MOP120,000港元 / 澳門元 | US$8,000美元 /HK$ / MOP64,000港元 / 澳門元",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r4-c125",
+    "evidence_ids": [
+      "p017-b001-t1-r4"
+    ],
+    "parent_id": "row-p017-b001-t1-r4",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "最低保障額Minimum Sum Insured / < Age 45 歲 / ≥ Age 45 歲最低保障額Minimum Sum Insured | 其他 Others | US$5,000美元 / HK$ / MOP40,000港元 / 澳門元",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n最低保障額Minimum Sum Insured / < Age 45 歲 / ≥ Age 45 歲最低保障額Minimum Sum Insured | 其他 Others | US$5,000美元 / HK$ / MOP40,000港元 / 澳門元",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r5-c126",
+    "evidence_ids": [
+      "p017-b001-t1-r5"
+    ],
+    "parent_id": "row-p017-b001-t1-r5",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "最高保障額Maximum Sum Insured | 個別考慮Individual consideration",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n最高保障額Maximum Sum Insured | 個別考慮Individual consideration",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r6-c127",
+    "evidence_ids": [
+      "p017-b001-t1-r6"
+    ],
+    "parent_id": "row-p017-b001-t1-r6",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "增加/減少保障額Increase / Decrease Sum Insured | 每次更改之最低金額為5,000美元 / 40,000港元 / 400,000澳門元The minimum amount of increase / decrease is US$5,000 / HK$400,000 / MOP40,000",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n增加/減少保障額Increase / Decrease Sum Insured | 每次更改之最低金額為5,000美元 / 40,000港元 / 400,000澳門元The minimum amount of increase / decrease is US$5,000 / HK$400,000 / MOP40,000",
+    "related_evidence_ids": [],
+    "review_flags": [
+      "SOURCE_CONFLICT"
+    ]
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r7-c128",
+    "evidence_ids": [
+      "p017-b001-t1-r7"
+    ],
+    "parent_id": "row-p017-b001-t1-r7",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "保費行政費用^{10}Premium Expense Charge^{10} | 按每次繳交的定期或非定期保費收取:在保單生效第一至第三年,費用為該段期間繳付的保費的10%,在保單生效第四至第九年內,為繳付保費的7%,而期後則為5%Charged based on each scheduled or unscheduled premium payment:This charge is 10% of premium payments made in policy years 1 to 3 inclusive, 7% of premium payments made in policy years 4 to 9 inclusive and 5% of premium payments made thereafter",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n保費行政費用^{10}Premium Expense Charge^{10} | 按每次繳交的定期或非定期保費收取:在保單生效第一至第三年,費用為該段期間繳付的保費的10%,在保單生效第四至第九年內,為繳付保費的7%,而期後則為5%Charged based on each scheduled or unscheduled premium payment:This charge is 10% of premium payments made in policy years 1 to 3 inclusive, 7% of premium payments made in policy years 4 to 9 inclusive and 5% of premium payments made thereafter",
+    "related_evidence_ids": [
+      "p012-b011",
+      "p012-b022"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r8-c129",
+    "evidence_ids": [
+      "p017-b001-t1-r8"
+    ],
+    "parent_id": "row-p017-b001-t1-r8",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "保險成本^{10}Cost of Insurance^{10} | 按淨承擔風險總值乘保險成本費率計算,每月收取。淨承擔風險總值的定義如下:固定壽險保障:淨承擔風險總值 = 基本保障額 - 賬戶價值漸進壽險保障:淨承擔風險總值 = 基本保障額 - 賬戶價值的50%遞增壽險保障 / 特級遞增壽險保障:淨承擔風險總值 = 基本保障額在任何情況下,淨承擔風險總值不會少於零。保險成本費率按受保人的性別、投保年齡(只適用於特級遞增壽險保障選擇)、實際年齡、吸煙習慣、風險級別、壽險保障選擇而釐定Charged monthly, determined by multiplying the Net Amount At Risk by the Cost of Insurance Rate.Net Amount At Risk is defined as follows:For Level Benefit: Net Amount At Risk = Basic Sum Insured - Account ValueFor Incremental Benefit: Net Amount At Risk = Basic Sum Insured - 50% of Account ValueFor Increasing Benefit / Increasing Benefit Plus: Net Amount At Risk = Basic Sum Insured Under all circumstances, the Net Amount At Risk will not be less than zero.Cost of Insurance Rate depends on the gender, issue age (for Increasing Benefit Plus option only), attained age, smoking habit and risk class of the Insured and Life Protection Option chosen",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n保險成本^{10}Cost of Insurance^{10} | 按淨承擔風險總值乘保險成本費率計算,每月收取。淨承擔風險總值的定義如下:固定壽險保障:淨承擔風險總值 = 基本保障額 - 賬戶價值漸進壽險保障:淨承擔風險總值 = 基本保障額 - 賬戶價值的50%遞增壽險保障 / 特級遞增壽險保障:淨承擔風險總值 = 基本保障額在任何情況下,淨承擔風險總值不會少於零。保險成本費率按受保人的性別、投保年齡(只適用於特級遞增壽險保障選擇)、實際年齡、吸煙習慣、風險級別、壽險保障選擇而釐定Charged monthly, determined by multiplying the Net Amount At Risk by the Cost of Insurance Rate.Net Amount At Risk is defined as follows:For Level Benefit: Net Amount At Risk = Basic Sum Insured - Account ValueFor Incremental Benefit: Net Amount At Risk = Basic Sum Insured - 50% of Account ValueFor Increasing Benefit / Increasing Benefit Plus: Net Amount At Risk = Basic Sum Insured Under all circumstances, the Net Amount At Risk will not be less than zero.Cost of Insurance Rate depends on the gender, issue age (for Increasing Benefit Plus option only), attained age, smoking habit and risk class of the Insured and Life Protection Option chosen",
+    "related_evidence_ids": [
+      "p012-b011",
+      "p012-b022"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p017-b001-t1-r9-c130",
+    "evidence_ids": [
+      "p017-b001-t1-r9"
+    ],
+    "parent_id": "row-p017-b001-t1-r9",
+    "pdf_pages": [
+      17
+    ],
+    "language_hint": "mixed",
+    "text": "一般行政費用^{10}Administrative Charge^{10} | 按基本計劃的每層保障額及一般行政費用率計算,每月收取,再加每月4美元 / 32港元 / 32澳門元一般行政費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Charged monthly, determined based on each layer of Basic Sum Insured and the Administrative Charge Rate, plus US$4 / HK$32 / MOP32 per month.The Administrative Charge Rate depends on the gender, issue age, smoking habit, risk class of the Insured and years in effect",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n一般行政費用^{10}Administrative Charge^{10} | 按基本計劃的每層保障額及一般行政費用率計算,每月收取,再加每月4美元 / 32港元 / 32澳門元一般行政費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Charged monthly, determined based on each layer of Basic Sum Insured and the Administrative Charge Rate, plus US$4 / HK$32 / MOP32 per month.The Administrative Charge Rate depends on the gender, issue age, smoking habit, risk class of the Insured and years in effect",
+    "related_evidence_ids": [
+      "p012-b011",
+      "p012-b022"
+    ],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "page-018-intro-c131",
+    "evidence_ids": [
+      "p018-b001",
+      "p018-b002"
+    ],
+    "parent_id": "page-018-intro",
+    "pdf_pages": [
+      18
+    ],
+    "language_hint": "mixed",
+    "text": "保單資料 Policy Information\n投保資料 Basic Information",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n保單資料 Policy Information\n投保資料 Basic Information",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p018-b001-t1-r1-c132",
+    "evidence_ids": [
+      "p018-b001-t1-r1"
+    ],
+    "parent_id": "row-p018-b001-t1-r1",
+    "pdf_pages": [
+      18
+    ],
+    "language_hint": "mixed",
+    "text": "退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 退保費用10Surrender Charge10 | 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 退保費用10Surrender Charge10 | 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p018-b001-t1-r2-c133",
+    "evidence_ids": [
+      "p018-b001-t1-r2"
+    ],
+    "parent_id": "row-p018-b001-t1-r2",
+    "pdf_pages": [
+      18
+    ],
+    "language_hint": "mixed",
+    "text": "退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n退保費用10Surrender Charge10 / 按基本計劃的每層保障額及退保費用率計算。適用於保單日期/每次增加基本保障額的生效日期起計首14年,於下列情況收取退保費用: - 保單失效或退保- 減少基本計劃的保障額退保費用率根據受保人的性別、投保年齡、吸煙習慣、風險級別及已生效的年期而釐定Determined based on each layer of Basic Sum Insured and the Surrender Charge Rate and applicable in the first 14 years from Policy Date / effective date of each increase in Basic Sum Insured upon: - Policy lapse or surrender- Decrease in Basic Sum InsuredSurrender Charge Rate depends on gender, issue age, smoking habit, risk class of the Insured and years in effect 提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p018-b002-t1-r1-c134",
+    "evidence_ids": [
+      "p018-b002-t1-r1"
+    ],
+    "parent_id": "row-p018-b002-t1-r1",
+    "pdf_pages": [
+      18
+    ],
+    "language_hint": "mixed",
+    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) | 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) | 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55)",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p018-b002-t1-r2-c135",
+    "evidence_ids": [
+      "p018-b002-t1-r2"
+    ],
+    "parent_id": "row-p018-b002-t1-r2",
+    "pdf_pages": [
+      18
+    ],
+    "language_hint": "mixed",
+    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 保障年期Benefit Term | 至100歲To Age 100",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 保障年期Benefit Term | 至100歲To Age 100",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "row-p018-b002-t1-r3-c136",
+    "evidence_ids": [
+      "p018-b002-t1-r3"
+    ],
+    "parent_id": "row-p018-b002-t1-r3",
+    "pdf_pages": [
+      18
+    ],
+    "language_hint": "mixed",
+    "text": "投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 繳付保費年期Premium Payment Term | 至100歲To Age 100",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n投保年齡(以上次生日年齡計算)Issue Age (At Last Birthday) / 0-75歲(如選擇特級遞增壽險保障,投保年齡則為0-55歲)Age 0-75 (For Increasing Benefit Plus, Issue Age is 0-55) 繳付保費年期Premium Payment Term | 至100歲To Age 100",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "page-019-intro-c137",
+    "evidence_ids": [
+      "p019-b001"
+    ],
+    "parent_id": "page-019-intro",
+    "pdf_pages": [
+      19
+    ],
+    "language_hint": "zh",
+    "text": "以上為計劃的一般資料，只供參考之用，並非保單的一部份，亦未涵蓋保單的所有條款。有關保障範圍、詳情及條款， 以及不保事項，請參閱保單文件。如有垂詢或欲索取保單文件之範本，歡迎與本公司之顧問、特許分銷商或保險經紀聯絡。其他查詢請致電客戶服務熱線：香港 (852) 2533 5555 / 澳門 (853) 2832 2622。",
+    "retrieval_text": "額外安心保障 Extra Protections for Total Peace of Mind\n以上為計劃的一般資料，只供參考之用，並非保單的一部份，亦未涵蓋保單的所有條款。有關保障範圍、詳情及條款， 以及不保事項，請參閱保單文件。如有垂詢或欲索取保單文件之範本，歡迎與本公司之顧問、特許分銷商或保險經紀聯絡。其他查詢請致電客戶服務熱線：香港 (852) 2533 5555 / 澳門 (853) 2832 2622。",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p020-b001-c138",
+    "evidence_ids": [
+      "p020-b002",
+      "p020-b003",
+      "p020-b004",
+      "p020-b005",
+      "p020-b006",
+      "p020-b007",
+      "p020-b009",
+      "p020-b011",
+      "p020-b012",
+      "p020-b013"
+    ],
+    "parent_id": "section-p020-b001",
+    "pdf_pages": [
+      20
+    ],
+    "language_hint": "mixed",
+    "text": "萬通保險國際有限公司（萬通保險）的主要權益股東*包括擁有174年歷史、美國五大壽險公司**之一的 Massachusetts Mutual Life Insurance Company（美國萬通），以及雲鋒金融控股有限公司等。\n萬通保險與Barings（霸菱）為長久戰略合作夥伴，憑藉獨佔鰲頭的環球投資實力與合作網絡，攜金融科技創新強勁動能，居香港保險業領先地位。\nThe major shareholders* of YF Life Insurance International Limited (YF Life) include Massachusetts Mutual Life Insurance Company (MassMutual), which itself has 174 years of experience and is one of the Five Largest US Life Insurance Companies**, as well as Yunfeng Financial Holdings Limited, among others.\nYF Life is a long-term strategic partner of Barings. We stay at the forefront of Hong Kong’s insurance industry with our superior global investment capabilities, extensive partnership network, and fintech innovation.\nOwn the future.\nFacebook Instagram\nWeChat YouTube\n* 美國萬通及雲鋒金融控股有限公司為間接持有萬通保險國際有限公司的股份。\n** 美國五大壽險公司乃按2025年6月2日《FORTUNE500》公佈的「互惠壽險公司」及「上市股份壽險公司」2024年收入排行榜合併計算。\n* MassMutual and Yunfeng Financial Holdings Limited have indirect shareholdings in YF Life Insurance International Limited.",
+    "retrieval_text": "YFLife 萬通保險\n萬通保險國際有限公司（萬通保險）的主要權益股東*包括擁有174年歷史、美國五大壽險公司**之一的 Massachusetts Mutual Life Insurance Company（美國萬通），以及雲鋒金融控股有限公司等。\n萬通保險與Barings（霸菱）為長久戰略合作夥伴，憑藉獨佔鰲頭的環球投資實力與合作網絡，攜金融科技創新強勁動能，居香港保險業領先地位。\nThe major shareholders* of YF Life Insurance International Limited (YF Life) include Massachusetts Mutual Life Insurance Company (MassMutual), which itself has 174 years of experience and is one of the Five Largest US Life Insurance Companies**, as well as Yunfeng Financial Holdings Limited, among others.\nYF Life is a long-term strategic partner of Barings. We stay at the forefront of Hong Kong’s insurance industry with our superior global investment capabilities, extensive partnership network, and fintech innovation.\nOwn the future.\nFacebook Instagram\nWeChat YouTube\n* 美國萬通及雲鋒金融控股有限公司為間接持有萬通保險國際有限公司的股份。\n** 美國五大壽險公司乃按2025年6月2日《FORTUNE500》公佈的「互惠壽險公司」及「上市股份壽險公司」2024年收入排行榜合併計算。\n* MassMutual and Yunfeng Financial Holdings Limited have indirect shareholdings in YF Life Insurance International Limited.",
+    "related_evidence_ids": [],
+    "review_flags": []
+  },
+  {
+    "chunk_id": "section-p020-b001-c139",
+    "evidence_ids": [
+      "p020-b014",
+      "p020-b015"
+    ],
+    "parent_id": "section-p020-b001",
+    "pdf_pages": [
+      20
+    ],
+    "language_hint": "mixed",
+    "text": "** The “Five Largest US Life Insurance Companies” are ranked according to the results of “Insurance: Life, Health (Mutual)” and “Insurance: Life, Health (Stock)” on total revenues for 2024, and based on the FORTUNE 500 as published on June 2, 2025.\n萬通保險國際有限公司 YF Life Insurance International Ltd. www.yflife.com",
+    "retrieval_text": "YFLife 萬通保險\n** The “Five Largest US Life Insurance Companies” are ranked according to the results of “Insurance: Life, Health (Mutual)” and “Insurance: Life, Health (Stock)” on total revenues for 2024, and based on the FORTUNE 500 as published on June 2, 2025.\n萬通保險國際有限公司 YF Life Insurance International Ltd. www.yflife.com",
+    "related_evidence_ids": [],
+    "review_flags": []
+  }
+]

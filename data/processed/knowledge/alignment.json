@@ -1,0 +1,82 @@
+[
+  {
+    "clause_group_id": "note-01",
+    "evidence_ids": [
+      "p012-b002",
+      "p012-b013"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-02",
+    "evidence_ids": [
+      "p012-b003",
+      "p012-b014"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-03",
+    "evidence_ids": [
+      "p012-b004",
+      "p012-b015"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-04",
+    "evidence_ids": [
+      "p012-b005",
+      "p012-b016"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-05",
+    "evidence_ids": [
+      "p012-b006",
+      "p012-b017"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-06",
+    "evidence_ids": [
+      "p012-b007",
+      "p012-b018"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-07",
+    "evidence_ids": [
+      "p012-b008",
+      "p012-b019"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-08",
+    "evidence_ids": [
+      "p012-b009",
+      "p012-b020"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-09",
+    "evidence_ids": [
+      "p012-b010",
+      "p012-b021"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  },
+  {
+    "clause_group_id": "note-10",
+    "evidence_ids": [
+      "p012-b011",
+      "p012-b022"
+    ],
+    "status": "PAIRED_BY_NOTE_NUMBER_NOT_SEMANTICALLY_VERIFIED"
+  }
+]
