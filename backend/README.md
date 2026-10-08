@@ -1,15 +1,16 @@
 # 后端
 
-Python + FastAPI，原生 Python 组织业务流程。
+Python 3.12 + FastAPI，入口 `app/main.py`。
 
-- app/api/：聊天、文档、评测报告与健康检查接口。
-- app/rag/：PDF 提取、清洗、对齐、分块、embedding 与检索。
-- app/guardrails/：原因分类、处理动作、输入/输出核查。
-- app/services/：模型、会话、问答编排与指标记录。
-- tests/：不依赖真实模型的逻辑测试。
+- `app/rag/`：清洗、分块、显式 embedding 与版本化 Chroma 索引。
+- `app/guardrails/`：原因分类、输入规则、输出引用和冲突检查。
+- `app/services/`：模型、答案编排、会话、追问改写及只读评测。
+- `tests/`：无需真实模型的回归测试。
 
-FastAPI 入口为 app/main.py。requirements.txt 锁定当前验证过的依赖，requirements.in 保留直接依赖范围。
+`/api/chat` 接通 RAG；`/api/conversations` 创建会话，凭证通过请求头传递。
+`/api/evaluations` 只读保存报告，PDF 接口只开放固定文档。
+live 检查进程，ready 检查本地配置、来源和索引，不探测模型。
 
-已有健康检查、资料状态、连接测试和 PDF 白名单接口。网页运行状态与 RAG 就绪分开：/health/live 返回200，/health/ready 当前返回503；/api/chat 尚未接入检索与生成。
-
-从根目录执行 .venv/bin/python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000；或用 scripts/dev.sh。已有16项 unittest 检查，不调用模型。
+requirements.txt 锁定依赖，requirements.in 保留直接依赖。
+从根目录运行 `bash scripts/dev.sh`；首次建库与 Docker 见 [README](../README.md)。
+会话存在单进程内存中，使用一个 worker；重启会清空会话。

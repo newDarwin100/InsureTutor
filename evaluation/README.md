@@ -1,25 +1,21 @@
 # 评测
 
-questions.json 已建立首批 10 个参考案例，保存语言、历史、预期事实、条件、证据组、禁止错误和安全动作。覆盖利率保证、提款、失效风险、三语言、多轮、原文冲突、注入泄密与个人建议。当前只是参考题，未运行真实模型。
+questions.json 保存首批10道参考题，含必要事实、限制、证据组和禁止错误。
+retrieval_pilot.json 保存三语言小样本配置。
+results/ 保存真实固定测试的排名、耗时、usage 和生成结果，普通用户问答不落盘。
 
-results/ 将保存真实运行结果、模型配置、耗时、usage、引用和人工核对结果，供看板读取。只保存评测题，不保存普通用户会话；当前没有真实检索或模型结果。
+免费检查：`scripts/evaluate_retrieval.py` 和 `scripts/check_full_alignment.py`。
+如已有实际排名，使用 `scripts/evaluate_retrieval.py --results path/to/rankings.json`。
 
-## 验证题集
+直接 Recall@5 和关联补齐覆盖率分别报告。检索命中、模型核对通过、人工确认正确是不同结果。
 
-```bash
-.venv/bin/python scripts/evaluate_retrieval.py
-```
+## 已保存结果
 
-检查引用证据 ID 和实际页码，不调用模型，不产生虚构评测分数。
+- pilot-large.json：12块小库、12道三语言检索题。
+- full-large.json / .md：143块全文、12道三语言题和8道参考检索题，2道安全题未执行。
+- single-turn.json、single-turn-retry.json / single-turn.md：最初两题和一次提款重测，保留失败。
+- compound-question.json：复合题。模型核对通过后人工发现漏条件，不能计为人工验收通过。
 
-## 后续评估实际检索结果
-
-检索器输出 JSON 数组，每项包含 case_id 和按排名排列的 ranked_chunk_ids，运行：
-
-```bash
-.venv/bin/python scripts/evaluate_retrieval.py --results path/to/actual-rankings.json
-```
-
-scoring.py 将原始 Recall@5 与补齐脚注后的覆盖率分开；中英可替代证据作为同一组计分。安全短路题无检索分母，显示 null；重复或未知 ID 报错，缺失案例列出。答案和引用语义准确性仍需独立人工核对，不从检索命中推断。
-
-题集包含 development 和 validation；validation 不用于反复调参。后续扩到 20–30 题，并补充越界、无依据、正常问题误拒和更多跨语言案例。
+看板读取这五份 JSON，共38行历史结果，不重新付费测试。缓存保留原始计时，未知数据为空。
+完整20–30题答案验收、真实多轮/安全校准和模型对比待完成。
+付费入口及发送数据说明见 [README](../README.md)；不要覆盖结果美化指标。

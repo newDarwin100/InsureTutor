@@ -13,6 +13,8 @@ RUN pip install --no-cache-dir -r backend/requirements.txt \
     && useradd --uid 10001 --create-home appuser
 COPY --chown=appuser:appuser backend/app/ /app/backend/app/
 COPY --chown=appuser:appuser evaluation/results/ /app/evaluation/results/
+COPY --chown=appuser:appuser evaluation/__init__.py evaluation/full_alignment.py /app/evaluation/
+COPY --chown=appuser:appuser scripts/container_entrypoint.py /app/scripts/container_entrypoint.py
 COPY --chown=appuser:appuser data/reviewed/ /app/data/reviewed/
 COPY --chown=appuser:appuser data/processed/ /app/data/processed/
 COPY --chown=appuser:appuser ["docs/FLEXI-ULife Prime Saver.pdf", "/app/docs/"]
@@ -20,6 +22,6 @@ COPY --from=frontend-build --chown=appuser:appuser /build/dist/ /app/frontend/di
 RUN mkdir -p /app/data/chroma && chown appuser:appuser /app/data/chroma
 USER appuser
 EXPOSE 8000
-HEALTHCHECK --interval=15s --timeout=5s --start-period=15s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/live', timeout=3)"
-CMD ["python", "-m", "uvicorn", "app.main:app", "--app-dir", "backend", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]
+HEALTHCHECK --interval=15s --timeout=5s --start-period=10m --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=3)"
+CMD ["python", "scripts/container_entrypoint.py"]

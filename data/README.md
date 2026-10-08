@@ -12,7 +12,7 @@
 
 ## chroma/
 
-生成的 Chroma 持久化索引，不提交 Git。Docker 后续挂载 volume。
+生成的 Chroma 持久化索引，不提交 Git。Docker 挂载独立 named volume，首次启动初始化，后续复用。
 
 目前已接收用户的 MinerU Markdown 和 JSON；raw/ 的原文件保持不变。
 
@@ -30,10 +30,10 @@
 
 ## reviewed/
 
-`pilot_alignment.json` 保存实际核对的双语条款关系，与按编号自动配对的 alignment.json 区分。当前只覆盖利率、失业保障、周期提款选定的13组条款，全文仍需检查。简体中文不是额外的PDF来源。
+`pilot_alignment.json` 保存历史小样本核对的13组双语关系，与按编号自动配对的 alignment.json 区分。全文核对另见下面的 full_alignment.json。简体中文不是额外的PDF来源。
 
 运行 `.venv/bin/python scripts/check_alignment.py` 检查来源哈希、证据和页码、关键条件及三语言测试问题，并生成同目录的可读核对记录 `pilot_alignment.md`。哈希或关键条件变了，检查会失败，需要重新对照PDF核对。脚本只检查记录有效性，不自动判断双语含义。
 
-小样本块和问题放在 `evaluation/retrieval_pilot.json`；准备好不等于已向量化或通过检索。
+小样本块和问题放在 `evaluation/retrieval_pilot.json`；已运行的检索报告在 evaluation/results/，准备数据本身不代表答案质量通过。
 
 全文提取文本核对见 `reviewed/full_alignment.json` / `.md`。292条证据、143个检索块，每条有对应关系或上下文用途说明；40个discarded块均检查去向。两处原文冲突与图像提取限制仍保留。运行 `.venv/bin/python scripts/check_full_alignment.py` 验证来源和覆盖，不能把它理解为自动语义审校。

@@ -1,191 +1,189 @@
 # InsureTutor
 
-基于保险 PDF 的多语言 AI 导师，计划支持多轮问答、可验证引用、安全控制和评测看板。
+A conversational tutor for the **FLEXI-ULife Prime Saver** brochure. Ask in English, Simplified Chinese or Traditional Chinese, inspect the cited text and open its PDF page.
 
-技术方向：Vue 3 + Vite + TypeScript、Python + FastAPI、本地 ChromaDB。
+Vue 3 + TypeScript · FastAPI + Python · persistent Chroma. API keys stay on the backend.
 
-## 目录
+## Run with Docker
 
-```text
-frontend/src/
-  components/       页面组件
-  api/              后端请求与类型
-backend/
-  app/
-    api/            FastAPI 接口
-    rag/            文档处理与检索
-    guardrails/     安全检查
-    services/       模型、会话、编排和指标
-  tests/            逻辑测试
-data/
-  raw/              PDF 直接提取结果
-  processed/        清洗、对齐、分块
-  chroma/           生成索引
-evaluation/results/ 真实评测报告
-scripts/            提取、索引、评测、启动脚本
-docs/               原始 PDF、任务和执行清单
+Requires Docker with Compose and an OpenAI API key with access to the configured models.
+
+```bash
+git clone https://github.com/newDarwin100/InsureTutor.git
+cd InsureTutor
+cp .env.example .env
+# Edit .env: set OPENAI_API_KEY and models available to your account.
+bash scripts/start.sh
 ```
 
-## 当前状态
+Open **http://127.0.0.1:8000** after readiness is reported.
 
-页面已接通 RAG 问答和会话追问，可以选择简体、繁体或英文回答，回答在一个气泡内展示，引用按实际PDF页码归组、默认折叠；点击编号可展开整理后的原文，并打开对应PDF页。同一页面可接着追问；历史用于明确问题对象，每轮仍重新检索PDF。143块全文 Chroma 索引已建立，能重启复用。
+On first start, the container validates the checked-in data and embeds **143 text chunks** into a named volume. This sends brochure text to OpenAI and incurs embedding usage. Subsequent starts reuse an unchanged index. Changes to sources, model or dimensions produce a new index version; completed batches can resume, and activation happens only after the build completes.
 
-模型选择证据 ID，引用原文、文件名和页码由后端读取；同一模型再单独核对结论的支持关系，失败的草稿不展示。模型核对仍可能误判，不能代替人工验收。英文利率问题真实测试通过；中文提款题两次被拦截，其中一次是模型抄错引用，现已改为后端直接读取原文。修改后只做免费回归，中文真实验收仍待完成。自动检查58项通过，前端4项检查通过。
+After image construction, the script waits up to 10 minutes for local RAG readiness. Dependency downloads during the image build may take longer. A failure prints recent logs and requires an explicit retry.
 
-Docker 配置与启动脚本已写好，但当前开发机器未检测到 Docker，容器构建/运行尚未验证。已接入输入规则和模型分类、引用及依据核对；安全规则仍需真实模型正反例校准。会话隔离和追问流程已通过免费检查，真实多轮质量仍待验收；页面三语言和历史评测看板已接入；三语言真实答案一致性与完整评测仍待验收。
+```bash
+docker compose logs -f app     # Index and server progress
+docker compose down           # Stop; retain the index
+bash scripts/start.sh         # Restart or retry after fixing configuration
+```
 
-开发顺序见 [执行清单](docs/EXECUTION.md)，数据约定见 [数据目录说明](data/README.md)。
+Do not use `docker compose down -v` unless you intend to delete the index and pay to rebuild it. The local development index and Docker volume are separate.
 
-## 本地开发
+**Validation status:** initialization and reuse are covered by offline tests. Docker is not installed on the development machine; an actual image build and fresh-volume run remain unverified.
 
-需要 Python 3.12 和 Node.js 22.12+（或 20.19+），首次准备：
+## Try the demo
+
+- “Is the 4% interest rate guaranteed?”
+- “被裁员后能停缴多久？附加保障也适用吗？”
+- “定期提款有什么条件？” — then “那每年提款呢？”
+
+Language selection changes the interface and subsequent answers. Earlier messages and quotations retain their original language. Click a citation number to reveal its text and PDF link. Page numbers count the cover; direct PDF jumping depends on browser support.
+
+Each page gets a separate session. “Clear conversation” deletes backend history. Sessions expire after 30 idle minutes and disappear on restart; credentials stay in page memory.
+
+The evaluation panel reads saved reports. Opening it does not call a model or record your conversation.
+
+## Architecture
+
+```mermaid
+flowchart TD
+    User --> UI[Vue chat · three languages]
+    UI --> API[FastAPI]
+    API --> Guard[Input guardrail]
+    Guard --> Context[Resolve follow-up if needed]
+    Context --> Embed[Embed the question]
+    Embed --> DB[(Chroma · Top-K 5)]
+    DB --> Evidence[Evidence + linked conditions and footnotes]
+    Evidence --> Draft[LLM answer with evidence IDs]
+    Draft --> Check[Citation validation + model evidence check]
+    Check --> Result[Answer · sources · timings]
+    Result --> UI
+    Result --> PDF[Original PDF page]
+```
+
+Clear misuse requests stop before retrieval; ambiguous follow-ups ask for clarification. Unsupported drafts are withheld. Optional repair allows at most one additional attempt.
+
+History resolves what a follow-up refers to. Every answer retrieves fresh PDF evidence; previous assistant text is not a factual source.
+
+## Design decisions
+
+| Decision | Choice and reason | Trade-off |
+| --- | --- | --- |
+| Frontend | Vue + Vite, one chat page and plain CSS cover the required interactions. | No larger application framework or component library. |
+| Orchestration | Small Python modules with explicit provider calls make context and usage inspectable. | Validation and error handling are implemented locally. |
+| Database | Embedded Chroma persists one small brochure without a separate service. | Larger corpora and concurrent workloads need a measured storage/service comparison. |
+| Parsing | MinerU JSON preserves text, layout and tables; targeted PDF checks resolve gaps. | Some image-only content is unindexed. PyMuPDF/pypdf support inspection; they do not replace reviewed extraction. |
+| Chunking | Sections, table rows and footnote links; 1,200-character cap, 120-character overlap for long passages. | More bookkeeping than fixed windows. Character limits are not token limits. |
+| Languages | Align original English and Traditional Chinese; generate Simplified Chinese answers from those sources. | Translations are never labeled as original PDF quotations. |
+| Citations | The model selects IDs; the server supplies text, filename and page. Display groups sources by page. | Valid IDs alone do not prove semantic support. |
+| Guardrails | Input rules, model scope classification and output evidence checks; conflicts apply to disputed fields. | Rules and model checks can miss errors or reject valid answers. |
+| Memory | Backend memory: 8 turns, 24,000 characters, 30-minute idle expiry, one worker. | Restart clears history; multiple instances need shared storage and access control. |
+| Models | Configurable LLM; saved reports use `gpt-5.6-luna` and `text-embedding-3-large`. | Check account availability. No controlled model comparison is complete. |
+| Deployment | Multi-stage Docker build; FastAPI serves the compiled frontend. | First startup needs embedding access; local readiness cannot prove remote model availability. |
+
+### A retrieval failure that shaped the design
+
+An English unemployment question retrieved the **365-day special grace period** but missed the next page's **Basic Plan only** footnote. Following the reviewed body-to-footnote link recovered the missing restriction.
+
+We keep smaller retrieval chunks and expand known relationships before increasing Top-K or adding a reranker. Direct recall and expanded coverage are scored separately. Expansion cannot help when the relevant body text was never retrieved.
+
+[Execution notes](docs/EXECUTION.md) · [full retrieval report](evaluation/results/full-large.md).
+
+## Configuration and cost
+
+Copy `.env.example` to `.env`; never commit the real key.
+
+| Variable | Purpose |
+| --- | --- |
+| `OPENAI_API_KEY` | Backend-only credential. |
+| `LLM_MODEL` | Generation, evidence check and optional follow-up resolution. |
+| `EMBEDDING_MODEL` | Document/query embeddings; default `text-embedding-3-large`. |
+| `EMBEDDING_DIMENSIONS` | Optional override; changing it requires a new index. |
+| `RAG_TOP_K` | Initial retrieval count; default 5. |
+| `ANSWER_REPAIR_ENABLED` | Default `false`; `true` permits one extra generation/check attempt. |
+
+Ordinary questions use a query embedding, generation and evidence check. Contextual follow-ups may add a resolution call; enabled repair adds usage. Responses show actual timings and provider usage. Unknown report values remain blank.
+
+This brochure includes historical illustrations; answers explain its stated terms rather than claim its rates or fees are current.
+
+## Local development
+
+Requires **Python 3.12** and **Node.js 22.12+** (or 20.19+). From the repository root:
 
 ```bash
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r backend/requirements.txt
-cd frontend
-npm ci
-cd ..
-```
-
-如果已经有 .venv，不必重新创建。配置 .env 后：
-
-```bash
+npm ci --prefix frontend
+cp .env.example .env
+# Edit .env before the next command.
+.venv/bin/python scripts/build_index.py --full
 bash scripts/dev.sh
 ```
 
-访问 http://127.0.0.1:5173，接口文档在 http://127.0.0.1:8000/docs。Ctrl+C 停止两端。脚本只启动已安装的依赖，不自动安装。前端 dev server 代理后端 API。
+Keep an existing `.env`. Indexing calls the embedding API only for missing chunks; the development launcher does not build indexes or install dependencies.
 
-## 小样本向量检索
+Frontend: **http://127.0.0.1:5173**. API docs: **http://127.0.0.1:8000/docs**. Ctrl+C stops both services. Stop Docker before development; both use port 8000.
 
-配置 `.env` 后运行：
+## Checks and evaluation
+
+Offline tests use deterministic or mocked providers, without paid calls:
+
+```bash
+.venv/bin/python -m unittest discover -s backend/tests -v
+.venv/bin/python scripts/check_full_alignment.py
+.venv/bin/python scripts/evaluate_retrieval.py
+npm test --prefix frontend
+npm run build --prefix frontend
+```
+
+With a server running, `.venv/bin/python scripts/check_local.py` checks the built page, assets, health, PDF byte ranges and private-path isolation without calling a model.
+
+| Endpoint | Meaning |
+| --- | --- |
+| `/health/live` | The API process responds. |
+| `/health/ready` | Key configuration, reviewed sources and current index are locally ready; otherwise 503. Docker uses this endpoint. |
+
+Readiness does **not** check API balance, model access or answer quality.
+
+### Saved measurements
+
+| Test set | Direct mean Recall@5 | Coverage after linked evidence expansion |
+| --- | ---: | ---: |
+| 12-chunk pilot, 12 multilingual questions | 95.83% | 100% |
+| 143-chunk full index, 12 multilingual questions | 87.50% | 100% |
+| Full index, 8 reference retrieval questions | 93.75% | 100% |
+
+These small development sets measure retrieval, not overall answer correctness. [Reports](evaluation/results/full-large.json) preserve rankings and usage; cached timings remain the original measurements.
+
+The dashboard includes **38 historical rows**, including failures and two unexecuted safety cases. One answer passed the model check but human review found missing withdrawal conditions. This prompted context expansion; that run is not an independently verified correct answer. See [answer checks](evaluation/results/single-turn.md).
+
+Paid evaluations are separate, explicit commands:
 
 ```bash
 .venv/bin/python scripts/run_retrieval_pilot.py
-```
-
-先检查已核对的数据，再把9个目标块和3个干扰块存入 `data/chroma/pilot/`，运行12道三语言检索题。首次调用 OpenAI embedding API；未改变的小样本索引和问题结果会复用，避免重复付费。保留原始结果可使用 `--output /tmp/pilot-rerun.json` 指定新报告。
-
-本次用 `text-embedding-3-large`、3072维、cosine、Top-K=5：11/12题直接找齐必要证据，按必要条款组计算的平均 Recall@5 为95.83%；沿明确脚注关联补齐后覆盖率100%。漏项是英文失业问题里的“只适用于基本计划”。两项指标分别保存，不能把补齐效果算成直接召回提升。
-
-实际报告：[小样本结果](evaluation/results/pilot-large.json)。这是12块的小库测试，含已知目标；该小库报告不代表全量表现或回答/引用质量；全量检索结果见下节，也未比较 small 模型。
-
-全文提取数据已核对并建立索引，冲突与图像提取限制保留。单独构建/复用索引与查询：
-
-```bash
-.venv/bin/python scripts/build_index.py --full
-.venv/bin/python scripts/search_knowledge.py "Is the 4% interest rate guaranteed?"
-```
-
-模型、维度、PDF、分块及相关证据配置相同就复用索引；变化后按新版本构建，每批写入可断点继续，全部写好才切换。文件保存在 `data/chroma/`，不提交 Git。当前支持 macOS/Linux；页面聊天和 Docker 自动初始化仍待接入。
-
-## Docker（配置已准备，待实机验证）
-
-安装并启动 Docker（含 Compose），准备 .env 后执行：
-
-```bash
-bash scripts/start.sh
-```
-
-等价的构建/启动命令是 `docker compose up --build -d`。访问 http://127.0.0.1:8000；使用者无需本地 Node/Python。前端在镜像构建阶段编译，运行时由 FastAPI 提供。
-
-- 日志：`docker compose logs -f app`
-- 停止：`docker compose down`
-- 索引 volume 保留；本地索引不会自动复制到容器，容器首次启动目前不会自动调用模型或建库。
-- 首次构建需要网络下载依赖。
-
-## 验证
-
-```bash
-.venv/bin/python -m unittest discover -s backend/tests -v
-.venv/bin/python scripts/evaluate_retrieval.py
-```
-
-前端类型检查与构建：在 frontend 运行 `npm run build`。
-构建后启动后端，可运行 `.venv/bin/python scripts/check_local.py` 检查真实 HTTP 页面、资源、PDF 和路径隔离；不调用模型。
-
-- `/health/live`：200，网页进程正常，Docker 使用此项。
-- `/health/ready`：配置、已核对来源及全文索引就绪时200，否则503；不探测远端模型。
-- `/api/demo`：明确的免费连接测试；`/api/chat` 调用单轮问答服务。
-- PDF 只通过固定 document_id 开放，页码链接形如 `/api/documents/flexi-ulife-prime-saver#page=12`。浏览器决定是否支持直接跳页；页面可展开引用原文核验。
-
-## 当前链路
-
-```mermaid
-flowchart LR
-    U[Browser] --> V[Vue]
-    V --> F[FastAPI]
-    F --> R[Chroma retrieval]
-    R --> E[Evidence and linked footnotes]
-    E --> L[LLM draft]
-    L --> C[Validate source IDs]
-    C --> A[LLM evidence check]
-    A --> O[Answer and citations]
-    O --> P[Original PDF page]
-    O --> V
-```
-
-当前链路每轮重新检索，追问会先明确指代。明确安全请求由本地规则在检索前拒绝，其他范围判断合并到回答模型。会话记忆为单进程短期存储，界面支持简体、繁体、英文切换，历史回答与引用原文不自动翻译。
-
-## 配置
-
-真实 key 保存在根目录 .env，不提交 Git，仅后端读取。配置格式参照 .env.example。
-
-## 数据核对
-
-全文提取文本的中英文对应和用途记录见 [核对报告](data/reviewed/full_alignment.md)，当前292条证据、143块。第19页英文免责声明等4块从原MinerU discarded_blocks恢复，原JSON不需重新识别。两处原文冲突和未提取的图表内容仍明确记录。
-
-```bash
-.venv/bin/python scripts/check_full_alignment.py
-```
-
-全量检索脚本为 `.venv/bin/python scripts/run_full_retrieval.py`：先检查来源，再建立完整文本索引，分别报告三语言问题和首批参考题的检索结果。安全题暂不执行，追问只拼接之前的用户问题；不会把这些测试说成安全和会话功能已完成。
-
-## 全量检索基线
-
-143块文本、large模型、Top-K=5。12道三语言题的平均直接Recall@5为87.50%，8道参考检索题为93.75%；脚注关联补齐后的必要证据覆盖率均为100%。两种计分粒度分别保存，不合并，也不代表回答质量。
-
-漏项集中在利率非保证说明和失业保障仅基本计划的脚注。与12块小库相比，全量更容易漏条件，回答上下文已按这些关联补齐证据。
-
-[结果说明](evaluation/results/full-large.md) · [完整排名和用量](evaluation/results/full-large.json)。全量脚本会缓存固定问题的排名，重复运行不会默认重新测量API延时。两个安全案例和真正多轮尚未验证；页面已接通单轮问答。
-
-## 单轮回答检查
-
-先运行 `.venv/bin/python scripts/build_index.py --full` 建立或复用索引，再启动开发服务。健康检查只核对配置、已核对来源和索引版本，不调用模型、不验证远端余额。索引缺失或来源变更时 `/health/ready` 返回503。
-
-免费检查：
-
-```bash
-.venv/bin/python -m unittest discover -s backend/tests -v
-.venv/bin/python scripts/check_local.py
-```
-
-固定问题实测会发送问题及检索原文到 OpenAI，并产生 API 用量；不会自动运行：
-
-```bash
+.venv/bin/python scripts/run_full_retrieval.py
 .venv/bin/python scripts/check_answers.py --run
 ```
 
-报告写入 `evaluation/results/single-turn.json`，包含固定测试的模型诊断。应用只在当前后端进程内保存受限会话，不把用户问答写入文件。每条回答显示检索、模型生成与核对、总耗时，以及分开的 embedding / LLM 用量；当前没有自动重试或流式展示。真实报告及限制见 [单轮实测说明](evaluation/results/single-turn.md)。
+They send fixed questions and/or brochure text to OpenAI and may incur usage. Retrieval scripts reuse index/query caches; check cache fields before treating a run as a fresh latency measurement.
 
-## 安全检查
+## Source data and remaining work
 
-输入先用本地规则检查明显的注入、索要秘密、粘贴API key、个性化购买建议、个案医疗/法律建议、其他产品和明显无关请求；命中时不检索、不调用模型。普通疾病保障、费用和保证性质的问题继续交给证据限定问答。复杂范围判断与回答共用一次模型调用，返回明确原因分类；规则不是完整的攻击识别器。
+Checked-in data contains **292 evidence records and 143 chunks**, source hashes, physical pages, table structure and reviewed bilingual relationships. Raw MinerU exports and local indexes are excluded from Git and the image. Fresh Docker startup uses reviewed processed data.
 
-输出检查引用是否属于本次证据、结论涉及的具体原文冲突是否被静默处理，以及模型核对的结论支持关系。失败不展示草稿。`ANSWER_REPAIR_ENABLED=false` 为默认值；开启后最多修正一次，再次检查仍失败则拒绝展示，全部用量计入原请求。模拟测试只验证控制流程，不代表真实模型安全通过率。
+Two genuine bilingual discrepancies remain: an age boundary and minimum amounts for a sum-insured change. They are not silently reconciled. See the [source review](data/reviewed/full_alignment.md).
 
-## 会话记忆
+Remaining submission gates: an actual Docker build/fresh-volume run and complete answer-level checks across languages, multi-turn cases and safety false positives. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled model comparison has been reported.
 
-页面首次提问时创建会话，凭证仅留在当前页面内存，通过 `X-Conversation-Token` 请求头发送，不放在URL或localStorage中。不同页面各自创建会话；清空会同时删除后端历史。30分钟未使用过期，最多8轮/24,000字符，服务重启或开发reload后失效；失效时清空重开即可。
+## Repository guide
 
-追问使用最近4轮明确对象，再按独立问题重新检索。明确完整问题跳过改写调用，指代不明则澄清。历史中的助手说法不作为保险证据，失败或拒绝的问答不进入记忆。改写的真实耗时和用量计入该请求。
-
-当前只支持一个后端worker，最多100个活动会话；同一会话的重叠请求返回409。未来部署多实例需要共享存储和身份控制。多轮流程已用模拟模型检查，未报告真实追问成功率。
-
-## 页面语言与评测看板
-
-输入区的语言选择同时切换页面与后续回答语言，错误提示也随之切换。已有回答和PDF原文保持其原有语言，避免把翻译当作原始证据。
-
-页面下方展开“评测看板”：GET /api/evaluations只读取固定的已保存报告，不调用模型，不读取用户会话。展示12块小库、143块全文的三语言及参考题检索指标，并逐题列出检索/模型/总耗时、命中块数、embedding和LLM用量、失败结果、缓存及报告来源。未知或未测值显示“—”，未执行的安全题仍保留未执行状态。
-
-这些是历史版本的运行结果，不代表当前版本整体答案正确率。复合问题曾通过模型核对却被人工发现遗漏条件，因此展示为“生成通过”，不称为“答案正确”。目前没有完整20–30题答案验收、模型对比或压力测试。Docker会复制这些固定报告，但容器本身仍未完成运行验收。
+| Path | Contents |
+| --- | --- |
+| `frontend/src/` | Chat, translations, citations and evaluation panel. |
+| `backend/app/` | API, retrieval, guardrails, model calls and sessions. |
+| `backend/tests/` | Offline regression tests. |
+| `data/processed/`, `data/reviewed/` | Knowledge and source review. |
+| `evaluation/` | Reference questions, scoring and saved reports. |
+| `scripts/` | Preparation, indexing, checks and launchers. |
+| `docs/` | Supplied PDF, task and Chinese [execution log](docs/EXECUTION.md). |

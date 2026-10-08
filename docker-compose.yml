@@ -7,7 +7,8 @@ services:
       - .env
     volumes:
       - chroma-data:/app/data/chroma
-    restart: unless-stopped
+    # A failed index build needs an explicit retry, rather than repeated paid calls.
+    restart: "no"
 
 volumes:
   chroma-data:

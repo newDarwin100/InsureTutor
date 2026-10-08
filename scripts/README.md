@@ -1,31 +1,23 @@
-# 脚本
+# 脚本入口
 
-已有 smoke_test.py：读取本地 .env，测试模型连通性。
+从项目根目录运行。完整启动说明见 [README](../README.md)。
 
-已有 dev.sh 同时启动前后端，start.sh 构建并启动 Docker 应用，check_local.py 检查正在运行的最小链路。当前机器未安装 Docker，start.sh 尚未做容器验收。向量索引与真实模型评测入口尚未实现；evaluate_retrieval.py 可验证参考题或给实际排名计分，默认不调用模型。
+| 脚本 | 用途 | 是否调用模型 |
+| --- | --- | --- |
+| `start.sh` | Docker 构建、初始化/复用索引、等待 RAG 就绪 | 索引缺失或版本变化时 embedding |
+| `container_entrypoint.py` | 容器来源核对、索引初始化、启动 FastAPI | 同上 |
+| `dev.sh` | 启动已安装的本地前后端；检查版本和端口 | 否 |
+| `build_index.py --full` | 验证全文核对记录，建库或复用 | 只向量化缺失块 |
+| `search_knowledge.py "问题"` | 查询当前索引 | 查询 embedding |
+| `run_retrieval_pilot.py` / `run_full_retrieval.py` | 小库 / 全文检索评测 | 缺失索引或查询缓存时调用 |
+| `check_answers.py --run` | 固定题真实生成与核对 | 是 |
+| `smoke_test.py` | API 连通性测试 | 是 |
+| `check_local.py` | 页面、健康、PDF Range、路径隔离 | 否 |
+| `check_full_alignment.py` / `check_alignment.py` | 全文 / 小样本来源与对应检查 | 否 |
+| `evaluate_retrieval.py` | 验证参考题，或给实际排名计分 | 否 |
+| `normalize_mineru.py` | 原始 JSON 整理与已核对修复 | 否 |
+| `prepare_knowledge.py` | 规则清洗、表格拆行、关联和分块 | 否 |
+| `extract_pdf.py` | pypdf 提取基线，需另装 pypdf | 否 |
 
-## 已有 PDF 处理入口
-
-- extract_pdf.py：pypdf 逐页提取基线，需要 pypdf；不做清洗。
-- normalize_mineru.py：读取用户导出的 MinerU JSON，用 Python 标准库整理页码、文本块、表格与待核对标记。
-
-运行 MinerU 结构整理：
-
-```bash
-.venv/bin/python scripts/normalize_mineru.py
-```
-
-默认输出 data/processed/mineru/pages.json、manifest.json 和 review.md。它们是未完成清洗的中间数据，不是已验收知识库；保留原始 JSON 不动。
-
-## 规则清洗和分块
-
-```bash
-.venv/bin/python scripts/prepare_knowledge.py
-.venv/bin/python -m unittest discover -s backend/tests -v
-```
-
-实现位于 backend/app/rag/preprocess.py，仅用 Python 标准库，不调用模型。
-输出 data/processed/knowledge/ 下的 evidence.json、parents.json、chunks.json、alignment.json、changes.json、omitted_blocks.json、manifest.json 和 review.md。
-
-人工核对的修复与明确关联配置在 data/processed/mineru/corrections.json，绑定输入哈希；原数据变化时必须重新核对。原始提取仍保留，不能把清洗文本误称为未经处理的引用原文。
-默认分块上限 1200 字符，超长段落 overlap 120 字符；这不是 token 计数。按标题归组并合并短段落，表格按行保留类别与表头，编号脚注关联正文。简繁转换和全文双语语义核对尚未实现，尚未评测召回。
+重新处理原始数据需要本机的 MinerU JSON；普通启动不需要 raw 数据。
+缓存计时是历史测量，不是新的 API 测速。不要用模拟数据替换真实报告。
