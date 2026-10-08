@@ -84,6 +84,32 @@
 
 **产物/验收：** data/processed/clauses.json、alignment.json，记录工具版本和文档哈希；关键数字脚注完整，中英文逐条对应，无法对应有记录。若用离线 MinerU 结果，版本化保存并写再生成说明，Docker 不依赖在线解析服务。
 
+### 这次漏项怎么补，以及以后怎么查
+
+第19页英文免责声明其实已经被MinerU提取出来，只是放在 `discarded_blocks`，我们的清洗脚本没把它纳入知识库。问题出在筛选规则，原JSON不需要重新识别。
+
+处理顺序：
+
+1. **先查JSON。** 中英文一边缺失时，先查本页的 `para_blocks`、`preproc_blocks` 和 `discarded_blocks`。以JSON为主，只有找不到内容、数字冲突或表格关系不清楚时再回PDF核对。
+2. **检查被丢弃块。** `discarded` 是解析器对版面的判断，不代表内容没有用。免责声明、适用条件、产品类别和客服资料要保留；页码、装饰和宣传内容记录用途，不直接混进条款。
+3. **明确恢复哪些块。** 在 `data/processed/mineru/corrections.json` 的 `retained_discarded_blocks` 中列出块ID和原因，再重新生成知识数据。原JSON不改，恢复后仍保留原文、页码、坐标及JSON指针。
+4. **检查表格上下文。** 首行如果是实际条款，就不能当成后续行的表头。本次第18页用 `table_first_row_is_content` 修正，避免提款行继承退保说明、保障年期行继承投保年龄。
+5. **补上条件关联。** 正文和摘要关联对应脚注；末期病症还要关联不保事项。中英文金额、年龄边界等冲突分别保留并标记，不能为了对齐而改成一致。
+6. **验证后再建向量。** 运行下面的检查，确认恢复的英文能进入分块、原文可追溯、后续表格行没有错误前缀。文本或来源变化后，旧核对记录和索引需要重新检查。
+
+```bash
+.venv/bin/python scripts/prepare_knowledge.py
+.venv/bin/python scripts/check_alignment.py
+.venv/bin/python scripts/check_full_alignment.py
+.venv/bin/python -m unittest discover -s backend/tests -v
+```
+
+重新清洗会改变证据文件哈希，两个alignment检查会先拒绝旧核对记录。需要对照改动重新核对后再更新哈希，不能只改哈希让检查通过。
+
+本次已检查40个被丢弃块，恢复4块：封面产品类别、第3页退休标签、第19页英文免责声明、第20页客服地址。修复后为292条证据、143个检索块；数据修复提交为 `66711ce`，已push。
+
+对比原JSON的 `preproc_blocks` 文字/HTML和整理后的正文及discarded内容，忽略空白后没有发现漏掉的span，结果在 `data/reviewed/preproc_span_audit.json`。这只检查已提取的文字，图表中尚未识别的内容仍单独记录，不据此宣称整个PDF完全无遗漏。
+
 ## 2. 根据清洗并核对后的条款，写 10 道代表性题目
 
 - [ ] 基于第 1 步已清洗并核对的条款制定问题；参考事实仍回原 PDF 核验。
