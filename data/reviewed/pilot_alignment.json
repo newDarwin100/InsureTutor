@@ -1,0 +1,462 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-08",
+  "scope": "利率、失业保障、定期提款的指定正文及条件；不是全文核对",
+  "source_hashes": {
+    "pdf": "2043de40845267fdb1f657280438f3ded04edda6692791960415116a5668a475",
+    "evidence": "fcd78789c96175a7437c83e9abbfe8e771d487cc67fb7567f1edbc43e6bb2eb4"
+  },
+  "languages": {
+    "source": [
+      "zh-Hant",
+      "en"
+    ],
+    "query_and_answer": [
+      "zh-Hans",
+      "zh-Hant",
+      "en"
+    ],
+    "simplified_chinese_source": false,
+    "note": "简体中文只用于问题和回答，翻译不当作PDF原文。"
+  },
+  "groups": [
+    {
+      "clause_group_id": "premium-deductions",
+      "topic": "interest",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b002"
+        ],
+        "en": [
+          "p008-b003"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "扣除任何適用的費用"
+        ],
+        "en": [
+          "deduction of any applicable charges"
+        ]
+      },
+      "checked_facts": [
+        "保费先扣除适用费用，再计入账户价值。"
+      ],
+      "review_note": "",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "account-value-floor",
+      "topic": "interest",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b002"
+        ],
+        "en": [
+          "p008-b004"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "15年",
+          "2.5%",
+          "賬戶價值"
+        ],
+        "en": [
+          "15 years",
+          "2.5%",
+          "Account Value"
+        ]
+      },
+      "checked_facts": [
+        "保单生效满15年或以上。",
+        "保证比较对象是累计账户价值，不是每年保费回报率。",
+        "按假设每年2.5%派息累积的账户价值作为最低比较基础。"
+      ],
+      "review_note": "中文一段对应英文两段：费用和保证机制分别关联，不按段落数量硬配对。",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "assumed-interest-rates",
+      "topic": "interest",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b005",
+          "p008-b007",
+          "p008-b008",
+          "p008-b009"
+        ],
+        "en": [
+          "p008-b005",
+          "p008-b007",
+          "p008-b008",
+          "p008-b009"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "現時假設息率",
+          "4%",
+          "0.25%"
+        ],
+        "en": [
+          "Current assumed rate",
+          "4%",
+          "0.25%"
+        ]
+      },
+      "checked_facts": [
+        "图示基本派息率4%，额外利息率0.25%，均为假设年利率。"
+      ],
+      "review_note": "图示是同一组双语标签和共享数字，不复制成两份来源。",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "assumed-rate-disclaimer",
+      "topic": "interest",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b011"
+        ],
+        "en": [
+          "p008-b014"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "2022年1月",
+          "並非保證",
+          "更改"
+        ],
+        "en": [
+          "January 2022",
+          "not guaranteed",
+          "subject to change"
+        ]
+      },
+      "checked_facts": [
+        "数值是册子2022年1月刊发时的假设，并非保证，之后可能变化。",
+        "不得作为今天的报价。"
+      ],
+      "review_note": "",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "additional-interest-first-credit",
+      "topic": "interest",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b012"
+        ],
+        "en": [
+          "p008-b015"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "第1年",
+          "第20年"
+        ],
+        "en": [
+          "year 1 through 20",
+          "end of the 20th"
+        ]
+      },
+      "checked_facts": [
+        "额外利息首笔按第1至20年计算，在第20年年终计入账户价值。"
+      ],
+      "review_note": "",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "additional-interest-later-credit",
+      "topic": "interest",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p008-b013"
+        ],
+        "en": [
+          "p008-b016"
+        ]
+      },
+      "pdf_pages": [
+        8
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "每5年",
+          "第1年",
+          "第5年"
+        ],
+        "en": [
+          "every 5 years",
+          "year 1 through 5"
+        ]
+      },
+      "checked_facts": [
+        "此后每5年派发，按各5年期间计算，在该期间末计入。"
+      ],
+      "review_note": "",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "unemployment-special-grace",
+      "topic": "unemployment",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p011-b003"
+        ],
+        "en": [
+          "p011-b004"
+        ]
+      },
+      "pdf_pages": [
+        11
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "投保人",
+          "裁員或遣散",
+          "365日"
+        ],
+        "en": [
+          "Policy Owner",
+          "made redundant",
+          "365 days"
+        ]
+      },
+      "checked_facts": [
+        "适用对象是投保人被裁员或遣散，特惠宽限期最长365日。",
+        "范围须结合脚注8：只适用于基本计划。"
+      ],
+      "review_note": "",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "unemployment-basic-only",
+      "topic": "unemployment",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b009"
+        ],
+        "en": [
+          "p012-b020"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "只適用於基本計劃"
+        ],
+        "en": [
+          "only applicable to the Basic Plan"
+        ]
+      },
+      "checked_facts": [
+        "失业保障只适用于基本计划，不能扩展到所有附加保障。"
+      ],
+      "review_note": "",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "periodic-withdrawal-option",
+      "topic": "withdrawal",
+      "status": "WORDING_DIFFERENCE",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p010-b005"
+        ],
+        "en": [
+          "p010-b006"
+        ]
+      },
+      "pdf_pages": [
+        10
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "足夠的現金價值",
+          "每月 / 每年"
+        ],
+        "en": [
+          "accumulated a Cash Value",
+          "monthly / annually"
+        ]
+      },
+      "checked_facts": [
+        "可设置按月或按年定期提款；具体资格和最低金额见脚注6。",
+        "正文也提及部分现金提款，费用见脚注7，不能与定期提款费用混同。"
+      ],
+      "review_note": "中文明确写足够的现金价值，英文未出现 sufficient。保留各自原文；不能声称逐字等价，也不能据英文推断任意金额均可提款。",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "periodic-withdrawal-conditions",
+      "topic": "withdrawal",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b007"
+        ],
+        "en": [
+          "p012-b018"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "10年",
+          "500美元/4,000港元/4,000澳門元",
+          "最短一年",
+          "6,000美元/48,000 港元/48,000澳門元",
+          "最短三年",
+          "豁免",
+          "手續費"
+        ],
+        "en": [
+          "10 years",
+          "US$500/HK$4,000/MOP4,000",
+          "one year",
+          "US$6,000/HK$48,000/ MOP48,000",
+          "three years",
+          "waived",
+          "nominal fee"
+        ]
+      },
+      "checked_facts": [
+        "保单生效至少10年。",
+        "每月最低USD500/HKD4,000/MOP4,000，最短一年。",
+        "每年最低USD6,000/HKD48,000/MOP48,000，最短三年。",
+        "定期提款费用豁免；确认后更改安排仍收手续费。"
+      ],
+      "review_note": "英文HK$4,000已在之前按PDF视觉核对修复；原始提取仍保留。",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "ordinary-withdrawal-fee",
+      "topic": "withdrawal",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b008"
+        ],
+        "en": [
+          "p012-b019"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "25美元/200港元/200澳門元"
+        ],
+        "en": [
+          "US$25/HK$ 200/MOP200"
+        ]
+      },
+      "checked_facts": [
+        "册子所列每次提款费USD25/HKD200/MOP200；定期提款豁免见脚注6。",
+        "费用不是当前报价；收费非保证见脚注10。"
+      ],
+      "review_note": "",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "charges-can-cause-lapse",
+      "topic": "withdrawal",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p010-b013"
+        ],
+        "en": [
+          "p010-b014"
+        ]
+      },
+      "pdf_pages": [
+        10
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "每月費用仍會被扣除",
+          "沒有任何價值"
+        ],
+        "en": [
+          "monthly charges are still deductible",
+          "lapse with zero value"
+        ]
+      },
+      "checked_facts": [
+        "提款、减保费或停缴会影响现金价值，每月费用仍扣除。",
+        "现金价值不足付费用存在失效且零价值风险，不能解释成永久保障。"
+      ],
+      "review_note": "这里只核对本页警示；若回答具体宽限期，还需检索第14页。英文提取有 afect/suficient 拼写漏字，不改保险含义。",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    },
+    {
+      "clause_group_id": "fees-can-change",
+      "topic": "withdrawal",
+      "status": "MATCHED",
+      "source_evidence_ids": {
+        "zh-Hant": [
+          "p012-b011"
+        ],
+        "en": [
+          "p012-b022"
+        ]
+      },
+      "pdf_pages": [
+        12
+      ],
+      "source_text_checks": {
+        "zh-Hant": [
+          "並非保證",
+          "提前一個月"
+        ],
+        "en": [
+          "not guaranteed",
+          "one-month prior written notice"
+        ]
+      },
+      "checked_facts": [
+        "收费标准非保证，公司可在提前一个月书面通知后变更。"
+      ],
+      "review_note": "",
+      "review_method": "PDF page image compared against extracted text; bilingual meaning checked by development assistant, not external insurance expert"
+    }
+  ],
+  "limitations": [
+    "仅核对列出的正文和脚注，全文其他条款仍未核对。",
+    "图示历史表格与全篇产品摘要尚未逐项对齐。",
+    "原文第17页金额冲突继续保留，不以本次核对消除。",
+    "不代表专业保险审校或模型回答已通过测试。"
+  ]
+}

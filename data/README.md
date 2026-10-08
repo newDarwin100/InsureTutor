@@ -27,3 +27,11 @@
 - processed/knowledge/samples.md：三个实际样例供人工查看。
 
 向量索引仍为空。raw 文件默认忽略；重建需保留用户的原始 MinerU 导出，后续交付准备经过核对的结构化材料。
+
+## reviewed/
+
+`pilot_alignment.json` 保存实际核对的双语条款关系，与按编号自动配对的 alignment.json 区分。当前只覆盖利率、失业保障、周期提款选定的13组条款，全文仍需检查。简体中文不是额外的PDF来源。
+
+运行 `.venv/bin/python scripts/check_alignment.py` 检查来源哈希、证据和页码、关键条件及三语言测试问题，并生成同目录的可读核对记录 `pilot_alignment.md`。哈希或关键条件变了，检查会失败，需要重新对照PDF核对。脚本只检查记录有效性，不自动判断双语含义。
+
+小样本块和问题放在 `evaluation/retrieval_pilot.json`；准备好不等于已向量化或通过检索。

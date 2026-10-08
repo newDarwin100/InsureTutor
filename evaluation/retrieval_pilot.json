@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "stage": "PREPARED_NOT_EMBEDDED",
+  "alignment_file": "data/reviewed/pilot_alignment.json",
+  "target_chunk_ids": [
+    "page-008-intro-c037",
+    "page-008-rate-notes-c038",
+    "section-p010-b004-c048",
+    "section-p010-b012-c050",
+    "section-p011-b001-c051",
+    "note-06-c061",
+    "note-07-c062",
+    "note-08-c063",
+    "note-10-c065"
+  ],
+  "distractor_chunk_ids": [
+    "section-p010-b001-c047",
+    "section-p011-b005-c052",
+    "section-p011-b013-c055"
+  ],
+  "distractor_note": "干扰块保留已有提取原文，本次未审核其双语语义，不作为参考答案。",
+  "cases": [
+    {
+      "case_id": "rate-guarantee-zh-Hans",
+      "topic": "interest",
+      "language": "zh-Hans",
+      "question": "材料里的4%基本派息率是保证的吗？",
+      "required_clause_group_ids": [
+        "assumed-interest-rates",
+        "assumed-rate-disclaimer"
+      ]
+    },
+    {
+      "case_id": "rate-guarantee-zh-Hant",
+      "topic": "interest",
+      "language": "zh-Hant",
+      "question": "材料裡的4%基本派息率是保證的嗎？",
+      "required_clause_group_ids": [
+        "assumed-interest-rates",
+        "assumed-rate-disclaimer"
+      ]
+    },
+    {
+      "case_id": "rate-guarantee-en",
+      "topic": "interest",
+      "language": "en",
+      "question": "Is the illustrated 4% base crediting interest rate guaranteed?",
+      "required_clause_group_ids": [
+        "assumed-interest-rates",
+        "assumed-rate-disclaimer"
+      ]
+    },
+    {
+      "case_id": "account-floor-zh-Hans",
+      "topic": "interest",
+      "language": "zh-Hans",
+      "question": "2.5%保证是什么意思，是每年保费的回报吗？",
+      "required_clause_group_ids": [
+        "account-value-floor",
+        "premium-deductions"
+      ]
+    },
+    {
+      "case_id": "account-floor-zh-Hant",
+      "topic": "interest",
+      "language": "zh-Hant",
+      "question": "2.5%保證是甚麼意思，是每年保費的回報嗎？",
+      "required_clause_group_ids": [
+        "account-value-floor",
+        "premium-deductions"
+      ]
+    },
+    {
+      "case_id": "account-floor-en",
+      "topic": "interest",
+      "language": "en",
+      "question": "What does the 2.5% guarantee mean? Is it an annual return on premiums?",
+      "required_clause_group_ids": [
+        "account-value-floor",
+        "premium-deductions"
+      ]
+    },
+    {
+      "case_id": "unemployment-zh-Hans",
+      "topic": "unemployment",
+      "language": "zh-Hans",
+      "question": "被裁员后能停缴多久？附加保障也适用吗？",
+      "required_clause_group_ids": [
+        "unemployment-special-grace",
+        "unemployment-basic-only"
+      ]
+    },
+    {
+      "case_id": "unemployment-zh-Hant",
+      "topic": "unemployment",
+      "language": "zh-Hant",
+      "question": "被裁員後能停繳多久？附加保障也適用嗎？",
+      "required_clause_group_ids": [
+        "unemployment-special-grace",
+        "unemployment-basic-only"
+      ]
+    },
+    {
+      "case_id": "unemployment-en",
+      "topic": "unemployment",
+      "language": "en",
+      "question": "If the policy owner is made redundant, how long can payments be suspended? Are riders included?",
+      "required_clause_group_ids": [
+        "unemployment-special-grace",
+        "unemployment-basic-only"
+      ]
+    },
+    {
+      "case_id": "withdrawal-zh-Hans",
+      "topic": "withdrawal",
+      "language": "zh-Hans",
+      "question": "定期提款需要保单生效几年？按月和按年的最低金额及最短期限是多少？",
+      "required_clause_group_ids": [
+        "periodic-withdrawal-conditions"
+      ]
+    },
+    {
+      "case_id": "withdrawal-zh-Hant",
+      "topic": "withdrawal",
+      "language": "zh-Hant",
+      "question": "定期提款需要保單生效幾年？按月和按年的最低金額及最短期限是多少？",
+      "required_clause_group_ids": [
+        "periodic-withdrawal-conditions"
+      ]
+    },
+    {
+      "case_id": "withdrawal-en",
+      "topic": "withdrawal",
+      "language": "en",
+      "question": "When can periodic withdrawals begin? What are the monthly and annual minimum amounts and periods?",
+      "required_clause_group_ids": [
+        "periodic-withdrawal-conditions"
+      ]
+    }
+  ],
+  "limitations": "小样本包含已知目标，召回结果仅用于排查链路；不能代表139块全量表现。"
+}
