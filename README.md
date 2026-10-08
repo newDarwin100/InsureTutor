@@ -28,9 +28,9 @@ docs/               原始 PDF、任务和执行清单
 
 ## 当前状态
 
-Vue + FastAPI 最小应用已可运行，页面支持连接测试、资料状态和指定页码的 PDF 链接。已完成规则清洗分块、10个参考测试案例及检索计分工具，16项自动检查通过。当前不会回答保险问题，也不调用模型或检索。
+Vue + FastAPI 最小应用已可运行，页面支持连接测试、资料状态和指定页码的 PDF 链接。已完成规则清洗分块、10个参考测试案例及检索计分工具，已加入 Chroma 持久化索引和命令行检索，自动检查共26项。页面仍是连接测试，尚未接入保险回答。
 
-Docker 配置与启动脚本已写好，但当前开发机器未检测到 Docker，容器构建/运行尚未验证。向量检索、生成回答、多轮、完整三语言 UI、Guardrails 和看板仍待接入。
+Docker 配置与启动脚本已写好，但当前开发机器未检测到 Docker，容器构建/运行尚未验证。12块小样本已通过真实 API 检索测试，全量索引未建立；生成回答、多轮、完整三语言 UI、Guardrails 和看板仍待接入。
 
 开发顺序见 [执行清单](docs/EXECUTION.md)，数据约定见 [数据目录说明](data/README.md)。
 
@@ -54,6 +54,29 @@ bash scripts/dev.sh
 
 访问 http://127.0.0.1:5173，接口文档在 http://127.0.0.1:8000/docs。Ctrl+C 停止两端。脚本只启动已安装的依赖，不自动安装。前端 dev server 代理后端 API。
 
+## 小样本向量检索
+
+配置 `.env` 后运行：
+
+```bash
+.venv/bin/python scripts/run_retrieval_pilot.py
+```
+
+先检查已核对的数据，再把9个目标块和3个干扰块存入 `data/chroma/pilot/`，运行12道三语言检索题。首次调用 OpenAI embedding API；未改变的小样本索引和问题结果会复用，避免重复付费。保留原始结果可使用 `--output /tmp/pilot-rerun.json` 指定新报告。
+
+本次用 `text-embedding-3-large`、3072维、cosine、Top-K=5：11/12题直接找齐必要证据，按必要条款组计算的平均 Recall@5 为95.83%；沿明确脚注关联补齐后覆盖率100%。漏项是英文失业问题里的“只适用于基本计划”。两项指标分别保存，不能把补齐效果算成直接召回提升。
+
+实际报告：[小样本结果](evaluation/results/pilot-large.json)。这是12块的小库测试，含已知目标；尚未验证139块全量、回答正确性或引用支持关系，也未比较 small 模型。
+
+通用全量构建脚本已经准备，但本次不执行。等全文数据检查和小样本结果讨论后，再明确运行：
+
+```bash
+.venv/bin/python scripts/build_index.py --full
+.venv/bin/python scripts/search_knowledge.py "Is the 4% interest rate guaranteed?"
+```
+
+模型、维度、PDF、分块及相关证据配置相同就复用索引；变化后按新版本构建，每批写入可断点继续，全部写好才切换。文件保存在 `data/chroma/`，不提交 Git。当前支持 macOS/Linux；页面聊天和 Docker 自动初始化仍待接入。
+
 ## Docker（配置已准备，待实机验证）
 
 安装并启动 Docker（含 Compose），准备 .env 后执行：
@@ -66,7 +89,7 @@ bash scripts/start.sh
 
 - 日志：`docker compose logs -f app`
 - 停止：`docker compose down`
-- 索引 volume 保留；当前索引尚未构建，不会首次启动自动调用模型。
+- 索引 volume 保留；只构建了本地小样本，容器首次启动目前不会自动调用模型。
 - 首次构建需要网络下载依赖。
 
 ## 验证
