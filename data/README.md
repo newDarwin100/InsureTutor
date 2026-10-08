@@ -26,7 +26,7 @@
 - processed/knowledge/changes.json 与 review.md：修复记录、原文冲突及局限。
 - processed/knowledge/samples.md：三个实际样例供人工查看。
 
-已建立12块小样本索引（data/chroma/pilot/），139块全量尚未建立。raw 文件默认忽略；重建需保留用户的原始 MinerU 导出，后续交付准备经过核对的结构化材料。
+已建立12块小样本索引（data/chroma/pilot/），143块全量文本索引已建立，并在独立进程验证复用。raw 文件默认忽略；重建需保留用户的原始 MinerU 导出，后续交付准备经过核对的结构化材料。
 
 ## reviewed/
 

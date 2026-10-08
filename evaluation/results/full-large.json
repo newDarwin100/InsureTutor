@@ -1,0 +1,1034 @@
+{
+  "stage": "FULL_CORPUS_RETRIEVAL_ONLY",
+  "run_at_utc": "2026-10-08T12:25:53.920611+00:00",
+  "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+  "index_spec": {
+    "schema_version": 1,
+    "model": "text-embedding-3-large",
+    "dimensions": 3072,
+    "distance": "cosine",
+    "chunks_sha256": "9b39ff7f222f1f38e8005b10151359102cd7f6e294f7ac8ea83b82957835acbb",
+    "knowledge_hashes": {
+      "manifest.json": "ed2f08e8a4e10210de3137dff3f8b2a342e2ee5c6a449338c208b55c4997a276",
+      "evidence.json": "12e64ae2cbaff33b92ef4e796220706094d7eb47cadbf2fbe52dcb5392912852",
+      "parents.json": "bfdcd4dd7e07dce458d245bad421fc69cd9d2498f8e78ad26d8e1050449d03cd"
+    },
+    "pdf_sha256": "2043de40845267fdb1f657280438f3ded04edda6692791960415116a5668a475",
+    "chunk_count": 143
+  },
+  "review_validation": {
+    "evidence_count": 292,
+    "group_count": 185,
+    "status_counts": {
+      "MATCHED": 87,
+      "WORDING_DIFFERENCE": 4,
+      "CONFLICT": 2,
+      "SHARED_BILINGUAL_SOURCE": 82,
+      "CONTEXT_ONLY": 10
+    },
+    "discarded_blocks_audited": 40,
+    "extracted_evidence_coverage": 1.0,
+    "all_pdf_visual_content_indexed": false
+  },
+  "evaluation_hashes": {
+    "pilot": "db9074394cb2a77035c3a6efa4704ed80e23a1af3da894f5411d424e460e44eb",
+    "gold": "4924e319c8e3f41397010fd92887175edf3c444ce1f21c9bb9b94f0eb664eac7"
+  },
+  "build": {
+    "version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+    "reused": false,
+    "embedded_chunks": 143,
+    "input_tokens": 18309
+  },
+  "build_ms": 19778.24,
+  "new_query_input_tokens": 521,
+  "pilot_on_full_corpus": {
+    "case_count": 12,
+    "mean_recall_at_5": 0.875,
+    "mean_coverage_after_link_expansion": 1.0,
+    "cases": [
+      {
+        "case_id": "rate-guarantee-zh-Hans",
+        "topic": "interest",
+        "language": "zh-Hans",
+        "question": "材料里的4%基本派息率是保证的吗？",
+        "required_clause_group_ids": [
+          "assumed-interest-rates",
+          "assumed-rate-disclaimer"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "section-p013-b002-c066",
+          "section-p005-b013-c009",
+          "page-008-intro-c037",
+          "row-p008-b001-t1-r13-c036",
+          "row-p008-b001-t1-r9-c032"
+        ],
+        "distances": [
+          0.48315346240997314,
+          0.5229158997535706,
+          0.523662805557251,
+          0.5281196236610413,
+          0.531150221824646
+        ],
+        "input_tokens": 20,
+        "query_embedding_ms": 803.32,
+        "vector_search_ms": 6.91,
+        "retrieval_ms": 810.23,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "assumed-interest-rates"
+        ],
+        "expanded_hit_groups": [
+          "assumed-interest-rates",
+          "assumed-rate-disclaimer"
+        ],
+        "recall_at_5": 0.5,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "rate-guarantee-zh-Hant",
+        "topic": "interest",
+        "language": "zh-Hant",
+        "question": "材料裡的4%基本派息率是保證的嗎？",
+        "required_clause_group_ids": [
+          "assumed-interest-rates",
+          "assumed-rate-disclaimer"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "section-p013-b002-c066",
+          "section-p005-b013-c009",
+          "page-008-intro-c037",
+          "row-p008-b001-t1-r13-c036",
+          "row-p008-b001-t1-r3-c026"
+        ],
+        "distances": [
+          0.4584386348724365,
+          0.49595850706100464,
+          0.5009351968765259,
+          0.5192779898643494,
+          0.5207913517951965
+        ],
+        "input_tokens": 23,
+        "query_embedding_ms": 1564.29,
+        "vector_search_ms": 1.29,
+        "retrieval_ms": 1565.58,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "assumed-interest-rates"
+        ],
+        "expanded_hit_groups": [
+          "assumed-interest-rates",
+          "assumed-rate-disclaimer"
+        ],
+        "recall_at_5": 0.5,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "rate-guarantee-en",
+        "topic": "interest",
+        "language": "en",
+        "question": "Is the illustrated 4% base crediting interest rate guaranteed?",
+        "required_clause_group_ids": [
+          "assumed-interest-rates",
+          "assumed-rate-disclaimer"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "section-p013-b023-c072",
+          "section-p013-b023-c071",
+          "page-008-rate-notes-c038",
+          "page-008-intro-c037",
+          "section-p005-b013-c009"
+        ],
+        "distances": [
+          0.41668403148651123,
+          0.42422282695770264,
+          0.4712926745414734,
+          0.48310256004333496,
+          0.5180398225784302
+        ],
+        "input_tokens": 13,
+        "query_embedding_ms": 1298.14,
+        "vector_search_ms": 1.56,
+        "retrieval_ms": 1299.7,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "assumed-interest-rates",
+          "assumed-rate-disclaimer"
+        ],
+        "expanded_hit_groups": [
+          "assumed-interest-rates",
+          "assumed-rate-disclaimer"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "account-floor-zh-Hans",
+        "topic": "interest",
+        "language": "zh-Hans",
+        "question": "2.5%保证是什么意思，是每年保费的回报吗？",
+        "required_clause_group_ids": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "page-008-intro-c037",
+          "page-009-intro-c039",
+          "row-p008-b001-t1-r3-c026",
+          "row-p008-b001-t1-r4-c027",
+          "section-p005-b013-c009"
+        ],
+        "distances": [
+          0.4332336187362671,
+          0.4498494267463684,
+          0.45111823081970215,
+          0.4542219638824463,
+          0.45773136615753174
+        ],
+        "input_tokens": 24,
+        "query_embedding_ms": 1474.31,
+        "vector_search_ms": 1.44,
+        "retrieval_ms": 1475.75,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "expanded_hit_groups": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "account-floor-zh-Hant",
+        "topic": "interest",
+        "language": "zh-Hant",
+        "question": "2.5%保證是甚麼意思，是每年保費的回報嗎？",
+        "required_clause_group_ids": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "section-p005-b013-c009",
+          "page-008-intro-c037",
+          "page-009-intro-c039",
+          "row-p008-b001-t1-r3-c026",
+          "section-p013-b002-c066"
+        ],
+        "distances": [
+          0.3971215486526489,
+          0.4140046238899231,
+          0.44575035572052,
+          0.4491459131240845,
+          0.45237356424331665
+        ],
+        "input_tokens": 29,
+        "query_embedding_ms": 1415.74,
+        "vector_search_ms": 1.08,
+        "retrieval_ms": 1416.83,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "expanded_hit_groups": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "account-floor-en",
+        "topic": "interest",
+        "language": "en",
+        "question": "What does the 2.5% guarantee mean? Is it an annual return on premiums?",
+        "required_clause_group_ids": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "page-008-intro-c037",
+          "row-p008-b001-t1-r3-c026",
+          "page-009-intro-c039",
+          "row-p016-b002-t1-r6-c111",
+          "row-p008-b001-t1-r4-c027"
+        ],
+        "distances": [
+          0.5254216194152832,
+          0.5262448191642761,
+          0.5340137481689453,
+          0.5349380970001221,
+          0.5376191139221191
+        ],
+        "input_tokens": 19,
+        "query_embedding_ms": 1191.76,
+        "vector_search_ms": 2.39,
+        "retrieval_ms": 1194.15,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "expanded_hit_groups": [
+          "account-value-floor",
+          "premium-deductions"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "unemployment-zh-Hans",
+        "topic": "unemployment",
+        "language": "zh-Hans",
+        "question": "被裁员后能停缴多久？附加保障也适用吗？",
+        "required_clause_group_ids": [
+          "unemployment-special-grace",
+          "unemployment-basic-only"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "section-p011-b001-c051",
+          "note-08-c063",
+          "section-p005-b024-c011",
+          "section-p011-b008-c053",
+          "section-p011-b010-c054"
+        ],
+        "distances": [
+          0.43802982568740845,
+          0.548328697681427,
+          0.5673559308052063,
+          0.574736475944519,
+          0.5929026007652283
+        ],
+        "input_tokens": 27,
+        "query_embedding_ms": 1035.74,
+        "vector_search_ms": 2.53,
+        "retrieval_ms": 1038.27,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "unemployment-special-grace",
+          "unemployment-basic-only"
+        ],
+        "expanded_hit_groups": [
+          "unemployment-special-grace",
+          "unemployment-basic-only"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "unemployment-zh-Hant",
+        "topic": "unemployment",
+        "language": "zh-Hant",
+        "question": "被裁員後能停繳多久？附加保障也適用嗎？",
+        "required_clause_group_ids": [
+          "unemployment-special-grace",
+          "unemployment-basic-only"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "section-p011-b001-c051",
+          "note-08-c063",
+          "section-p005-b024-c011",
+          "section-p011-b008-c053",
+          "section-p011-b010-c054"
+        ],
+        "distances": [
+          0.42025768756866455,
+          0.5400818586349487,
+          0.5485377907752991,
+          0.5539828538894653,
+          0.574674665927887
+        ],
+        "input_tokens": 30,
+        "query_embedding_ms": 974.39,
+        "vector_search_ms": 1.9,
+        "retrieval_ms": 976.3,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "unemployment-special-grace",
+          "unemployment-basic-only"
+        ],
+        "expanded_hit_groups": [
+          "unemployment-special-grace",
+          "unemployment-basic-only"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "unemployment-en",
+        "topic": "unemployment",
+        "language": "en",
+        "question": "If the policy owner is made redundant, how long can payments be suspended? Are riders included?",
+        "required_clause_group_ids": [
+          "unemployment-special-grace",
+          "unemployment-basic-only"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "section-p011-b001-c051",
+          "section-p014-b030-c086",
+          "section-p010-b007-c049",
+          "section-p014-b002-c078",
+          "section-p015-b029-c105"
+        ],
+        "distances": [
+          0.456714928150177,
+          0.47031694650650024,
+          0.5197199583053589,
+          0.523776650428772,
+          0.5304785370826721
+        ],
+        "input_tokens": 19,
+        "query_embedding_ms": 738.96,
+        "vector_search_ms": 4.89,
+        "retrieval_ms": 743.85,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "unemployment-special-grace"
+        ],
+        "expanded_hit_groups": [
+          "unemployment-special-grace",
+          "unemployment-basic-only"
+        ],
+        "recall_at_5": 0.5,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "withdrawal-zh-Hans",
+        "topic": "withdrawal",
+        "language": "zh-Hans",
+        "question": "定期提款需要保单生效几年？按月和按年的最低金额及最短期限是多少？",
+        "required_clause_group_ids": [
+          "periodic-withdrawal-conditions"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "note-06-c061",
+          "section-p014-b002-c078",
+          "section-p014-b030-c086",
+          "section-p010-b004-c048",
+          "row-p016-b002-t1-r16-c121"
+        ],
+        "distances": [
+          0.32186514139175415,
+          0.42216789722442627,
+          0.4412672519683838,
+          0.44428694248199463,
+          0.480363667011261
+        ],
+        "input_tokens": 34,
+        "query_embedding_ms": 1102.06,
+        "vector_search_ms": 1.36,
+        "retrieval_ms": 1103.42,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "periodic-withdrawal-conditions"
+        ],
+        "expanded_hit_groups": [
+          "periodic-withdrawal-conditions"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "withdrawal-zh-Hant",
+        "topic": "withdrawal",
+        "language": "zh-Hant",
+        "question": "定期提款需要保單生效幾年？按月和按年的最低金額及最短期限是多少？",
+        "required_clause_group_ids": [
+          "periodic-withdrawal-conditions"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "note-06-c061",
+          "section-p014-b002-c078",
+          "section-p010-b004-c048",
+          "section-p005-b019-c010",
+          "section-p014-b030-c086"
+        ],
+        "distances": [
+          0.31267237663269043,
+          0.42209500074386597,
+          0.4441159963607788,
+          0.4765428304672241,
+          0.48517125844955444
+        ],
+        "input_tokens": 37,
+        "query_embedding_ms": 815.02,
+        "vector_search_ms": 1.19,
+        "retrieval_ms": 816.21,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "periodic-withdrawal-conditions"
+        ],
+        "expanded_hit_groups": [
+          "periodic-withdrawal-conditions"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      },
+      {
+        "case_id": "withdrawal-en",
+        "topic": "withdrawal",
+        "language": "en",
+        "question": "When can periodic withdrawals begin? What are the monthly and annual minimum amounts and periods?",
+        "required_clause_group_ids": [
+          "periodic-withdrawal-conditions"
+        ],
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "ranked_chunk_ids": [
+          "note-06-c061",
+          "section-p010-b004-c048",
+          "section-p014-b030-c086",
+          "row-p018-b001-t1-r2-c133",
+          "section-p005-b019-c010"
+        ],
+        "distances": [
+          0.4090965986251831,
+          0.5533434152603149,
+          0.5837364196777344,
+          0.5876625776290894,
+          0.6233435273170471
+        ],
+        "input_tokens": 17,
+        "query_embedding_ms": 1285.59,
+        "vector_search_ms": 1.21,
+        "retrieval_ms": 1286.79,
+        "query_result_reused": false,
+        "direct_hit_groups": [
+          "periodic-withdrawal-conditions"
+        ],
+        "expanded_hit_groups": [
+          "periodic-withdrawal-conditions"
+        ],
+        "recall_at_5": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "missing_groups": []
+      }
+    ]
+  },
+  "gold_retrieval": {
+    "measured_cases": 8,
+    "skipped_guardrail_cases": 2,
+    "mean_recall_at_5": 0.9375,
+    "mean_coverage_after_link_expansion": 1.0,
+    "cases": [
+      {
+        "case_id": "Q01",
+        "top_k": 5,
+        "ranked_chunk_ids": [
+          "section-p013-b023-c072",
+          "section-p013-b023-c071",
+          "page-008-rate-notes-c038",
+          "page-008-intro-c037",
+          "section-p005-b013-c009"
+        ],
+        "required_group_count": 2,
+        "direct_hit_groups": [
+          "illustrated_base_rate",
+          "assumed_non_guaranteed"
+        ],
+        "expanded_hit_groups": [
+          "illustrated_base_rate",
+          "assumed_non_guaranteed"
+        ],
+        "recall_at_k": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "expanded_evidence_ids": [
+          "p005-b015",
+          "p005-b016",
+          "p005-b017",
+          "p008-b002",
+          "p008-b003",
+          "p008-b004",
+          "p008-b005",
+          "p008-b007",
+          "p008-b008",
+          "p008-b009",
+          "p008-b011",
+          "p008-b012",
+          "p008-b013",
+          "p008-b014",
+          "p008-b015",
+          "p008-b016",
+          "p013-b024",
+          "p013-b025",
+          "p013-b026",
+          "p013-b027",
+          "p013-b028",
+          "p013-b029"
+        ],
+        "answer_correctness": null,
+        "citation_accuracy": null,
+        "note": "Link expansion only; no parent expansion or generated answer is scored.",
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "distances": [
+          0.41668403148651123,
+          0.42422282695770264,
+          0.4712926745414734,
+          0.48310256004333496,
+          0.5180398225784302
+        ],
+        "input_tokens": 13,
+        "query_embedding_ms": 1298.14,
+        "vector_search_ms": 1.56,
+        "retrieval_ms": 1299.7,
+        "effective_query": "Is the illustrated 4% base crediting interest rate guaranteed?",
+        "query_result_reused": true,
+        "history_mode": "SINGLE_TURN",
+        "language": "en",
+        "status": "RETRIEVAL_ONLY"
+      },
+      {
+        "case_id": "Q02",
+        "top_k": 5,
+        "ranked_chunk_ids": [
+          "page-008-intro-c037",
+          "row-p008-b001-t1-r3-c026",
+          "row-p008-b001-t1-r4-c027",
+          "row-p008-b001-t1-r2-c025",
+          "row-p016-b002-t1-r7-c112"
+        ],
+        "required_group_count": 1,
+        "direct_hit_groups": [
+          "account_value_floor_conditions"
+        ],
+        "expanded_hit_groups": [
+          "account_value_floor_conditions"
+        ],
+        "recall_at_k": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "expanded_evidence_ids": [
+          "p008-b001-t1-r2",
+          "p008-b001-t1-r3",
+          "p008-b001-t1-r4",
+          "p008-b002",
+          "p008-b003",
+          "p008-b004",
+          "p008-b005",
+          "p008-b007",
+          "p008-b008",
+          "p008-b009",
+          "p008-b011",
+          "p008-b012",
+          "p008-b013",
+          "p008-b014",
+          "p008-b015",
+          "p008-b016",
+          "p016-b002-t1-r7"
+        ],
+        "answer_correctness": null,
+        "citation_accuracy": null,
+        "note": "Link expansion only; no parent expansion or generated answer is scored.",
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "distances": [
+          0.4129948616027832,
+          0.43467938899993896,
+          0.4387158155441284,
+          0.44108015298843384,
+          0.4566497206687927
+        ],
+        "input_tokens": 32,
+        "query_embedding_ms": 1291.56,
+        "vector_search_ms": 1.67,
+        "retrieval_ms": 1293.23,
+        "effective_query": "既然最低保证2.5%，是不是我每年交的保费都至少赚2.5%？",
+        "query_result_reused": false,
+        "history_mode": "SINGLE_TURN",
+        "language": "zh-CN",
+        "status": "RETRIEVAL_ONLY"
+      },
+      {
+        "case_id": "Q03",
+        "top_k": 5,
+        "ranked_chunk_ids": [
+          "section-p011-b001-c051",
+          "section-p010-b007-c049",
+          "section-p014-b030-c086",
+          "section-p015-b029-c105",
+          "section-p014-b002-c078"
+        ],
+        "required_group_count": 2,
+        "direct_hit_groups": [
+          "special_grace_period"
+        ],
+        "expanded_hit_groups": [
+          "special_grace_period",
+          "basic_plan_only"
+        ],
+        "recall_at_k": 0.5,
+        "coverage_after_link_expansion": 1.0,
+        "expanded_evidence_ids": [
+          "p010-b008",
+          "p010-b009",
+          "p010-b010",
+          "p010-b011",
+          "p010-b013",
+          "p010-b014",
+          "p011-b002",
+          "p011-b003",
+          "p011-b004",
+          "p012-b009",
+          "p012-b020",
+          "p014-b003",
+          "p014-b031",
+          "p015-b030"
+        ],
+        "answer_correctness": null,
+        "citation_accuracy": null,
+        "note": "Link expansion only; no parent expansion or generated answer is scored.",
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "distances": [
+          0.4793257713317871,
+          0.4876687526702881,
+          0.5056895017623901,
+          0.552698016166687,
+          0.5588403940200806
+        ],
+        "input_tokens": 21,
+        "query_embedding_ms": 1065.55,
+        "vector_search_ms": 2.5,
+        "retrieval_ms": 1068.05,
+        "effective_query": "If I am made redundant, how long can I suspend premium payments, and does this cover riders too?",
+        "query_result_reused": false,
+        "history_mode": "SINGLE_TURN",
+        "language": "en",
+        "status": "RETRIEVAL_ONLY"
+      },
+      {
+        "case_id": "Q04",
+        "top_k": 5,
+        "ranked_chunk_ids": [
+          "section-p011-b001-c051",
+          "note-08-c063",
+          "section-p011-b008-c053",
+          "section-p005-b024-c011",
+          "section-p010-b007-c049"
+        ],
+        "required_group_count": 2,
+        "direct_hit_groups": [
+          "special_grace_period",
+          "basic_plan_only"
+        ],
+        "expanded_hit_groups": [
+          "special_grace_period",
+          "basic_plan_only"
+        ],
+        "recall_at_k": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "expanded_evidence_ids": [
+          "p005-b026",
+          "p005-b027",
+          "p005-b028",
+          "p005-b030",
+          "p010-b008",
+          "p010-b009",
+          "p010-b010",
+          "p010-b011",
+          "p010-b013",
+          "p010-b014",
+          "p011-b002",
+          "p011-b003",
+          "p011-b004",
+          "p011-b009",
+          "p012-b009",
+          "p012-b020"
+        ],
+        "answer_correctness": null,
+        "citation_accuracy": null,
+        "note": "Link expansion only; no parent expansion or generated answer is scored.",
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "distances": [
+          0.36959517002105713,
+          0.5148718953132629,
+          0.5248832702636719,
+          0.5317842960357666,
+          0.5566527247428894
+        ],
+        "input_tokens": 38,
+        "query_embedding_ms": 986.57,
+        "vector_search_ms": 1.64,
+        "retrieval_ms": 988.2,
+        "effective_query": "如果我被裁員，最多可以暫停繳費多久？附加保障也適用嗎？",
+        "query_result_reused": false,
+        "history_mode": "SINGLE_TURN",
+        "language": "zh-TW",
+        "status": "RETRIEVAL_ONLY"
+      },
+      {
+        "case_id": "Q05",
+        "top_k": 5,
+        "ranked_chunk_ids": [
+          "note-06-c061",
+          "section-p010-b004-c048",
+          "row-p018-b001-t1-r2-c133",
+          "section-p014-b002-c078",
+          "section-p005-b013-c009"
+        ],
+        "required_group_count": 1,
+        "direct_hit_groups": [
+          "periodic_withdrawal_requirements"
+        ],
+        "expanded_hit_groups": [
+          "periodic_withdrawal_requirements"
+        ],
+        "recall_at_k": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "expanded_evidence_ids": [
+          "p005-b015",
+          "p005-b016",
+          "p005-b017",
+          "p008-b002",
+          "p008-b004",
+          "p008-b011",
+          "p008-b014",
+          "p010-b005",
+          "p010-b006",
+          "p010-b013",
+          "p010-b014",
+          "p012-b007",
+          "p012-b008",
+          "p012-b018",
+          "p012-b019",
+          "p014-b003",
+          "p018-b001-t1-r2"
+        ],
+        "answer_correctness": null,
+        "citation_accuracy": null,
+        "note": "Link expansion only; no parent expansion or generated answer is scored.",
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "distances": [
+          0.38490360975265503,
+          0.5195266604423523,
+          0.5317633152008057,
+          0.5611467361450195,
+          0.5796220302581787
+        ],
+        "input_tokens": 38,
+        "query_embedding_ms": 950.5,
+        "vector_search_ms": 2.01,
+        "retrieval_ms": 952.51,
+        "effective_query": "定期提款什么时候能申请？每月和每年的最低金额、最短年期分别是多少？",
+        "query_result_reused": false,
+        "history_mode": "SINGLE_TURN",
+        "language": "zh-CN",
+        "status": "RETRIEVAL_ONLY"
+      },
+      {
+        "case_id": "Q06",
+        "top_k": 5,
+        "ranked_chunk_ids": [
+          "section-p010-b007-c049",
+          "section-p014-b002-c078",
+          "section-p010-b012-c050",
+          "section-p005-b019-c010",
+          "section-p011-b008-c053"
+        ],
+        "required_group_count": 1,
+        "direct_hit_groups": [
+          "charges_and_lapse"
+        ],
+        "expanded_hit_groups": [
+          "charges_and_lapse"
+        ],
+        "recall_at_k": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "expanded_evidence_ids": [
+          "p005-b021",
+          "p005-b022",
+          "p005-b023",
+          "p010-b008",
+          "p010-b009",
+          "p010-b010",
+          "p010-b011",
+          "p010-b013",
+          "p010-b014",
+          "p011-b009",
+          "p014-b003"
+        ],
+        "answer_correctness": null,
+        "citation_accuracy": null,
+        "note": "Link expansion only; no parent expansion or generated answer is scored.",
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "distances": [
+          0.35543328523635864,
+          0.39795583486557007,
+          0.4715069532394409,
+          0.4819580912590027,
+          0.5227651596069336
+        ],
+        "input_tokens": 37,
+        "query_embedding_ms": 1245.41,
+        "vector_search_ms": 1.3,
+        "retrieval_ms": 1246.7,
+        "effective_query": "只要有现金价值，我暂停缴费以后是不是就一直有保障，不用再担心费用？",
+        "query_result_reused": false,
+        "history_mode": "SINGLE_TURN",
+        "language": "zh-CN",
+        "status": "RETRIEVAL_ONLY"
+      },
+      {
+        "case_id": "Q07",
+        "top_k": 5,
+        "ranked_chunk_ids": [
+          "section-p013-b002-c066",
+          "page-008-rate-notes-c038",
+          "section-p005-b013-c009",
+          "page-008-intro-c037",
+          "row-p008-b001-t1-r4-c027"
+        ],
+        "required_group_count": 2,
+        "direct_hit_groups": [
+          "illustrated_base_rate",
+          "assumed_non_guaranteed"
+        ],
+        "expanded_hit_groups": [
+          "illustrated_base_rate",
+          "assumed_non_guaranteed"
+        ],
+        "recall_at_k": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "expanded_evidence_ids": [
+          "p005-b015",
+          "p005-b016",
+          "p005-b017",
+          "p008-b001-t1-r4",
+          "p008-b002",
+          "p008-b003",
+          "p008-b004",
+          "p008-b005",
+          "p008-b007",
+          "p008-b008",
+          "p008-b009",
+          "p008-b011",
+          "p008-b012",
+          "p008-b013",
+          "p008-b014",
+          "p008-b015",
+          "p008-b016",
+          "p013-b003",
+          "p013-b004",
+          "p013-b005",
+          "p013-b006",
+          "p013-b007",
+          "p013-b008"
+        ],
+        "answer_correctness": null,
+        "citation_accuracy": null,
+        "note": "Link expansion only; no parent expansion or generated answer is scored.",
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "distances": [
+          0.462141215801239,
+          0.4752669930458069,
+          0.5285407304763794,
+          0.5534069538116455,
+          0.564656138420105
+        ],
+        "input_tokens": 27,
+        "query_embedding_ms": 1143.08,
+        "vector_search_ms": 1.12,
+        "retrieval_ms": 1144.2,
+        "effective_query": "材料里举例的基本派息率是多少？\n那它保证吗？",
+        "query_result_reused": false,
+        "history_mode": "USER_QUESTION_CONCATENATION",
+        "language": "zh-CN",
+        "status": "RETRIEVAL_ONLY"
+      },
+      {
+        "case_id": "Q08",
+        "top_k": 5,
+        "ranked_chunk_ids": [
+          "row-p017-b001-t1-r6-c127",
+          "row-p017-b001-t1-r4-c125",
+          "row-p017-b001-t1-r2-c123",
+          "row-p017-b001-t1-r3-c124",
+          "section-p006-b001-c012"
+        ],
+        "required_group_count": 1,
+        "direct_hit_groups": [
+          "conflicting_source_row"
+        ],
+        "expanded_hit_groups": [
+          "conflicting_source_row"
+        ],
+        "recall_at_k": 1.0,
+        "coverage_after_link_expansion": 1.0,
+        "expanded_evidence_ids": [
+          "p006-b002",
+          "p006-b003",
+          "p012-b002",
+          "p012-b013",
+          "p017-b001-t1-r2",
+          "p017-b001-t1-r3",
+          "p017-b001-t1-r4",
+          "p017-b001-t1-r6"
+        ],
+        "answer_correctness": null,
+        "citation_accuracy": null,
+        "note": "Link expansion only; no parent expansion or generated answer is scored.",
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9",
+        "distances": [
+          0.3622872233390808,
+          0.41944950819015503,
+          0.45417141914367676,
+          0.45623576641082764,
+          0.4685937762260437
+        ],
+        "input_tokens": 36,
+        "query_embedding_ms": 1312.35,
+        "vector_search_ms": 0.98,
+        "retrieval_ms": 1313.33,
+        "effective_query": "增加或减少保障额时，最低变更金额的港币和澳门币各是多少？",
+        "query_result_reused": false,
+        "history_mode": "SINGLE_TURN",
+        "language": "zh-CN",
+        "status": "RETRIEVAL_ONLY"
+      },
+      {
+        "case_id": "Q09",
+        "status": "NOT_RUN_GUARDRAILS_NOT_IMPLEMENTED",
+        "recall_at_k": null
+      },
+      {
+        "case_id": "Q10",
+        "status": "NOT_RUN_GUARDRAILS_NOT_IMPLEMENTED",
+        "recall_at_k": null
+      }
+    ]
+  },
+  "limitations": [
+    "No generated answers or citation semantic accuracy scored; guardrail cases were not run.",
+    "Q07 concatenates earlier user questions; this does not validate conversation memory or reference resolution.",
+    "Pilot groups require complete clause paragraphs; gold groups accept a listed alternative. Their means are separate.",
+    "Known unextracted graphic content is listed in full_alignment.json; this is the full cleaned TEXT corpus.",
+    "Cached rankings retain original timings/usage; no new API call when reused."
+  ],
+  "separate_process_index_reuse_check": {
+    "reused": true,
+    "embedded_chunks": 0,
+    "input_tokens": 0,
+    "command": ".venv/bin/python scripts/build_index.py --full"
+  }
+}
