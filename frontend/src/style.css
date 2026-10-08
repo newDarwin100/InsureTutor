@@ -49,3 +49,13 @@ dt { color: #778880; } dd { margin: 0; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
 @media (max-width: 760px) { .app-shell { padding: 20px 16px; } .header { align-items: flex-start; } .badge { font-size: 10px; } .layout { grid-template-columns: 1fr; } .sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } .panel { padding: 16px; } .chat-panel { height: 600px; min-height: 500px; } .chat-header, .messages { padding: 20px; } .empty-state { padding: 35px 5px; } .composer { padding: 16px; } }
 @media (max-width: 420px) { .sidebar { grid-template-columns: 1fr; } .header { flex-wrap: wrap; } }
+
+.sources { margin-top: 14px; border-top: 1px solid #dce5df; padding-top: 10px; }
+.sources details { margin: 8px 0; scroll-margin-top: 12px; }
+.sources summary { cursor: pointer; font-size: 13px; line-height: 1.6; }
+.sources blockquote { margin: 10px 0; border-left: 3px solid #7ba28a; padding-left: 12px; white-space: pre-wrap; font-size: 14px; }
+.sources a, .citation-number { color: #24684a; }
+.citation-number { margin-left: 5px; font-size: 12px; }
+.metrics { border-top: 1px solid #e3e8e4; padding-top: 8px; }
+.language-label { display: flex; gap: 8px; align-items: center; font-size: 13px; margin-bottom: 8px; }
+.language-label select { padding: 5px; border: 1px solid #cbd9d0; border-radius: 5px; background: white; }

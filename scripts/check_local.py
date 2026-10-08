@@ -29,7 +29,9 @@ def main(base):
     for asset in assets:
         assert fetch(base, asset)[0] == 200, "Frontend asset is unavailable"
     assert fetch(base, "/health/live")[0] == 200
-    assert fetch(base, "/health/ready")[0] == 503
+    ready_status, _, ready_body = fetch(base, "/health/ready")
+    assert ready_status in (200, 503)
+    assert json.loads(ready_body)["model_probed"] is False
     status, _, body = fetch(base, "/api/demo", {"message": "connection test"})
     assert status == 200 and json.loads(body)["mode"] == "connection_test"
     status, headers, body = fetch(base, "/api/documents/flexi-ulife-prime-saver", headers={"Range": "bytes=0-4"})
@@ -38,7 +40,7 @@ def main(base):
     assert fetch(base, "/.env")[0] == 404
     assert fetch(base, "/api/documents/unknown")[0] == 404
     print("Homepage, built assets, health, demo, PDF ranges and file isolation: OK")
-    print("RAG remains not ready; no model API was called.")
+    print(f"RAG dependency readiness: HTTP {ready_status}; no model API was called.")
 
 
 if __name__ == "__main__":

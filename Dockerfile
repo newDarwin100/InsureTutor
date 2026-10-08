@@ -12,6 +12,7 @@ COPY backend/requirements.txt /app/backend/requirements.txt
 RUN pip install --no-cache-dir -r backend/requirements.txt \
     && useradd --uid 10001 --create-home appuser
 COPY --chown=appuser:appuser backend/app/ /app/backend/app/
+COPY --chown=appuser:appuser data/reviewed/ /app/data/reviewed/
 COPY --chown=appuser:appuser data/processed/ /app/data/processed/
 COPY --chown=appuser:appuser ["docs/FLEXI-ULife Prime Saver.pdf", "/app/docs/"]
 COPY --from=frontend-build --chown=appuser:appuser /build/dist/ /app/frontend/dist/

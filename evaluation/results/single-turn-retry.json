@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-10-08T12:46:49.910692+00:00",
+  "mode": "real_single_turn_service",
+  "limits": "Fixed examples only; model verification is not a guarantee. No memory or full guardrail evaluation.",
+  "cases": [
+    {
+      "case": {
+        "id": "A02",
+        "message": "定期提款需要保单生效多久？每月、每年的最低提款额和最低提款期限是多少？提款费和安排费一样吗？",
+        "language": "zh-Hans"
+      },
+      "response": {
+        "request_id": "0ff171e7f7524b1ba43d03c4d4dd2d1d",
+        "action": "verification_failed",
+        "language": "zh-Hans",
+        "claims": [],
+        "citations": [],
+        "message": "这次草稿未通过依据检查。可以缩小问题范围，或直接核对 PDF。",
+        "mode": "single_turn",
+        "verification": {
+          "status": "failed",
+          "reason": "invalid_citation"
+        },
+        "metrics": {
+          "retrieval_ms": 2423.64,
+          "query_embedding_ms": 2422.24,
+          "vector_search_ms": 1.4,
+          "generation_ms": 6266.87,
+          "verification_ms": 0,
+          "llm_ms": 6266.87,
+          "total_ms": 8744.4,
+          "retrieved_chunks": 5,
+          "direct_evidence": 8,
+          "context_evidence": 10,
+          "embedding_input_tokens": 49,
+          "llm_input_tokens": 1559,
+          "llm_output_tokens": 558
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      },
+      "diagnostics": [
+        {
+          "type": "Draft",
+          "value": {
+            "action": "answered",
+            "claims": [
+              {
+                "text": "定期提款权益要求保单生效满10年或以上；符合条件时可豁免提款费。",
+                "citations": [
+                  {
+                    "evidence_id": "p012-b007",
+                    "quote": "定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。"
+                  }
+                ]
+              },
+              {
+                "text": "每月提款：最低为500美元／4,000港元／4,000澳门元，最短提款期为一年。",
+                "citations": [
+                  {
+                    "evidence_id": "p012-b007",
+                    "quote": "按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年"
+                  }
+                ]
+              },
+              {
+                "text": "每年提款：最低为6,000美元／48,000港元／48,000澳门元，最短提款期为三年。",
+                "citations": [
+                  {
+                    "evidence_id": "p012-b007",
+                    "quote": "而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。"
+                  }
+                ]
+              },
+              {
+                "text": "提款费与更改已确认定期提款安排的手续费不是同一项费用：一般现金提款目前每次收取25美元／200港元／200澳门元；定期提款权益可豁免提款费。",
+                "citations": [
+                  {
+                    "evidence_id": "p018-b001-t1-r2",
+                    "quote": "目前每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免"
+                  },
+                  {
+                    "evidence_id": "p012-b007",
+                    "quote": "如欲更改已確認的定期提款權益，須支付手續費。"
+                  }
+                ]
+              },
+              {
+                "text": "上述安排以保单内已有足够现金价值为前提；提款会减少累积现金价值，而每月费用仍会扣除，若现金价值不足以支付每月费用，保单可能终止且没有价值。",
+                "citations": [
+                  {
+                    "evidence_id": "p010-b005",
+                    "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6"
+                  },
+                  {
+                    "evidence_id": "p014-b003",
+                    "quote": "提取現金、減低或暫停繳付保費（如適用），將會減少計劃所累積的現金價值，而每月費用仍會被扣除。"
+                  }
+                ]
+              }
+            ]
+          },
+          "usage": {
+            "ms": 6266.87,
+            "input_tokens": 1559,
+            "output_tokens": 558
+          }
+        }
+      ]
+    }
+  ]
+}

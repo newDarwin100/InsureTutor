@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { nextTick, onMounted, ref } from 'vue'
-import { getStatus, testConnection, type AppStatus } from './api/client'
+import { getStatus, askQuestion, type AppStatus, type ChatReply, type Language } from './api/client'
 
 const status = ref<AppStatus | null>(null)
 const error = ref('')
 const input = ref('')
 const busy = ref(false)
 const page = ref(8)
-const messages = ref<{ role: 'user' | 'assistant'; text: string }[]>([])
+const language = ref<Language>('zh-Hans')
+const messages = ref<{ role: 'user' | 'assistant'; text: string; reply?: ChatReply }[]>([])
 const messageArea = ref<HTMLElement | null>(null)
 
 async function refresh() {
@@ -24,11 +25,11 @@ async function send() {
   messages.value.push({ role: 'user', text: value })
   input.value = ''
   try {
-    const reply = await testConnection(value)
-    messages.value.push({ role: 'assistant', text: reply.message })
-  } catch {
+    const reply = await askQuestion(value, language.value)
+    messages.value.push({ role: 'assistant', text: reply.message, reply })
+  } catch (err) {
     input.value = value
-    error.value = '连接测试失败。可重试，当前没有调用模型。'
+    error.value = err instanceof Error ? err.message : '请求失败，请手动重试。'
   } finally {
     busy.value = false
     await nextTick()
@@ -48,7 +49,7 @@ onMounted(refresh)
   <main class="app-shell">
     <header class="header">
       <div class="brand"><span class="brand-icon">IT</span><div><h1>InsureTutor</h1><p>读懂条款，找到依据</p></div></div>
-      <span class="badge">开发预览 · 连接测试</span>
+      <span class="badge">开发预览 · 单轮问答</span>
     </header>
 
     <div class="layout">
@@ -60,7 +61,7 @@ onMounted(refresh)
             <div><dt>资料</dt><dd>{{ status?.document_available ? 'PDF 已就绪' : '检查中' }}</dd></div>
             <div><dt>来源证据</dt><dd>{{ status?.knowledge_counts.evidence ?? '—' }}</dd></div>
             <div><dt>检索分块</dt><dd>{{ status?.knowledge_counts.chunks ?? '—' }}</dd></div>
-            <div><dt>保险问答</dt><dd>尚未接入</dd></div>
+            <div><dt>保险问答</dt><dd>{{ status?.rag_ready ? '单轮已就绪' : '未就绪' }}</dd></div>
           </dl>
           <button class="text-button" @click="refresh">刷新状态</button>
         </section>
@@ -71,21 +72,37 @@ onMounted(refresh)
           <label for="pdf-page">PDF 实际页码（包含封面）</label>
           <input id="pdf-page" v-model.number="page" type="number" min="1" max="20" step="1" />
           <a class="document-link" :href="documentUrl()" target="_blank" rel="noopener noreferrer">打开 PDF ↗</a>
-          <p class="small-note">这是文档跳转入口。回答中的引用将随 RAG 接入；跳页取决于浏览器阅读器支持。</p>
+          <p class="small-note">回答附带原文引用及实际页码。跳页取决于浏览器阅读器支持。</p>
         </section>
       </aside>
 
-      <section class="chat-panel" aria-label="连接测试">
-        <div class="chat-header"><div><h2>连接测试</h2><p>先验证前后端与原文件访问</p></div><button class="text-button" :disabled="busy" @click="messages = []">清空</button></div>
+      <section class="chat-panel" aria-label="保险问答">
+        <div class="chat-header"><div><h2>保险资料问答</h2><p>每次提问独立检索，暂不记住之前的对话</p></div><button class="text-button" :disabled="busy" @click="messages = []">清空</button></div>
         <div ref="messageArea" class="messages" aria-live="polite">
-          <div v-if="!messages.length" class="empty-state"><span class="empty-icon">↗</span><h3>项目的第一条链路已准备好</h3><p>发送一条消息测试连接，也可以从左侧打开指定 PDF 页面。</p><p class="small-note">当前不会回答保险问题，不调用模型或检索。</p></div>
-          <div v-for="(message, index) in messages" :key="index" class="message" :class="message.role"><span class="message-label">{{ message.role === 'user' ? '你' : 'InsureTutor' }}</span><p>{{ message.text }}</p></div>
-          <p v-if="busy" class="small-note">正在连接后端…</p>
+          <div v-if="!messages.length" class="empty-state"><span class="empty-icon">↗</span><h3>从一个条款问题开始</h3><p>例如：4% 的利率是保证的吗？定期提款有什么条件？</p><p class="small-note">仅依据这份产品资料回答；资料中的历史数字不代表当前利率。</p></div>
+          <div v-for="(message, index) in messages" :key="index" class="message" :class="message.role"><span class="message-label">{{ message.role === 'user' ? '你' : 'InsureTutor' }}</span><p v-if="message.text">{{ message.text }}</p>
+            <template v-if="message.reply">
+              <p v-for="(claim, ci) in message.reply.claims" :key="ci">{{ claim.text }}
+                <a v-for="number in claim.citation_numbers" :key="number" class="citation-number" :href="`#source-${index}-${number}`">[{{ number }}]</a>
+              </p>
+              <div v-if="message.reply.citations.length" class="sources">
+                <details v-for="source in message.reply.citations" :id="`source-${index}-${source.number}`" :key="source.number">
+                  <summary>[{{ source.number }}] {{ source.document_name }} · 第 {{ source.pdf_page }} 页</summary>
+                  <blockquote>{{ source.quote }}</blockquote>
+                  <a :href="source.url" target="_blank" rel="noopener noreferrer">打开此页 PDF ↗</a>
+                  <details><summary>完整证据（整理后的原文）</summary><p>{{ source.text }}</p><small>{{ source.evidence_id }}</small></details>
+                </details>
+              </div>
+              <p class="small-note metrics">Retrieval: {{ message.reply.metrics.retrieval_ms }} ms · LLM: {{ (message.reply.metrics.llm_ms / 1000).toFixed(2) }} s · Total: {{ (message.reply.metrics.total_ms / 1000).toFixed(2) }} s<br />Chunks: {{ message.reply.metrics.retrieved_chunks }} · LLM tokens: {{ message.reply.metrics.llm_input_tokens }} in / {{ message.reply.metrics.llm_output_tokens }} out · Embedding: {{ message.reply.metrics.embedding_input_tokens }}</p>
+            </template>
+          </div>
+          <p v-if="busy" class="small-note">正在检索资料、生成回答并检查依据…</p>
         </div>
         <form class="composer" @submit.prevent="send">
           <p v-if="error" class="error" role="alert">{{ error }}</p>
-          <label class="sr-only" for="message">连接测试消息</label>
-          <div class="input-row"><input id="message" v-model="input" maxlength="2000" placeholder="输入一条测试消息…" autocomplete="off" :disabled="busy" /><button type="submit" :disabled="busy || !input.trim()">{{ busy ? '连接中' : '测试连接' }}</button></div>
+          <label class="sr-only" for="message">保险问题</label>
+          <label class="language-label">回答语言 <select v-model="language" :disabled="busy"><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></label>
+          <div class="input-row"><input id="message" v-model="input" maxlength="2000" placeholder="输入保险条款问题…" autocomplete="off" :disabled="busy" /><button type="submit" :disabled="busy || !input.trim()">{{ busy ? '回答中' : '发送' }}</button></div>
         </form>
       </section>
     </div>

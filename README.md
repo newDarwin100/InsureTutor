@@ -28,9 +28,11 @@ docs/               原始 PDF、任务和执行清单
 
 ## 当前状态
 
-Vue + FastAPI 最小应用已可运行，页面支持连接测试、资料状态和指定页码的 PDF 链接。已完成规则清洗分块、10个参考测试案例及检索计分工具，已加入 Chroma 持久化索引和命令行检索，自动检查共30项。页面仍是连接测试，尚未接入保险回答。
+页面已接通单轮 RAG 问答，可以选择简体、繁体或英文回答，引用可展开整理后的原文，并打开 PDF 对应实际页码。每个问题独立处理，暂不使用聊天历史。143块全文 Chroma 索引已建立，能重启复用。
 
-Docker 配置与启动脚本已写好，但当前开发机器未检测到 Docker，容器构建/运行尚未验证。12块小样本已通过真实 API 检索测试，143块全量文本索引已建立并验证重启复用；生成回答、多轮、完整三语言 UI、Guardrails 和看板仍待接入。
+模型选择证据 ID，引用原文、文件名和页码由后端读取；同一模型再单独核对结论的支持关系，失败的草稿不展示。模型核对仍可能误判，不能代替人工验收。英文利率问题真实测试通过；中文提款题两次被拦截，其中一次是模型抄错引用，现已改为后端直接读取原文。修改后只做免费回归，中文真实验收仍待完成。自动检查38项通过。
+
+Docker 配置与启动脚本已写好，但当前开发机器未检测到 Docker，容器构建/运行尚未验证。完整输入拦截、多轮记忆、全页面三语言、评测看板仍待完成。
 
 开发顺序见 [执行清单](docs/EXECUTION.md)，数据约定见 [数据目录说明](data/README.md)。
 
@@ -89,7 +91,7 @@ bash scripts/start.sh
 
 - 日志：`docker compose logs -f app`
 - 停止：`docker compose down`
-- 索引 volume 保留；只构建了本地小样本，容器首次启动目前不会自动调用模型。
+- 索引 volume 保留；本地索引不会自动复制到容器，容器首次启动目前不会自动调用模型或建库。
 - 首次构建需要网络下载依赖。
 
 ## 验证
@@ -103,9 +105,9 @@ bash scripts/start.sh
 构建后启动后端，可运行 `.venv/bin/python scripts/check_local.py` 检查真实 HTTP 页面、资源、PDF 和路径隔离；不调用模型。
 
 - `/health/live`：200，网页进程正常，Docker 使用此项。
-- `/health/ready`：当前返回503，RAG 尚未接入，不能误报已就绪。
-- `/api/demo`：明确的连接测试；`/api/chat` 当前返回503。
-- PDF 只通过固定 document_id 开放，页码链接形如 `/api/documents/flexi-ulife-prime-saver#page=12`。浏览器决定是否支持直接跳页，引用原文展开仍需后续实现。
+- `/health/ready`：配置、已核对来源及全文索引就绪时200，否则503；不探测远端模型。
+- `/api/demo`：明确的免费连接测试；`/api/chat` 调用单轮问答服务。
+- PDF 只通过固定 document_id 开放，页码链接形如 `/api/documents/flexi-ulife-prime-saver#page=12`。浏览器决定是否支持直接跳页；页面可展开引用原文核验。
 
 ## 当前链路
 
@@ -113,12 +115,17 @@ bash scripts/start.sh
 flowchart LR
     U[Browser] --> V[Vue]
     V --> F[FastAPI]
-    F --> D[Connection test]
-    F --> P[Original PDF]
-    F --> S[Prepared data status]
+    F --> R[Chroma retrieval]
+    R --> E[Evidence and linked footnotes]
+    E --> L[LLM draft]
+    L --> C[Validate source IDs]
+    C --> A[LLM evidence check]
+    A --> O[Answer and citations]
+    O --> P[Original PDF page]
+    O --> V
 ```
 
-三语言问答与完整 RAG 主图见执行清单，尚未实现的能力不会在当前页面冒充完成。
+当前是单轮链路。完整输入拦截、会话记忆和三语言页面翻译见执行清单，尚未完成。
 
 ## 配置
 
@@ -138,6 +145,25 @@ flowchart LR
 
 143块文本、large模型、Top-K=5。12道三语言题的平均直接Recall@5为87.50%，8道参考检索题为93.75%；脚注关联补齐后的必要证据覆盖率均为100%。两种计分粒度分别保存，不合并，也不代表回答质量。
 
-漏项集中在利率非保证说明和失业保障仅基本计划的脚注。与12块小库相比，全量更容易漏条件，下一步回答上下文必须补齐关联证据。
+漏项集中在利率非保证说明和失业保障仅基本计划的脚注。与12块小库相比，全量更容易漏条件，回答上下文已按这些关联补齐证据。
 
-[结果说明](evaluation/results/full-large.md) · [完整排名和用量](evaluation/results/full-large.json)。全量脚本会缓存固定问题的排名，重复运行不会默认重新测量API延时。两个安全案例和真正多轮尚未验证，页面仍是连接测试。
+[结果说明](evaluation/results/full-large.md) · [完整排名和用量](evaluation/results/full-large.json)。全量脚本会缓存固定问题的排名，重复运行不会默认重新测量API延时。两个安全案例和真正多轮尚未验证；页面已接通单轮问答。
+
+## 单轮回答检查
+
+先运行 `.venv/bin/python scripts/build_index.py --full` 建立或复用索引，再启动开发服务。健康检查只核对配置、已核对来源和索引版本，不调用模型、不验证远端余额。索引缺失或来源变更时 `/health/ready` 返回503。
+
+免费检查：
+
+```bash
+.venv/bin/python -m unittest discover -s backend/tests -v
+.venv/bin/python scripts/check_local.py
+```
+
+固定问题实测会发送问题及检索原文到 OpenAI，并产生 API 用量；不会自动运行：
+
+```bash
+.venv/bin/python scripts/check_answers.py --run
+```
+
+报告写入 `evaluation/results/single-turn.json`，包含固定测试的模型诊断。应用不会保存用户问答。每条回答显示检索、模型生成与核对、总耗时，以及分开的 embedding / LLM 用量；当前没有自动重试或流式展示。真实报告及限制见 [单轮实测说明](evaluation/results/single-turn.md)。

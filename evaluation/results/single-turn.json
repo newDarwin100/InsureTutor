@@ -1,0 +1,207 @@
+{
+  "generated_at": "2026-10-08T12:41:28.717867+00:00",
+  "mode": "real_single_turn_api",
+  "limits": "Two fixed cases only; model verification is not a guarantee of accuracy. No memory or full guardrail evaluation.",
+  "cases": [
+    {
+      "case": {
+        "id": "A01",
+        "message": "Is the illustrated 4% interest rate guaranteed? How does it differ from the 2.5% guarantee?",
+        "language": "en"
+      },
+      "response": {
+        "action": "answered",
+        "language": "en",
+        "claims": [
+          {
+            "text": "No. The illustrated 4% p.a. is identified as the “Current assumed rate,” and the brochure states that the current assumed base crediting rate is not guaranteed and may change; it was quoted as of the brochure’s January 2022 print date.",
+            "citation_numbers": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "text": "The 2.5% guarantee is different: once the policy has been in force for 15 years or more, the Account Value is guaranteed to accumulate to at least the amount that would result if interest had been credited at 2.5% p.a., regardless of economic conditions.",
+            "citation_numbers": [
+              4
+            ]
+          },
+          {
+            "text": "The guarantee concerns the Account Value, including credited interest and Extra Bonus, and premiums are credited after deduction of applicable charges; it is therefore not a guarantee that every premium will be returned or that the account will earn 4%.",
+            "citation_numbers": [
+              5,
+              6
+            ]
+          },
+          {
+            "text": "The brochure also lists a 0.25% retrospective additional-interest rate as a current assumption, not a guarantee; crediting rates and non-guaranteed bonuses are reviewed and determined from time to time.",
+            "citation_numbers": [
+              7,
+              8,
+              9
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "evidence_id": "p008-b005",
+            "quote": "Base Crediting Interest (Current assumed rate*)",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)",
+            "source_pointer": "/pdf_info/7/para_blocks/4",
+            "review_flags": []
+          },
+          {
+            "number": 2,
+            "evidence_id": "p008-b007",
+            "quote": "4% 每年 p.a.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "4% 每年 p.a.",
+            "source_pointer": "/pdf_info/7/para_blocks/6",
+            "review_flags": []
+          },
+          {
+            "number": 3,
+            "evidence_id": "p008-b014",
+            "quote": "The current assumed base crediting interest rate and the current assumed retrospective additional interest rate are quoted as of the print date of this brochure in January 2022, and are not guaranteed. They are subject to change.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "* The current assumed base crediting interest rate and the current assumed retrospective additional interest rate are quoted as of the print date of this brochure in January 2022, and are not guaranteed. They are subject to change.",
+            "source_pointer": "/pdf_info/7/para_blocks/13",
+            "review_flags": []
+          },
+          {
+            "number": 4,
+            "evidence_id": "p008-b004",
+            "quote": "In addition, when a Policy has been in force for 15 years or more, the total interest and Extra Bonus credited to the Policy will be such that the Account Value is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a., regardless of the economic situation.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "In addition, when a Policy has been in force for 15 years or more, the total interest and Extra Bonus credited to the Policy will be such that the Account Value is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a., regardless of the economic situation.",
+            "source_pointer": "/pdf_info/7/para_blocks/3",
+            "review_flags": []
+          },
+          {
+            "number": 5,
+            "evidence_id": "p008-b002",
+            "quote": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。",
+            "source_pointer": "/pdf_info/7/para_blocks/1",
+            "review_flags": []
+          },
+          {
+            "number": 6,
+            "evidence_id": "p008-b004",
+            "quote": "the total interest and Extra Bonus credited to the Policy will be such that the Account Value is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "In addition, when a Policy has been in force for 15 years or more, the total interest and Extra Bonus credited to the Policy will be such that the Account Value is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a., regardless of the economic situation.",
+            "source_pointer": "/pdf_info/7/para_blocks/3",
+            "review_flags": []
+          },
+          {
+            "number": 7,
+            "evidence_id": "p008-b008",
+            "quote": "Retrospective additional interest (Current assumed rate*)",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)",
+            "source_pointer": "/pdf_info/7/para_blocks/7",
+            "review_flags": []
+          },
+          {
+            "number": 8,
+            "evidence_id": "p008-b009",
+            "quote": "0.25% 每年 p.a.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "0.25% 每年 p.a.",
+            "source_pointer": "/pdf_info/7/para_blocks/8",
+            "review_flags": []
+          },
+          {
+            "number": 9,
+            "evidence_id": "p013-b024",
+            "quote": "The crediting interest rate and/or non-guaranteed bonuses will be reviewed and determined by us from time to time.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 13,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=13",
+            "text": "The crediting interest rate and/or non-guaranteed bonuses will be reviewed and determined by us from time to time. The crediting interest rate and/or nonguaranteed bonuses will be determined based on the current earned rate, the best estimate long term earned rate and our target interest spread of 0% - 1.5% p.a. depends on the policy duration. Policy Owners will receive a portion of the investment returns, net of interest spread, in the form of crediting interest rate and/or bonuses.",
+            "source_pointer": "/pdf_info/12/para_blocks/23",
+            "review_flags": []
+          }
+        ],
+        "message": "",
+        "mode": "single_turn",
+        "verification": {
+          "status": "passed",
+          "reason": "supported"
+        },
+        "metrics": {
+          "retrieval_ms": 3248.43,
+          "query_embedding_ms": 3246.11,
+          "vector_search_ms": 2.32,
+          "generation_ms": 7665.02,
+          "verification_ms": 1730.1,
+          "llm_ms": 9395.12,
+          "total_ms": 12729.3,
+          "retrieved_chunks": 5,
+          "direct_evidence": 22,
+          "context_evidence": 22,
+          "embedding_input_tokens": 23,
+          "llm_input_tokens": 4518,
+          "llm_output_tokens": 694
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      }
+    },
+    {
+      "case": {
+        "id": "A02",
+        "message": "定期提款需要保单生效多久？每月、每年的最低提款额和最低提款期限是多少？提款费和安排费一样吗？",
+        "language": "zh-Hans"
+      },
+      "response": {
+        "action": "verification_failed",
+        "language": "zh-Hans",
+        "claims": [],
+        "citations": [],
+        "message": "这次草稿未通过依据检查。可以缩小问题范围，或直接核对 PDF。",
+        "mode": "single_turn",
+        "verification": {
+          "status": "failed",
+          "reason": "unsupported_claim"
+        },
+        "metrics": {
+          "retrieval_ms": 1249.47,
+          "query_embedding_ms": 1247.85,
+          "vector_search_ms": 1.62,
+          "generation_ms": 7096.6,
+          "verification_ms": 2222.01,
+          "llm_ms": 9318.61,
+          "total_ms": 10584.73,
+          "retrieved_chunks": 5,
+          "direct_evidence": 8,
+          "context_evidence": 10,
+          "embedding_input_tokens": 49,
+          "llm_input_tokens": 3630,
+          "llm_output_tokens": 626
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      }
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import asyncio
 import json
 import sys
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -44,9 +45,10 @@ class ApiTests(unittest.TestCase):
 
     def test_liveness_is_not_rag_readiness(self):
         self.assertEqual(self.request("/health/live")[0], 200)
-        status, _, body = self.request("/health/ready")
+        with patch("app.main.readiness", return_value=False):
+            status, _, body = self.request("/health/ready")
         self.assertEqual(status, 503)
-        self.assertEqual(json.loads(body)["code"], "RAG_NOT_IMPLEMENTED")
+        self.assertEqual(json.loads(body)["code"], "RAG_DEPENDENCIES_UNAVAILABLE")
 
     def test_demo_is_explicit_and_rejects_blank_input(self):
         status, _, body = self.request("/api/demo", "POST", {"message": "测试"})
@@ -54,10 +56,17 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(json.loads(body)["mode"], "connection_test")
         self.assertEqual(self.request("/api/demo", "POST", {"message": "   "})[0], 422)
         self.assertEqual(self.request("/api/demo", "POST", {"message": "x" * 2001})[0], 422)
-        self.assertEqual(self.request("/api/chat", "POST", {"message": "保险"})[0], 503)
+        with patch("app.main.answer", side_effect=RuntimeError("not ready")):
+            self.assertEqual(self.request("/api/chat", "POST", {"message": "保险"})[0], 503)
+        with patch("app.main.answer", return_value={"action": "answered"}) as mocked:
+            self.assertEqual(self.request("/api/chat", "POST", {"message": "问题", "language": "en"})[0], 200)
+            mocked.assert_called_once_with("问题", "en")
+        self.assertEqual(self.request("/api/chat", "POST", {"message": "   "})[0], 422)
+        self.assertEqual(self.request("/api/chat", "POST", {"message": "x", "language": "fr"})[0], 422)
 
     def test_status_does_not_expose_configuration_secrets(self):
-        status, _, body = self.request("/api/status")
+        with patch("app.main.readiness", return_value=False):
+            status, _, body = self.request("/api/status")
         self.assertEqual(status, 200)
         data = json.loads(body)
         self.assertFalse(data["rag_ready"])
