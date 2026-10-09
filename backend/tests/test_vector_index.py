@@ -1,6 +1,7 @@
 """Exercise real Chroma persistence with free deterministic test embeddings."""
 import json
 import tempfile
+import time
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -39,7 +40,8 @@ class IndexTests(unittest.TestCase):
             with patch.dict('os.environ', {'OPENAI_API_KEY': 'test-two'}):
                 self.assertFalse(index.search('fixed question')['query_cached'])
             for key, record in list(QUERY_VECTORS.items()):
-                QUERY_VECTORS[key] = (0, record[1])
+                # monotonic() starts at the host's boot, which can be under 10 minutes in CI.
+                QUERY_VECTORS[key] = (time.monotonic() - 601, record[1])
             self.assertFalse(index.search('fixed question')['query_cached'])
             new = VectorIndex(embedder, directory, limit=3)
             new.build()

@@ -30,7 +30,7 @@ bash scripts/start.sh         # Restart or retry after fixing configuration
 
 Do not use `docker compose down -v` unless you intend to delete both the saved chats and the index (and pay to rebuild the latter). Local development data and Docker volumes are separate.
 
-**Validation status:** initialization and reuse are covered by offline tests. Docker is not installed on the development machine; an actual image build and fresh-volume run remain unverified.
+**Validation status:** the production image built successfully on a clean Linux GitHub runner, with its compiled page, health routes and PDF ranges checked. Initialization and reuse are covered by offline tests. Docker is not installed on the development machine; paid fresh-volume indexing, a real container answer and restart reuse remain unverified.
 
 GitHub Actions runs offline tests, builds the production image and checks its compiled page, health routes and PDF byte ranges. CI uses no API key: RAG readiness must return 503, and normal startup must stop without configuration. This checks the container packaging; it does not verify paid first-time indexing or insurance answers. See [CI runs](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml).
 
