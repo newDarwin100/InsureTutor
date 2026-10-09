@@ -2,11 +2,13 @@
 
 import json
 import os
+import time
+from contextlib import nullcontext
 from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Header
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from app.services.answer import answer, readiness
@@ -17,6 +19,7 @@ from app.services.language import detect_language
 from typing import Literal
 from app.services.followup import conversational_answer
 from app.services.evaluations import dashboard
+from app.services.streaming import StreamCancelled, event_stream
 
 ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(ROOT / ".env", override=False)
@@ -117,6 +120,61 @@ def chat(body: ChatRequest, conversation_token: str | None = Header(default=None
 @app.get('/api/evaluations')
 def evaluations():
     return dashboard()
+
+
+@app.post('/api/chat/stream')
+def chat_stream(body: ChatRequest, conversation_token: str | None = Header(default=None, alias='X-Conversation-Token')):
+    if not body.message.strip():
+        raise HTTPException(status_code=422, detail='Message must not be blank')
+    started = time.perf_counter()
+
+    def run(send):
+        first_text = None
+
+        def emit(event, data):
+            nonlocal first_text
+            if event == 'delta' and data.get('text', '').strip() and first_text is None:
+                first_text = round((time.perf_counter()-started)*1000, 2)
+            send(event, data)
+
+        try:
+            with conversations.use(conversation_token) if conversation_token else nullcontext(None) as entry:
+                language = detect_language(body.message, getattr(entry, 'language', 'zh-Hans'), getattr(entry, 'chinese_language', None)) if body.language == 'auto' else body.language
+                persistent = entry is not None and isinstance(conversations, ChatHistory)
+                if persistent:
+                    conversations.begin(entry, body.message.strip(), language)
+                committed = False
+                try:
+                    emit('meta', {'language': language})
+                    if entry is None:
+                        reply = answer(body.message.strip(), language, emit=emit)
+                        resolved = body.message.strip()
+                    else:
+                        reply, resolved = conversational_answer(body.message.strip(), language, entry.turns, emit=emit)
+                    # Check the channel before committing a reply after a slow audit.
+                    emit('status', {'stage': 'complete'})
+                    reply['metrics']['ttft_ms'] = first_text
+                    reply['metrics']['total_ms'] = round((time.perf_counter()-started)*1000, 2)
+                    if entry is not None:
+                        conversations.append(entry, body.message.strip(), resolved, reply)
+                    committed = True
+                    emit('done', reply)
+                except Exception as exc:
+                    if persistent and not committed:
+                        conversations.fail(entry, 'REQUEST_INTERRUPTED' if isinstance(exc, StreamCancelled) else
+                            'MODEL_UNAVAILABLE' if isinstance(exc, ModelError) else 'RAG_UNAVAILABLE')
+                    raise
+        except StreamCancelled:
+            raise
+        except ConversationError as exc:
+            send('error', {'code': exc.code})
+        except ModelError:
+            send('error', {'code': 'MODEL_UNAVAILABLE'})
+        except (RuntimeError, ValueError, OSError, KeyError):
+            send('error', {'code': 'RAG_UNAVAILABLE'})
+
+    return StreamingResponse(event_stream(run), media_type='text/event-stream', headers={
+        'Cache-Control': 'no-cache, no-transform', 'X-Accel-Buffering': 'no'})
 
 
 @app.post('/api/workspaces', status_code=201)

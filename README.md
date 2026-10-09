@@ -44,9 +44,11 @@ The left sidebar lists saved conversations. Titles start with the first question
 
 A browser credential in localStorage identifies its conversation list; chat credentials are sent in headers, never URLs. Use the same browser and address to reopen the same list. This is local demo access, without account login or cross-device sync. Clearing browser storage loses access to that browser's list. The database is excluded from Git and Docker build context; Docker keeps it in the separate `chat-history` volume. Old process-only sessions from previous versions cannot be recovered.
 
-The composer stays at the bottom of the viewport. Enter sends; Shift + Enter adds a line. Checked answers appear progressively, and the transcript follows new content unless you scroll upward; “Jump to latest” resumes following. This is a frontend reveal after the complete checked response, not token streaming from the model. Reduced-motion preferences show the answer immediately.
+The composer stays at the bottom of the viewport. Enter sends; Shift + Enter adds a line. `/api/chat/stream` uses POST + SSE: model-generated answer text appears as it arrives, with a **not yet verified** label. Citations appear only after the final evidence check; failed checks or interrupted streams clear the provisional text. The transcript follows new content unless you scroll upward; “Jump to latest” resumes following. There is no additional typewriter delay after the response finishes.
 
 The Performance tab shows per-request latency, its cumulative average, a latency histogram and average/median/minimum/maximum values. Switch between returned requests on this page and separate saved test sets; timing stages can be filtered. Request details and token usage are collapsed by default. Chart measurements stay in browser memory (latest 200, reset on refresh); saved conversations still retain each reply's timings. Opening the tab does not call a model or copy private chats into evaluation reports.
+
+First-text time measures submission to the first nonblank answer text, excluding loading messages, JSON fields and heartbeats. Generation, evidence checks and follow-up resolution are measured separately. **Under 2 seconds is a target, not a per-request guarantee**: query embeddings, ambiguous follow-up resolution and upstream API variation occur before answer text can arrive. Old non-streaming records have no first-text measurement.
 
 ## Architecture
 
@@ -61,13 +63,14 @@ flowchart TD
     Embed --> DB[(Chroma · Top-K 5)]
     DB --> Evidence[Evidence + linked conditions and footnotes]
     Evidence --> Draft[LLM answer with evidence IDs]
+    Draft -. SSE provisional text .-> UI
     Draft --> Check[Citation validation + model evidence check]
     Check --> Result[Answer · sources · timings]
     Result --> UI
     Result --> PDF[Original PDF page]
 ```
 
-Clear misuse requests stop before retrieval; ambiguous follow-ups ask for clarification. Unsupported drafts are withheld. Optional repair allows at most one additional attempt.
+Clear misuse requests stop before retrieval; ambiguous follow-ups ask for clarification. Unsupported drafts are removed from the UI after checking and are never saved as accepted answers. Streaming exposes provisional content before semantic verification, so users must wait for confirmation before relying on it. Optional repair allows at most one additional attempt.
 
 History resolves what a follow-up refers to. Full transcripts are saved, but only up to 8 successful/clarification turns and 24,000 characters are retained as model context; the rewrite uses the latest 4. Idle context is evicted from the in-process cache after 30 minutes and restored from SQLite on demand. Every answer retrieves fresh PDF evidence; previous assistant text is not a factual source.
 
@@ -110,6 +113,8 @@ Copy `.env.example` to `.env`; never commit the real key.
 | `CHAT_HISTORY_PATH` | Optional SQLite path; default `data/history/chats.sqlite3`. |
 
 Ordinary questions use a query embedding, generation and evidence check. Contextual follow-ups may add a resolution call; enabled repair adds usage. Responses show actual timings and provider usage. Unknown report values remain blank.
+
+Reviewed equivalent translations are compacted before generation; conflicting wording and linked conditions remain. Successful checks return a compact verdict. Unambiguous monthly/annual withdrawal follow-ups use local subject resolution, then retrieve evidence again. A bounded 10-minute in-memory query-vector cache (128 entries) avoids repeated embedding calls; it caches vectors, never answers, and is separated by index/model configuration and credential changes. Cache hits report zero newly billed embedding input tokens and their actual current retrieval time.
 
 This brochure includes historical illustrations; answers explain its stated terms rather than claim its rates or fees are current.
 
@@ -165,6 +170,8 @@ These small development sets measure retrieval, not overall answer correctness. 
 The dashboard includes **38 historical rows**, including failures and two unexecuted safety cases. One answer passed the model check but human review found missing withdrawal conditions. This prompted context expansion; that run is not an independently verified correct answer. See [answer checks](evaluation/results/single-turn.md).
 
 A later [demo-example regression](evaluation/results/demo-answers.md) covers six fixed examples: the compound rate/withdrawal question in all three languages, unemployment, withdrawal conditions and an annual-withdrawal follow-up. The first batch returned five answers and one mistaken rejection; targeted fixes and reruns are preserved. Each case now has an answered result with key facts manually checked. This is a development regression, not an overall quality score.
+
+The [streaming check](evaluation/results/streaming.md) records two live runs of three fixed questions, including a follow-up. The latest first-text times were 1.99 / 1.75 / 1.57 seconds; the earlier run includes two misses of the 2-second target. These are small development samples, without a p95 latency guarantee or controlled model comparison. Browser stream handling was checked separately with saved-answer replay, not counted as new API latency measurements.
 
 Paid evaluations are separate, explicit commands:
 

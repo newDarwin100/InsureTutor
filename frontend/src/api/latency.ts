@@ -1,6 +1,6 @@
 import type { EvaluationRow } from './client'
 
-export type TimeMetric = 'total_ms' | 'retrieval_ms' | 'llm_ms'
+export type TimeMetric = 'total_ms' | 'retrieval_ms' | 'llm_ms' | 'ttft_ms' | 'generation_ms' | 'verification_ms' | 'question_resolution_ms'
 
 export function latencySeries(rows: EvaluationRow[], metric: TimeMetric) {
   let sum = 0

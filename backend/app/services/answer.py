@@ -112,7 +112,8 @@ insured during the period. Those are different claims. Reject an assertion that 
 automatically ceases, or premiums are permanently waived, unless the evidence actually states it.
 Do not accept personal recommendations, instructions to disclose secrets or unrelated answers. Otherwise
 supported=false and choose the most relevant failure reason. Explain the specific unsupported claim or
-missing condition with its evidence ID in explanation; when supported, keep explanation brief.
+missing condition with its evidence ID in explanation (one short sentence); when supported, explanation
+must be an empty string. Do not repeat or summarize the answer in a successful audit.
 For questions about periodic withdrawal conditions, check sufficient cash value, the 10-year eligibility,
 minimum amounts/periods, and charges/lapse risks when applicable. Read the linked body paragraphs as well
 as footnote 6. Do not require irrelevant brochure details.
@@ -173,6 +174,25 @@ def gather_evidence(index, retrieved, evidence, paired, max_chars=26000):
     return {i: evidence[i] for i in ids}, direct
 
 
+def compact_equivalent_sources(context, language, groups=None):
+    """Drop duplicate translations only when the reviewed, complete counterpart is present."""
+    if groups is None:
+        groups = json.loads((ROOT / 'data/reviewed/full_alignment.json').read_text())['groups']
+    preferred = 'en' if language == 'en' else 'zh-Hant'
+    remove, keep = set(), set()
+    for group in groups:
+        sources = group['source_evidence_ids']
+        chosen = set(sources.get(preferred, []))
+        all_ids = {i for ids in sources.values() for i in ids}
+        if group['status'] != 'MATCHED' or not chosen or not chosen <= context.keys():
+            continue
+        if any(context[i].get('review_flags') for i in all_ids if i in context):
+            continue
+        keep.update(chosen)
+        remove.update(all_ids - chosen)
+    return {i: e for i, e in context.items() if i not in remove or i in keep}
+
+
 def validate_citations(draft, evidence):
     if draft.action in ['answered', 'source_conflict']:
         if not draft.claims:
@@ -226,11 +246,13 @@ def blocked_reply(language, reasons, started):
             'models': {'llm': None, 'embedding': None}}
 
 
-def answer(question, language, index=None, model=None):
+def answer(question, language, index=None, model=None, emit=None):
     started = time.perf_counter()
     reasons = input_reasons(question)
     if reasons:
         return blocked_reply(language, reasons, started)
+    if emit:
+        emit('status', {'stage': 'retrieval'})
     guard_ms = round((time.perf_counter()-started)*1000, 2)
     index = index or VectorIndex()
     if not index.ready():
@@ -238,13 +260,19 @@ def answer(question, language, index=None, model=None):
     evidence, paired = load_evidence(index.knowledge)
     retrieved = index.search(question, top_k=int(os.getenv('RAG_TOP_K', '5')))
     context, direct = gather_evidence(index, retrieved, evidence, paired)
+    expanded_count = len(context)
+    context = compact_equivalent_sources(context, language)
     payload = {'question': question, 'language': language,
                'evidence': [{'evidence_id': i, 'text': e['text'], 'review_flags': e['review_flags'],
                              'review_note': e['review_note'], 'conflict_relevant_to_question': conflict_applies(e, question)}
                             for i, e in context.items()]}
     model = model or Responses()
     output_type = grounded_draft_type(context)
-    draft, generation = model.structured(GENERATE, payload, output_type)
+    if emit:
+        emit('status', {'stage': 'generation'})
+        draft, generation = model.structured_stream(GENERATE, payload, output_type, emit)
+    else:
+        draft, generation = model.structured(GENERATE, payload, output_type)
     verification = {'ms': 0, 'input_tokens': 0, 'output_tokens': 0}
     repair = {'ms': 0, 'input_tokens': 0, 'output_tokens': 0}
     check = None
@@ -263,6 +291,8 @@ def answer(question, language, index=None, model=None):
             failure = failure or Reason.INVALID_CITATION
         check = None
         if failure is None and draft.claims:
+            if emit:
+                emit('status', {'stage': 'verification'})
             check, usage = model.structured(VERIFY, {**payload, 'draft': draft.model_dump()}, Verification)
             for key in verification:
                 verification[key] += usage[key]
@@ -273,6 +303,9 @@ def answer(question, language, index=None, model=None):
         if failure is None or not can_repair or attempts == 1 or failure == Reason.SECRET_OR_PRIVATE_DATA_REQUEST:
             break
         attempts += 1
+        if emit:
+            emit('reset', {})
+            emit('status', {'stage': 'repair'})
         draft, repair = model.structured(GENERATE, {**payload, 'previous_draft': draft.model_dump(),
             'repair_feedback': {'reason': failure.value, 'detail': check.explanation if check else failure.value}}, output_type)
     passed = failure is None
@@ -310,10 +343,12 @@ def answer(question, language, index=None, model=None):
                 message or 'Evidence check passed.', attempts),
             'metrics': {'guardrail_ms': guard_ms, 'repair_ms': repair['ms'], 'retrieval_ms': retrieved['retrieval_ms'], 'query_embedding_ms': retrieved['query_embedding_ms'],
                         'vector_search_ms': retrieved['vector_search_ms'], 'generation_ms': generation['ms'],
-                        'verification_ms': verification['ms'], 'llm_ms': round(generation['ms']+verification['ms']+repair['ms'], 2),
+                        'verification_ms': verification['ms'], 'model_ttft_ms': generation.get('model_ttft_ms'),
+                        'llm_ms': round(generation['ms']+verification['ms']+repair['ms'], 2),
                         'total_ms': round((time.perf_counter()-started)*1000, 2),
                         'retrieved_chunks': len(retrieved['ranked_chunk_ids']), 'direct_evidence': len(direct),
-                        'context_evidence': len(context), 'embedding_input_tokens': retrieved['input_tokens'],
+                        'context_evidence': len(context), 'expanded_evidence': expanded_count,
+                        'embedding_input_tokens': retrieved['input_tokens'], 'query_cached': retrieved.get('query_cached', False),
                         'llm_input_tokens': generation['input_tokens']+verification['input_tokens']+repair['input_tokens'],
                         'llm_output_tokens': generation['output_tokens']+verification['output_tokens']+repair['output_tokens']},
             'models': {'llm': getattr(model, 'model', None),

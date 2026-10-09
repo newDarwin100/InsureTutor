@@ -5,6 +5,8 @@ import json
 import math
 import os
 import time
+import threading
+from collections import OrderedDict
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -13,6 +15,8 @@ import chromadb
 from chromadb.config import Settings
 
 ROOT = Path(__file__).resolve().parents[3]
+QUERY_VECTORS = OrderedDict()
+QUERY_LOCK = threading.Lock()
 
 
 def digest(value):
@@ -142,13 +146,30 @@ class VectorIndex:
         if not self.ready():
             raise RuntimeError('Index missing or outdated; run scripts/build_index.py')
         start = time.perf_counter()
-        vectors, tokens = self.embedder.embed([question.strip()])
+        # Hash keys only; ephemeral, bounded cache. Never share vectors across index/model/key changes.
+        cache_key = (self.version, digest(question.strip()), digest(os.getenv('OPENAI_API_KEY', '')))
+        cached = False
+        with QUERY_LOCK:
+            record = QUERY_VECTORS.get(cache_key) if isinstance(self.embedder, Embeddings) else None
+            if record and time.monotonic()-record[0] < 600:
+                vectors, tokens, cached = record[1], 0, True
+                QUERY_VECTORS.move_to_end(cache_key)
+            elif record:
+                del QUERY_VECTORS[cache_key]
+        if not cached:
+            vectors, tokens = self.embedder.embed([question.strip()])
         validate_vectors(vectors, 1, self.embedder.dimensions)
+        if not cached and isinstance(self.embedder, Embeddings):
+            with QUERY_LOCK:
+                QUERY_VECTORS[cache_key] = (time.monotonic(), vectors)
+                while len(QUERY_VECTORS) > 128:
+                    QUERY_VECTORS.popitem(last=False)
         embedded = time.perf_counter()
         result = self.collection().query(query_embeddings=vectors, n_results=min(top_k, len(self.chunks)),
                                          include=['distances'])
         end = time.perf_counter()
         return {'index_version': self.version, 'ranked_chunk_ids': result['ids'][0],
+                'query_cached': cached,
                 'distances': result['distances'][0], 'input_tokens': tokens,
                 'query_embedding_ms': round((embedded-start)*1000, 2),
                 'vector_search_ms': round((end-embedded)*1000, 2),

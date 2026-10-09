@@ -3,8 +3,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from backend.app.rag.index import ROOT, VectorIndex
+from backend.app.rag.index import ROOT, VectorIndex, Embeddings, QUERY_VECTORS
 
 
 class FakeEmbeddings:
@@ -21,6 +22,29 @@ class FakeEmbeddings:
 
 
 class IndexTests(unittest.TestCase):
+    def test_query_cache_reuses_vectors_not_answers_and_separates_versions_and_credentials(self):
+        class CachedEmbeddings(FakeEmbeddings, Embeddings):
+            pass
+        with tempfile.TemporaryDirectory() as directory, patch.dict(QUERY_VECTORS, clear=True), patch.dict('os.environ', {'OPENAI_API_KEY': 'test-one'}):
+            embedder = CachedEmbeddings()
+            index = VectorIndex(embedder, directory, limit=2)
+            index.build()
+            first = index.search('fixed question')
+            second = index.search('fixed question')
+            self.assertFalse(first['query_cached'])
+            self.assertTrue(second['query_cached'])
+            self.assertEqual(second['input_tokens'], 0)
+            self.assertEqual(embedder.calls, 2)
+            self.assertEqual(first['ranked_chunk_ids'], second['ranked_chunk_ids'])
+            with patch.dict('os.environ', {'OPENAI_API_KEY': 'test-two'}):
+                self.assertFalse(index.search('fixed question')['query_cached'])
+            for key, record in list(QUERY_VECTORS.items()):
+                QUERY_VECTORS[key] = (0, record[1])
+            self.assertFalse(index.search('fixed question')['query_cached'])
+            new = VectorIndex(embedder, directory, limit=3)
+            new.build()
+            self.assertFalse(new.search('fixed question')['query_cached'])
+
     def test_persistence_and_no_embedding_on_reuse(self):
         with tempfile.TemporaryDirectory() as directory:
             embedder = FakeEmbeddings()

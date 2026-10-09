@@ -21,7 +21,9 @@ const ceiling = computed(() => chartCeiling(stats.value.max ?? 0))
 const maxBin = computed(() => Math.max(1, ...bins.value.map(bin => bin.count)))
 const selected = computed(() => samples.value[hovered.value ?? samples.value.length - 1])
 const summary = computed(() => data.value?.summaries.find(item => item.group === dataset.value))
-const hasLLM = computed(() => rows.value.some(row => row.llm_ms != null))
+const stages = ['total_ms', 'ttft_ms', 'retrieval_ms', 'llm_ms', 'generation_ms', 'verification_ms', 'question_resolution_ms'] as const
+const stageLabels = computed(() => ({ total_ms: t.value.total, ttft_ms: t.value.ttft, retrieval_ms: t.value.retrieval,
+  generation_ms: t.value.generation, verification_ms: t.value.verification, question_resolution_ms: t.value.resolution, llm_ms: t.value.llm }))
 const label = (value: string) => t.value[value as keyof typeof t.value] ?? value
 const seconds = (value: number | null | undefined) => value == null ? '—' : (value / 1000).toFixed(2)
 const percent = (value: number | null | undefined) => value == null ? '—' : `${(value * 100).toFixed(1)}%`
@@ -33,7 +35,7 @@ const ticks = computed(() => [0, ceiling.value / 2, ceiling.value])
 const countTicks = computed(() => [...new Set([0, Math.ceil(maxBin.value / 2), maxBin.value])])
 const requestTicks = computed(() => [...new Set([0, Math.floor((samples.value.length - 1) / 2), samples.value.length - 1])])
 const barWidth = computed(() => 626 / Math.max(1, bins.value.length))
-watch(dataset, () => { hovered.value = null; if (!hasLLM.value && metric.value === 'llm_ms') metric.value = 'total_ms' })
+watch(dataset, () => { hovered.value = null; if (!rows.value.some(row => row[metric.value] != null)) metric.value = 'total_ms' })
 watch(metric, () => { hovered.value = null })
 watch(() => props.runs.length, (count, previous) => { if (count && !previous) dataset.value = 'live' })
 async function load() {
@@ -57,7 +59,7 @@ onMounted(load)
         <optgroup :label="t.historyRuns"><option value="full_trilingual">{{ t.full_trilingual }}</option><option value="full_gold">{{ t.full_gold }}</option><option value="pilot">{{ t.pilot }}</option><option value="answers">{{ t.answers }}</option></optgroup>
       </select></label>
       <div class="stage-switch" :aria-label="t.metric">
-        <button v-for="stage in (['total_ms', 'retrieval_ms', 'llm_ms'] as const)" :key="stage" :class="{ active: metric === stage }" :aria-pressed="metric === stage" :disabled="stage === 'llm_ms' && !hasLLM" @click="metric = stage">{{ stage === 'total_ms' ? t.total : stage === 'retrieval_ms' ? t.retrieval : t.llm }}</button>
+        <button v-for="stage in stages" :key="stage" :class="{ active: metric === stage }" :aria-pressed="metric === stage" :disabled="!rows.some(row => row[stage] != null)" @click="metric = stage">{{ stageLabels[stage] }}</button>
       </div>
     </div>
     <p class="dashboard-caption">{{ dataset === 'live' ? t.liveNote : t.historyNote }}</p>
@@ -112,10 +114,10 @@ onMounted(load)
     <details class="run-details">
       <summary>{{ t.runDetails }} <span>{{ rows.length }}</span></summary>
       <div class="evaluation-table" tabindex="0"><table>
-        <thead><tr><th>#</th><th>{{ t.question }}</th><th>{{ t.result }}</th><th>{{ t.retrieval }} s</th><th>{{ t.llm }} s</th><th>{{ t.total }} s</th><th>{{ t.inputTokens }}</th><th>{{ t.outputTokens }}</th><th>{{ t.embedding }}</th></tr></thead>
-        <tbody><tr v-for="(row, index) in rows" :key="row.id"><td>{{ index + 1 }}</td><td><p>{{ row.question }}</p><small>{{ row.language ?? '—' }} · {{ row.source === 'live' ? t.liveRuns : row.query_cached ? t.cached : row.source }}</small></td><td>{{ label(row.status) }}</td><td>{{ seconds(row.retrieval_ms) }}</td><td>{{ seconds(row.llm_ms) }}</td><td>{{ seconds(row.total_ms) }}</td><td>{{ row.llm_input_tokens ?? '—' }}</td><td>{{ row.llm_output_tokens ?? '—' }}</td><td>{{ row.embedding_input_tokens ?? '—' }}</td></tr></tbody>
+        <thead><tr><th>#</th><th>{{ t.question }}</th><th>{{ t.result }}</th><th>{{ t.ttft }} s</th><th>{{ t.retrieval }} s</th><th>{{ t.generation }} s</th><th>{{ t.verification }} s</th><th>{{ t.resolution }} s</th><th>{{ t.llm }} s</th><th>{{ t.total }} s</th><th>{{ t.inputTokens }}</th><th>{{ t.outputTokens }}</th><th>{{ t.embedding }}</th></tr></thead>
+        <tbody><tr v-for="(row, index) in rows" :key="row.id"><td>{{ index + 1 }}</td><td><p>{{ row.question }}</p><small>{{ row.language ?? '—' }} · {{ row.source === 'live' ? t.liveRuns : row.query_cached ? t.cached : row.source }}</small></td><td>{{ label(row.status) }}</td><td>{{ seconds(row.ttft_ms) }}</td><td>{{ seconds(row.retrieval_ms) }}</td><td>{{ seconds(row.generation_ms) }}</td><td>{{ seconds(row.verification_ms) }}</td><td>{{ seconds(row.question_resolution_ms) }}</td><td>{{ seconds(row.llm_ms) }}</td><td>{{ seconds(row.total_ms) }}</td><td>{{ row.llm_input_tokens ?? '—' }}</td><td>{{ row.llm_output_tokens ?? '—' }}</td><td>{{ row.embedding_input_tokens ?? '—' }}</td></tr></tbody>
       </table></div>
     </details>
-    <details class="dashboard-method"><summary>{{ t.method }}</summary><p>{{ t.dashboardMethod }} {{ t.modelTimeNote }}</p><p v-if="data?.missing_reports.length">{{ t.missing }}: {{ data.missing_reports.join(', ') }}</p></details>
+    <details class="dashboard-method"><summary>{{ t.method }}</summary><p>{{ t.dashboardMethod }} {{ t.modelTimeNote }} {{ t.ttftNote }}</p><p v-if="data?.missing_reports.length">{{ t.missing }}: {{ data.missing_reports.join(', ') }}</p></details>
   </section>
 </template>

@@ -4,8 +4,7 @@ import EvaluationPanel from './components/EvaluationPanel.vue'
 import Icon from './components/Icon.vue'
 import { copies } from './copy'
 import { presentReply } from './api/presentation'
-import { characterCount, revealBudget, revealParagraphs } from './api/reveal'
-import { askQuestion, createConversation, createWorkspace, listConversations, getConversation, renameConversation, deleteConversation, ApiError, type ChatReply, type ConversationSummary, type EvaluationRow, type Language } from './api/client'
+import { streamQuestion, createConversation, createWorkspace, listConversations, getConversation, renameConversation, deleteConversation, ApiError, type ChatReply, type ConversationSummary, type EvaluationRow, type Language } from './api/client'
 
 const activeView = ref('chat')
 const runs = ref<EvaluationRow[]>([])
@@ -41,38 +40,39 @@ const orderedChats = computed(() => [...chats.value].sort((a, b) => b.updated - 
 const drafts = new Map<string, string>()
 const WORKSPACE_KEY = 'insuretutor.workspace.v1'
 const SELECTED_KEY = 'insuretutor.selected-chat.v1'
-type Message = { role: 'user' | 'assistant'; text: string; reply?: ChatReply; language?: Language; errorCode?: string; visibleCharacters?: number; revealing?: boolean }
+type Message = { role: 'user' | 'assistant'; text: string; reply?: ChatReply; language?: Language; errorCode?: string; provisional?: boolean }
 const messages = ref<Message[]>([])
 const messageArea = ref<HTMLElement | null>(null)
 const composerInput = ref<HTMLTextAreaElement | null>(null)
 const followLatest = ref(true)
-let lastScrollTop = 0
-const isRevealing = computed(() => messages.value.some(message => message.revealing))
-const displayMessages = computed(() => messages.value.map(message => {
-  const presentation = message.reply ? presentReply(message.reply) : null
-  const budget = message.visibleCharacters ?? Infinity
-  return { ...message,
-    text: message.errorCode ? savedError(message.errorCode, message.language ?? language.value) : Array.from(message.text).slice(0, budget).join(''),
-    presentation: presentation ? { ...presentation, paragraphs: revealParagraphs(presentation.paragraphs, budget - characterCount(message.text)) } : null,
-  }
-}))
+const streamStage = ref('retrieval')
+const hasPreview = computed(() => messages.value.some(message => message.provisional && message.text.trim()))
+const streamLabel = computed(() => streamStage.value === 'verification' ? t.value.streamChecking :
+  streamStage.value === 'resolution' ? t.value.resolving : streamStage.value === 'retrieval' ? t.value.retrieving : t.value.streaming)
+let activeStream: AbortController | undefined
+onBeforeUnmount(() => activeStream?.abort())
+const displayMessages = computed(() => messages.value.map(message => ({ ...message,
+  text: message.errorCode ? savedError(message.errorCode, message.language ?? language.value) : message.text,
+  presentation: message.reply ? presentReply(message.reply) : null,
+})))
 
 async function scrollToLatest(force = false) {
   if (force) followLatest.value = true
   await nextTick()
   if (followLatest.value && activeView.value === 'chat' && messageArea.value) {
     messageArea.value.scrollTop = messages.value.length ? messageArea.value.scrollHeight : 0
-    lastScrollTop = Math.max(0, messageArea.value.scrollTop)
   }
 }
 
 function onMessageScroll() {
   const area = messageArea.value
   if (!area) return
-  const top = Math.max(0, area.scrollTop)
-  if (top < lastScrollTop - 1) followLatest.value = false
-  else if (area.scrollHeight - top - area.clientHeight < 32) followLatest.value = true
-  lastScrollTop = top
+  if (area.scrollHeight - Math.max(0, area.scrollTop) - area.clientHeight < 32) followLatest.value = true
+}
+
+function onScrollPointer(event: PointerEvent) {
+  const area = messageArea.value
+  if (area && event.clientX >= area.getBoundingClientRect().right - 18) followLatest.value = false
 }
 
 function resizeComposer() {
@@ -89,36 +89,6 @@ function onComposerKey(event: KeyboardEvent) {
   }
 }
 
-let finishReveal: (() => void) | undefined
-function animateReply(message: Message) {
-  const total = characterCount(message.text) + (message.reply?.claims.reduce((sum, claim) => sum + characterCount(claim.text), 0) ?? 0)
-  if (!total || window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.hidden) return Promise.resolve()
-  message.visibleCharacters = 0
-  message.revealing = true
-  return new Promise<void>(resolve => {
-    const started = performance.now()
-    let frame = 0
-    const finish = () => {
-      cancelAnimationFrame(frame)
-      document.removeEventListener('visibilitychange', onVisibility)
-      message.visibleCharacters = total
-      message.revealing = false
-      finishReveal = undefined
-      resolve()
-    }
-    const onVisibility = () => { if (document.hidden) finish() }
-    const tick = (now: number) => {
-      message.visibleCharacters = revealBudget(now - started, total)
-      void scrollToLatest()
-      if (message.visibleCharacters >= total) finish()
-      else frame = requestAnimationFrame(tick)
-    }
-    finishReveal = finish
-    document.addEventListener('visibilitychange', onVisibility)
-    frame = requestAnimationFrame(tick)
-  })
-}
-onBeforeUnmount(() => finishReveal?.())
 watch(activeView, () => { void scrollToLatest() })
 watch(input, () => { void nextTick(resizeComposer) })
 
@@ -242,6 +212,7 @@ async function removeChat() {
 async function send() {
   const value = input.value.trim()
   if (!value || busy.value || loadingHistory.value || !conversationToken.value) return
+  const requestStarted = performance.now()
   busy.value = true
   error.value = ''
   messages.value.push({ role: 'user', text: value })
@@ -252,23 +223,48 @@ async function send() {
       if (!activeChat.value.title) activeChat.value.title = value.replace(/\s+/g, ' ').slice(0, 42)
       activeChat.value.updated = Date.now() / 1000
     }
-    const reply = await askQuestion(value, 'auto', conversationToken.value)
-    messages.value.push({ role: 'assistant', text: reply.message, reply, language: reply.language })
+    messages.value.push({ role: 'assistant', text: '', provisional: true })
     const message = messages.value[messages.value.length - 1]!
+    const paragraphs: string[] = []
+    let firstText: number | null = null
+    streamStage.value = 'retrieval'
+    activeStream = new AbortController()
+    const signal = AbortSignal.any([activeStream.signal, AbortSignal.timeout(180000)])
+    const reply = await streamQuestion(value, conversationToken.value, (event, data) => {
+      if (event === 'meta') message.language = data.language
+      if (event === 'status') streamStage.value = data.stage
+      if (event === 'reset') { paragraphs.length = 0; message.text = '' }
+      if (event === 'delta') {
+        paragraphs[data.index] = (paragraphs[data.index] ?? '') + data.text
+        message.text = paragraphs.join('\n\n')
+        if (firstText === null && data.text.trim()) firstText = performance.now() - requestStarted
+        void scrollToLatest()
+      }
+    }, signal)
+    reply.metrics.client_ttft_ms = firstText
+    message.text = reply.message
+    message.reply = reply
+    message.language = reply.language
+    message.provisional = false
     runs.value.push({ id: reply.request_id ?? `live-${Date.now()}-${runs.value.length}`, group: 'live',
       source: 'live', kind: 'answer', provenance: 'real', question: value, language: reply.language ?? null,
       status: reply.action, measured_at: new Date().toISOString(), model: null,
       retrieval_ms: reply.metrics.retrieval_ms, llm_ms: reply.metrics.llm_ms, total_ms: reply.metrics.total_ms,
       chunks: reply.metrics.retrieved_chunks, embedding_input_tokens: reply.metrics.embedding_input_tokens,
       llm_input_tokens: reply.metrics.llm_input_tokens, llm_output_tokens: reply.metrics.llm_output_tokens,
-      direct_recall: null, expanded_coverage: null, query_cached: false })
+      direct_recall: null, expanded_coverage: null, query_cached: reply.metrics.query_cached ?? false,
+      ttft_ms: firstText, generation_ms: reply.metrics.generation_ms ?? null,
+      verification_ms: reply.metrics.verification_ms ?? null, question_resolution_ms: reply.metrics.question_resolution_ms ?? null })
     if (runs.value.length > 200) runs.value.shift()
-    await animateReply(message)
   } catch (err) {
     input.value = value
     error.value = localizedError(err, t.value.requestError)
-    messages.value.push({ role: 'assistant', text: '', errorCode: err instanceof ApiError ? err.code : 'REQUEST_FAILED', language: activeChat.value?.language })
+    const message = messages.value[messages.value.length - 1]
+    const failed = { role: 'assistant' as const, text: '', errorCode: err instanceof ApiError ? err.code : 'REQUEST_FAILED', language: message?.language ?? activeChat.value?.language }
+    if (message?.role === 'assistant' && message.provisional) messages.value[messages.value.length - 1] = failed
+    else messages.value.push(failed)
   } finally {
+    activeStream = undefined
     try { await refreshChats() } catch { error.value = error.value || t.value.historyError }
     busy.value = false
     await scrollToLatest()
@@ -315,7 +311,7 @@ function documentUrl() {
         <form v-if="editingTitle" class="chat-edit-bar" @submit.prevent="saveTitle"><label class="sr-only" for="chat-title">{{ t.rename }}</label><input id="chat-title" v-model="titleInput" maxlength="80" :placeholder="t.chatTitle" :disabled="loadingHistory" /><button type="submit" :disabled="loadingHistory || !titleInput.trim()">{{ t.save }}</button><button type="button" :disabled="loadingHistory" @click="editingTitle = false">{{ t.cancel }}</button></form>
         <div v-if="deletingChat" class="chat-edit-bar delete-confirm" role="alert"><span>{{ t.deleteConfirm }}</span><button :disabled="loadingHistory" @click="removeChat">{{ t.deleteChat }}</button><button :disabled="loadingHistory" @click="deletingChat = false">{{ t.cancel }}</button></div>
         <div class="message-window">
-        <div ref="messageArea" class="messages" role="log" aria-live="polite" :aria-busy="busy" @scroll="onMessageScroll" @wheel="event => { if (event.deltaY < 0) followLatest = false }">
+        <div ref="messageArea" class="messages" role="log" aria-live="polite" :aria-busy="busy" @scroll="onMessageScroll" @wheel="event => { if (event.deltaY < 0) followLatest = false }" @touchmove="followLatest = false" @pointerdown="onScrollPointer" @focusin="followLatest = false" @keydown="event => { if (['ArrowUp', 'PageUp', 'Home'].includes(event.key)) followLatest = false }">
           <div v-if="!messages.length" class="empty-state">
             <div class="hero-symbol"><Icon name="book" /><span><Icon name="shield" /></span></div>
             <span class="hero-kicker">{{ t.heroKicker }}</span>
@@ -324,16 +320,16 @@ function documentUrl() {
           </div>
           <div v-for="(message, index) in displayMessages" :key="index" class="message" :class="message.role">
             <span class="message-label"><span v-if="message.role === 'assistant'" class="assistant-mark"><Icon name="book" /></span>{{ message.role === 'user' ? t.you : 'InsureTutor' }}</span>
-            <div class="answer-bubble" :class="{ revealing: message.revealing }">
-              <p v-if="message.text">{{ message.text }}</p>
+            <div class="answer-bubble" :class="{ revealing: message.provisional && streamStage === 'generation' }">
+              <p v-if="message.text">{{ message.text }}</p><span v-if="message.provisional && message.text" class="stream-note" role="status">{{ streamLabel }}</span>
               <template v-if="message.reply && message.presentation">
                 <p v-for="(paragraph, ci) in message.presentation.paragraphs" :key="ci">{{ paragraph.text }}
-                  <a v-for="number in message.revealing ? [] : paragraph.references" :key="number" class="citation-number" :href="`#source-${index}-${number}`" :aria-label="`${t.viewCitation} ${number}`" @click.prevent="revealSource(index, number)">[{{ number }}]</a>
+                  <a v-for="number in message.provisional ? [] : paragraph.references" :key="number" class="citation-number" :href="`#source-${index}-${number}`" :aria-label="`${t.viewCitation} ${number}`" @click.prevent="revealSource(index, number)">[{{ number }}]</a>
                 </p>
               </template>
-              <span v-if="message.revealing && !message.text && !message.presentation?.paragraphs.length" class="typing-cursor" aria-hidden="true">▍</span>
+              <span v-if="message.provisional && !message.text && !message.presentation?.paragraphs.length" class="typing-cursor" aria-hidden="true">▍</span>
             </div>
-            <template v-if="message.reply && message.presentation && !message.revealing">
+            <template v-if="message.reply && message.presentation && !message.provisional">
               <details v-if="message.reply.verification?.status === 'failed'" class="metrics">
                 <summary>{{ t.failure }}</summary>
                 <p v-if="message.reply.verification.detail">{{ t.auditNote }}: {{ message.reply.verification.detail }}</p>
@@ -351,11 +347,12 @@ function documentUrl() {
               <details class="metrics">
                 <summary><Icon name="clock" /><span>{{ t.elapsed }} <strong>{{ (message.reply.metrics.total_ms / 1000).toFixed(1) }} {{ t.seconds }}</strong></span><span class="runtime-label">{{ t.runtime }}</span><Icon name="chevron" /></summary>
                 <dl class="request-timings"><div><dt>{{ t.retrieval }}</dt><dd>{{ message.reply.metrics.retrieval_ms }} <small>ms</small></dd></div><div><dt>{{ t.llm }}</dt><dd>{{ (message.reply.metrics.llm_ms / 1000).toFixed(2) }} <small>s</small></dd></div><div><dt>{{ t.total }}</dt><dd>{{ (message.reply.metrics.total_ms / 1000).toFixed(2) }} <small>s</small></dd></div></dl>
-                <p class="usage-line">{{ t.chunks }}: {{ message.reply.metrics.retrieved_chunks }} · {{ t.inputTokens }}: {{ message.reply.metrics.llm_input_tokens }} / {{ t.outputTokens }}: {{ message.reply.metrics.llm_output_tokens }} · {{ t.embedding }}: {{ message.reply.metrics.embedding_input_tokens }}</p>
+                <dl class="request-timings stage-timings"><div v-for="stage in (['ttft_ms', 'generation_ms', 'verification_ms', 'question_resolution_ms'] as const)" :key="stage"><dt>{{ stage === 'ttft_ms' ? t.ttft : stage === 'generation_ms' ? t.generation : stage === 'verification_ms' ? t.verification : t.resolution }}</dt><dd>{{ (stage === 'ttft_ms' ? message.reply.metrics.client_ttft_ms ?? message.reply.metrics.ttft_ms : message.reply.metrics[stage]) == null ? '—' : ((stage === 'ttft_ms' ? message.reply.metrics.client_ttft_ms ?? message.reply.metrics.ttft_ms : message.reply.metrics[stage])! / 1000).toFixed(2) }} <small>s</small></dd></div></dl>
+                <p class="usage-line">{{ t.chunks }}: {{ message.reply.metrics.retrieved_chunks }} · {{ t.inputTokens }}: {{ message.reply.metrics.llm_input_tokens }} / {{ t.outputTokens }}: {{ message.reply.metrics.llm_output_tokens }} · {{ t.embedding }}: {{ message.reply.metrics.embedding_input_tokens }}<span v-if="message.reply.metrics.query_cached"> · {{ t.vectorCached }}</span></p>
               </details>
             </template>
           </div>
-          <div v-if="busy && !isRevealing" class="waiting-status" role="status"><span class="waiting-dots" aria-hidden="true"><i></i><i></i><i></i></span>{{ t.waiting }}</div>
+          <div v-if="busy && !hasPreview" class="waiting-status" role="status"><span class="waiting-dots" aria-hidden="true"><i></i><i></i><i></i></span>{{ streamLabel }}</div>
         </div>
         <button v-if="!followLatest && messages.length" class="jump-latest" type="button" @click="scrollToLatest(true)">↓ {{ t.latest }}</button>
         </div>

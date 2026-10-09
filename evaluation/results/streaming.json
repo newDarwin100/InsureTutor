@@ -1,0 +1,880 @@
+{
+  "measured_at": "2026-10-09T10:31:37.169851+00:00",
+  "provenance": "real_api",
+  "ttft_definition": "HTTP submission to first nonblank answer text; status/heartbeats/JSON fields excluded.",
+  "target_ms": 2000,
+  "target_is_guarantee": false,
+  "cases": [
+    {
+      "case_id": "D01",
+      "question": "4% 的利率是保证的吗？定期提款有什么条件？",
+      "client_ttft_ms": 1988.74,
+      "under_2_seconds": true,
+      "delta_events": 265,
+      "provisional_matches_final": true,
+      "client_total_ms": 7170.8,
+      "response": {
+        "request_id": "c181c13c79e2473d9a8dc2755485bc13",
+        "action": "answered",
+        "language": "zh-Hans",
+        "claims": [
+          {
+            "text": "不是。册子列出的4%是“现时假设基本派息率”，并非保证，且日后可能更改；另列出的0.25%额外利息同样是现时假设息率。册子所述的长期保证利率为2.5%，并且只有保单生效满15年或以上时，账户价值（包括已拨入的利息及额外回报总额）才保证不少于按每年2.5%计算累积的账户价值。",
+            "citation_numbers": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          {
+            "text": "定期提款权益只适用于生效满10年或以上、并已累积足够现金价值的保单；每月提款最低为500美元／4,000港元／4,000澳门元，最短提款期为一年；每年提款最低为6,000美元／48,000港元／48,000澳门元，最短提款期为三年。定期提款可获豁免提款费，但如更改已确认的定期提款权益，须支付手续费。另请注意，提款会影响累积现金价值，而每月费用仍会扣除；若现金价值不足以支付每月费用，保单可能终止且不具任何价值。",
+            "citation_numbers": [
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "evidence_id": "p008-b005",
+            "quote": "基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)",
+            "source_pointer": "/pdf_info/7/para_blocks/4",
+            "review_flags": []
+          },
+          {
+            "number": 2,
+            "evidence_id": "p008-b007",
+            "quote": "4% 每年 p.a.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "4% 每年 p.a.",
+            "source_pointer": "/pdf_info/7/para_blocks/6",
+            "review_flags": []
+          },
+          {
+            "number": 3,
+            "evidence_id": "p008-b008",
+            "quote": "額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)",
+            "source_pointer": "/pdf_info/7/para_blocks/7",
+            "review_flags": []
+          },
+          {
+            "number": 4,
+            "evidence_id": "p008-b009",
+            "quote": "0.25% 每年 p.a.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "0.25% 每年 p.a.",
+            "source_pointer": "/pdf_info/7/para_blocks/8",
+            "review_flags": []
+          },
+          {
+            "number": 5,
+            "evidence_id": "p008-b011",
+            "quote": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。",
+            "source_pointer": "/pdf_info/7/para_blocks/10",
+            "review_flags": []
+          },
+          {
+            "number": 6,
+            "evidence_id": "p008-b002",
+            "quote": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。",
+            "source_pointer": "/pdf_info/7/para_blocks/1",
+            "review_flags": []
+          },
+          {
+            "number": 7,
+            "evidence_id": "p012-b007",
+            "quote": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+            "source_pointer": "/pdf_info/11/para_blocks/6",
+            "review_flags": []
+          },
+          {
+            "number": 8,
+            "evidence_id": "p010-b005",
+            "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "source_pointer": "/pdf_info/9/para_blocks/4",
+            "review_flags": []
+          },
+          {
+            "number": 9,
+            "evidence_id": "p018-b001-t1-r2",
+            "quote": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 18,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=18",
+            "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+            "source_pointer": "/pdf_info/17/para_blocks/0",
+            "review_flags": []
+          },
+          {
+            "number": 10,
+            "evidence_id": "p010-b013",
+            "quote": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "source_pointer": "/pdf_info/9/para_blocks/12",
+            "review_flags": []
+          }
+        ],
+        "message": "",
+        "mode": "conversation",
+        "verification": {
+          "status": "passed",
+          "reason": "supported",
+          "detail": null
+        },
+        "guardrail": {
+          "reasons": [],
+          "action": "ANSWER",
+          "explanation": "Evidence check passed.",
+          "repair_attempts": 0
+        },
+        "metrics": {
+          "guardrail_ms": 0.01,
+          "repair_ms": 0,
+          "retrieval_ms": 605.57,
+          "query_embedding_ms": 601.65,
+          "vector_search_ms": 3.92,
+          "generation_ms": 4505.23,
+          "verification_ms": 1804.11,
+          "model_ttft_ms": 1172.98,
+          "llm_ms": 6309.34,
+          "total_ms": 7091.04,
+          "retrieved_chunks": 5,
+          "direct_evidence": 14,
+          "context_evidence": 18,
+          "expanded_evidence": 26,
+          "embedding_input_tokens": 22,
+          "query_cached": false,
+          "llm_input_tokens": 5408,
+          "llm_output_tokens": 418,
+          "question_resolution_ms": 0,
+          "question_resolution_mode": "none",
+          "ttft_ms": 1987.8
+        },
+        "models": {
+          "llm": "gpt-5.6-luna",
+          "embedding": "text-embedding-3-large"
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      }
+    },
+    {
+      "case_id": "D05",
+      "question": "定期提款有什么条件？",
+      "client_ttft_ms": 1745.22,
+      "under_2_seconds": true,
+      "delta_events": 197,
+      "provisional_matches_final": true,
+      "client_total_ms": 6313.59,
+      "response": {
+        "request_id": "a163f33b5bac49ecbc0fa31a7eaf301d",
+        "action": "answered",
+        "language": "zh-Hans",
+        "claims": [
+          {
+            "text": "定期提款权益只适用于保单生效满10年或以上，并且在符合条件时可豁免提款费用。保单内必须已累积足够的现金价值；您可预先设定每月或每年的提款金额和年期。按本册所列现行规定，每月提款最低为500美元／4,000港元／4,000澳门元，最短提款期为一年；每年提款最低为6,000美元／48,000港元／48,000澳门元，最短提款期为三年。若更改已确认的定期提款权益，则须支付手续费。提取现金价值会影响累积现金价值，而每月费用仍会扣除；若现金价值不足以支付每月费用，保单可能终止且不具任何价值。上述收费标准并非保证，公司可在提前一个月书面通知后更改。",
+            "citation_numbers": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "evidence_id": "p012-b007",
+            "quote": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+            "source_pointer": "/pdf_info/11/para_blocks/6",
+            "review_flags": []
+          },
+          {
+            "number": 2,
+            "evidence_id": "p010-b005",
+            "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "source_pointer": "/pdf_info/9/para_blocks/4",
+            "review_flags": []
+          },
+          {
+            "number": 3,
+            "evidence_id": "p010-b013",
+            "quote": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "source_pointer": "/pdf_info/9/para_blocks/12",
+            "review_flags": []
+          },
+          {
+            "number": 4,
+            "evidence_id": "p012-b011",
+            "quote": "10. 現時的收費標準並非保證，以及受制於本公司在提前一個月以書面通知後作出改變的全權酌情決定權。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "10. 現時的收費標準並非保證，以及受制於本公司在提前一個月以書面通知後作出改變的全權酌情決定權。",
+            "source_pointer": "/pdf_info/11/para_blocks/10",
+            "review_flags": []
+          }
+        ],
+        "message": "",
+        "mode": "conversation",
+        "verification": {
+          "status": "passed",
+          "reason": "supported",
+          "detail": null
+        },
+        "guardrail": {
+          "reasons": [],
+          "action": "ANSWER",
+          "explanation": "Evidence check passed.",
+          "repair_attempts": 0
+        },
+        "metrics": {
+          "guardrail_ms": 0.02,
+          "repair_ms": 0,
+          "retrieval_ms": 397.94,
+          "query_embedding_ms": 379.96,
+          "vector_search_ms": 17.99,
+          "generation_ms": 3245.41,
+          "verification_ms": 2603.13,
+          "model_ttft_ms": 1221.09,
+          "llm_ms": 5848.54,
+          "total_ms": 6303.65,
+          "retrieved_chunks": 5,
+          "direct_evidence": 11,
+          "context_evidence": 15,
+          "expanded_evidence": 21,
+          "embedding_input_tokens": 10,
+          "query_cached": false,
+          "llm_input_tokens": 4551,
+          "llm_output_tokens": 283,
+          "question_resolution_ms": 0,
+          "question_resolution_mode": "none",
+          "ttft_ms": 1742.54
+        },
+        "models": {
+          "llm": "gpt-5.6-luna",
+          "embedding": "text-embedding-3-large"
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      }
+    },
+    {
+      "case_id": "D06",
+      "question": "那每年提款呢？",
+      "client_ttft_ms": 1569.18,
+      "under_2_seconds": true,
+      "delta_events": 130,
+      "provisional_matches_final": true,
+      "client_total_ms": 4574.14,
+      "response": {
+        "request_id": "cacea411a6b747d5b9512a0daaae8b60",
+        "action": "answered",
+        "language": "zh-Hans",
+        "claims": [
+          {
+            "text": "按本宣传册所列，每年提款须符合以下条件：保单已生效满10年或以上，并已累积足够的现金价值；每年提款金额最低为6,000美元、48,000港元或48,000澳门元，提款年期最短为3年。定期提款可获豁免提款费用；如更改已确认的定期提款权益，则须支付手续费。",
+            "citation_numbers": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "text": "提款会影响计划累积的现金价值，而每月费用仍会扣除；若现金价值不足以支付每月费用，保单可能终止且不具任何价值。",
+            "citation_numbers": [
+              4
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "evidence_id": "p012-b007",
+            "quote": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+            "source_pointer": "/pdf_info/11/para_blocks/6",
+            "review_flags": []
+          },
+          {
+            "number": 2,
+            "evidence_id": "p010-b005",
+            "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "source_pointer": "/pdf_info/9/para_blocks/4",
+            "review_flags": []
+          },
+          {
+            "number": 3,
+            "evidence_id": "p018-b001-t1-r2",
+            "quote": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 18,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=18",
+            "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+            "source_pointer": "/pdf_info/17/para_blocks/0",
+            "review_flags": []
+          },
+          {
+            "number": 4,
+            "evidence_id": "p010-b013",
+            "quote": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "source_pointer": "/pdf_info/9/para_blocks/12",
+            "review_flags": []
+          }
+        ],
+        "message": "",
+        "mode": "conversation",
+        "verification": {
+          "status": "passed",
+          "reason": "supported",
+          "detail": null
+        },
+        "guardrail": {
+          "reasons": [],
+          "action": "ANSWER",
+          "explanation": "Evidence check passed.",
+          "repair_attempts": 0
+        },
+        "metrics": {
+          "guardrail_ms": 0.02,
+          "repair_ms": 0,
+          "retrieval_ms": 424.91,
+          "query_embedding_ms": 422.57,
+          "vector_search_ms": 2.34,
+          "generation_ms": 2577.68,
+          "verification_ms": 1532.45,
+          "model_ttft_ms": 1031.77,
+          "llm_ms": 4111.09,
+          "total_ms": 4565.56,
+          "retrieved_chunks": 5,
+          "direct_evidence": 10,
+          "context_evidence": 11,
+          "expanded_evidence": 16,
+          "embedding_input_tokens": 16,
+          "query_cached": false,
+          "llm_input_tokens": 3764,
+          "llm_output_tokens": 229,
+          "question_resolution_ms": 0.96,
+          "question_resolution_mode": "local",
+          "ttft_ms": 1563.85
+        },
+        "models": {
+          "llm": "gpt-5.6-luna",
+          "embedding": "text-embedding-3-large"
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      }
+    }
+  ],
+  "previous_runs": [
+    {
+      "measured_at": "2026-10-09T10:27:30.261998+00:00",
+      "provenance": "real_api",
+      "ttft_definition": "HTTP submission to first nonblank answer text; status/heartbeats/JSON fields excluded.",
+      "target_ms": 2000,
+      "target_is_guarantee": false,
+      "cases": [
+        {
+          "case_id": "D01",
+          "question": "4% 的利率是保证的吗？定期提款有什么条件？",
+          "client_ttft_ms": 3214.63,
+          "under_2_seconds": false,
+          "delta_events": 322,
+          "provisional_matches_final": true,
+          "client_total_ms": 8868.61,
+          "response": {
+            "request_id": "801ce720742d416193f847678cf74b1e",
+            "action": "answered",
+            "language": "zh-Hans",
+            "claims": [
+              {
+                "text": "不是。手册列出的4%是“现时假设基本派息率”，并非保证，且手册说明该数值以2022年1月刊发时适用，日后可能更改；另列出的0.25%额外利息同样是现时假设息率。因此，不能把4%理解为保证回报。手册另有2.5%的长期利率保证；保单生效满15年或以上时，账户价值（包括已拨入的利息及额外回报）保证不低于按每年2.5%派息率累积的账户价值。",
+                "citation_numbers": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              {
+                "text": "定期提款权益只适用于已生效满10年或以上、且保单内已累积足够现金价值的保单。按手册所列现行规定，每月提款最低为500美元／4,000港元／4,000澳门元，最短提款期为一年；每年提款最低为6,000美元／48,000港元／48,000澳门元，最短提款期为三年。定期提款可豁免提款费，但如更改已确认的定期提款权益，须支付手续费；手册另列一般现金提款每次收取25美元／200港元／200澳门元的现行提款费。提款会影响累积现金价值，而每月费用仍会扣除；若现金价值不足以支付月费，保单可能终止且没有任何价值。",
+                "citation_numbers": [
+                  7,
+                  8,
+                  9,
+                  10
+                ]
+              }
+            ],
+            "citations": [
+              {
+                "number": 1,
+                "evidence_id": "p008-b005",
+                "quote": "基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 8,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+                "text": "基本派息 (現時假設息率*） Base Crediting Interest (Current assumed rate*)",
+                "source_pointer": "/pdf_info/7/para_blocks/4",
+                "review_flags": []
+              },
+              {
+                "number": 2,
+                "evidence_id": "p008-b007",
+                "quote": "4% 每年 p.a.",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 8,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+                "text": "4% 每年 p.a.",
+                "source_pointer": "/pdf_info/7/para_blocks/6",
+                "review_flags": []
+              },
+              {
+                "number": 3,
+                "evidence_id": "p008-b008",
+                "quote": "額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 8,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+                "text": "額外利息 (現時假設息率*） Retrospective additional interest (Current assumed rate*)",
+                "source_pointer": "/pdf_info/7/para_blocks/7",
+                "review_flags": []
+              },
+              {
+                "number": 4,
+                "evidence_id": "p008-b009",
+                "quote": "0.25% 每年 p.a.",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 8,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+                "text": "0.25% 每年 p.a.",
+                "source_pointer": "/pdf_info/7/para_blocks/8",
+                "review_flags": []
+              },
+              {
+                "number": 5,
+                "evidence_id": "p008-b011",
+                "quote": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 8,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+                "text": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。",
+                "source_pointer": "/pdf_info/7/para_blocks/10",
+                "review_flags": []
+              },
+              {
+                "number": 6,
+                "evidence_id": "p005-b017",
+                "quote": "■ 2.5%長線利率保證 2.5% long-term guaranteed interest rate",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 5,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=5",
+                "text": "■ 2.5%長線利率保證 2.5% long-term guaranteed interest rate",
+                "source_pointer": "/pdf_info/4/para_blocks/16",
+                "review_flags": []
+              },
+              {
+                "number": 7,
+                "evidence_id": "p012-b007",
+                "quote": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 12,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+                "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+                "source_pointer": "/pdf_info/11/para_blocks/6",
+                "review_flags": []
+              },
+              {
+                "number": 8,
+                "evidence_id": "p010-b005",
+                "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 10,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+                "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+                "source_pointer": "/pdf_info/9/para_blocks/4",
+                "review_flags": []
+              },
+              {
+                "number": 9,
+                "evidence_id": "p018-b001-t1-r2",
+                "quote": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 18,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=18",
+                "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+                "source_pointer": "/pdf_info/17/para_blocks/0",
+                "review_flags": []
+              },
+              {
+                "number": 10,
+                "evidence_id": "p010-b013",
+                "quote": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 10,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+                "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+                "source_pointer": "/pdf_info/9/para_blocks/12",
+                "review_flags": []
+              }
+            ],
+            "message": "",
+            "mode": "conversation",
+            "verification": {
+              "status": "passed",
+              "reason": "supported",
+              "detail": null
+            },
+            "guardrail": {
+              "reasons": [],
+              "action": "ANSWER",
+              "explanation": "Evidence check passed.",
+              "repair_attempts": 0
+            },
+            "metrics": {
+              "guardrail_ms": 0.01,
+              "repair_ms": 0,
+              "retrieval_ms": 1701.71,
+              "query_embedding_ms": 1695.89,
+              "vector_search_ms": 5.82,
+              "generation_ms": 5077.69,
+              "verification_ms": 1999.11,
+              "model_ttft_ms": 1331.35,
+              "llm_ms": 7076.8,
+              "total_ms": 8864.02,
+              "retrieved_chunks": 5,
+              "direct_evidence": 14,
+              "context_evidence": 18,
+              "expanded_evidence": 26,
+              "embedding_input_tokens": 22,
+              "llm_input_tokens": 5465,
+              "llm_output_tokens": 475,
+              "question_resolution_ms": 0,
+              "ttft_ms": 3213.59
+            },
+            "models": {
+              "llm": "gpt-5.6-luna",
+              "embedding": "text-embedding-3-large"
+            },
+            "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+          }
+        },
+        {
+          "case_id": "D05",
+          "question": "定期提款有什么条件？",
+          "client_ttft_ms": 1601.67,
+          "under_2_seconds": true,
+          "delta_events": 200,
+          "provisional_matches_final": true,
+          "client_total_ms": 5057.3,
+          "response": {
+            "request_id": "608084bdcf89440985e71694b2437392",
+            "action": "answered",
+            "language": "zh-Hans",
+            "claims": [
+              {
+                "text": "定期提款权益只适用于保单生效满10年或以上，并可豁免提款费用。按本册所列规定，每月提款最低为500美元／4,000港元／4,000澳门元，提款期最短一年；每年提款最低为6,000美元／48,000港元／48,000澳门元，提款期最短三年。更改已确认的定期提款权益须支付手续费。",
+                "citation_numbers": [
+                  1
+                ]
+              },
+              {
+                "text": "此外，保单须已累积足够的现金价值；提取现金价值会影响计划累积的现金价值，而每月费用仍会扣除。若现金价值不足以支付每月费用，保单可能终止且没有任何价值。一般现金提款按本册所列现时标准每次收取25美元／200港元／200澳门元，但定期提款权益可获豁免；相关收费标准并非保证，日后可能更改。",
+                "citation_numbers": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              }
+            ],
+            "citations": [
+              {
+                "number": 1,
+                "evidence_id": "p012-b007",
+                "quote": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 12,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+                "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+                "source_pointer": "/pdf_info/11/para_blocks/6",
+                "review_flags": []
+              },
+              {
+                "number": 2,
+                "evidence_id": "p010-b005",
+                "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 10,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+                "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+                "source_pointer": "/pdf_info/9/para_blocks/4",
+                "review_flags": []
+              },
+              {
+                "number": 3,
+                "evidence_id": "p010-b013",
+                "quote": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 10,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+                "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+                "source_pointer": "/pdf_info/9/para_blocks/12",
+                "review_flags": []
+              },
+              {
+                "number": 4,
+                "evidence_id": "p018-b001-t1-r2",
+                "quote": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 18,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=18",
+                "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+                "source_pointer": "/pdf_info/17/para_blocks/0",
+                "review_flags": []
+              },
+              {
+                "number": 5,
+                "evidence_id": "p012-b008",
+                "quote": "7. 現時提款費用每次25美元/200港元/200澳門元。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 12,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+                "text": "7. 現時提款費用每次25美元/200港元/200澳門元。",
+                "source_pointer": "/pdf_info/11/para_blocks/7",
+                "review_flags": []
+              },
+              {
+                "number": 6,
+                "evidence_id": "p012-b011",
+                "quote": "10. 現時的收費標準並非保證，以及受制於本公司在提前一個月以書面通知後作出改變的全權酌情決定權。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 12,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+                "text": "10. 現時的收費標準並非保證，以及受制於本公司在提前一個月以書面通知後作出改變的全權酌情決定權。",
+                "source_pointer": "/pdf_info/11/para_blocks/10",
+                "review_flags": []
+              }
+            ],
+            "message": "",
+            "mode": "conversation",
+            "verification": {
+              "status": "passed",
+              "reason": "supported",
+              "detail": null
+            },
+            "guardrail": {
+              "reasons": [],
+              "action": "ANSWER",
+              "explanation": "Evidence check passed.",
+              "repair_attempts": 0
+            },
+            "metrics": {
+              "guardrail_ms": 0.01,
+              "repair_ms": 0,
+              "retrieval_ms": 335.11,
+              "query_embedding_ms": 333.42,
+              "vector_search_ms": 1.69,
+              "generation_ms": 3329.35,
+              "verification_ms": 1362.31,
+              "model_ttft_ms": 1178.3,
+              "llm_ms": 4691.66,
+              "total_ms": 5054.71,
+              "retrieved_chunks": 5,
+              "direct_evidence": 11,
+              "context_evidence": 15,
+              "expanded_evidence": 21,
+              "embedding_input_tokens": 10,
+              "llm_input_tokens": 4591,
+              "llm_output_tokens": 318,
+              "question_resolution_ms": 0,
+              "ttft_ms": 1600.59
+            },
+            "models": {
+              "llm": "gpt-5.6-luna",
+              "embedding": "text-embedding-3-large"
+            },
+            "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+          }
+        },
+        {
+          "case_id": "D06",
+          "question": "那每年提款呢？",
+          "client_ttft_ms": 3610.92,
+          "under_2_seconds": false,
+          "delta_events": 135,
+          "provisional_matches_final": true,
+          "client_total_ms": 6424.53,
+          "response": {
+            "request_id": "34b00dcd833d4cc49111cc35ec2d83f4",
+            "action": "answered",
+            "language": "zh-Hans",
+            "claims": [
+              {
+                "text": "每年定期提款需同时满足以下条件：保单已生效满10年或以上，并且保单内已累积足够的现金价值；每年提款金额最低为6,000美元、48,000港元或48,000澳门元，提款年期最短为3年。定期提款可获豁免提款费用；如更改已确认的定期提款权益，则须支付手续费。",
+                "citation_numbers": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              {
+                "text": "提款或其他影响现金价值的操作会使现金价值减少，而每月费用仍会扣除；若现金价值不足以支付每月费用，保单可能终止且不具任何价值。",
+                "citation_numbers": [
+                  4
+                ]
+              }
+            ],
+            "citations": [
+              {
+                "number": 1,
+                "evidence_id": "p012-b007",
+                "quote": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 12,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+                "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+                "source_pointer": "/pdf_info/11/para_blocks/6",
+                "review_flags": []
+              },
+              {
+                "number": 2,
+                "evidence_id": "p010-b005",
+                "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 10,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+                "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+                "source_pointer": "/pdf_info/9/para_blocks/4",
+                "review_flags": []
+              },
+              {
+                "number": 3,
+                "evidence_id": "p018-b001-t1-r2",
+                "quote": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 18,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=18",
+                "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+                "source_pointer": "/pdf_info/17/para_blocks/0",
+                "review_flags": []
+              },
+              {
+                "number": 4,
+                "evidence_id": "p010-b013",
+                "quote": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+                "document_name": "FLEXI-ULife Prime Saver.pdf",
+                "pdf_page": 10,
+                "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+                "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+                "source_pointer": "/pdf_info/9/para_blocks/12",
+                "review_flags": []
+              }
+            ],
+            "message": "",
+            "mode": "conversation",
+            "verification": {
+              "status": "passed",
+              "reason": "supported",
+              "detail": null
+            },
+            "guardrail": {
+              "reasons": [],
+              "action": "ANSWER",
+              "explanation": "Evidence check passed.",
+              "repair_attempts": 0
+            },
+            "metrics": {
+              "guardrail_ms": 0.02,
+              "repair_ms": 0,
+              "retrieval_ms": 1113.43,
+              "query_embedding_ms": 1112.14,
+              "vector_search_ms": 1.3,
+              "generation_ms": 2437.48,
+              "verification_ms": 1210.71,
+              "model_ttft_ms": 770.83,
+              "llm_ms": 5288.69,
+              "total_ms": 6418.29,
+              "retrieved_chunks": 5,
+              "direct_evidence": 11,
+              "context_evidence": 15,
+              "expanded_evidence": 21,
+              "embedding_input_tokens": 16,
+              "llm_input_tokens": 4978,
+              "llm_output_tokens": 268,
+              "question_resolution_ms": 1640.5,
+              "ttft_ms": 3610.19
+            },
+            "models": {
+              "llm": "gpt-5.6-luna",
+              "embedding": "text-embedding-3-large"
+            },
+            "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+          }
+        }
+      ]
+    }
+  ],
+  "review_note": "Core rate/withdrawal facts inspected against citations. D01 did not explicitly date the rate in answer text; January 2022 is present in the cited footnote. Not a complete answer-quality evaluation."
+}

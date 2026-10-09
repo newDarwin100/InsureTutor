@@ -30,15 +30,46 @@ def is_followup(question):
                 or re.search(r'第[一二三四\d]+个|第[一二三四\d]+個|\b(it|that|those|them|second one)\b|呢[？?]?$', q))
 
 
-def conversational_answer(question, language, turns, model=None):
+def local_followup(question, language, turns):
+    """Resolve a narrowly defined frequency follow-up using only the previous user subject."""
+    if not turns:
+        return None
+    previous = turns[-1].get('resolved_question', turns[-1].get('question', ''))
+    if not re.search(r'定期提款|periodic withdrawal', previous, re.IGNORECASE):
+        return None
+    # A previous multipart question has multiple possible referents; let the model resolve it.
+    if re.search(r'利率|失业|失業|身故|guarantee|unemployment|death', previous, re.IGNORECASE):
+        return None
+    q = question.strip().lower()
+    chinese = re.fullmatch(r'(?:那|那么|那麼)?(每年|每月)提款(?:呢)?[？?]?', q)
+    english = re.fullmatch(r'(?:what about|and|then) (annual|monthly) withdrawals?\??', q)
+    if chinese:
+        period = chinese[1]
+        return f'定期提款中，{period}提款有什麼條件？' if language == 'zh-Hant' else f'定期提款中，{period}提款有什么条件？'
+    if english:
+        return f'What are the {english[1]} periodic withdrawal conditions?'
+    return None
+
+
+def conversational_answer(question, language, turns, model=None, emit=None):
     started = time.perf_counter()
     resolved = question
     usage = {'ms': 0, 'input_tokens': 0, 'output_tokens': 0}
+    resolution_mode = 'none'
     if input_reasons(question):
         reply = answer(question, language)
         reply['mode'] = 'conversation'
         return reply, question
-    if turns and is_followup(question):
+    local = local_followup(question, language, turns)
+    if local:
+        resolved = local
+        resolution_mode = 'local'
+        usage['ms'] = round((time.perf_counter()-started)*1000, 2)
+        reply = answer(resolved, language, model=model, **({'emit': emit} if emit else {}))
+    elif turns and is_followup(question):
+        resolution_mode = 'model'
+        if emit:
+            emit('status', {'stage': 'resolution'})
         model = model or Responses()
         rewrite, usage = model.structured(RESOLVE, {'question': question, 'language': language,
                                                   'history': turns[-4:]}, ResolvedQuestion)
@@ -51,12 +82,13 @@ def conversational_answer(question, language, turns, model=None):
             reply['guardrail'] = guard_result([Reason.INSUFFICIENT_EVIDENCE], Action.CLARIFY, reply['message'])
         else:
             resolved = rewrite.question.strip()
-            reply = answer(resolved, language, model=model)
+            reply = answer(resolved, language, model=model, **({'emit': emit} if emit else {}))
     else:
-        reply = answer(question, language, model=model)
+        reply = answer(question, language, model=model, **({'emit': emit} if emit else {}))
     reply['mode'] = 'conversation'
     reply['metrics']['question_resolution_ms'] = usage['ms']
-    reply['metrics']['llm_ms'] = round(reply['metrics']['llm_ms'] + usage['ms'], 2)
+    reply['metrics']['question_resolution_mode'] = resolution_mode
+    reply['metrics']['llm_ms'] = round(reply['metrics']['llm_ms'] + (usage['ms'] if resolution_mode == 'model' else 0), 2)
     reply['metrics']['llm_input_tokens'] += usage['input_tokens']
     reply['metrics']['llm_output_tokens'] += usage['output_tokens']
     reply['metrics']['total_ms'] = round((time.perf_counter()-started)*1000, 2)
