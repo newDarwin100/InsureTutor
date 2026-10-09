@@ -1,7 +1,7 @@
 import type { Language } from './api/client'
 const hans = {
   vectorCached: '复用问题向量',
-  ttft: '首字响应', generation: '生成', verification: '依据核对', resolution: '追问改写', streaming: '正在生成 · 内容尚在核对', streamChecking: '正在核对依据 · 内容尚未确认', retrieving: '正在查找原文…', resolving: '正在理解追问…', ttftNote: '首字响应指从发送问题到收到第一个答案文字，不含加载提示。2秒为优化目标，不是每次请求的保证。',
+  ttft: '首字响应', generation: '生成', verification: '依据核对', resolution: '追问改写', streaming: '正在整理回答…', streamChecking: '正在核对原文…', retrieving: '正在查找原文…', resolving: '正在理解追问…', ttftNote: '当前首字响应包含依据核对：从发送到收到最终答案，不含加载提示。旧记录可能测量草稿首字，不能直接比较；不保证2秒内完成。',
   heroKicker: '以原文为依据', heroTitle: '关于这份保单，你想了解什么？', heroDescription: '把不清楚的条款交给我们，回答和原文一起看。', rateTopic: '收益保证', rateExample: '4% 的利率是保证的吗？', rateQuestion: '4% 的利率是保证的吗？定期提款有什么条件？', withdrawTopic: '提款条件', withdrawExample: '定期提款有什么要求？', withdrawQuestion: '定期提款有什么条件？', unemploymentTopic: '失业保障', unemploymentExample: '被裁员后，可以停缴多久？', unemploymentQuestion: '被裁员后能停缴多久？附加保障也适用吗？',
   chatHistory: '聊天记录', newChat: '新对话', rename: '重命名', deleteChat: '删除', save: '保存', cancel: '取消', deleteConfirm: '删除这个对话及全部记录？', loadingHistory: '正在读取聊天记录…', historyError: '聊天记录暂时无法读取或保存，请刷新重试。', storageError: '请允许浏览器本地存储，再刷新以保存会话凭证。', interrupted: '这次请求未完成，可以重新提问。', pendingReply: '这个对话正在处理请求，请稍后重新打开。', historyNoteShort: '本地保存 · 回答语言自动识别', closeHistory: '关闭聊天列表',
   latest: '回到最新', composerHint: 'Enter 发送 · Shift + Enter 换行',
@@ -18,7 +18,7 @@ const hans = {
 }
 const hant: Record<keyof typeof hans, string> = {
   vectorCached: '復用問題向量',
-  ttft: '首字回應', generation: '生成', verification: '依據核對', resolution: '追問改寫', streaming: '正在生成 · 內容尚在核對', streamChecking: '正在核對依據 · 內容尚未確認', retrieving: '正在查找原文…', resolving: '正在理解追問…', ttftNote: '首字回應指從發送問題到收到第一個答案文字，不含載入提示。2秒為優化目標，並非每次請求的保證。',
+  ttft: '首字回應', generation: '生成', verification: '依據核對', resolution: '追問改寫', streaming: '正在整理回答…', streamChecking: '正在核對原文…', retrieving: '正在查找原文…', resolving: '正在理解追問…', ttftNote: '目前首字回應包含依據核對：從發送到收到最終答案，不含載入提示。舊記錄可能量度草稿首字，不能直接比較；不保證2秒內完成。',
   heroKicker: '以原文為依據', heroTitle: '關於這份保單，你想了解甚麼？', heroDescription: '把不清楚的條款交給我們，回答和原文一起看。', rateTopic: '收益保證', rateExample: '4% 的利率是保證的嗎？', rateQuestion: '4% 的利率是保證的嗎？定期提款有什麼條件？', withdrawTopic: '提款條件', withdrawExample: '定期提款有甚麼要求？', withdrawQuestion: '定期提款有什麼條件？', unemploymentTopic: '失業保障', unemploymentExample: '被裁員後，可以停繳多久？', unemploymentQuestion: '被裁員後能停繳多久？附加保障也適用嗎？',
   chatHistory: '聊天記錄', newChat: '新對話', rename: '重新命名', deleteChat: '刪除', save: '儲存', cancel: '取消', deleteConfirm: '刪除這個對話及全部記錄？', loadingHistory: '正在讀取聊天記錄…', historyError: '聊天記錄暫時無法讀取或儲存，請重新整理再試。', storageError: '請允許瀏覽器本地儲存，再重新整理以保存會話憑證。', interrupted: '這次請求未完成，可以重新提問。', pendingReply: '這個對話正在處理請求，請稍後重新開啟。', historyNoteShort: '本地儲存 · 回答語言自動識別', closeHistory: '關閉聊天列表',
   latest: '回到最新', composerHint: 'Enter 發送 · Shift + Enter 換行',
@@ -27,7 +27,7 @@ const hant: Record<keyof typeof hans, string> = {
 }
 const en: Record<keyof typeof hans, string> = {
   vectorCached: 'Query vector reused',
-  ttft: 'First text', generation: 'Generation', verification: 'Evidence check', resolution: 'Follow-up rewrite', streaming: 'Generating · Not yet verified', streamChecking: 'Checking evidence · Not yet verified', retrieving: 'Finding source passages…', resolving: 'Resolving the follow-up…', ttftNote: 'First-text time runs from submitting the question to receiving the first answer text, excluding loading indicators. Two seconds is a target, not a per-request guarantee.',
+  ttft: 'First text', generation: 'Generation', verification: 'Evidence check', resolution: 'Follow-up rewrite', streaming: 'Preparing the answer…', streamChecking: 'Checking source passages…', retrieving: 'Finding source passages…', resolving: 'Resolving the follow-up…', ttftNote: 'Current first-text time includes verification: submission to receiving the final answer, excluding loading indicators. Historical records may measure draft text and are not directly comparable. Completion within two seconds is not guaranteed.',
   heroKicker: 'Grounded in the brochure', heroTitle: 'What would you like to understand?', heroDescription: 'Ask about a clause. Read the answer alongside its source.', rateTopic: 'Guaranteed returns', rateExample: 'Is the 4% rate guaranteed?', rateQuestion: 'Is the 4% rate guaranteed? What are the periodic withdrawal conditions?', withdrawTopic: 'Withdrawals', withdrawExample: 'What are the withdrawal conditions?', withdrawQuestion: 'What are the periodic withdrawal conditions?', unemploymentTopic: 'Unemployment', unemploymentExample: 'How long can premiums be deferred?', unemploymentQuestion: 'How long is the unemployment premium grace period? Does it apply to riders?',
   chatHistory: 'Chats', newChat: 'New chat', rename: 'Rename', deleteChat: 'Delete', save: 'Save', cancel: 'Cancel', deleteConfirm: 'Delete this conversation and all its messages?', loadingHistory: 'Loading conversations…', historyError: 'Could not load or save conversations. Refresh and retry.', storageError: 'Allow browser storage and refresh to save your conversation credentials.', interrupted: 'This request did not finish. You can ask again.', pendingReply: 'This conversation is processing a request. Reopen it shortly.', historyNoteShort: 'Saved locally · Automatic answer language', closeHistory: 'Close chat list',
   latest: 'Jump to latest', composerHint: 'Enter to send · Shift + Enter for a new line',

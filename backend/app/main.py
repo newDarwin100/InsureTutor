@@ -129,13 +129,11 @@ def chat_stream(body: ChatRequest, conversation_token: str | None = Header(defau
     started = time.perf_counter()
 
     def run(send):
-        first_text = None
-
         def emit(event, data):
-            nonlocal first_text
-            if event == 'delta' and data.get('text', '').strip() and first_text is None:
-                first_text = round((time.perf_counter()-started)*1000, 2)
-            send(event, data)
+            # Draft deltas and repair resets stay inside the worker. Only the
+            # final, checked reply may cross the public answer boundary.
+            if event in ('meta', 'status'):
+                send(event, data)
 
         try:
             with conversations.use(conversation_token) if conversation_token else nullcontext(None) as entry:
@@ -153,12 +151,13 @@ def chat_stream(body: ChatRequest, conversation_token: str | None = Header(defau
                         reply, resolved = conversational_answer(body.message.strip(), language, entry.turns, emit=emit)
                     # Check the channel before committing a reply after a slow audit.
                     emit('status', {'stage': 'complete'})
-                    reply['metrics']['ttft_ms'] = first_text
+                    reply['metrics']['ttft_ms'] = (round((time.perf_counter()-started)*1000, 2)
+                        if any(claim['text'].strip() for claim in reply['claims']) else None)
                     reply['metrics']['total_ms'] = round((time.perf_counter()-started)*1000, 2)
                     if entry is not None:
                         conversations.append(entry, body.message.strip(), resolved, reply)
                     committed = True
-                    emit('done', reply)
+                    send('done', reply)
                 except Exception as exc:
                     if persistent and not committed:
                         conversations.fail(entry, 'REQUEST_INTERRUPTED' if isinstance(exc, StreamCancelled) else

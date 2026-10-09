@@ -83,9 +83,10 @@ def run(cases, output, baseline=None):
     report = {'generated_at': datetime.now(timezone.utc).isoformat(), 'mode': 'real_fixed_service_streaming',
               'limits': ['Development set, not held-out quality or production latency.',
                          'Service TTFT excludes browser/network transport; refusals have no answer-text TTFT.',
+                         'Current service first-text time waits for final verification; internal draft timing is diagnostic only.',
                          'Structural checks and provider audit do not replace manual review.'], 'cases': [],
               'source_hashes': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in [
-                  'backend/app/services/answer.py', 'backend/app/services/responses.py',
+                  'backend/app/main.py', 'backend/app/services/answer.py', 'backend/app/services/responses.py',
                   'backend/app/services/answer_text.py', 'evaluation/answer_regression.json']}}
     if output.exists():
         raise ValueError('Choose a new output path; previous runs must be preserved')
@@ -94,10 +95,11 @@ def run(cases, output, baseline=None):
         model = RecordedModel()
         started = time.perf_counter()
         first_text = None
+        draft_first_text = None
         def emit(kind, data):
-            nonlocal first_text
-            if kind == 'delta' and data.get('text', '').strip() and first_text is None:
-                first_text = round((time.perf_counter() - started) * 1000, 2)
+            nonlocal draft_first_text
+            if kind == 'delta' and data.get('text', '').strip() and draft_first_text is None:
+                draft_first_text = round((time.perf_counter() - started) * 1000, 2)
         item = {'case': case, 'measured_at': datetime.now(timezone.utc).isoformat(), 'manual_review': None}
         token = store.create()
         try:
@@ -110,8 +112,11 @@ def run(cases, output, baseline=None):
                     store.append(entry, previous['case']['question'], previous['resolved_question'], previous['response'])
                 language = detect_language(case['question'], fallback=case['language'])
                 response, resolved = conversational_answer(case['question'], language, entry.turns, model, emit)
+                if any(claim['text'].strip() for claim in response['claims']):
+                    first_text = round((time.perf_counter() - started) * 1000, 2)
                 item.update(response=response, resolved_question=resolved,
                             service_first_text_ms=first_text,
+                            internal_draft_first_text_ms=draft_first_text,
                             structural_checks=structural_checks(case, response, evidence))
         except RuntimeError as exc:
             # Service/provider messages are sanitized; never save credentials or arbitrary exception data.

@@ -55,17 +55,20 @@ def main():
                         raise RuntimeError(value['code'])
                     elif event == 'done':
                         final = value
+                        if first_text is None and any(c['text'].strip() for c in final['claims']):
+                            first_text = round((time.perf_counter()-began)*1000, 2)
                         break
         if final is None:
             raise RuntimeError('Stream ended without a final response')
         rows.append({'case_id': case_id, 'question': question, 'client_ttft_ms': first_text,
             'under_2_seconds': first_text is not None and first_text < 2000,
-            'delta_events': deltas, 'provisional_matches_final': list(content.values()) == [c['text'] for c in final['claims']],
+            'delta_events': deltas, 'delivery': 'verified_final' if not deltas else 'provisional',
+            'draft_text_sent': bool(deltas),
             'client_total_ms': round((time.perf_counter()-began)*1000, 2), 'response': final})
         print(json.dumps({'case': case_id, 'action': final['action'], 'metrics': final['metrics']}, ensure_ascii=False), flush=True)
     path = ROOT / 'evaluation/results/streaming.json'
     report = {'measured_at': datetime.now(timezone.utc).isoformat(), 'provenance': 'real_api',
-        'ttft_definition': 'HTTP submission to first nonblank answer text; status/heartbeats/JSON fields excluded.',
+        'ttft_definition': 'HTTP submission to final checked answer availability; status/heartbeats/JSON fields excluded.',
         'target_ms': 2000, 'target_is_guarantee': False, 'cases': rows}
     if path.exists():
         report['previous_runs'] = [json.loads(path.read_text())]

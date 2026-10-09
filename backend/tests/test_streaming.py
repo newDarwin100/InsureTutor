@@ -77,7 +77,7 @@ class StreamingTests(unittest.TestCase):
                     with self.assertRaises(ModelError):
                         Responses().structured_stream('instructions', {}, type(draft()), lambda e, d: None)
 
-    def test_failed_audit_withdraws_all_preview_claims(self):
+    def test_failed_audit_never_returns_draft_claims_in_final_reply(self):
         events = []
         reply = answer('Is 4% guaranteed?', 'en', index=Index(), model=StreamModel(draft('4% is guaranteed.'), False),
                        emit=lambda e, d: events.append((e, d)))
@@ -131,6 +131,9 @@ class StreamingTests(unittest.TestCase):
                     _, _, body = asyncio.run(call('/api/chat/stream', 'POST', {'message': 'premiums', 'language': 'en'},
                         [(b'x-conversation-token', token.encode())]))
                 saved = store.read(token)['messages'][-1]
+                self.assertNotIn(b'event: delta', body)
+                self.assertNotIn(b'preview', body)
+                self.assertNotIn(b'unverified draft', body)
                 if method is completed:
                     self.assertEqual(saved['reply']['claims'], final['claims'])
                     self.assertIsNotNone(saved['reply']['metrics']['ttft_ms'])
@@ -140,6 +143,31 @@ class StreamingTests(unittest.TestCase):
                     self.assertIsNone(saved['reply'])
                     self.assertEqual(saved['text'], '')
                     self.assertNotIn(b'event: done', body)
+
+    def test_public_stream_withholds_draft_until_audit_and_never_sends_failed_claim(self):
+        for supported in (True, False):
+            def run(question, language, emit=None):
+                return answer(question, language, index=Index(),
+                              model=StreamModel(draft('Internal draft sentence.'), supported), emit=emit)
+            with patch('app.main.answer', side_effect=run):
+                _, _, body = asyncio.run(call('/api/chat/stream', 'POST',
+                    {'message': 'Is 4% guaranteed?', 'language': 'en'}))
+            before, after = body.decode().split('event: done\ndata: ')
+            self.assertIn('generation', before)
+            self.assertIn('verification', before)
+            self.assertNotIn('Internal draft sentence.', before)
+            self.assertNotIn('event: delta', before)
+            self.assertNotIn('event: reset', before)
+            final = json.loads(after.split('\n\n')[0])
+            if supported:
+                self.assertEqual(final['claims'][0]['text'], 'Internal draft sentence.')
+                self.assertIsNotNone(final['metrics']['ttft_ms'])
+            else:
+                self.assertNotIn('Internal draft sentence.', after)
+                self.assertEqual(final['action'], 'verification_failed')
+                self.assertEqual(final['claims'], [])
+                self.assertIsNone(final['metrics']['ttft_ms'])
+
     def test_asgi_input_guard_and_invalid_conversation_do_not_call_paid_services(self):
         with patch('app.services.answer.VectorIndex', side_effect=AssertionError('No model/index')):
             status, headers, body = asyncio.run(call('/api/chat/stream', 'POST',

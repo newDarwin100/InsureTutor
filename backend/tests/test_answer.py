@@ -118,8 +118,10 @@ class AnswerTests(unittest.TestCase):
         from app.guardrails.rules import Reason
         check = Verification(supported=False, reason='missing_condition', explanation='mock detail')
         message = verification_message('zh-Hans', Reason.INSURANCE_CONDITION_MISMATCH, check)
-        self.assertIn('条款条件', message)
-        self.assertIn('不需要缩小', message)
+        self.assertIn('适用条件', message)
+        self.assertIn('可以重试', message)
+        self.assertNotIn('缩小问题', message)
+        self.assertNotIn('已停止展示', message)
 
     def test_server_owns_page_and_link_and_separate_usage(self):
         result = answer('How are premiums credited?', 'en', index=Index(), model=Model(draft()))

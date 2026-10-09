@@ -239,23 +239,23 @@ def verification_message(language, failure, check=None):
         Reason.SOURCE_CONFLICT: 'source_conflict', Reason.INSURANCE_CONDITION_MISMATCH: 'missing_condition'}.get(failure, failure.value)
     messages = {
         'zh-Hans': {
-            'invalid_citation': '这次回答的引用未能对应原文，已停止展示。可以重试；你的问题本身可以正常提问。',
-            'missing_condition': '这次回答有条款条件未通过核对，已停止展示。可以重试，不需要缩小问题范围。',
-            'unanswered_question': '这次回答没能覆盖你问的全部内容，已停止展示。可以重试。',
-            'source_conflict': '相关原文存在冲突，这次回答未能清楚说明双方差异，已停止展示。',
-            'default': '这次生成的部分结论未能通过原文核对，已停止展示。可以重试；并不是你的问题不合法。'},
+            'invalid_citation': '我还没能为这次回答确认准确的原文引用。可以重试一次，或打开 PDF 核对相关条款。',
+            'missing_condition': '我还需要确认相关条款的适用条件，暂时无法给出可靠的回答。可以重试，或核对 PDF。',
+            'unanswered_question': '我还没能根据原文完整回答这个问题。可以重试一次，或打开 PDF 核对相关条款。',
+            'source_conflict': '相关原文有不同表述，我还没能把差异解释清楚。建议先核对 PDF 中的相关条款。',
+            'default': '我还没能根据原文整理出可靠的回答。可以重试一次，或打开 PDF 核对相关条款。'},
         'zh-Hant': {
-            'invalid_citation': '這次回答的引用未能對應原文，已停止展示。可以重試；你的問題本身可以正常提問。',
-            'missing_condition': '這次回答有條款條件未通過核對，已停止展示。可以重試，不需要縮小問題範圍。',
-            'unanswered_question': '這次回答未能涵蓋你問的全部內容，已停止展示。可以重試。',
-            'source_conflict': '相關原文存在衝突，這次回答未能清楚說明雙方差異，已停止展示。',
-            'default': '這次生成的部分結論未能通過原文核對，已停止展示。可以重試；並非你的問題不合法。'},
+            'invalid_citation': '我還未能為這次回答確認準確的原文引用。可以重試一次，或打開 PDF 核對相關條款。',
+            'missing_condition': '我還需要確認相關條款的適用條件，暫時無法給出可靠的回答。可以重試，或核對 PDF。',
+            'unanswered_question': '我還未能根據原文完整回答這個問題。可以重試一次，或打開 PDF 核對相關條款。',
+            'source_conflict': '相關原文有不同表述，我還未能把差異解釋清楚。建議先核對 PDF 中的相關條款。',
+            'default': '我還未能根據原文整理出可靠的回答。可以重試一次，或打開 PDF 核對相關條款。'},
         'en': {
-            'invalid_citation': 'The generated references could not be matched to the source. Please retry; your question is valid.',
-            'missing_condition': 'Some policy conditions did not pass verification. Please retry; you do not need to narrow the question.',
-            'unanswered_question': 'The answer did not cover your whole question. Please retry.',
-            'source_conflict': 'The source contains conflicting wording that the draft did not explain clearly.',
-            'default': 'Some generated claims did not pass the source check. Please retry; your question is valid.'}}
+            'invalid_citation': 'I could not confirm accurate source references for this answer. You can retry or check the relevant terms in the PDF.',
+            'missing_condition': 'I still need to confirm the conditions that apply before giving a reliable answer. You can retry or check the PDF.',
+            'unanswered_question': 'I could not fully answer this question from the source. You can retry or check the relevant terms in the PDF.',
+            'source_conflict': 'The source uses differing wording here, and I could not clearly explain the difference. Please check the relevant PDF terms.',
+            'default': 'I could not prepare a reliable answer from the source this time. You can retry or check the relevant terms in the PDF.'}}
     return messages[language].get(reason, messages[language]['default'])
 
 

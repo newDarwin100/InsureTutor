@@ -46,11 +46,11 @@ The left sidebar lists saved conversations. Titles start with the first question
 
 A browser credential in localStorage identifies its conversation list; chat credentials are sent in headers, never URLs. Use the same browser and address to reopen the same list. This is local demo access, without account login or cross-device sync. Clearing browser storage loses access to that browser's list. The database is excluded from Git and Docker build context; Docker keeps it in the separate `chat-history` volume. Old process-only sessions from previous versions cannot be recovered.
 
-The composer stays at the bottom of the viewport. Enter sends; Shift + Enter adds a line. `/api/chat/stream` uses POST + SSE: model-generated answer text appears as it arrives, with a **not yet verified** label. Citations appear only after the final evidence check; failed checks or interrupted streams clear the provisional text. The transcript follows new content unless you scroll upward; “Jump to latest” resumes following. There is no additional typewriter delay after the response finishes.
+The composer stays at the bottom of the viewport. Enter sends; Shift + Enter adds a line. `/api/chat/stream` uses POST + SSE for retrieval, generation and verification progress. Draft text stays on the server. The final answer and citations arrive only after checks finish; verified prose then reveals gradually for up to 1.2 seconds, or immediately with reduced motion. Failed checks show a single helpful notice without displaying or withdrawing a draft. The transcript follows new content unless you scroll upward; “Jump to latest” resumes following.
 
 The Performance tab shows per-request latency, its cumulative average, a latency histogram and average/median/minimum/maximum values. Switch between returned requests on this page and separate saved test sets; timing stages can be filtered. Request details and token usage are collapsed by default. Chart measurements stay in browser memory (latest 200, reset on refresh); saved conversations still retain each reply's timings. Opening the tab does not call a model or copy private chats into evaluation reports.
 
-First-text time measures submission to the first nonblank answer text, excluding loading messages, JSON fields and heartbeats. Generation, evidence checks and follow-up resolution are measured separately. **Under 2 seconds is a target, not a per-request guarantee**: query embeddings, ambiguous follow-up resolution and upstream API variation occur before answer text can arrive. Old non-streaming records have no first-text measurement.
+Current first-text time measures submission to availability of the final answer, including evidence verification and excluding loading messages, JSON fields, heartbeats and the display animation. Model first-delta time is separate. Historical streaming reports measured provisional draft text and cannot be directly compared with the current metric; those reports are preserved. **Under 2 seconds is not guaranteed** when the full generation and verification must complete before display. Old non-streaming records have no first-text measurement.
 
 ## Architecture
 
@@ -65,14 +65,13 @@ flowchart TD
     Embed --> DB[(Chroma · Top-K 5)]
     DB --> Evidence[Evidence + linked conditions and footnotes]
     Evidence --> Draft[LLM answer with evidence IDs]
-    Draft -. SSE provisional text .-> UI
     Draft --> Check[Citation validation + model evidence check]
     Check --> Result[Answer · sources · timings]
     Result --> UI
     Result --> PDF[Original PDF page]
 ```
 
-Clear misuse requests stop before retrieval; ambiguous follow-ups ask for clarification. Unsupported drafts are removed from the UI after checking and are never saved as accepted answers. Streaming exposes provisional content before semantic verification, so users must wait for confirmation before relying on it. Optional repair allows at most one additional attempt.
+Clear misuse requests stop before retrieval; ambiguous follow-ups ask for clarification. Drafts stay inside the generation/checking pipeline and are never sent to the public chat stream or saved as accepted answers if unsupported. Waiting for verification increases visible answer latency but avoids showing content that is then withdrawn. Optional repair allows at most one additional attempt.
 
 History resolves what a follow-up refers to. Full transcripts are saved, but only up to 8 successful/clarification turns and 24,000 characters are retained as model context; the rewrite uses the latest 4. Idle context is evicted from the in-process cache after 30 minutes and restored from SQLite on demand. Every answer retrieves fresh PDF evidence; previous assistant text is not a factual source.
 
