@@ -32,7 +32,7 @@ Do not use `docker compose down -v` unless you intend to delete both the saved c
 
 **Validation status:** the production image built successfully on a clean Linux GitHub runner, with its compiled page, health routes and PDF ranges checked. Initialization and reuse are covered by offline tests. Docker is not installed on the development machine; paid fresh-volume indexing, a real container answer and restart reuse remain unverified.
 
-GitHub Actions runs offline tests, builds the production image and checks its compiled page, health routes and PDF byte ranges. CI uses no API key: RAG readiness must return 503, and normal startup must stop without configuration. This checks the container packaging; it does not verify paid first-time indexing or insurance answers. See [CI runs](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml).
+GitHub Actions runs offline tests, builds the production image and checks its compiled page, health routes and PDF byte ranges. CI uses no API key: RAG readiness must return 503, and normal startup must stop without configuration. This checks the container packaging; it does not verify paid first-time indexing or insurance answers. [The run for `2c20bda` passed](https://github.com/newDarwin100/InsureTutor/actions/runs/37940072481), including all 80 backend and 9 frontend tests. [All CI runs](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml).
 
 ## Try the demo
 
@@ -182,9 +182,13 @@ Paid evaluations are separate, explicit commands:
 .venv/bin/python scripts/run_full_retrieval.py
 .venv/bin/python scripts/check_answers.py --run
 .venv/bin/python scripts/check_demo_examples.py --run
+.venv/bin/python scripts/run_answer_regression.py --run
+.venv/bin/python scripts/compare_embeddings.py --run
 ```
 
 They send fixed questions and/or brochure text to OpenAI and may incur usage. Retrieval scripts reuse index/query caches; check cache fields before treating a run as a fresh latency measurement.
+
+The new 26-case [answer reference set](evaluation/answer_regression.json) and 12-query embedding comparison are prepared, **not yet run**. The regression script defaults to reference validation without `--run`. Comparison uses a separate small-model index and keeps the application's current index unchanged. Both refuse to overwrite existing result files.
 
 ## Source data and remaining work
 
@@ -192,7 +196,7 @@ Checked-in data contains **292 evidence records and 143 chunks**, source hashes,
 
 Two genuine bilingual discrepancies remain: an age boundary and minimum amounts for a sum-insured change. They are not silently reconciled. See the [source review](data/reviewed/full_alignment.md).
 
-Remaining submission gates: an actual Docker build/fresh-volume run and complete answer-level checks across languages, multi-turn cases and safety false positives. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled model comparison has been reported.
+Remaining submission gates: paid fresh-volume Docker indexing/answer/restart acceptance and complete answer-level checks across languages, multi-turn cases and safety false positives. The Docker image and unpaid container HTTP smoke checks passed in CI. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled model comparison has been reported.
 
 ## Repository guide
 
