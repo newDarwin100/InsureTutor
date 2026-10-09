@@ -12,6 +12,8 @@
 | `run_retrieval_pilot.py` / `run_full_retrieval.py` | 小库 / 全文检索评测 | 缺失索引或查询缓存时调用 |
 | `check_answers.py --run` | 固定题真实生成与核对 | 是 |
 | `check_demo_examples.py --run` | 6道页面示例与追问真实回归；重测保留前次结果 | 是 |
+| `run_answer_regression.py` | 校验26道固定参考题；`--run`真实生成/核对并保留逐题结果 | 仅`--run`调用 |
+| `compare_embeddings.py` | 同143块、12道题比较small/large；独立测试索引 | 仅`--run`调用embedding |
 | `smoke_test.py` | API 连通性测试 | 是 |
 | `check_local.py` | 页面、健康、PDF Range、路径隔离 | 否 |
 | `check_full_alignment.py` / `check_alignment.py` | 全文 / 小样本来源与对应检查 | 否 |
