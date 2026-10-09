@@ -166,6 +166,21 @@ async function refreshChats() {
   if (workspaceToken.value) chats.value = (await listConversations(workspaceToken.value)).conversations
 }
 
+function recordRun(reply: ChatReply, question: string, id: string, source: string, measuredAt: string) {
+  if (runs.value.some(row => row.id === id)) return
+  runs.value.push({ id, group: 'live', source, kind: 'answer', provenance: 'real', question,
+    language: reply.language ?? null, status: reply.action, measured_at: measuredAt, model: null,
+    retrieval_ms: reply.metrics.retrieval_ms, llm_ms: reply.metrics.llm_ms, total_ms: reply.metrics.total_ms,
+    chunks: reply.metrics.retrieved_chunks, embedding_input_tokens: reply.metrics.embedding_input_tokens,
+    llm_input_tokens: reply.metrics.llm_input_tokens, llm_output_tokens: reply.metrics.llm_output_tokens,
+    direct_recall: null, expanded_coverage: null, query_cached: reply.metrics.query_cached ?? false,
+    ttft_ms: reply.metrics.client_ttft_ms ?? reply.metrics.ttft_ms ?? null,
+    generation_ms: reply.metrics.generation_ms ?? null, verification_ms: reply.metrics.verification_ms ?? null,
+    question_resolution_ms: reply.metrics.question_resolution_ms ?? null })
+  runs.value.sort((a, b) => Date.parse(a.measured_at!) - Date.parse(b.measured_at!))
+  if (runs.value.length > 200) runs.value.splice(0, runs.value.length - 200)
+}
+
 async function selectChat(token: string) {
   if (busy.value) return
   loadingHistory.value = true
@@ -178,6 +193,12 @@ async function selectChat(token: string) {
     messages.value = saved.messages.map(message => ({ role: message.role, text: message.text,
       reply: message.reply ?? undefined, language: message.language,
       errorCode: message.error_code ?? (message.status === 'pending' ? 'pending' : undefined) }))
+    let question = ''
+    saved.messages.forEach((message, index) => {
+      if (message.role === 'user') question = message.text
+      else if (message.reply) recordRun(message.reply, question, message.reply.request_id ?? `${token}-${index}`,
+        'saved_chat', new Date(message.created * 1000).toISOString())
+    })
     input.value = drafts.get(token) ?? ''
     activeView.value = 'chat'
     editingTitle.value = false
@@ -284,16 +305,7 @@ async function send() {
     message.language = reply.language
     message.pending = false
     await revealFinal(message)
-    runs.value.push({ id: reply.request_id ?? `live-${Date.now()}-${runs.value.length}`, group: 'live',
-      source: 'live', kind: 'answer', provenance: 'real', question: value, language: reply.language ?? null,
-      status: reply.action, measured_at: new Date().toISOString(), model: null,
-      retrieval_ms: reply.metrics.retrieval_ms, llm_ms: reply.metrics.llm_ms, total_ms: reply.metrics.total_ms,
-      chunks: reply.metrics.retrieved_chunks, embedding_input_tokens: reply.metrics.embedding_input_tokens,
-      llm_input_tokens: reply.metrics.llm_input_tokens, llm_output_tokens: reply.metrics.llm_output_tokens,
-      direct_recall: null, expanded_coverage: null, query_cached: reply.metrics.query_cached ?? false,
-      ttft_ms: firstText, generation_ms: reply.metrics.generation_ms ?? null,
-      verification_ms: reply.metrics.verification_ms ?? null, question_resolution_ms: reply.metrics.question_resolution_ms ?? null })
-    if (runs.value.length > 200) runs.value.shift()
+    recordRun(reply, value, reply.request_id ?? `live-${Date.now()}-${runs.value.length}`, 'live', new Date().toISOString())
   } catch (err) {
     input.value = value
     error.value = localizedError(err, t.value.requestError)

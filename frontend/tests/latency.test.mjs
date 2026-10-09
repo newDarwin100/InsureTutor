@@ -5,7 +5,7 @@ import ts from 'typescript'
 
 const source = readFileSync(new URL('../src/api/latency.ts', import.meta.url), 'utf8')
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText
-const { latencySeries, latencyStats, latencyHistogram, chartCeiling } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`)
+const { averageBreakdown, latencyBreakdown, latencySeries, latencyStats, latencyHistogram, chartCeiling } = await import(`data:text/javascript;base64,${Buffer.from(compiled).toString('base64')}`)
 const row = (id, value, provenance = 'real') => ({ id, total_ms: value, provenance })
 
 test('cumulative mean excludes unknown and unexecuted timings but includes real zero', () => {
@@ -28,4 +28,26 @@ test('histogram counts every sample exactly once, including upper boundary and r
   assert.deepEqual(latencyHistogram([]), [])
   assert.equal(latencyStats([1000, 3000]).median, 2000)
   assert.ok(chartCeiling(12730) >= 12730)
+})
+
+test('time composition does not double-count model totals or first-text time', () => {
+  const samples = latencyBreakdown([{ ...row('a', 10000), ttft_ms: 10000,
+    retrieval_ms: 1000, generation_ms: 6000, verification_ms: 1500,
+    question_resolution_ms: 1000, llm_ms: 8500 }])
+  assert.deepEqual(samples[0].parts, { retrieval: 1000, generation: 6000,
+    verification: 1500, resolution: 1000, model_other: 0, other: 500 })
+  const average = averageBreakdown(samples)
+  assert.equal(average.find(part => part.stage === 'generation').share, .6)
+  assert.equal(average.reduce((sum, part) => sum + part.share, 0), 1)
+})
+
+test('old reports retain unknown model stages and empty or invalid measurements are excluded', () => {
+  const samples = latencyBreakdown([{ ...row('old', 5000), retrieval_ms: 1000, llm_ms: 3800 },
+    row('blocked', 0), row('missing', null), row('unrun', 9000, 'not_run'), row('invalid', Infinity)])
+  assert.equal(samples.length, 2)
+  assert.equal(samples[0].parts.model_other, 3800)
+  assert.equal(samples[0].parts.other, 200)
+  assert.equal(samples[0].parts.generation, 0)
+  assert.equal(averageBreakdown(samples).find(part => part.stage === 'model_other').mean, 1900)
+  assert.deepEqual(averageBreakdown([]), [])
 })

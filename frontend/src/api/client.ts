@@ -32,7 +32,7 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
 }
 export const getStatus = () => request<AppStatus>('/api/status')
 export interface ConversationSummary { token: string; title: string; created: number; updated: number; language: Language }
-export interface SavedMessage { role: 'user' | 'assistant'; text: string; reply: ChatReply | null; language: Language; status: string; error_code: string | null }
+export interface SavedMessage { role: 'user' | 'assistant'; text: string; reply: ChatReply | null; language: Language; status: string; error_code: string | null; created: number }
 export interface SavedConversation extends ConversationSummary { messages: SavedMessage[] }
 export const createWorkspace = () => request<{ token: string }>('/api/workspaces', { method: 'POST' })
 export const listConversations = (token: string) => request<{ conversations: ConversationSummary[] }>('/api/conversations', { headers: { 'X-Workspace-Token': token } })
