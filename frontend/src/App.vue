@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { computed, nextTick, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import EvaluationPanel from './components/EvaluationPanel.vue'
 import { copies } from './copy'
 import { presentReply } from './api/presentation'
+import { characterCount, revealBudget, revealParagraphs } from './api/reveal'
 import { askQuestion, createConversation, deleteConversation, ApiError, type ChatReply, type EvaluationRow, type Language } from './api/client'
 
 const activeView = ref('chat')
@@ -21,15 +22,91 @@ watch(language, (value, previous) => {
   }
 }, { immediate: true })
 const conversationToken = ref<string | null>(null)
-const messages = ref<{ role: 'user' | 'assistant'; text: string; reply?: ChatReply }[]>([])
+type Message = { role: 'user' | 'assistant'; text: string; reply?: ChatReply; visibleCharacters?: number; revealing?: boolean }
+const messages = ref<Message[]>([])
 const messageArea = ref<HTMLElement | null>(null)
-const displayMessages = computed(() => messages.value.map(message => ({
-  ...message, presentation: message.reply ? presentReply(message.reply) : null,
-})))
+const composerInput = ref<HTMLTextAreaElement | null>(null)
+const followLatest = ref(true)
+let lastScrollTop = 0
+const isRevealing = computed(() => messages.value.some(message => message.revealing))
+const displayMessages = computed(() => messages.value.map(message => {
+  const presentation = message.reply ? presentReply(message.reply) : null
+  const budget = message.visibleCharacters ?? Infinity
+  return { ...message,
+    text: Array.from(message.text).slice(0, budget).join(''),
+    presentation: presentation ? { ...presentation, paragraphs: revealParagraphs(presentation.paragraphs, budget - characterCount(message.text)) } : null,
+  }
+}))
+
+async function scrollToLatest(force = false) {
+  if (force) followLatest.value = true
+  await nextTick()
+  if (followLatest.value && activeView.value === 'chat' && messageArea.value) {
+    messageArea.value.scrollTop = messageArea.value.scrollHeight
+    lastScrollTop = Math.max(0, messageArea.value.scrollTop)
+  }
+}
+
+function onMessageScroll() {
+  const area = messageArea.value
+  if (!area) return
+  const top = Math.max(0, area.scrollTop)
+  if (top < lastScrollTop - 1) followLatest.value = false
+  else if (area.scrollHeight - top - area.clientHeight < 32) followLatest.value = true
+  lastScrollTop = top
+}
+
+function resizeComposer() {
+  const element = composerInput.value
+  if (!element) return
+  element.style.height = 'auto'
+  element.style.height = `${Math.min(element.scrollHeight + 2, 120)}px`
+}
+
+function onComposerKey(event: KeyboardEvent) {
+  if (event.key === 'Enter' && !event.shiftKey && !event.isComposing && event.keyCode !== 229) {
+    event.preventDefault()
+    void send()
+  }
+}
+
+let finishReveal: (() => void) | undefined
+function animateReply(message: Message) {
+  const total = characterCount(message.text) + (message.reply?.claims.reduce((sum, claim) => sum + characterCount(claim.text), 0) ?? 0)
+  if (!total || window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.hidden) return Promise.resolve()
+  message.visibleCharacters = 0
+  message.revealing = true
+  return new Promise<void>(resolve => {
+    const started = performance.now()
+    let frame = 0
+    const finish = () => {
+      cancelAnimationFrame(frame)
+      document.removeEventListener('visibilitychange', onVisibility)
+      message.visibleCharacters = total
+      message.revealing = false
+      finishReveal = undefined
+      resolve()
+    }
+    const onVisibility = () => { if (document.hidden) finish() }
+    const tick = (now: number) => {
+      message.visibleCharacters = revealBudget(now - started, total)
+      void scrollToLatest()
+      if (message.visibleCharacters >= total) finish()
+      else frame = requestAnimationFrame(tick)
+    }
+    finishReveal = finish
+    document.addEventListener('visibilitychange', onVisibility)
+    frame = requestAnimationFrame(tick)
+  })
+}
+onBeforeUnmount(() => finishReveal?.())
+watch(activeView, () => { void scrollToLatest() })
+watch(input, () => { void nextTick(resizeComposer) })
 
 function revealSource(index: number, number: number) {
   const group = document.getElementById(`source-${index}-${number}`) as HTMLDetailsElement | null
   if (!group) return
+  followLatest.value = false
   const sources = group.closest('.sources') as HTMLDetailsElement | null
   if (sources) sources.open = true
   group.open = true
@@ -54,10 +131,12 @@ async function send() {
   error.value = ''
   messages.value.push({ role: 'user', text: value })
   input.value = ''
+  await scrollToLatest(true)
   try {
     if (!conversationToken.value) conversationToken.value = (await createConversation()).token
     const reply = await askQuestion(value, language.value, conversationToken.value)
     messages.value.push({ role: 'assistant', text: reply.message, reply })
+    const message = messages.value[messages.value.length - 1]!
     runs.value.push({ id: reply.request_id ?? `live-${Date.now()}-${runs.value.length}`, group: 'live',
       source: 'live', kind: 'answer', provenance: 'real', question: value, language: language.value,
       status: reply.action, measured_at: new Date().toISOString(), model: null,
@@ -66,13 +145,14 @@ async function send() {
       llm_input_tokens: reply.metrics.llm_input_tokens, llm_output_tokens: reply.metrics.llm_output_tokens,
       direct_recall: null, expanded_coverage: null, query_cached: false })
     if (runs.value.length > 200) runs.value.shift()
+    await animateReply(message)
   } catch (err) {
     input.value = value
     error.value = localizedError(err, t.value.requestError)
   } finally {
     busy.value = false
-    await nextTick()
-    messageArea.value?.scrollTo({ top: messageArea.value.scrollHeight, behavior: 'smooth' })
+    await scrollToLatest()
+    if (activeView.value === 'chat') composerInput.value?.focus({ preventScroll: true })
   }
 }
 
@@ -84,6 +164,8 @@ async function clearChat() {
     if (conversationToken.value) await deleteConversation(conversationToken.value)
     conversationToken.value = null
     messages.value = []
+    followLatest.value = true
+    lastScrollTop = 0
   } catch (err) {
     error.value = localizedError(err, t.value.clearError)
   } finally { busy.value = false }
@@ -97,7 +179,7 @@ function documentUrl() {
 </script>
 
 <template>
-  <main class="app-shell">
+  <main class="app-shell" :class="{ 'chat-mode': activeView === 'chat' }">
     <header class="header">
       <div class="brand"><span class="brand-icon">IT</span><div><h1>InsureTutor</h1><p>{{ t.tagline }}</p></div></div>
       <span class="badge">{{ t.preview }}</span>
@@ -117,19 +199,21 @@ function documentUrl() {
       </section>
       <section class="chat-panel" :aria-label="t.tutor">
         <div class="chat-header"><div><h2>{{ t.chatTitle }}</h2><p>{{ t.memory }}</p></div><button class="text-button" :disabled="busy" @click="clearChat">{{ t.clear }}</button></div>
-        <div ref="messageArea" class="messages" aria-live="polite">
+        <div class="message-window">
+        <div ref="messageArea" class="messages" role="log" aria-live="polite" :aria-busy="busy" @scroll="onMessageScroll" @wheel="event => { if (event.deltaY < 0) followLatest = false }">
           <div v-if="!messages.length" class="empty-state"><span class="empty-icon">↗</span><h3>{{ t.start }}</h3><p>{{ t.example }}</p><p class="small-note">{{ t.historical }}</p></div>
           <div v-for="(message, index) in displayMessages" :key="index" class="message" :class="message.role">
             <span class="message-label">{{ message.role === 'user' ? t.you : 'InsureTutor' }}</span>
-            <div class="answer-bubble">
+            <div class="answer-bubble" :class="{ revealing: message.revealing }">
               <p v-if="message.text">{{ message.text }}</p>
               <template v-if="message.reply && message.presentation">
                 <p v-for="(paragraph, ci) in message.presentation.paragraphs" :key="ci">{{ paragraph.text }}
-                  <a v-for="number in paragraph.references" :key="number" class="citation-number" :href="`#source-${index}-${number}`" :aria-label="`${t.viewCitation} ${number}`" @click.prevent="revealSource(index, number)">[{{ number }}]</a>
+                  <a v-for="number in message.revealing ? [] : paragraph.references" :key="number" class="citation-number" :href="`#source-${index}-${number}`" :aria-label="`${t.viewCitation} ${number}`" @click.prevent="revealSource(index, number)">[{{ number }}]</a>
                 </p>
               </template>
+              <span v-if="message.revealing && !message.text && !message.presentation?.paragraphs.length" class="typing-cursor" aria-hidden="true">▍</span>
             </div>
-            <template v-if="message.reply && message.presentation">
+            <template v-if="message.reply && message.presentation && !message.revealing">
               <details v-if="message.reply.verification?.status === 'failed'" class="metrics">
                 <summary>{{ t.failure }}</summary>
                 <p v-if="message.reply.verification.detail">{{ t.auditNote }}: {{ message.reply.verification.detail }}</p>
@@ -150,12 +234,15 @@ function documentUrl() {
               </details>
             </template>
           </div>
-          <p v-if="busy" class="small-note">{{ t.waiting }}</p>
+          <div v-if="busy && !isRevealing" class="waiting-status" role="status"><span class="waiting-dots" aria-hidden="true"><i></i><i></i><i></i></span>{{ t.waiting }}</div>
+        </div>
+        <button v-if="!followLatest && messages.length" class="jump-latest" type="button" @click="scrollToLatest(true)">↓ {{ t.latest }}</button>
         </div>
         <form class="composer" @submit.prevent="send">
           <p v-if="error" class="error" role="alert">{{ error }}</p>
           <label class="sr-only" for="message">{{ t.question }}</label>
-          <div class="input-row"><input id="message" v-model="input" maxlength="2000" :placeholder="t.placeholder" autocomplete="off" :disabled="busy" /><button type="submit" :disabled="busy || !input.trim()">{{ busy ? t.answering : t.send }}</button></div>
+          <div class="input-row"><textarea id="message" ref="composerInput" v-model="input" rows="1" maxlength="2000" :placeholder="t.placeholder" :aria-describedby="'composer-hint'" :disabled="busy" @keydown="onComposerKey" /><button type="submit" :disabled="busy || !input.trim()">{{ busy ? t.answering : t.send }}</button></div>
+          <p id="composer-hint" class="composer-hint">{{ t.composerHint }}</p>
         </form>
       </section>
     </div>
