@@ -3,6 +3,15 @@ set -euo pipefail
 project_root="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$project_root"
 
+# A newly installed Docker Desktop may not be on this terminal's PATH yet.
+if ! command -v docker >/dev/null; then
+  if [[ -x "$HOME/.docker/bin/docker" ]]; then
+    export PATH="$HOME/.docker/bin:$PATH"
+  elif [[ -x /Applications/Docker.app/Contents/Resources/bin/docker ]]; then
+    export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
+  fi
+fi
+
 if ! command -v docker >/dev/null || ! docker compose version >/dev/null 2>&1; then
   echo '请安装并启动 Docker（含 Docker Compose）。' >&2
   exit 1

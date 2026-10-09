@@ -30,7 +30,7 @@ bash scripts/start.sh         # Restart or retry after fixing configuration
 
 Do not use `docker compose down -v` unless you intend to delete both the saved chats and the index (and pay to rebuild the latter). Local development data and Docker volumes are separate.
 
-**Validation status:** the production image built successfully on a clean Linux GitHub runner, with its compiled page, health routes and PDF ranges checked. Initialization and reuse are covered by offline tests. Docker is not installed on the development machine; paid fresh-volume indexing, a real container answer and restart reuse remain unverified.
+**Validation status:** the production image built on both a clean Linux CI runner and the local Apple Silicon machine. Local startup with empty volumes embedded all 143 chunks (18,309 input tokens) and became healthy. Recreating the container reused the index with zero embedding usage and restored a dedicated test chat, including its title and messages. Compiled assets, PDF ranges, private-file isolation and a rules-only SSE response passed. Insurance answers in this container remain for manual acceptance; the earlier live answer reports used the development service.
 
 GitHub Actions runs offline tests, builds the production image and checks its compiled page, health routes and PDF byte ranges. CI uses no API key: RAG readiness must return 503, and normal startup must stop without configuration. This checks the container packaging; it does not verify paid first-time indexing or insurance answers. [The run for `2c20bda` passed](https://github.com/newDarwin100/InsureTutor/actions/runs/37940072481), including all 80 backend and 9 frontend tests. [All CI runs](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml).
 
@@ -202,7 +202,7 @@ Checked-in data contains **292 evidence records and 143 chunks**, source hashes,
 
 Two genuine bilingual discrepancies remain: an age boundary and minimum amounts for a sum-insured change. They are not silently reconciled. See the [source review](data/reviewed/full_alignment.md).
 
-Remaining submission gates: paid fresh-volume Docker indexing/answer/restart acceptance and a targeted live check of the terminal-illness focus instruction. The Docker image and unpaid container HTTP smoke checks passed in CI. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled LLM comparison has been reported.
+Remaining submission gates: manual insurance-answer acceptance in Docker and a targeted live check of the terminal-illness focus instruction. Fresh-volume indexing and index/chat persistence after container recreation passed locally; container HTTP checks also passed in CI. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled LLM comparison has been reported.
 
 ## Repository guide
 
