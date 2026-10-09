@@ -9,9 +9,12 @@ from fastapi import FastAPI, HTTPException, Header
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
-from app.services.answer import Language, answer, readiness
+from app.services.answer import answer, readiness
 from app.services.responses import ModelError
-from app.services.conversations import Conversations, ConversationError
+from app.services.conversations import ConversationError
+from app.services.chat_history import ChatHistory
+from app.services.language import detect_language
+from typing import Literal
 from app.services.followup import conversational_answer
 from app.services.evaluations import dashboard
 
@@ -21,7 +24,12 @@ PDF = ROOT / "docs/FLEXI-ULife Prime Saver.pdf"
 FRONTEND = ROOT / "frontend/dist"
 
 app = FastAPI(title="InsureTutor", version="0.1.0")
-conversations = Conversations()
+conversations = ChatHistory(os.getenv('CHAT_HISTORY_PATH', str(ROOT / 'data/history/chats.sqlite3')))
+
+
+@app.exception_handler(ConversationError)
+async def conversation_error(request, exc):
+    return JSONResponse(status_code=exc.status, content={'detail': {'code': exc.code, 'message': exc.message}})
 
 
 class DemoRequest(BaseModel):
@@ -44,7 +52,7 @@ def status():
             pass
     key = os.getenv("OPENAI_API_KEY", "").strip()
     return {"stage": "conversation", "backend_ready": True, "rag_ready": readiness(),
-            "model_probed": False, "session_memory": True, "full_guardrails": False, "guardrail_mode": "rules_and_model_checks",
+            "model_probed": False, "session_memory": True, "persistent_history": True, "full_guardrails": False, "guardrail_mode": "rules_and_model_checks",
             "document_available": PDF.is_file(), "knowledge_counts": counts,
             "api_key_configured": bool(key and key != "your_openai_api_key_here")}
 
@@ -68,7 +76,7 @@ def demo(body: DemoRequest):
 
 class ChatRequest(BaseModel):
     message: str = Field(min_length=1, max_length=2000)
-    language: Language = 'zh-Hans'
+    language: Literal['auto', 'en', 'zh-Hans', 'zh-Hant'] = 'auto'
 
 
 @app.post("/api/chat")
@@ -77,10 +85,24 @@ def chat(body: ChatRequest, conversation_token: str | None = Header(default=None
         raise HTTPException(status_code=422, detail="Message must not be blank")
     try:
         if conversation_token is None:
-            return answer(body.message.strip(), body.language)
+            language = detect_language(body.message) if body.language == 'auto' else body.language
+            return answer(body.message.strip(), language)
         with conversations.use(conversation_token) as entry:
-            reply, resolved = conversational_answer(body.message.strip(), body.language, entry.turns)
-            conversations.append(entry, body.message.strip(), resolved, reply)
+            language = detect_language(body.message, getattr(entry, 'language', 'zh-Hans'), getattr(entry, 'chinese_language', None)) if body.language == 'auto' else body.language
+            persistent = isinstance(conversations, ChatHistory)
+            if persistent:
+                conversations.begin(entry, body.message.strip(), language)
+            try:
+                reply, resolved = conversational_answer(body.message.strip(), language, entry.turns)
+                conversations.append(entry, body.message.strip(), resolved, reply)
+            except ModelError:
+                if persistent:
+                    conversations.fail(entry, 'MODEL_UNAVAILABLE')
+                raise
+            except (RuntimeError, ValueError, OSError, KeyError):
+                if persistent:
+                    conversations.fail(entry, 'RAG_UNAVAILABLE')
+                raise
             return reply
     except ConversationError as exc:
         raise HTTPException(status_code=exc.status, detail={'code': exc.code, 'message': exc.message}) from None
@@ -97,10 +119,38 @@ def evaluations():
     return dashboard()
 
 
+@app.post('/api/workspaces', status_code=201)
+def create_workspace():
+    return {'token': conversations.create_workspace()}
+
+
+@app.get('/api/conversations')
+def list_conversations(workspace_token: str = Header(alias='X-Workspace-Token')):
+    return {'conversations': conversations.list(workspace_token)}
+
+
+@app.get('/api/conversations/current')
+def get_conversation(conversation_token: str = Header(alias='X-Conversation-Token')):
+    return conversations.read(conversation_token)
+
+
+class RenameRequest(BaseModel):
+    title: str = Field(min_length=1, max_length=80)
+
+
+@app.patch('/api/conversations/current')
+def rename_conversation(body: RenameRequest, conversation_token: str = Header(alias='X-Conversation-Token')):
+    if not body.title.strip():
+        raise HTTPException(status_code=422, detail='Title must not be blank')
+    conversations.rename(conversation_token, body.title.strip())
+    return {'renamed': True}
+
+
 @app.post('/api/conversations', status_code=201)
-def create_conversation():
+def create_conversation(workspace_token: str | None = Header(default=None, alias='X-Workspace-Token')):
     try:
-        return {'token': conversations.create(), 'idle_ttl_seconds': conversations.ttl}
+        token = conversations.create(workspace_token) if workspace_token else conversations.create()
+        return {'token': token, 'persistent': isinstance(conversations, ChatHistory)}
     except ConversationError as exc:
         raise HTTPException(status_code=exc.status, detail={'code': exc.code, 'message': exc.message}) from None
 

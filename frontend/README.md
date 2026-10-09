@@ -2,7 +2,7 @@
 
 Vue 3 + Vite + TypeScript + 普通 CSS。
 
-- `src/App.vue`：会话、语言切换、引用、错误处理和计时。
+- `src/App.vue`：左侧会话列表、新建/改名/删除、自动回答语言、引用、逐字展示、错误处理和计时。完整记录存后端SQLite，localStorage只保留列表凭证和上次选中的会话。
 - `src/copy.ts`：英文、简体和繁体界面文案。
 - `src/components/EvaluationPanel.vue`：实时/历史耗时折线、累计平均、分布与折叠明细。
 - `src/api/latency.ts`：累计平均、统计量和直方图分桶；未知耗时不当成零。

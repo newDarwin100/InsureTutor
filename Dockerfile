@@ -19,7 +19,7 @@ COPY --chown=appuser:appuser data/reviewed/ /app/data/reviewed/
 COPY --chown=appuser:appuser data/processed/ /app/data/processed/
 COPY --chown=appuser:appuser ["docs/FLEXI-ULife Prime Saver.pdf", "/app/docs/"]
 COPY --from=frontend-build --chown=appuser:appuser /build/dist/ /app/frontend/dist/
-RUN mkdir -p /app/data/chroma && chown appuser:appuser /app/data/chroma
+RUN mkdir -p /app/data/chroma /app/data/history && chown appuser:appuser /app/data/chroma /app/data/history
 USER appuser
 EXPOSE 8000
 HEALTHCHECK --interval=15s --timeout=5s --start-period=10m --retries=3 \

@@ -13,6 +13,7 @@ data/raw/*
 !data/raw/.gitkeep
 data/chroma/*
 !data/chroma/.gitkeep
+data/history/
 .pytest_cache/
 tmp/
 .DS_Store

@@ -28,7 +28,7 @@ docker compose down           # Stop; retain the index
 bash scripts/start.sh         # Restart or retry after fixing configuration
 ```
 
-Do not use `docker compose down -v` unless you intend to delete the index and pay to rebuild it. The local development index and Docker volume are separate.
+Do not use `docker compose down -v` unless you intend to delete both the saved chats and the index (and pay to rebuild the latter). Local development data and Docker volumes are separate.
 
 **Validation status:** initialization and reuse are covered by offline tests. Docker is not installed on the development machine; an actual image build and fresh-volume run remain unverified.
 
@@ -38,13 +38,15 @@ Do not use `docker compose down -v` unless you intend to delete the index and pa
 - “被裁员后能停缴多久？附加保障也适用吗？”
 - “定期提款有什么条件？” — then “那每年提款呢？”
 
-Language selection changes the interface and subsequent answers. Earlier messages and quotations retain their original language. Click a citation number to reveal its text and PDF link. Page numbers count the cover; direct PDF jumping depends on browser support.
+Language selection changes the interface. Answers automatically match each question's Simplified Chinese, Traditional Chinese or English text. Script detection uses local OpenCC dictionaries; ambiguous shared Chinese characters keep the chat's preceding Chinese script (a new chat defaults to Simplified Chinese). Mixed Chinese/English text is treated as Chinese. Quotations retain their original language. Click a citation number to reveal its text and PDF link. Page numbers count the cover; direct PDF jumping depends on browser support.
 
-Each page gets a separate session. “Clear conversation” deletes backend history. Sessions expire after 30 idle minutes and disappear on restart; credentials stay in page memory.
+The left sidebar lists saved conversations. Titles start with the first question; rename them, create a new chat, or reopen an older one. SQLite stores questions, returned answers, citations, timings and failed/interrupted requests at `data/history/chats.sqlite3`. Refreshing the page or restarting the backend keeps the transcript and bounded follow-up context. Deleting a chat requires a confirmation and removes its messages too.
+
+A browser credential in localStorage identifies its conversation list; chat credentials are sent in headers, never URLs. Use the same browser and address to reopen the same list. This is local demo access, without account login or cross-device sync. Clearing browser storage loses access to that browser's list. The database is excluded from Git and Docker build context; Docker keeps it in the separate `chat-history` volume. Old process-only sessions from previous versions cannot be recovered.
 
 The composer stays at the bottom of the viewport. Enter sends; Shift + Enter adds a line. Checked answers appear progressively, and the transcript follows new content unless you scroll upward; “Jump to latest” resumes following. This is a frontend reveal after the complete checked response, not token streaming from the model. Reduced-motion preferences show the answer immediately.
 
-The Performance tab shows per-request latency, its cumulative average, a latency histogram and average/median/minimum/maximum values. Switch between returned requests on this page and separate saved test sets; timing stages can be filtered. Request details and token usage are collapsed by default. Page measurements stay in browser memory (latest 200, reset on refresh); opening the tab does not call a model or persist conversations.
+The Performance tab shows per-request latency, its cumulative average, a latency histogram and average/median/minimum/maximum values. Switch between returned requests on this page and separate saved test sets; timing stages can be filtered. Request details and token usage are collapsed by default. Chart measurements stay in browser memory (latest 200, reset on refresh); saved conversations still retain each reply's timings. Opening the tab does not call a model or copy private chats into evaluation reports.
 
 ## Architecture
 
@@ -52,6 +54,7 @@ The Performance tab shows per-request latency, its cumulative average, a latency
 flowchart TD
     User --> UI[Vue chat · three languages]
     UI --> API[FastAPI]
+    API --> History[(SQLite · saved conversations)]
     API --> Guard[Input guardrail]
     Guard --> Context[Resolve follow-up if needed]
     Context --> Embed[Embed the question]
@@ -66,7 +69,7 @@ flowchart TD
 
 Clear misuse requests stop before retrieval; ambiguous follow-ups ask for clarification. Unsupported drafts are withheld. Optional repair allows at most one additional attempt.
 
-History resolves what a follow-up refers to. Every answer retrieves fresh PDF evidence; previous assistant text is not a factual source.
+History resolves what a follow-up refers to. Full transcripts are saved, but only up to 8 successful/clarification turns and 24,000 characters are retained as model context; the rewrite uses the latest 4. Idle context is evicted from the in-process cache after 30 minutes and restored from SQLite on demand. Every answer retrieves fresh PDF evidence; previous assistant text is not a factual source.
 
 ## Design decisions
 
@@ -80,7 +83,7 @@ History resolves what a follow-up refers to. Every answer retrieves fresh PDF ev
 | Languages | Align original English and Traditional Chinese; generate Simplified Chinese answers from those sources. | Translations are never labeled as original PDF quotations. |
 | Citations | The model selects IDs; the server supplies text, filename and page. Display groups sources by page. | Valid IDs alone do not prove semantic support. |
 | Guardrails | Input rules, model scope classification and output evidence checks; conflicts apply to disputed fields. | Rules and model checks can miss errors or reject valid answers. |
-| Memory | Backend memory: 8 turns, 24,000 characters, 30-minute idle expiry, one worker. | Restart clears history; multiple instances need shared storage and access control. |
+| Memory | SQLite saves full transcripts; model context stays bounded to 8 turns / 24,000 characters, one worker. | Local browser credentials, not user accounts. Cross-device sync, pagination for large histories and multi-worker coordination remain future work. |
 | Models | Configurable LLM; saved reports use `gpt-5.6-luna` and `text-embedding-3-large`. | Check account availability. No controlled model comparison is complete. |
 | Deployment | Multi-stage Docker build; FastAPI serves the compiled frontend. | First startup needs embedding access; local readiness cannot prove remote model availability. |
 
@@ -104,6 +107,7 @@ Copy `.env.example` to `.env`; never commit the real key.
 | `EMBEDDING_DIMENSIONS` | Optional override; changing it requires a new index. |
 | `RAG_TOP_K` | Initial retrieval count; default 5. |
 | `ANSWER_REPAIR_ENABLED` | Default `false`; `true` permits one extra generation/check attempt. |
+| `CHAT_HISTORY_PATH` | Optional SQLite path; default `data/history/chats.sqlite3`. |
 
 Ordinary questions use a query embedding, generation and evidence check. Contextual follow-ups may add a resolution call; enabled repair adds usage. Responses show actual timings and provider usage. Unknown report values remain blank.
 

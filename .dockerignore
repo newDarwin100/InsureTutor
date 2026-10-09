@@ -9,5 +9,6 @@
 **/.pytest_cache
 data/raw
 data/chroma
+data/history
 tmp
 **/.DS_Store

@@ -8,6 +8,7 @@ export interface AppStatus {
 }
 export type Language = 'en' | 'zh-Hans' | 'zh-Hant'
 export interface ChatReply {
+  language?: Language
   request_id?: string
   verification?: { status: string; reason: string | null; detail?: string | null }
   action: string
@@ -28,9 +29,16 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
   return response.json() as Promise<T>
 }
 export const getStatus = () => request<AppStatus>('/api/status')
-export const createConversation = () => request<{ token: string }>('/api/conversations', { method: 'POST' })
+export interface ConversationSummary { token: string; title: string; created: number; updated: number; language: Language }
+export interface SavedMessage { role: 'user' | 'assistant'; text: string; reply: ChatReply | null; language: Language; status: string; error_code: string | null }
+export interface SavedConversation extends ConversationSummary { messages: SavedMessage[] }
+export const createWorkspace = () => request<{ token: string }>('/api/workspaces', { method: 'POST' })
+export const listConversations = (token: string) => request<{ conversations: ConversationSummary[] }>('/api/conversations', { headers: { 'X-Workspace-Token': token } })
+export const createConversation = (workspace?: string) => request<{ token: string }>('/api/conversations', { method: 'POST', headers: workspace ? { 'X-Workspace-Token': workspace } : undefined })
+export const getConversation = (token: string) => request<SavedConversation>('/api/conversations/current', { headers: { 'X-Conversation-Token': token } })
+export const renameConversation = (token: string, title: string) => request('/api/conversations/current', { method: 'PATCH', headers: { 'Content-Type': 'application/json', 'X-Conversation-Token': token }, body: JSON.stringify({ title }) })
 export const deleteConversation = (token: string) => request('/api/conversations/current', { method: 'DELETE', headers: { 'X-Conversation-Token': token } })
-export const askQuestion = (message: string, language: Language, token: string) => request<ChatReply>(
+export const askQuestion = (message: string, language: Language | 'auto', token: string) => request<ChatReply>(
   '/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Conversation-Token': token }, body: JSON.stringify({ message, language }) },
 )
 
