@@ -719,3 +719,7 @@ Docker仍未安装在本机。CI已有生产镜像和免费HTTP验收，但空vo
 - 交付现状保留 R13 待真实复测、图片文字未覆盖及单实例边界。视频为补充材料，链接待用户提供；仓库访问按邀请邮件确认。
 
 提交点：`docs: add Chinese delivery guide and architecture visuals`。
+
+### 2026-10-10：调整交付目录与录屏稿
+
+仓库结构改成普通树状目录，整体流程图保留。新增 [录屏逐字稿](VIDEO_SCRIPT.zh-CN.md)，约4分钟，按简体复合题、PDF引用、同会话追问、繁体失业题、英文回答、安全短路、性能看板和工程选型安排操作与旁白。等待可剪辑但注明，图表保留实际耗时；没有新增付费测试。提交点：`docs: simplify repository tree and add demo narration`。

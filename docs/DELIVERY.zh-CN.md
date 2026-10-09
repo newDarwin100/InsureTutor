@@ -28,7 +28,35 @@ bash scripts/start.sh
 
 ## 2. 仓库结构与整体流程
 
-![代码仓库结构](assets/delivery/repository.svg)
+```text
+InsureTutor/
+├── frontend/                    # Vue + TypeScript
+│   ├── src/
+│   │   ├── App.vue              # 聊天界面与会话列表
+│   │   ├── components/          # 性能图表与图标
+│   │   └── api/                 # SSE、请求与耗时统计
+│   └── tests/                   # 前端测试
+├── backend/
+│   ├── app/
+│   │   ├── main.py              # API、PDF 与健康检查
+│   │   ├── rag/                 # 索引、检索与证据关联
+│   │   ├── guardrails/          # 范围与安全规则
+│   │   └── services/            # 生成、核对、追问与聊天保存
+│   └── tests/                   # 后端测试
+├── data/
+│   ├── processed/              # 清洗证据与分块
+│   ├── reviewed/               # 对齐与修正记录
+│   ├── chroma/                 # 本地向量库，不入 Git
+│   └── history/                # 本地聊天库，不入 Git
+├── evaluation/                 # 参考题、证据与真实测试报告
+├── scripts/                    # 启动、建库与验证
+├── docs/                       # 原始 PDF、执行与交付说明
+├── .github/workflows/          # CI
+├── Dockerfile
+├── docker-compose.yml
+├── .env.example                # 配置模板
+└── README.md                   # 启动与设计说明
+```
 
 ![资料准备与问答流程](assets/delivery/pipeline.svg)
 
@@ -88,4 +116,4 @@ bash scripts/start.sh
 
 ---
 
-**提交材料：仓库链接 + README + 本说明。** 可补一段约 3 分钟视频，依次演示三语回答、脚注限制、同会话追问、PDF 跳转、越界请求和性能图表；提交前补视频链接，并按邀请邮件确认评审账号的仓库访问权限。
+**提交材料：仓库链接 + README + 本说明。** 可补一段约 4 分钟视频，按[录屏逐字稿](VIDEO_SCRIPT.zh-CN.md)演示三语回答、脚注限制、同会话追问、PDF 跳转、越界请求和性能图表；提交前补视频链接，并按邀请邮件确认评审账号的仓库访问权限。
