@@ -5,6 +5,7 @@ import time
 import re
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+from app.services.answer_text import answer_text
 
 
 class ModelError(RuntimeError):
@@ -30,8 +31,9 @@ def sse_events(response):
 
 class ClaimTextStream:
     """Expose only claim text from an incomplete structured JSON response, never raw JSON."""
-    def __init__(self, emit):
+    def __init__(self, emit, language=None):
         self.emit, self.buffer, self.seen = emit, '', {}
+        self.language = language
 
     def feed(self, delta):
         self.buffer += delta
@@ -46,11 +48,15 @@ class ClaimTextStream:
             # A high surrogate at a chunk boundary is not displayable yet.
             if text and 0xD800 <= ord(text[-1]) <= 0xDBFF:
                 text = text[:-1]
+            # Phrase conversion can revise an earlier character once more context arrives.
+            # A replacement updates that paragraph without discarding the other streamed text.
+            text = answer_text(text, self.language, partial=True)
             previous = self.seen.get(index, '')
             if text != previous:
-                if not text.startswith(previous):
-                    raise ModelError('Non-monotonic claim stream')
-                self.emit('delta', {'index': index, 'text': text[len(previous):]})
+                if text.startswith(previous):
+                    self.emit('delta', {'index': index, 'text': text[len(previous):]})
+                else:
+                    self.emit('delta', {'index': index, 'text': text, 'replace': True})
                 self.seen[index] = text
 
 
@@ -83,7 +89,7 @@ class Responses:
         try:
             with urlopen(request, timeout=45) as response:
                 if emit:
-                    parser = ClaimTextStream(emit)
+                    parser = ClaimTextStream(emit, payload.get('language'))
                     result = None
                     for event in sse_events(response):
                         kind = event.get('type')

@@ -89,7 +89,7 @@ History resolves what a follow-up refers to. Full transcripts are saved, but onl
 | Citations | The model selects IDs; the server supplies text, filename and page. Display groups sources by page. | Valid IDs alone do not prove semantic support. |
 | Guardrails | Input rules, model scope classification and output evidence checks; conflicts apply to disputed fields. | Rules and model checks can miss errors or reject valid answers. |
 | Memory | SQLite saves full transcripts; model context stays bounded to 8 turns / 24,000 characters, one worker. | Local browser credentials, not user accounts. Cross-device sync, pagination for large histories and multi-worker coordination remain future work. |
-| Models | Configurable LLM; saved reports use `gpt-5.6-luna` and `text-embedding-3-large`. | Check account availability. No controlled model comparison is complete. |
+| Models | Configurable LLM (`gpt-5.6-luna`); retain `text-embedding-3-large` after a 12-query comparison found better condition coverage than small. | Small development set; no controlled LLM comparison is complete. |
 | Deployment | Multi-stage Docker build; FastAPI serves the compiled frontend. | First startup needs embedding access; local readiness cannot prove remote model availability. |
 
 ### A retrieval failure that shaped the design
@@ -188,7 +188,11 @@ Paid evaluations are separate, explicit commands:
 
 They send fixed questions and/or brochure text to OpenAI and may incur usage. Retrieval scripts reuse index/query caches; check cache fields before treating a run as a fresh latency measurement.
 
-The new 26-case [answer reference set](evaluation/answer_regression.json) and 12-query embedding comparison are prepared, **not yet run**. The regression script defaults to reference validation without `--run`. Comparison uses a separate small-model index and keeps the application's current index unchanged. Both refuse to overwrite existing result files.
+The [26-case regression](evaluation/results/answer-regression.md) ran all fixed cases: 24 actions matched, but source review found presentation/condition issues and two blocked answers. This is not a 24/26 answer-correctness score. Review was performed by Codex against the sources, not by an independent insurance professional. Four saved outputs passed an offline replay of local fixes; five prompt-related cases await targeted live retesting. Original failures remain in the report.
+
+The [12-query embedding comparison](evaluation/results/embedding-comparison.md) used the same 143 chunks: large achieved 87.5% direct Recall@5 / 100% linked coverage; small achieved 66.7% / 79.2%. Retain large for this brochure. The separate small index never replaces the app's active index. These are retrieval results, not answer scores or stable latency claims.
+
+The regression script defaults to reference validation without `--run`; both new paid scripts refuse to overwrite existing result files. `scripts/replay_answer_regression.py` uses saved outputs with provider calls disabled and does not create new API latency measurements.
 
 ## Source data and remaining work
 
@@ -196,7 +200,7 @@ Checked-in data contains **292 evidence records and 143 chunks**, source hashes,
 
 Two genuine bilingual discrepancies remain: an age boundary and minimum amounts for a sum-insured change. They are not silently reconciled. See the [source review](data/reviewed/full_alignment.md).
 
-Remaining submission gates: paid fresh-volume Docker indexing/answer/restart acceptance and complete answer-level checks across languages, multi-turn cases and safety false positives. The Docker image and unpaid container HTTP smoke checks passed in CI. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled model comparison has been reported.
+Remaining submission gates: paid fresh-volume Docker indexing/answer/restart acceptance and targeted live checks for the prompt-related issues from the 26-case regression. The Docker image and unpaid container HTTP smoke checks passed in CI. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled LLM comparison has been reported.
 
 ## Repository guide
 

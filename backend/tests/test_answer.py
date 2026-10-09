@@ -39,6 +39,41 @@ class AnswerTests(unittest.TestCase):
     def setUp(self):
         self.evidence, self.paired = load_evidence(Index.knowledge)
 
+    def test_generated_script_and_markers_are_normalized_but_pdf_quote_is_unchanged(self):
+        index = Index()
+        index.by_id = {'fake': {'evidence_ids': ['p014-b012']}}
+        model = Model(draft('期滿利益等於保單期滿日的賬戶價值。【p014-b012】', 'p014-b012'))
+        result = answer('期满利益是多少？', 'zh-Hans', index=index, model=model)
+        self.assertEqual(result['claims'][0]['text'], '期满利益等于保单期满日的账户价值。')
+        self.assertEqual(result['citations'][0]['quote'], self.evidence['p014-b012']['text'])
+        self.assertIn('賬戶', result['citations'][0]['quote'])
+
+    def test_supported_conflict_verdict_is_accepted_only_for_a_reviewed_conflict_answer(self):
+        class ConflictModel(Model):
+            def structured(self, instructions, payload, output_type):
+                if issubclass(output_type, Draft):
+                    return super().structured(instructions, payload, output_type)
+                return Verification(supported=self.supported, reason='source_conflict', explanation=''), {
+                    'ms': 1, 'input_tokens': 1, 'output_tokens': 1}
+        index = Index()
+        index.by_id = {'fake': {'evidence_ids': ['p011-b009']}}
+        value = draft('中文65岁或以前，英文before age65，边界未解决。', 'p011-b009').model_dump()
+        value['action'] = 'source_conflict'
+        from app.guardrails.rules import Reason
+        value['reasons'] = [Reason.SOURCE_CONFLICT]
+        value['claims'][0]['citations'].append({'evidence_id': 'p011-b015'})
+        for supported in [True, False]:
+            result = answer('Does the age limit include 65?', 'en', index=index,
+                            model=ConflictModel(Draft.model_validate(value), supported))
+            self.assertEqual(result['action'], 'source_conflict' if supported else 'verification_failed')
+        ordinary = answer('How are premiums credited?', 'en', index=Index(), model=ConflictModel(draft()))
+        self.assertEqual(ordinary['action'], 'verification_failed')
+
+    def test_marker_only_claim_cannot_pass_as_an_empty_answer(self):
+        result = answer('How are premiums credited?', 'en', index=Index(), model=Model(draft('【p008-b003】')))
+        self.assertEqual(result['action'], 'verification_failed')
+        self.assertEqual(result['claims'], [])
+
     def test_generation_schema_restricts_ids_to_this_requests_evidence(self):
         output = grounded_draft_type(['p008-b003', 'p008-b014', 'p008-b003'])
         schema = output.model_json_schema()

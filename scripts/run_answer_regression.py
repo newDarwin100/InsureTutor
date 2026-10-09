@@ -1,5 +1,6 @@
 """Explicit fixed-question regression; no private conversation database or automatic retries."""
 import argparse
+import hashlib
 import json
 import sys
 import time
@@ -35,8 +36,8 @@ class RecordedModel(Responses):
         return self.record(value, usage, payload, output_type)
 
 
-def validate(cases, evidence):
-    ids = set()
+def validate(cases, evidence, available=()):
+    ids = set(available)
     for case in cases:
         if case['case_id'] in ids or not case['question'].strip() or not case['expected_facts']:
             raise ValueError('Duplicate/incomplete reference case')
@@ -72,16 +73,20 @@ def structural_checks(case, response, evidence):
             'semantic_support': 'manual_review_required'}
 
 
-def run(cases, output):
+def run(cases, output, baseline=None):
     load_dotenv(ROOT / '.env', override=False)
     evidence = {e['evidence_id']: e for e in json.loads((ROOT / 'data/processed/knowledge/evidence.json').read_text())}
-    validate(cases, evidence)
+    prior = {r['case']['case_id']: r for r in baseline.get('cases', [])} if baseline else {}
+    validate(cases, evidence, available=set(prior) - {c['case_id'] for c in cases})
     # A process-local store only; never open data/history or read actual user messages.
     store = Conversations()
     report = {'generated_at': datetime.now(timezone.utc).isoformat(), 'mode': 'real_fixed_service_streaming',
               'limits': ['Development set, not held-out quality or production latency.',
                          'Service TTFT excludes browser/network transport; refusals have no answer-text TTFT.',
-                         'Structural checks and provider audit do not replace manual review.'], 'cases': []}
+                         'Structural checks and provider audit do not replace manual review.'], 'cases': [],
+              'source_hashes': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in [
+                  'backend/app/services/answer.py', 'backend/app/services/responses.py',
+                  'backend/app/services/answer_text.py', 'evaluation/answer_regression.json']}}
     if output.exists():
         raise ValueError('Choose a new output path; previous runs must be preserved')
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -98,8 +103,9 @@ def run(cases, output):
         try:
             with store.use(token) as entry:
                 if case.get('follows'):
-                    previous = next(r for r in report['cases'] if r['case']['case_id'] == case['follows'])
-                    if previous.get('response', {}).get('action') != 'answered':
+                    previous = next((r for r in report['cases'] if r['case']['case_id'] == case['follows']),
+                                    prior.get(case['follows']))
+                    if not previous or previous.get('response', {}).get('action') != 'answered':
                         raise RuntimeError('Prerequisite failed; follow-up was not executed')
                     store.append(entry, previous['case']['question'], previous['resolved_question'], previous['response'])
                 language = detect_language(case['question'], fallback=case['language'])
@@ -127,11 +133,22 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run', action='store_true', help='Send these fixed questions, linked history and PDF evidence to OpenAI')
     parser.add_argument('--output', type=Path, default=ROOT / 'evaluation/results/answer-regression.json')
+    parser.add_argument('--cases', nargs='+', help='Explicit subset of reference IDs; no automatic failure retry')
+    parser.add_argument('--baseline', type=Path, help='Prior fixed regression report for follow-up prerequisites')
     args = parser.parse_args()
     cases = json.loads((ROOT / 'evaluation/answer_regression.json').read_text())['cases']
     evidence = {e['evidence_id']: e for e in json.loads((ROOT / 'data/processed/knowledge/evidence.json').read_text())}
     validate(cases, evidence)
+    baseline = json.loads(args.baseline.read_text()) if args.baseline else None
+    if baseline:
+        reference = {c['case_id']: c for c in cases}
+        if any(r['case'] != reference.get(r['case']['case_id']) for r in baseline['cases']):
+            raise ValueError('Baseline must match this exact fixed reference set, not private chats')
+    if args.cases:
+        if not set(args.cases) <= {c['case_id'] for c in cases}:
+            raise ValueError('Unknown reference IDs')
+        cases = [c for c in cases if c['case_id'] in args.cases]
     if args.run:
-        run(cases, args.output)
+        run(cases, args.output, baseline)
     else:
         print(f'Validated {len(cases)} fixed cases. No API calls; use --run explicitly.')

@@ -23,6 +23,23 @@ class StreamModel(Model):
 
 
 class StreamingTests(unittest.TestCase):
+    def test_fragmented_generated_markers_are_hidden_and_script_matches_final_text(self):
+        from app.services.answer_text import answer_text
+        text = '保單期滿的賬戶價值【p014-b012】。普通括號【60天】要保留。 citep014-b012'
+        wire = json.dumps({'action': 'answered', 'claims': [{'text': text, 'citations': []}]}, ensure_ascii=False)
+        shown = ''
+        def emit(event, data):
+            nonlocal shown
+            shown = data['text'] if data.get('replace') else shown + data['text']
+            self.assertNotIn('', shown)
+            self.assertNotIn('p014', shown)
+        parser = ClaimTextStream(emit, 'zh-Hans')
+        for char in wire:
+            parser.feed(char)
+        self.assertEqual(shown, answer_text(text, 'zh-Hans'))
+        self.assertIn('保单期满', shown)
+        self.assertIn('【60天】', shown)
+
     def test_partial_json_and_unicode_escapes_do_not_leak_schema_or_citations(self):
         events = []
         parser = ClaimTextStream(lambda event, data: events.append(data))

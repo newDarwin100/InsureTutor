@@ -25,5 +25,7 @@ results/ 保存真实固定测试的排名、耗时、usage 和生成结果，�
 
 `scripts/compare_embeddings.py --run` 比较同143块、同12道三语言题的 large/3072维与 small/1536维；small放独立目录，不切换应用索引。交替查询顺序，分别报告直接召回、脚注关联及最终上下文覆盖。样本有限，时延仅供观察，不据单轮结果宣称稳定性能优势。官方接口依据：[OpenAI embeddings](https://developers.openai.com/api/docs/guides/embeddings)。
 
-这两组新增真实运行等待数据外发/费用确认，目前没有新质量分数。完整答案验收和真实多轮/安全校准仍待完成。
+两组首轮已真实运行：[26题原文核对](results/answer-regression.md)、[small/large检索对比](results/embedding-comparison.md)。26题动作符合24题，但逐题核对仍发现显示与条件问题，不作为24/26答案正确率。基于12题条件覆盖保留large。原始失败不覆盖。
+
+四题保存输出的[免费回放](results/answer-replay.json)只验证引用显示、简繁转换和冲突判定修复，不能计成新的模型生成。R02/R10/R11/R13/R15的提示词修正仍待定点真实复测。全部核对是开发期间Codex对照原文，未经独立保险专业审校。
 付费入口及发送数据说明见 [README](../README.md)；不要覆盖结果美化指标。

@@ -235,7 +235,7 @@ async function send() {
       if (event === 'status') streamStage.value = data.stage
       if (event === 'reset') { paragraphs.length = 0; message.text = '' }
       if (event === 'delta') {
-        paragraphs[data.index] = (paragraphs[data.index] ?? '') + data.text
+        paragraphs[data.index] = data.replace ? data.text : (paragraphs[data.index] ?? '') + data.text
         message.text = paragraphs.join('\n\n')
         if (firstText === null && data.text.trim()) firstText = performance.now() - requestStarted
         void scrollToLatest()

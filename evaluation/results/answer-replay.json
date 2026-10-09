@@ -1,0 +1,246 @@
+{
+  "mode": "offline_saved_output_replay",
+  "api_calls": 0,
+  "new_latency_measurement": false,
+  "limits": "Tests local presentation and conflict-verdict handling only; provider audit is replayed, not rerun.",
+  "cases": [
+    {
+      "case_id": "R03",
+      "action": "answered",
+      "claims": [
+        {
+          "text": "No. The brochure lists 4% p.a. as the current assumed base crediting interest rate, quoted as of January 2022, and expressly states that it is not guaranteed and may change. It separately describes a guaranteed floor after the policy has been in force for at least 15 years: the Account Value is guaranteed to have accumulated to at least the amount that would result from a 2.5% p.a. credited interest rate, regardless of economic conditions. The 0.25% retrospective additional interest rate is also an assumed, non-guaranteed rate.",
+          "citation_numbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "text": "For the automatic periodic withdrawal option, the policy must have been in force for at least 10 years for the withdrawal charge to be waived. The brochure lists a minimum monthly withdrawal of US$500/HK$4,000/MOP4,000, with a minimum withdrawal period of one year; alternatively, a minimum annual withdrawal of US$6,000/HK$48,000/MOP48,000, with a minimum withdrawal period of three years. Changes after the application is confirmed incur a nominal fee. The option is available when sufficient Cash Value has accumulated, and withdrawals reduce Cash Value while monthly charges continue to be deducted; if the Cash Value cannot cover those charges, the policy will lapse with zero value.",
+          "citation_numbers": [
+            6,
+            7,
+            8
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "evidence_id": "p008-b001-t1-r3",
+          "quote": "保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 2 | 4% | 0.25%",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 8,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+          "text": "保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 2 | 4% | 0.25%",
+          "source_pointer": "/pdf_info/7/para_blocks/0",
+          "review_flags": []
+        },
+        {
+          "number": 2,
+          "evidence_id": "p008-b007",
+          "quote": "4% 每年 p.a.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 8,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+          "text": "4% 每年 p.a.",
+          "source_pointer": "/pdf_info/7/para_blocks/6",
+          "review_flags": []
+        },
+        {
+          "number": 3,
+          "evidence_id": "p008-b009",
+          "quote": "0.25% 每年 p.a.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 8,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+          "text": "0.25% 每年 p.a.",
+          "source_pointer": "/pdf_info/7/para_blocks/8",
+          "review_flags": []
+        },
+        {
+          "number": 4,
+          "evidence_id": "p008-b014",
+          "quote": "* The current assumed base crediting interest rate and the current assumed retrospective additional interest rate are quoted as of the print date of this brochure in January 2022, and are not guaranteed. They are subject to change.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 8,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+          "text": "* The current assumed base crediting interest rate and the current assumed retrospective additional interest rate are quoted as of the print date of this brochure in January 2022, and are not guaranteed. They are subject to change.",
+          "source_pointer": "/pdf_info/7/para_blocks/13",
+          "review_flags": []
+        },
+        {
+          "number": 5,
+          "evidence_id": "p008-b004",
+          "quote": "In addition, when a Policy has been in force for 15 years or more, the total interest and Extra Bonus credited to the Policy will be such that the Account Value is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a., regardless of the economic situation.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 8,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+          "text": "In addition, when a Policy has been in force for 15 years or more, the total interest and Extra Bonus credited to the Policy will be such that the Account Value is guaranteed to have accumulated to at least an amount as if the interest rate credited had been 2.5% p.a., regardless of the economic situation.",
+          "source_pointer": "/pdf_info/7/para_blocks/3",
+          "review_flags": []
+        },
+        {
+          "number": 6,
+          "evidence_id": "p012-b018",
+          "quote": "6. Automatic periodic withdrawal option is only applicable if the Policy has been in force for at least 10 years, the withdrawal charge will be waived. Current requirement on minimum monthly withdrawal amount is US$500/HK$4,000/MOP4,000, with minimum withdrawal period of one year; and the minimum annual withdrawal amount is US$6,000/HK$48,000/ MOP48,000, with minimum withdrawal period of three years. For any change after the application has been confirmed, a nominal fee will be levied.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 12,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+          "text": "6. Automatic periodic withdrawal option is only applicable if the Policy has been in force for at least 10 years, the withdrawal charge will be waived. Current requirement on minimum monthly withdrawal amount is US$500/HK$4,000/MOP4,000, with minimum withdrawal period of one year; and the minimum annual withdrawal amount is US$6,000/HK$48,000/ MOP48,000, with minimum withdrawal period of three years. For any change after the application has been confirmed, a nominal fee will be levied.",
+          "source_pointer": "/pdf_info/11/para_blocks/17",
+          "review_flags": []
+        },
+        {
+          "number": 7,
+          "evidence_id": "p010-b006",
+          "quote": "When your Policy has accumulated a Cash Value, you can exercise the automatic periodic withdrawal option6 to withdraw a specified amount of Cash Value monthly / annually at preset time intervals, so that you can easily map out your financial needs, e.g. children's university education funds and retirement expenses. In addition, you can withdraw a portion of the Cash Value7 at any time to cope with emergencies.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 10,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+          "text": "When your Policy has accumulated a Cash Value, you can exercise the automatic periodic withdrawal option6 to withdraw a specified amount of Cash Value monthly / annually at preset time intervals, so that you can easily map out your financial needs, e.g. children's university education funds and retirement expenses. In addition, you can withdraw a portion of the Cash Value7 at any time to cope with emergencies.",
+          "source_pointer": "/pdf_info/9/para_blocks/5",
+          "review_flags": []
+        },
+        {
+          "number": 8,
+          "evidence_id": "p010-b014",
+          "quote": "Cash withdrawal, reducing the premium amount, or skipping premium payments will afect the accumulation of the Cash Value, while the monthly charges are still deductible. If the Cash Value is not suficient to cover the monthly charges, the Policy will lapse with zero value.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 10,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+          "text": "Cash withdrawal, reducing the premium amount, or skipping premium payments will afect the accumulation of the Cash Value, while the monthly charges are still deductible. If the Cash Value is not suficient to cover the monthly charges, the Policy will lapse with zero value.",
+          "source_pointer": "/pdf_info/9/para_blocks/13",
+          "review_flags": []
+        }
+      ],
+      "preview_matches_final": true
+    },
+    {
+      "case_id": "R06",
+      "action": "answered",
+      "claims": [
+        {
+          "text": "If the Policy Owner is made redundant, the brochure lists an option to suspend premium payments for 365 days—the “Special Grace Period.” It also states that you remain fully covered by the insurance throughout that period. This unemployment protection is applicable only to the Basic Plan, so the brochure does not include riders in this specific redundancy-related premium-suspension benefit.",
+          "citation_numbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "This Basic Plan restriction does not establish that all rider coverage stops or that rider premiums are waived. The brochure describes supplementary benefits as available for an additional premium, but it does not specify how riders are treated during the 365-day Special Grace Period.",
+          "citation_numbers": [
+            3
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "evidence_id": "p011-b004",
+          "quote": "Should the Policy Owner be made redundant, there is an option which allows suspension of premium payments for 365 days. During this entire \"Special Grace Period\", you will remain fully covered by the insurance8.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 11,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=11",
+          "text": "Should the Policy Owner be made redundant, there is an option which allows suspension of premium payments for 365 days. During this entire \"Special Grace Period\", you will remain fully covered by the insurance8.",
+          "source_pointer": "/pdf_info/10/para_blocks/3",
+          "review_flags": []
+        },
+        {
+          "number": 2,
+          "evidence_id": "p012-b020",
+          "quote": "8. Unemployment Protection is only applicable to the Basic Plan.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 12,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+          "text": "8. Unemployment Protection is only applicable to the Basic Plan.",
+          "source_pointer": "/pdf_info/11/para_blocks/19",
+          "review_flags": []
+        },
+        {
+          "number": 3,
+          "evidence_id": "p011-b014",
+          "quote": "The plan also ofers you a full spectrum of supplementary benefits at an additional premium:",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 11,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=11",
+          "text": "The plan also ofers you a full spectrum of supplementary benefits at an additional premium:",
+          "source_pointer": "/pdf_info/10/para_blocks/13",
+          "review_flags": []
+        }
+      ],
+      "preview_matches_final": true
+    },
+    {
+      "case_id": "R17",
+      "action": "answered",
+      "claims": [
+        {
+          "text": "如果受保人在保单期满日仍然在生，期满利益（期满价值）相等于该保单期满日的账户价值。",
+          "citation_numbers": [
+            1
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "evidence_id": "p014-b012",
+          "quote": "如受保人在保單期滿日仍然在生，您將獲得相等於保單期滿日的賬戶價值的期滿價值。",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 14,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=14",
+          "text": "如受保人在保單期滿日仍然在生，您將獲得相等於保單期滿日的賬戶價值的期滿價值。",
+          "source_pointer": "/pdf_info/13/para_blocks/11",
+          "review_flags": []
+        }
+      ],
+      "preview_matches_final": true
+    },
+    {
+      "case_id": "R19",
+      "action": "source_conflict",
+      "claims": [
+        {
+          "text": "这份宣传册无法确定豁免保费保障是否包括受保人65岁生日当天。中文写作“65岁或以前”，按字面可涵盖65岁当天；英文则写作“before the age of 65”，按字面表示须在满65岁之前。两种表述在65岁生日的边界上不一致，因此应以正式保单条款核实，不能仅凭本册统一解释。",
+          "citation_numbers": [
+            1,
+            2
+          ]
+        }
+      ],
+      "citations": [
+        {
+          "number": 1,
+          "evidence_id": "p011-b009",
+          "quote": "■ 豁免保費計劃 – 若受保人不幸於65歲或以前因患病或意外受傷引致連續6個月或以上不能工作，計劃會代付傷殘期間所需的保費。",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 11,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=11",
+          "text": "■ 豁免保費計劃 – 若受保人不幸於65歲或以前因患病或意外受傷引致連續6個月或以上不能工作，計劃會代付傷殘期間所需的保費。",
+          "source_pointer": "/pdf_info/10/para_blocks/8",
+          "review_flags": [
+            "SOURCE_CONFLICT"
+          ]
+        },
+        {
+          "number": 2,
+          "evidence_id": "p011-b015",
+          "quote": "■ Waiver of Premium Benefit – If the Insured sufers from total disability for a continuous period of not less than 6 months resulting from disease or bodily injury before the age of 65, the premiums required during the period of disability will be payable by the benefit.",
+          "document_name": "FLEXI-ULife Prime Saver.pdf",
+          "pdf_page": 11,
+          "url": "/api/documents/flexi-ulife-prime-saver#page=11",
+          "text": "■ Waiver of Premium Benefit – If the Insured sufers from total disability for a continuous period of not less than 6 months resulting from disease or bodily injury before the age of 65, the premiums required during the period of disability will be payable by the benefit.",
+          "source_pointer": "/pdf_info/10/para_blocks/14",
+          "review_flags": [
+            "SOURCE_CONFLICT"
+          ]
+        }
+      ],
+      "preview_matches_final": true
+    }
+  ]
+}

@@ -32,6 +32,7 @@ jobs:
       - run: python -m unittest discover -s backend/tests
       - run: python scripts/check_full_alignment.py
       - run: python scripts/run_answer_regression.py
+      - run: python scripts/replay_answer_regression.py
 
   docker-build:
     runs-on: ubuntu-latest

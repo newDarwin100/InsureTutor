@@ -47,7 +47,7 @@ def main():
                     data = []
                     if event == 'delta':
                         deltas += 1
-                        content[value['index']] = content.get(value['index'], '') + value['text']
+                        content[value['index']] = value['text'] if value.get('replace') else content.get(value['index'], '') + value['text']
                         if first_text is None and value['text'].strip():
                             first_text = round((time.perf_counter()-began)*1000, 2)
                             print(json.dumps({'case': case_id, 'first_text_ms': first_text}, ensure_ascii=False), flush=True)
