@@ -76,7 +76,7 @@ onMounted(load)
         <div class="chart-legend"><span><i class="legend-dot request-dot"></i>{{ t.singleTime }}</span><span><i class="legend-line"></i>{{ t.runningAverage }}</span></div>
         <div class="point-readout"><template v-if="selected"><span>#{{ selected.order }}</span><strong>{{ seconds(selected.value) }} s</strong><span>{{ t.runningAverage }} {{ seconds(selected.average) }} s</span></template></div>
         <svg class="latency-chart" viewBox="0 0 710 240" role="img" :aria-label="t.trend" @mouseleave="hovered = null">
-          <defs><linearGradient id="latency-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#398771" stop-opacity=".18"/><stop offset="100%" stop-color="#398771" stop-opacity=".01"/></linearGradient></defs>
+          <defs><linearGradient id="latency-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7492e5" stop-opacity=".16"/><stop offset="100%" stop-color="#7492e5" stop-opacity=".01"/></linearGradient></defs>
           <g v-for="tick in ticks" :key="tick"><line x1="52" x2="678" :y1="y(tick)" :y2="y(tick)" class="chart-gridline"/><text x="42" :y="y(tick) + 4" text-anchor="end">{{ (tick / 1000).toFixed(1) }}</text></g>
           <polygon :points="area" fill="url(#latency-fill)"/>
           <polyline :points="line('value')" class="request-line"/>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import EvaluationPanel from './components/EvaluationPanel.vue'
+import Icon from './components/Icon.vue'
 import { copies } from './copy'
 import { presentReply } from './api/presentation'
 import { characterCount, revealBudget, revealParagraphs } from './api/reveal'
@@ -14,6 +15,12 @@ const busy = ref(false)
 const page = ref(8)
 const language = ref<Language>('zh-Hans')
 const t = computed(() => copies[language.value])
+const prompts = computed(() => [
+  { icon: 'shield', title: t.value.rateTopic, text: t.value.rateExample, question: t.value.rateQuestion },
+  { icon: 'wallet', title: t.value.withdrawTopic, text: t.value.withdrawExample, question: t.value.withdrawQuestion },
+  { icon: 'clock', title: t.value.unemploymentTopic, text: t.value.unemploymentExample, question: t.value.unemploymentQuestion },
+])
+async function choosePrompt(question: string) { input.value = question; await nextTick(); composerInput.value?.focus({ preventScroll: true }) }
 watch(language, (value, previous) => {
   document.documentElement.lang = value
   if (previous && error.value) {
@@ -54,7 +61,7 @@ async function scrollToLatest(force = false) {
   if (force) followLatest.value = true
   await nextTick()
   if (followLatest.value && activeView.value === 'chat' && messageArea.value) {
-    messageArea.value.scrollTop = messageArea.value.scrollHeight
+    messageArea.value.scrollTop = messages.value.length ? messageArea.value.scrollHeight : 0
     lastScrollTop = Math.max(0, messageArea.value.scrollTop)
   }
 }
@@ -279,41 +286,44 @@ function documentUrl() {
 <template>
   <main class="app-shell" :class="{ 'chat-mode': activeView === 'chat' }">
     <header class="header">
-      <div class="brand"><span class="brand-icon">IT</span><div><h1>InsureTutor</h1><p>{{ t.tagline }}</p></div></div>
-      <span class="badge">{{ t.preview }}</span>
-    </header>
-
-    <div class="workspace-nav">
+      <div class="brand"><span class="brand-icon"><Icon name="book" /></span><div><h1>InsureTutor</h1><p>{{ t.tagline }}</p></div></div>
+      <div class="workspace-nav">
       <div class="view-tabs" role="tablist" :aria-label="t.tutor">
-        <button id="chat-tab" role="tab" :aria-selected="activeView === 'chat'" aria-controls="chat-view" :class="{ active: activeView === 'chat' }" @click="activeView = 'chat'">{{ t.conversation }}</button>
-        <button id="performance-tab" role="tab" :aria-selected="activeView === 'performance'" aria-controls="performance-view" :class="{ active: activeView === 'performance' }" @click="activeView = 'performance'">{{ t.performance }}<span v-if="runs.length" class="tab-count">{{ runs.length }}</span></button>
+        <button id="chat-tab" role="tab" :aria-selected="activeView === 'chat'" aria-controls="chat-view" :class="{ active: activeView === 'chat' }" @click="activeView = 'chat'"><Icon name="chat" />{{ t.conversation }}</button>
+        <button id="performance-tab" role="tab" :aria-selected="activeView === 'performance'" aria-controls="performance-view" :class="{ active: activeView === 'performance' }" @click="activeView = 'performance'"><Icon name="chart" />{{ t.performance }}<span v-if="runs.length" class="tab-count">{{ runs.length }}</span></button>
       </div>
-      <label class="language-label">{{ t.language }} <select v-model="language" :disabled="busy"><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></label>
-    </div>
+      <label class="language-label"><Icon name="globe" /><span class="sr-only">{{ t.language }}</span><select v-model="language" :disabled="busy"><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></label>
+      </div>
+    </header>
     <div id="chat-view" v-show="activeView === 'chat'" class="chat-workspace" :class="{ 'sidebar-open': sidebarOpen }" role="tabpanel" aria-labelledby="chat-tab">
       <button v-if="sidebarOpen" class="sidebar-backdrop" :aria-label="t.closeHistory" @click="sidebarOpen = false"></button>
       <aside class="chat-sidebar" :aria-label="t.chatHistory">
-        <div class="history-heading"><h2>{{ t.chatHistory }}</h2><button class="mobile-close text-button" :aria-label="t.closeHistory" @click="sidebarOpen = false">×</button></div>
-        <button class="new-chat-button" :disabled="busy || loadingHistory || !workspaceToken" @click="newChat">＋ {{ t.newChat }}</button>
+        <button class="new-chat-button" :disabled="busy || loadingHistory || !workspaceToken" @click="newChat"><Icon name="plus" />{{ t.newChat }}<span aria-hidden="true">↗</span></button>
+        <div class="history-heading"><h2>{{ t.chatHistory }}</h2><button class="mobile-close icon-button" :aria-label="t.closeHistory" @click="sidebarOpen = false"><Icon name="close" /></button></div>
         <div class="chat-list">
           <button v-for="chat in orderedChats" :key="chat.token" class="chat-list-item" :class="{ selected: chat.token === conversationToken }" :aria-current="chat.token === conversationToken ? 'page' : undefined" :disabled="busy || loadingHistory" :title="chat.title || t.newChat" @click="selectChat(chat.token)"><span>{{ chat.title || t.newChat }}</span><small>{{ new Date(chat.updated * 1000).toLocaleDateString(language === 'en' ? 'en-US' : language === 'zh-Hant' ? 'zh-TW' : 'zh-CN', { month: 'short', day: 'numeric' }) }}</small></button>
         </div>
-        <p class="history-note">{{ t.historyNoteShort }}</p>
+        <div class="history-footer"><span class="footer-avatar"><Icon name="shield" /></span><div><strong>InsureTutor</strong><p>{{ t.historyNoteShort }}</p></div></div>
       </aside>
       <div class="chat-content">
-      <section class="source-strip">
-        <div><span class="eyebrow">{{ t.knowledge }}</span><h2>FLEXI-ULife Prime Saver <small>PDF · 20 {{ t.pages }}</small></h2></div>
-        <div class="source-actions"><label class="sr-only" for="pdf-page">{{ t.pdfPage }}</label><span>{{ t.page }}</span><input id="pdf-page" v-model.number="page" type="number" min="1" max="20" step="1"/><a class="document-link" :href="documentUrl()" target="_blank" rel="noopener noreferrer">{{ t.openPdf }}</a></div>
-      </section>
       <section class="chat-panel" :aria-label="t.tutor">
-        <div class="chat-header"><button class="history-toggle text-button" :aria-label="t.chatHistory" :aria-expanded="sidebarOpen" @click="sidebarOpen = !sidebarOpen">☰</button><div class="chat-heading"><h2 :title="activeChat?.title">{{ activeChat?.title || t.chatTitle }}</h2><p>{{ t.memory }}</p></div><div class="chat-actions"><button class="text-button" :disabled="busy || loadingHistory || !conversationToken" @click="editTitle">{{ t.rename }}</button><button class="text-button" :disabled="busy || loadingHistory || !conversationToken" @click="deletingChat = true">{{ t.deleteChat }}</button></div></div>
+        <div class="chat-header"><button class="history-toggle icon-button" :aria-label="t.chatHistory" :aria-expanded="sidebarOpen" @click="sidebarOpen = !sidebarOpen"><Icon name="menu" /></button><div class="chat-heading"><span class="eyebrow">{{ t.tutor }}</span><h2 :title="activeChat?.title">{{ activeChat?.title || t.newChat }}</h2></div><div class="chat-actions"><button class="icon-button" :title="t.rename" :aria-label="t.rename" :disabled="busy || loadingHistory || !conversationToken" @click="editTitle"><Icon name="edit" /></button><button class="icon-button danger-button" :title="t.deleteChat" :aria-label="t.deleteChat" :disabled="busy || loadingHistory || !conversationToken" @click="deletingChat = true"><Icon name="trash" /></button></div></div>
+      <section class="source-strip">
+        <div class="document-name"><Icon name="file" /><span>FLEXI-ULife Prime Saver <small>20 {{ t.pages }}</small></span></div>
+        <div class="source-actions"><label class="sr-only" for="pdf-page">{{ t.pdfPage }}</label><span class="page-label">{{ t.page }}</span><input id="pdf-page" v-model.number="page" type="number" min="1" max="20" step="1"/><a class="document-link" :href="documentUrl()" target="_blank" rel="noopener noreferrer">{{ t.openPdf }}<Icon name="arrow" /></a></div>
+      </section>
         <form v-if="editingTitle" class="chat-edit-bar" @submit.prevent="saveTitle"><label class="sr-only" for="chat-title">{{ t.rename }}</label><input id="chat-title" v-model="titleInput" maxlength="80" :placeholder="t.chatTitle" :disabled="loadingHistory" /><button type="submit" :disabled="loadingHistory || !titleInput.trim()">{{ t.save }}</button><button type="button" :disabled="loadingHistory" @click="editingTitle = false">{{ t.cancel }}</button></form>
         <div v-if="deletingChat" class="chat-edit-bar delete-confirm" role="alert"><span>{{ t.deleteConfirm }}</span><button :disabled="loadingHistory" @click="removeChat">{{ t.deleteChat }}</button><button :disabled="loadingHistory" @click="deletingChat = false">{{ t.cancel }}</button></div>
         <div class="message-window">
         <div ref="messageArea" class="messages" role="log" aria-live="polite" :aria-busy="busy" @scroll="onMessageScroll" @wheel="event => { if (event.deltaY < 0) followLatest = false }">
-          <div v-if="!messages.length" class="empty-state"><span class="empty-icon">↗</span><h3>{{ loadingHistory ? t.loadingHistory : t.start }}</h3><p>{{ t.example }}</p><p class="small-note">{{ t.historical }}</p></div>
+          <div v-if="!messages.length" class="empty-state">
+            <div class="hero-symbol"><Icon name="book" /><span><Icon name="shield" /></span></div>
+            <span class="hero-kicker">{{ t.heroKicker }}</span>
+            <h3>{{ loadingHistory ? t.loadingHistory : t.heroTitle }}</h3><p class="hero-description">{{ t.heroDescription }}</p>
+            <div class="prompt-grid"><button v-for="prompt in prompts" :key="prompt.icon" class="prompt-card" :disabled="loadingHistory || !conversationToken" @click="choosePrompt(prompt.question)"><span class="prompt-icon"><Icon :name="prompt.icon" /></span><strong>{{ prompt.title }}</strong><span class="prompt-text">{{ prompt.text }}</span><Icon class="prompt-arrow" name="arrow" /></button></div>
+          </div>
           <div v-for="(message, index) in displayMessages" :key="index" class="message" :class="message.role">
-            <span class="message-label">{{ message.role === 'user' ? t.you : 'InsureTutor' }}</span>
+            <span class="message-label"><span v-if="message.role === 'assistant'" class="assistant-mark"><Icon name="book" /></span>{{ message.role === 'user' ? t.you : 'InsureTutor' }}</span>
             <div class="answer-bubble" :class="{ revealing: message.revealing }">
               <p v-if="message.text">{{ message.text }}</p>
               <template v-if="message.reply && message.presentation">
@@ -330,7 +340,7 @@ function documentUrl() {
                 <p>{{ t.classification }}: {{ message.reply.verification.reason }} · {{ t.request }}: {{ message.reply.request_id?.slice(0, 8) }}</p>
               </details>
               <details v-if="message.presentation.groups.length" class="sources">
-                <summary>{{ t.sources }} · {{ message.presentation.groups.length }} {{ t.pages }}</summary>
+                <summary><Icon name="file" /><span>{{ t.sources }}</span><span class="source-count">{{ message.presentation.groups.length }} {{ t.pages }}</span><Icon name="chevron" /></summary>
                 <details v-for="group in message.presentation.groups" :id="`source-${index}-${group.number}`" :key="group.number" class="source-group">
                   <summary>[{{ group.number }}] {{ t.page }} {{ group.page }} · {{ group.sources.length }} {{ t.passages }}</summary>
                   <div class="source-heading"><span>{{ group.documentName }}</span><a :href="group.url" target="_blank" rel="noopener noreferrer">{{ t.openPage }}</a></div>
@@ -339,8 +349,9 @@ function documentUrl() {
                 </details>
               </details>
               <details class="metrics">
-                <summary>{{ t.elapsed }} {{ (message.reply.metrics.total_ms / 1000).toFixed(1) }} {{ t.seconds }} · {{ t.runtime }}</summary>
-                <p>{{ t.retrieval }}: {{ message.reply.metrics.retrieval_ms }} ms · {{ t.llm }}: {{ (message.reply.metrics.llm_ms / 1000).toFixed(2) }} s · {{ t.total }}: {{ (message.reply.metrics.total_ms / 1000).toFixed(2) }} s<br />{{ t.chunks }}: {{ message.reply.metrics.retrieved_chunks }} · {{ t.inputTokens }}: {{ message.reply.metrics.llm_input_tokens }} / {{ t.outputTokens }}: {{ message.reply.metrics.llm_output_tokens }} · {{ t.embedding }}: {{ message.reply.metrics.embedding_input_tokens }}</p>
+                <summary><Icon name="clock" /><span>{{ t.elapsed }} <strong>{{ (message.reply.metrics.total_ms / 1000).toFixed(1) }} {{ t.seconds }}</strong></span><span class="runtime-label">{{ t.runtime }}</span><Icon name="chevron" /></summary>
+                <dl class="request-timings"><div><dt>{{ t.retrieval }}</dt><dd>{{ message.reply.metrics.retrieval_ms }} <small>ms</small></dd></div><div><dt>{{ t.llm }}</dt><dd>{{ (message.reply.metrics.llm_ms / 1000).toFixed(2) }} <small>s</small></dd></div><div><dt>{{ t.total }}</dt><dd>{{ (message.reply.metrics.total_ms / 1000).toFixed(2) }} <small>s</small></dd></div></dl>
+                <p class="usage-line">{{ t.chunks }}: {{ message.reply.metrics.retrieved_chunks }} · {{ t.inputTokens }}: {{ message.reply.metrics.llm_input_tokens }} / {{ t.outputTokens }}: {{ message.reply.metrics.llm_output_tokens }} · {{ t.embedding }}: {{ message.reply.metrics.embedding_input_tokens }}</p>
               </details>
             </template>
           </div>
@@ -351,8 +362,8 @@ function documentUrl() {
         <form class="composer" @submit.prevent="send">
           <p v-if="error" class="error" role="alert">{{ error }}</p>
           <label class="sr-only" for="message">{{ t.question }}</label>
-          <div class="input-row"><textarea id="message" ref="composerInput" v-model="input" rows="1" maxlength="2000" :placeholder="t.placeholder" :aria-describedby="'composer-hint'" :disabled="busy || loadingHistory || !conversationToken" @keydown="onComposerKey" /><button type="submit" :disabled="busy || loadingHistory || !conversationToken || !input.trim()">{{ busy ? t.answering : t.send }}</button></div>
-          <p id="composer-hint" class="composer-hint">{{ t.composerHint }}</p>
+          <div class="input-row"><textarea id="message" ref="composerInput" v-model="input" rows="1" maxlength="2000" :placeholder="t.placeholder" :aria-describedby="'composer-hint'" :disabled="busy || loadingHistory || !conversationToken" @keydown="onComposerKey" /><button type="submit" :aria-label="busy ? t.answering : t.send" :title="busy ? t.answering : t.send" :disabled="busy || loadingHistory || !conversationToken || !input.trim()"><span v-if="busy" class="send-spinner" aria-hidden="true"></span><Icon v-else name="send" /></button></div>
+          <div id="composer-hint" class="composer-caption"><span>{{ t.historical }}</span><span class="composer-hint">{{ t.composerHint }}</span></div>
         </form>
       </section>
       </div>
