@@ -188,7 +188,9 @@ Paid evaluations are separate, explicit commands:
 
 They send fixed questions and/or brochure text to OpenAI and may incur usage. Retrieval scripts reuse index/query caches; check cache fields before treating a run as a fresh latency measurement.
 
-The [26-case regression](evaluation/results/answer-regression.md) ran all fixed cases: 24 actions matched, but source review found presentation/condition issues and two blocked answers. This is not a 24/26 answer-correctness score. Review was performed by Codex against the sources, not by an independent insurance professional. Four saved outputs passed an offline replay of local fixes; five prompt-related cases await targeted live retesting. Original failures remain in the report.
+The [26-case regression](evaluation/results/answer-regression.md) ran all fixed cases: 24 actions matched, but source review found presentation/condition issues and two blocked answers. This is not a 24/26 answer-correctness score. Review was performed by Codex against the sources, not by an independent insurance professional. Four saved outputs passed an offline replay of local fixes. A [five-case targeted live retest](evaluation/results/answer-regression-fixes.md) returned four supported answers; the terminal-illness definition/termination question still failed after adding unasked claims. Its further focus instruction awaits another explicitly confirmed test. Original failures remain in the reports.
+
+The targeted retest also recorded slow API waits: first answer text took 17.83–33.55 seconds, with query embedding taking 8.95–19.04 seconds while database queries stayed below 7ms. Earlier fast results do not guarantee future TTFT. The measurements identify external request waits but do not establish their cause; slow results are preserved.
 
 The [12-query embedding comparison](evaluation/results/embedding-comparison.md) used the same 143 chunks: large achieved 87.5% direct Recall@5 / 100% linked coverage; small achieved 66.7% / 79.2%. Retain large for this brochure. The separate small index never replaces the app's active index. These are retrieval results, not answer scores or stable latency claims.
 
@@ -200,7 +202,7 @@ Checked-in data contains **292 evidence records and 143 chunks**, source hashes,
 
 Two genuine bilingual discrepancies remain: an age boundary and minimum amounts for a sum-insured change. They are not silently reconciled. See the [source review](data/reviewed/full_alignment.md).
 
-Remaining submission gates: paid fresh-volume Docker indexing/answer/restart acceptance and targeted live checks for the prompt-related issues from the 26-case regression. The Docker image and unpaid container HTTP smoke checks passed in CI. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled LLM comparison has been reported.
+Remaining submission gates: paid fresh-volume Docker indexing/answer/restart acceptance and a targeted live check of the terminal-illness focus instruction. The Docker image and unpaid container HTTP smoke checks passed in CI. Some chart content is not indexed. Model verification can misjudge support. No load test or controlled LLM comparison has been reported.
 
 ## Repository guide
 

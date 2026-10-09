@@ -1,0 +1,1301 @@
+{
+  "generated_at": "2026-10-09T14:20:38.714616+00:00",
+  "mode": "real_fixed_service_streaming",
+  "limits": [
+    "Development set, not held-out quality or production latency.",
+    "Service TTFT excludes browser/network transport; refusals have no answer-text TTFT.",
+    "Structural checks and provider audit do not replace manual review."
+  ],
+  "cases": [
+    {
+      "case": {
+        "case_id": "R02",
+        "question": "4% 的利率是保證的嗎？定期提款有什麼條件？",
+        "language": "zh-Hant",
+        "category": "compound",
+        "expected_actions": [
+          "answered"
+        ],
+        "expected_facts": [
+          "4%为2022年1月的假设利率，并非保证；不能当作当前报价。",
+          "定期提款须生效满10年且有足够现金价值；月最低USD500/HKD4000/MOP4000，至少1年；年最低USD6000/HKD48000/MOP48000，至少3年。",
+          "定期提款费豁免，但已确认安排的更改要手续费；月费仍扣，现金价值不足有失效风险。"
+        ],
+        "required_evidence_groups": [
+          {
+            "group_id": "p008-b011",
+            "alternative_evidence_ids": [
+              "p008-b011",
+              "p008-b014"
+            ],
+            "pdf_pages": [
+              8
+            ]
+          },
+          {
+            "group_id": "p012-b018",
+            "alternative_evidence_ids": [
+              "p012-b007",
+              "p012-b018"
+            ],
+            "pdf_pages": [
+              12
+            ]
+          },
+          {
+            "group_id": "p010-b005",
+            "alternative_evidence_ids": [
+              "p010-b005",
+              "p010-b006"
+            ],
+            "pdf_pages": [
+              10
+            ]
+          },
+          {
+            "group_id": "p014-b031",
+            "alternative_evidence_ids": [
+              "p014-b003",
+              "p014-b031"
+            ],
+            "pdf_pages": [
+              14
+            ]
+          }
+        ],
+        "expected_reasons": []
+      },
+      "measured_at": "2026-10-09T14:20:38.715859+00:00",
+      "manual_review": {
+        "reviewer": "Codex development source review",
+        "independent_insurance_expert": false,
+        "status": "passed",
+        "expected_fact_checks": [
+          true,
+          true,
+          true
+        ],
+        "notes": "正文明确2022年1月及非保证利率；定期提款10年、足够现金价值、三币种金额、年期、费用及失效警示都有相应引用。"
+      },
+      "response": {
+        "request_id": "3c20abd537a444d2a4215e2a3143c8fd",
+        "action": "answered",
+        "language": "zh-Hant",
+        "claims": [
+          {
+            "text": "不是。小冊子列明的4%基本派息率及0.25%額外利息率，是小冊子於2022年1月刊發時適用的「現時假設」利率，並非保證，日後或會更改；小冊子另列明保單生效滿15年或以上，賬戶價值不會少於按每年2.5%派息率累積的賬戶價值，這項保證底線與非保證的假設利率不同。",
+            "citation_numbers": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "text": "定期提款權益只適用於保單生效滿10年或以上，並可豁免提款費用；前提是保單已累積足夠現金價值。每月提款最低為500美元／4,000港元／4,000澳門元，最短提款期為一年；每年提款最低為6,000美元／48,000港元／48,000澳門元，最短提款期為三年。更改已確認的定期提款權益須支付手續費。提款後每月費用仍會扣除；若現金價值不足以支付每月費用，保單便會終止而沒有任何價值。",
+            "citation_numbers": [
+              6,
+              7,
+              8
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "evidence_id": "p008-b007",
+            "quote": "4% 每年 p.a.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "4% 每年 p.a.",
+            "source_pointer": "/pdf_info/7/para_blocks/6",
+            "review_flags": []
+          },
+          {
+            "number": 2,
+            "evidence_id": "p008-b009",
+            "quote": "0.25% 每年 p.a.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "0.25% 每年 p.a.",
+            "source_pointer": "/pdf_info/7/para_blocks/8",
+            "review_flags": []
+          },
+          {
+            "number": 3,
+            "evidence_id": "p008-b001-t1-r3",
+            "quote": "保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 2 | 4% | 0.25%",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "保單年Policy Year / 現時假設基本派息率*Current assumed base crediting interest rate*每月撥入賬戶價值,並以複式計算Credited monthly to the Account Value at a compound rate / 現時假設額外利息率*Current assumed retrospective additional interest rate*於第20年及其後每5年派發Credited to the Account Value at the end of the 20thpolicy year and forevery 5 years thereafter 2 | 4% | 0.25%",
+            "source_pointer": "/pdf_info/7/para_blocks/0",
+            "review_flags": []
+          },
+          {
+            "number": 4,
+            "evidence_id": "p008-b011",
+            "quote": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "* 上述之現時假設基本派息率及現時假設額外利息息率為本冊子於2022年1月刊發時適用，並非保證， 日後或會更改。",
+            "source_pointer": "/pdf_info/7/para_blocks/10",
+            "review_flags": []
+          },
+          {
+            "number": 5,
+            "evidence_id": "p008-b002",
+            "quote": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 8,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=8",
+            "text": "您的供款會於扣除任何適用的費用後，存入賬戶價值內，並獲享較一般銀行存款優厚的利息。 此外，我們保證無論經濟環境如何，於保單生效滿15年或以上，賬戶價值（包括撥入保單的利息及額外回報的總額）將不會少於每年以派息率 2.5%計算而累積的賬戶價值。",
+            "source_pointer": "/pdf_info/7/para_blocks/1",
+            "review_flags": []
+          },
+          {
+            "number": 6,
+            "evidence_id": "p012-b007",
+            "quote": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "6. 定期提款權益只適用於生效滿10年或以上的保單，並可獲豁免支付提款費用。按現行規定，每月提款金額最低為500美元/4,000港元/4,000澳門元，提款年期最短一年；而每年提款金額最低為6,000美元/48,000 港元/48,000澳門元，提款年期最短三年。如欲更改已確認的定期提款權益，須支付手續費。",
+            "source_pointer": "/pdf_info/11/para_blocks/6",
+            "review_flags": []
+          },
+          {
+            "number": 7,
+            "evidence_id": "p010-b005",
+            "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "source_pointer": "/pdf_info/9/para_blocks/4",
+            "review_flags": []
+          },
+          {
+            "number": 8,
+            "evidence_id": "p010-b013",
+            "quote": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "source_pointer": "/pdf_info/9/para_blocks/12",
+            "review_flags": []
+          }
+        ],
+        "message": "",
+        "mode": "conversation",
+        "verification": {
+          "status": "passed",
+          "reason": "supported",
+          "detail": null
+        },
+        "guardrail": {
+          "reasons": [],
+          "action": "ANSWER",
+          "explanation": "Evidence check passed.",
+          "repair_attempts": 0
+        },
+        "metrics": {
+          "guardrail_ms": 0.01,
+          "repair_ms": 0,
+          "retrieval_ms": 8949.27,
+          "query_embedding_ms": 8942.91,
+          "vector_search_ms": 6.37,
+          "generation_ms": 15920.69,
+          "verification_ms": 8908.31,
+          "model_ttft_ms": 11012.5,
+          "llm_ms": 24829.0,
+          "total_ms": 33868.55,
+          "retrieved_chunks": 5,
+          "direct_evidence": 14,
+          "context_evidence": 18,
+          "expanded_evidence": 26,
+          "embedding_input_tokens": 29,
+          "query_cached": false,
+          "llm_input_tokens": 5593,
+          "llm_output_tokens": 411,
+          "question_resolution_ms": 0,
+          "question_resolution_mode": "none"
+        },
+        "models": {
+          "llm": "gpt-5.6-luna",
+          "embedding": "text-embedding-3-large"
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      },
+      "resolved_question": "4% 的利率是保證的嗎？定期提款有什麼條件？",
+      "service_first_text_ms": 20237.07,
+      "structural_checks": {
+        "action_matches": true,
+        "language_matches": true,
+        "original_citations_valid": true,
+        "required_reasons_present": true,
+        "reference_groups_cited": [
+          "p008-b011",
+          "p012-b018",
+          "p010-b005"
+        ],
+        "semantic_support": "manual_review_required"
+      },
+      "diagnostics": [
+        {
+          "type": "GroundedDraft",
+          "value": {
+            "action": "answered",
+            "reasons": [],
+            "claims": [
+              {
+                "text": "不是。小冊子列明的4%基本派息率及0.25%額外利息率，是小冊子於2022年1月刊發時適用的「現時假設」利率，並非保證，日後或會更改；小冊子另列明保單生效滿15年或以上，賬戶價值不會少於按每年2.5%派息率累積的賬戶價值，這項保證底線與非保證的假設利率不同。",
+                "citations": [
+                  {
+                    "evidence_id": "p008-b007"
+                  },
+                  {
+                    "evidence_id": "p008-b009"
+                  },
+                  {
+                    "evidence_id": "p008-b001-t1-r3"
+                  },
+                  {
+                    "evidence_id": "p008-b011"
+                  },
+                  {
+                    "evidence_id": "p008-b002"
+                  }
+                ]
+              },
+              {
+                "text": "定期提款權益只適用於保單生效滿10年或以上，並可豁免提款費用；前提是保單已累積足夠現金價值。每月提款最低為500美元／4,000港元／4,000澳門元，最短提款期為一年；每年提款最低為6,000美元／48,000港元／48,000澳門元，最短提款期為三年。更改已確認的定期提款權益須支付手續費。提款後每月費用仍會扣除；若現金價值不足以支付每月費用，保單便會終止而沒有任何價值。",
+                "citations": [
+                  {
+                    "evidence_id": "p012-b007"
+                  },
+                  {
+                    "evidence_id": "p010-b005"
+                  },
+                  {
+                    "evidence_id": "p010-b013"
+                  }
+                ]
+              }
+            ]
+          },
+          "usage": {
+            "ms": 15920.69,
+            "model_ttft_ms": 11012.5,
+            "input_tokens": 2977,
+            "output_tokens": 392
+          },
+          "evidence_ids": [
+            "p005-b015",
+            "p005-b016",
+            "p005-b017",
+            "p008-b002",
+            "p008-b005",
+            "p008-b007",
+            "p008-b008",
+            "p008-b009",
+            "p012-b007",
+            "p008-b001-t1-r3",
+            "p018-b001-t1-r2",
+            "p008-b011",
+            "p008-b012",
+            "p008-b013",
+            "p010-b005",
+            "p010-b006",
+            "p010-b013",
+            "p012-b011"
+          ]
+        },
+        {
+          "type": "Verification",
+          "value": {
+            "supported": true,
+            "explanation": "",
+            "reason": "supported"
+          },
+          "usage": {
+            "ms": 8908.31,
+            "model_ttft_ms": null,
+            "input_tokens": 2616,
+            "output_tokens": 19
+          },
+          "evidence_ids": [
+            "p005-b015",
+            "p005-b016",
+            "p005-b017",
+            "p008-b002",
+            "p008-b005",
+            "p008-b007",
+            "p008-b008",
+            "p008-b009",
+            "p012-b007",
+            "p008-b001-t1-r3",
+            "p018-b001-t1-r2",
+            "p008-b011",
+            "p008-b012",
+            "p008-b013",
+            "p010-b005",
+            "p010-b006",
+            "p010-b013",
+            "p012-b011"
+          ]
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "R10",
+        "question": "What about monthly withdrawals?",
+        "language": "en",
+        "category": "followup",
+        "expected_actions": [
+          "answered"
+        ],
+        "expected_facts": [
+          "承接定期提款，月最低USD500/HKD4000/MOP4000，最短1年。",
+          "满10年且足够现金价值；提款费豁免、更改安排费及持续费用/失效风险。"
+        ],
+        "required_evidence_groups": [
+          {
+            "group_id": "p012-b018",
+            "alternative_evidence_ids": [
+              "p012-b007",
+              "p012-b018"
+            ],
+            "pdf_pages": [
+              12
+            ]
+          },
+          {
+            "group_id": "p010-b005",
+            "alternative_evidence_ids": [
+              "p010-b005",
+              "p010-b006"
+            ],
+            "pdf_pages": [
+              10
+            ]
+          },
+          {
+            "group_id": "p014-b031",
+            "alternative_evidence_ids": [
+              "p014-b003",
+              "p014-b031"
+            ],
+            "pdf_pages": [
+              14
+            ]
+          }
+        ],
+        "expected_reasons": [],
+        "follows": "R09"
+      },
+      "measured_at": "2026-10-09T14:21:12.586916+00:00",
+      "manual_review": {
+        "reviewer": "Codex development source review",
+        "independent_insurance_expert": false,
+        "status": "passed",
+        "expected_fact_checks": [
+          true,
+          true
+        ],
+        "notes": "明确月提款最低金额及1年期限，补上持续费用和31日宽限期/零价值失效，收费仅描述小册子。"
+      },
+      "response": {
+        "request_id": "39ace9776f91410a9891f63ab28d9a5d",
+        "action": "answered",
+        "language": "en",
+        "claims": [
+          {
+            "text": "The brochure states that the automatic monthly periodic withdrawal option is available only after the policy has been in force for at least 10 years, provided sufficient Cash Value has accumulated. The minimum monthly withdrawal is US$500, HK$4,000 or MOP4,000, and the minimum withdrawal period is one year. The withdrawal charge is waived for this option, but a nominal fee applies to changes after the application has been confirmed.",
+            "citation_numbers": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "text": "The brochure also states that cash withdrawals reduce Cash Value while monthly charges continue to be deducted. If the Cash Value becomes insufficient to cover those charges and no premium is paid by the end of the 31-day grace period from the premium due date, the policy will lapse with zero value. The brochure lists US$25/HK$200/MOP200 as the charge for each ordinary cash withdrawal; its fee scale is not guaranteed and may be changed with one month’s prior written notice.",
+            "citation_numbers": [
+              4,
+              5,
+              6
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "evidence_id": "p012-b018",
+            "quote": "6. Automatic periodic withdrawal option is only applicable if the Policy has been in force for at least 10 years, the withdrawal charge will be waived. Current requirement on minimum monthly withdrawal amount is US$500/HK$4,000/MOP4,000, with minimum withdrawal period of one year; and the minimum annual withdrawal amount is US$6,000/HK$48,000/ MOP48,000, with minimum withdrawal period of three years. For any change after the application has been confirmed, a nominal fee will be levied.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "6. Automatic periodic withdrawal option is only applicable if the Policy has been in force for at least 10 years, the withdrawal charge will be waived. Current requirement on minimum monthly withdrawal amount is US$500/HK$4,000/MOP4,000, with minimum withdrawal period of one year; and the minimum annual withdrawal amount is US$6,000/HK$48,000/ MOP48,000, with minimum withdrawal period of three years. For any change after the application has been confirmed, a nominal fee will be levied.",
+            "source_pointer": "/pdf_info/11/para_blocks/17",
+            "review_flags": []
+          },
+          {
+            "number": 2,
+            "evidence_id": "p018-b001-t1-r2",
+            "quote": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 18,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=18",
+            "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+            "source_pointer": "/pdf_info/17/para_blocks/0",
+            "review_flags": []
+          },
+          {
+            "number": 3,
+            "evidence_id": "p010-b005",
+            "quote": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "只要保單內已累積有足夠的現金價值，您可行使定期提款權益6，自由設定每月 / 每年提款金額及年期，讓各項理財安排（例如子女升學及退休等）更有規劃。此外，您亦可隨時提取部分現金價值7，以應不時之需。",
+            "source_pointer": "/pdf_info/9/para_blocks/4",
+            "review_flags": []
+          },
+          {
+            "number": 4,
+            "evidence_id": "p014-b031",
+            "quote": "The premium payment term and the benefit term are up to age 100 of the Insured. Cash withdrawals, reducing the premium amount, or skipping premium payments (if applicable) will reduce the accumulation of the Cash Value, while the monthly charges are still deductible. Non-guaranteed charges will be reviewed at least annually and may be adjusted if necessary. You will be notified the related changes with prior written notice 1 month before efective. In determining any changes in charges, we will take reference to both past experience and expected future outlooks for factors including, but not limited to, claims, expenses, investment performance and surrenders. If the Cash Value is not suficient to cover the monthly charges and no premiums are made before the end of the 31-day Grace Period from such premium due date, the Policy will lapse with zero value.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 14,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=14",
+            "text": "The premium payment term and the benefit term are up to age 100 of the Insured. Cash withdrawals, reducing the premium amount, or skipping premium payments (if applicable) will reduce the accumulation of the Cash Value, while the monthly charges are still deductible. Non-guaranteed charges will be reviewed at least annually and may be adjusted if necessary. You will be notified the related changes with prior written notice 1 month before efective. In determining any changes in charges, we will take reference to both past experience and expected future outlooks for factors including, but not limited to, claims, expenses, investment performance and surrenders. If the Cash Value is not suficient to cover the monthly charges and no premiums are made before the end of the 31-day Grace Period from such premium due date, the Policy will lapse with zero value.",
+            "source_pointer": "/pdf_info/13/para_blocks/30",
+            "review_flags": []
+          },
+          {
+            "number": 5,
+            "evidence_id": "p012-b019",
+            "quote": "7. The current charge for each withdrawal is US$25/HK$ 200/MOP200.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "7. The current charge for each withdrawal is US$25/HK$ 200/MOP200.",
+            "source_pointer": "/pdf_info/11/para_blocks/18",
+            "review_flags": []
+          },
+          {
+            "number": 6,
+            "evidence_id": "p012-b022",
+            "quote": "10. The current scale of fees and charges is not guaranteed and is subject to the Company’s sole discretion to change with one-month prior written notice.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "10. The current scale of fees and charges is not guaranteed and is subject to the Company’s sole discretion to change with one-month prior written notice.",
+            "source_pointer": "/pdf_info/11/para_blocks/21",
+            "review_flags": []
+          }
+        ],
+        "message": "",
+        "mode": "conversation",
+        "verification": {
+          "status": "passed",
+          "reason": "supported",
+          "detail": null
+        },
+        "guardrail": {
+          "reasons": [],
+          "action": "ANSWER",
+          "explanation": "Evidence check passed.",
+          "repair_attempts": 0
+        },
+        "metrics": {
+          "guardrail_ms": 0.01,
+          "repair_ms": 0,
+          "retrieval_ms": 11710.82,
+          "query_embedding_ms": 11707.86,
+          "vector_search_ms": 2.96,
+          "generation_ms": 17814.53,
+          "verification_ms": 12213.0,
+          "model_ttft_ms": 16410.17,
+          "llm_ms": 30027.53,
+          "total_ms": 41763.74,
+          "retrieved_chunks": 5,
+          "direct_evidence": 8,
+          "context_evidence": 8,
+          "expanded_evidence": 12,
+          "embedding_input_tokens": 8,
+          "query_cached": false,
+          "llm_input_tokens": 3940,
+          "llm_output_tokens": 298,
+          "question_resolution_ms": 0.26,
+          "question_resolution_mode": "local"
+        },
+        "models": {
+          "llm": "gpt-5.6-luna",
+          "embedding": "text-embedding-3-large"
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      },
+      "resolved_question": "What are the monthly periodic withdrawal conditions?",
+      "service_first_text_ms": 28315.28,
+      "structural_checks": {
+        "action_matches": true,
+        "language_matches": true,
+        "original_citations_valid": true,
+        "required_reasons_present": true,
+        "reference_groups_cited": [
+          "p012-b018",
+          "p010-b005",
+          "p014-b031"
+        ],
+        "semantic_support": "manual_review_required"
+      },
+      "diagnostics": [
+        {
+          "type": "GroundedDraft",
+          "value": {
+            "action": "answered",
+            "reasons": [],
+            "claims": [
+              {
+                "text": "The brochure states that the automatic monthly periodic withdrawal option is available only after the policy has been in force for at least 10 years, provided sufficient Cash Value has accumulated. The minimum monthly withdrawal is US$500, HK$4,000 or MOP4,000, and the minimum withdrawal period is one year. The withdrawal charge is waived for this option, but a nominal fee applies to changes after the application has been confirmed.",
+                "citations": [
+                  {
+                    "evidence_id": "p012-b018"
+                  },
+                  {
+                    "evidence_id": "p018-b001-t1-r2"
+                  },
+                  {
+                    "evidence_id": "p010-b005"
+                  }
+                ]
+              },
+              {
+                "text": "The brochure also states that cash withdrawals reduce Cash Value while monthly charges continue to be deducted. If the Cash Value becomes insufficient to cover those charges and no premium is paid by the end of the 31-day grace period from the premium due date, the policy will lapse with zero value. The brochure lists US$25/HK$200/MOP200 as the charge for each ordinary cash withdrawal; its fee scale is not guaranteed and may be changed with one month’s prior written notice.",
+                "citations": [
+                  {
+                    "evidence_id": "p014-b031"
+                  },
+                  {
+                    "evidence_id": "p012-b019"
+                  },
+                  {
+                    "evidence_id": "p012-b022"
+                  }
+                ]
+              }
+            ]
+          },
+          "usage": {
+            "ms": 17814.53,
+            "model_ttft_ms": 16410.17,
+            "input_tokens": 2182,
+            "output_tokens": 279
+          },
+          "evidence_ids": [
+            "p012-b018",
+            "p018-b001-t1-r2",
+            "p010-b005",
+            "p010-b006",
+            "p014-b031",
+            "p010-b014",
+            "p012-b019",
+            "p012-b022"
+          ]
+        },
+        {
+          "type": "Verification",
+          "value": {
+            "supported": true,
+            "explanation": "",
+            "reason": "supported"
+          },
+          "usage": {
+            "ms": 12213.0,
+            "model_ttft_ms": null,
+            "input_tokens": 1758,
+            "output_tokens": 19
+          },
+          "evidence_ids": [
+            "p012-b018",
+            "p018-b001-t1-r2",
+            "p010-b005",
+            "p010-b006",
+            "p014-b031",
+            "p010-b014",
+            "p012-b019",
+            "p012-b022"
+          ]
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "R11",
+        "question": "普通的非定期现金提款，每次收多少费用？",
+        "language": "zh-Hans",
+        "category": "ordinary_fee",
+        "expected_actions": [
+          "answered"
+        ],
+        "expected_facts": [
+          "按小册子所列，每次USD25/HKD200/MOP200；不能混同定期提款费用豁免。",
+          "费用可变，不称当前已核实价格。"
+        ],
+        "required_evidence_groups": [
+          {
+            "group_id": "p012-b019",
+            "alternative_evidence_ids": [
+              "p012-b008",
+              "p012-b019"
+            ],
+            "pdf_pages": [
+              12
+            ]
+          }
+        ],
+        "expected_reasons": []
+      },
+      "measured_at": "2026-10-09T14:21:54.358600+00:00",
+      "manual_review": {
+        "reviewer": "Codex development source review",
+        "independent_insurance_expert": false,
+        "status": "passed",
+        "expected_fact_checks": [
+          true,
+          true
+        ],
+        "notes": "金额明确限定为宣传册列明，保留非保证收费及提前一个月书面通知。"
+      },
+      "response": {
+        "request_id": "79ff8f3f7df34ef1a9fd14b823eb7f4a",
+        "action": "answered",
+        "language": "zh-Hans",
+        "claims": [
+          {
+            "text": "普通的非定期现金提款，宣传册列明每次收取25美元、200港元或200澳门元的提款费用；定期提款权益则可豁免提款费用。宣传册同时提醒，提款后每月费用仍会继续扣除；若现金价值不足以支付每月费用，保单可能终止且不具任何价值。",
+            "citation_numbers": [
+              1,
+              2
+            ]
+          },
+          {
+            "text": "上述收费标准并非保证，宣传册列明公司可在提前一个月书面通知后酌情更改。",
+            "citation_numbers": [
+              3
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "evidence_id": "p018-b001-t1-r2",
+            "quote": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 18,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=18",
+            "text": "提取現金價值Cash Value Withdrawal | 次數不限,現時每次收取25美元/200港元/200澳門元提款費用10;定期提款權益則可獲豁免Unlimited frequency. Currently, each cash withdrawal is subject to a withdrawal charge10of US$25/HK$200/MOP200. Withdrawal charge is waived for automatic periodic withdrawal option",
+            "source_pointer": "/pdf_info/17/para_blocks/0",
+            "review_flags": []
+          },
+          {
+            "number": 2,
+            "evidence_id": "p010-b013",
+            "quote": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 10,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=10",
+            "text": "提取現金、減低或暫停繳付保費，將會影響計劃所累積的現金價值，而每月費用仍會被扣除，如現金價值不足以支付每月費用時，保單便會終止而沒有任何價值。",
+            "source_pointer": "/pdf_info/9/para_blocks/12",
+            "review_flags": []
+          },
+          {
+            "number": 3,
+            "evidence_id": "p012-b011",
+            "quote": "10. 現時的收費標準並非保證，以及受制於本公司在提前一個月以書面通知後作出改變的全權酌情決定權。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 12,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=12",
+            "text": "10. 現時的收費標準並非保證，以及受制於本公司在提前一個月以書面通知後作出改變的全權酌情決定權。",
+            "source_pointer": "/pdf_info/11/para_blocks/10",
+            "review_flags": []
+          }
+        ],
+        "message": "",
+        "mode": "conversation",
+        "verification": {
+          "status": "passed",
+          "reason": "supported",
+          "detail": null
+        },
+        "guardrail": {
+          "reasons": [],
+          "action": "ANSWER",
+          "explanation": "Evidence check passed.",
+          "repair_attempts": 0
+        },
+        "metrics": {
+          "guardrail_ms": 0.01,
+          "repair_ms": 0,
+          "retrieval_ms": 19035.98,
+          "query_embedding_ms": 19034.06,
+          "vector_search_ms": 1.92,
+          "generation_ms": 15720.77,
+          "verification_ms": 12568.48,
+          "model_ttft_ms": 14317.47,
+          "llm_ms": 28289.25,
+          "total_ms": 47357.69,
+          "retrieved_chunks": 5,
+          "direct_evidence": 9,
+          "context_evidence": 7,
+          "expanded_evidence": 11,
+          "embedding_input_tokens": 20,
+          "query_cached": false,
+          "llm_input_tokens": 3520,
+          "llm_output_tokens": 195,
+          "question_resolution_ms": 0,
+          "question_resolution_mode": "none"
+        },
+        "models": {
+          "llm": "gpt-5.6-luna",
+          "embedding": "text-embedding-3-large"
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      },
+      "resolved_question": "普通的非定期现金提款，每次收多少费用？",
+      "service_first_text_ms": 33549.3,
+      "structural_checks": {
+        "action_matches": true,
+        "language_matches": true,
+        "original_citations_valid": true,
+        "required_reasons_present": true,
+        "reference_groups_cited": [],
+        "semantic_support": "manual_review_required"
+      },
+      "diagnostics": [
+        {
+          "type": "GroundedDraft",
+          "value": {
+            "action": "answered",
+            "reasons": [],
+            "claims": [
+              {
+                "text": "普通的非定期现金提款，宣传册列明每次收取25美元、200港元或200澳门元的提款费用；定期提款权益则可豁免提款费用。宣传册同时提醒，提款后每月费用仍会继续扣除；若现金价值不足以支付每月费用，保单可能终止且不具任何价值。",
+                "citations": [
+                  {
+                    "evidence_id": "p018-b001-t1-r2"
+                  },
+                  {
+                    "evidence_id": "p010-b013"
+                  }
+                ]
+              },
+              {
+                "text": "上述收费标准并非保证，宣传册列明公司可在提前一个月书面通知后酌情更改。",
+                "citations": [
+                  {
+                    "evidence_id": "p012-b011"
+                  }
+                ]
+              }
+            ]
+          },
+          "usage": {
+            "ms": 15720.77,
+            "model_ttft_ms": 14317.47,
+            "input_tokens": 2024,
+            "output_tokens": 176
+          },
+          "evidence_ids": [
+            "p018-b001-t1-r2",
+            "p012-b008",
+            "p012-b007",
+            "p010-b013",
+            "p010-b005",
+            "p010-b006",
+            "p012-b011"
+          ]
+        },
+        {
+          "type": "Verification",
+          "value": {
+            "supported": true,
+            "explanation": "",
+            "reason": "supported"
+          },
+          "usage": {
+            "ms": 12568.48,
+            "model_ttft_ms": null,
+            "input_tokens": 1496,
+            "output_tokens": 19
+          },
+          "evidence_ids": [
+            "p018-b001-t1-r2",
+            "p012-b008",
+            "p012-b007",
+            "p010-b013",
+            "p010-b005",
+            "p010-b006",
+            "p012-b011"
+          ]
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "R13",
+        "question": "What does terminal illness mean here, and what happens to the policy and riders after payment?",
+        "language": "en",
+        "category": "terminal_illness",
+        "expected_actions": [
+          "answered"
+        ],
+        "expected_facts": [
+          "公司委任医疗顾问认为疾病很可能在12个月内导致死亡。",
+          "首次确诊的末期病症保障赔偿为基本及附加保障(如有)身故保障额；支付后相关保单及所有附加保障自动终止。"
+        ],
+        "required_evidence_groups": [
+          {
+            "group_id": "p011-b007",
+            "alternative_evidence_ids": [
+              "p011-b006",
+              "p011-b007"
+            ],
+            "pdf_pages": [
+              11
+            ]
+          },
+          {
+            "group_id": "p012-b021",
+            "alternative_evidence_ids": [
+              "p012-b010",
+              "p012-b021"
+            ],
+            "pdf_pages": [
+              12
+            ]
+          }
+        ],
+        "expected_reasons": []
+      },
+      "measured_at": "2026-10-09T14:22:41.719753+00:00",
+      "manual_review": {
+        "reviewer": "Codex development source review",
+        "independent_insurance_expert": false,
+        "status": "failed",
+        "expected_fact_checks": [],
+        "notes": "仍无展示答案。草稿又加入未问的金额及整段除外列表，后半列表没有完整引用；核对 explanation 部分原文归因错误，但草稿额外结论确有依据不足。保留失败，继续限制到定义及赔付后终止。"
+      },
+      "response": {
+        "request_id": "0426f69f167e4a5b8eda69d82fa9d018",
+        "action": "verification_failed",
+        "language": "en",
+        "claims": [],
+        "citations": [],
+        "message": "Some generated claims did not pass the source check. Please retry; your question is valid.",
+        "mode": "conversation",
+        "verification": {
+          "status": "failed",
+          "reason": "unsupported_claim",
+          "detail": "The answer says the benefit is paid upon first diagnosis and that the benefit amount includes supplementary benefits, but p012-b021 only states payment upon first diagnosis and p011-b007 describes the amount as the basic-plan Death Benefit plus supplementary benefit(s), subject to terms; it does not establish that every listed exclusion applies to the benefit or that the riders themselves are the policy's Death Benefit."
+        },
+        "guardrail": {
+          "reasons": [
+            "UNSUPPORTED_OUTPUT"
+          ],
+          "action": "REFUSE",
+          "explanation": "Some generated claims did not pass the source check. Please retry; your question is valid.",
+          "repair_attempts": 0
+        },
+        "metrics": {
+          "guardrail_ms": 0.02,
+          "repair_ms": 0,
+          "retrieval_ms": 10315.33,
+          "query_embedding_ms": 10313.55,
+          "vector_search_ms": 1.79,
+          "generation_ms": 10102.83,
+          "verification_ms": 12270.19,
+          "model_ttft_ms": 7482.06,
+          "llm_ms": 22373.02,
+          "total_ms": 32719.53,
+          "retrieved_chunks": 5,
+          "direct_evidence": 18,
+          "context_evidence": 16,
+          "expanded_evidence": 25,
+          "embedding_input_tokens": 18,
+          "query_cached": false,
+          "llm_input_tokens": 4506,
+          "llm_output_tokens": 420,
+          "question_resolution_ms": 0,
+          "question_resolution_mode": "none"
+        },
+        "models": {
+          "llm": "gpt-5.6-luna",
+          "embedding": "text-embedding-3-large"
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      },
+      "resolved_question": "What does terminal illness mean here, and what happens to the policy and riders after payment?",
+      "service_first_text_ms": 17827.38,
+      "structural_checks": {
+        "action_matches": false,
+        "language_matches": true,
+        "original_citations_valid": true,
+        "required_reasons_present": true,
+        "reference_groups_cited": [],
+        "semantic_support": "manual_review_required"
+      },
+      "diagnostics": [
+        {
+          "type": "GroundedDraft",
+          "value": {
+            "action": "answered",
+            "reasons": [],
+            "claims": [
+              {
+                "text": "Here, “Terminal Illness” means a disease of the Insured that, in the opinion of the insurer’s appointed medical consultant, is likely to lead to the Insured’s death within twelve months. If the Insured is first diagnosed with such an illness, the Terminal Illness Benefit is the Death Benefit of the basic plan plus any supplementary benefits, subject to the policy terms and exclusions. The brochure lists exclusions including illnesses occurring within 60 days after the later of the coverage effective date or reinstatement approval, certain known pre-existing conditions, suicide or self-inflicted injury, non-prescribed drug or alcohol-related causes, HIV/AIDS-related illnesses, and congenital conditions occurring before age 18.",
+                "citations": [
+                  {
+                    "evidence_id": "p012-b021"
+                  },
+                  {
+                    "evidence_id": "p011-b007"
+                  },
+                  {
+                    "evidence_id": "p014-b050"
+                  },
+                  {
+                    "evidence_id": "p014-b051"
+                  },
+                  {
+                    "evidence_id": "p014-b052"
+                  },
+                  {
+                    "evidence_id": "p014-b053"
+                  }
+                ]
+              },
+              {
+                "text": "Upon payment of the Terminal Illness Benefit, the related policy and all attached supplementary benefits are automatically terminated. The brochure also states that the policy terminates when the Insured is diagnosed with terminal illness giving rise to payment of that benefit; therefore, the basic policy and attached riders do not continue after payment. The policy document should be consulted for the applicable detailed terms and conditions.",
+                "citations": [
+                  {
+                    "evidence_id": "p012-b021"
+                  },
+                  {
+                    "evidence_id": "p014-b037"
+                  }
+                ]
+              }
+            ]
+          },
+          "usage": {
+            "ms": 10102.83,
+            "model_ttft_ms": 7482.06,
+            "input_tokens": 2459,
+            "output_tokens": 323
+          },
+          "evidence_ids": [
+            "p014-b050",
+            "p014-b051",
+            "p014-b052",
+            "p014-b053",
+            "p014-b054",
+            "p014-b055",
+            "p014-b056",
+            "p012-b021",
+            "p014-b033",
+            "p014-b034",
+            "p014-b035",
+            "p014-b036",
+            "p014-b037",
+            "p014-b038",
+            "p011-b007",
+            "p014-b031"
+          ]
+        },
+        {
+          "type": "Verification",
+          "value": {
+            "supported": false,
+            "explanation": "The answer says the benefit is paid upon first diagnosis and that the benefit amount includes supplementary benefits, but p012-b021 only states payment upon first diagnosis and p011-b007 describes the amount as the basic-plan Death Benefit plus supplementary benefit(s), subject to terms; it does not establish that every listed exclusion applies to the benefit or that the riders themselves are the policy's Death Benefit.",
+            "reason": "unsupported_claim"
+          },
+          "usage": {
+            "ms": 12270.19,
+            "model_ttft_ms": null,
+            "input_tokens": 2047,
+            "output_tokens": 97
+          },
+          "evidence_ids": [
+            "p014-b050",
+            "p014-b051",
+            "p014-b052",
+            "p014-b053",
+            "p014-b054",
+            "p014-b055",
+            "p014-b056",
+            "p012-b021",
+            "p014-b033",
+            "p014-b034",
+            "p014-b035",
+            "p014-b036",
+            "p014-b037",
+            "p014-b038",
+            "p011-b007",
+            "p014-b031"
+          ]
+        }
+      ]
+    },
+    {
+      "case": {
+        "case_id": "R15",
+        "question": "冷靜期有多少天？從何時起算，退款有什麼限制？",
+        "language": "zh-Hant",
+        "category": "cooling_off",
+        "expected_actions": [
+          "answered"
+        ],
+        "expected_facts": [
+          "21个日历日，从交付保单或可领取保单通知取较早者计。",
+          "签署书面申请，退保费及香港适用征费，无利息；已支付/将支付/即将支付赔偿不退款。"
+        ],
+        "required_evidence_groups": [
+          {
+            "group_id": "p015-b025",
+            "alternative_evidence_ids": [
+              "p015-b011",
+              "p015-b025"
+            ],
+            "pdf_pages": [
+              15
+            ]
+          }
+        ],
+        "expected_reasons": []
+      },
+      "measured_at": "2026-10-09T14:23:14.442381+00:00",
+      "manual_review": {
+        "reviewer": "Codex development source review",
+        "independent_insurance_expert": false,
+        "status": "passed",
+        "expected_fact_checks": [
+          true,
+          true
+        ],
+        "notes": "包括签署书面请求、21日较早日期、退款及赔偿限制；六个月条款明确与冷静期退款分开，不再直接混用。"
+      },
+      "response": {
+        "request_id": "9b3a97129e884dc0a191ebd7d612a9c4",
+        "action": "answered",
+        "language": "zh-Hant",
+        "claims": [
+          {
+            "text": "冷靜期為21個曆日，從以下兩個時間點中較早者起算：保單交付予您或您的代表人之日，或交付《通知書》之日；該通知書會說明保單已可領取及冷靜期屆滿日。您須在期限內以書面及簽署的要求取消保單，並連同保單退回小冊子列明的相關公司地址。",
+            "citation_numbers": [
+              1,
+              2
+            ]
+          },
+          {
+            "text": "收到書面要求後，保單會被取消；小冊子列明可退回已繳保費及（適用於香港的）徵費，但不包括利息。若任何賠償已支付、將支付或即將支付，則不會退款。另請注意，這項冷靜期退款安排不同於退保價值的支付：小冊子列明公司保留將退保價值支付押後最多六個月的權利。",
+            "citation_numbers": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "citations": [
+          {
+            "number": 1,
+            "evidence_id": "p015-b011",
+            "quote": "如保單未能滿足您的要求，您可以書面方式要求取消保單，連同保單退回本公司（香港：香港灣仔駱克道33號萬通保險大廈27樓 / 澳門：澳門蘇亞利斯博士大馬路 320號澳門財富中心8樓A座），並確保本公司的辦事處於交付保單的21個曆日內，或向您 / 您的代表人交付 《通知書》（說明已經可以領取保單和冷靜期屆滿日）後起計的21個曆日內（以較早者為準）收到書面要求。於收妥書面要求後，保單將被取消，您將可獲退回已繳保費金額及您所繳付的徵費（適用於香港），但不包括任何利息。若曾獲賠償或將獲得賠償，則不獲發還保費。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 15,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=15",
+            "text": "如保單未能滿足您的要求，您可以書面方式要求取消保單，連同保單退回本公司（香港：香港灣仔駱克道33號萬通保險大廈27樓 / 澳門：澳門蘇亞利斯博士大馬路 320號澳門財富中心8樓A座），並確保本公司的辦事處於交付保單的21個曆日內，或向您 / 您的代表人交付 《通知書》（說明已經可以領取保單和冷靜期屆滿日）後起計的21個曆日內（以較早者為準）收到書面要求。於收妥書面要求後，保單將被取消，您將可獲退回已繳保費金額及您所繳付的徵費（適用於香港），但不包括任何利息。若曾獲賠償或將獲得賠償，則不獲發還保費。",
+            "source_pointer": "/pdf_info/14/para_blocks/10",
+            "review_flags": []
+          },
+          {
+            "number": 2,
+            "evidence_id": "p015-b025",
+            "quote": "If you are not satisfied with the Policy, you may return it under a signed covering letter to us (Hong Kong: 27/F, YF Life Tower, 33 Lockhart Road, Wanchai, Hong Kong / Macau: Avenida Doutor Mario Soares No. 320, Finance and IT Center of Macau, 8 Andar A, Macau) within 21 calendar days after the delivery of the Policy or delivery of the Notice (which states that the Policy is available for collection and the expiry date of the cooling-of period) to you or your representative, whichever is earlier. We will cancel the Policy upon receipt of your written request and refund all premiums and the levy you paid (applicable to Hong Kong only), without any interest. No refund can be made if a benefit payment has been made, is to be made or impending.",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 15,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=15",
+            "text": "If you are not satisfied with the Policy, you may return it under a signed covering letter to us (Hong Kong: 27/F, YF Life Tower, 33 Lockhart Road, Wanchai, Hong Kong / Macau: Avenida Doutor Mario Soares No. 320, Finance and IT Center of Macau, 8 Andar A, Macau) within 21 calendar days after the delivery of the Policy or delivery of the Notice (which states that the Policy is available for collection and the expiry date of the cooling-of period) to you or your representative, whichever is earlier. We will cancel the Policy upon receipt of your written request and refund all premiums and the levy you paid (applicable to Hong Kong only), without any interest. No refund can be made if a benefit payment has been made, is to be made or impending.",
+            "source_pointer": "/pdf_info/14/para_blocks/24",
+            "review_flags": []
+          },
+          {
+            "number": 3,
+            "evidence_id": "p015-b016",
+            "quote": "我們保留押後支付退保價值之權利，最長不超過接獲退保要求後六個月。",
+            "document_name": "FLEXI-ULife Prime Saver.pdf",
+            "pdf_page": 15,
+            "url": "/api/documents/flexi-ulife-prime-saver#page=15",
+            "text": "我們保留押後支付退保價值之權利，最長不超過接獲退保要求後六個月。",
+            "source_pointer": "/pdf_info/14/para_blocks/15",
+            "review_flags": []
+          }
+        ],
+        "message": "",
+        "mode": "conversation",
+        "verification": {
+          "status": "passed",
+          "reason": "supported",
+          "detail": null
+        },
+        "guardrail": {
+          "reasons": [],
+          "action": "ANSWER",
+          "explanation": "Evidence check passed.",
+          "repair_attempts": 0
+        },
+        "metrics": {
+          "guardrail_ms": 0.01,
+          "repair_ms": 0,
+          "retrieval_ms": 16853.88,
+          "query_embedding_ms": 16852.19,
+          "vector_search_ms": 1.69,
+          "generation_ms": 18732.89,
+          "verification_ms": 17678.58,
+          "model_ttft_ms": 15581.01,
+          "llm_ms": 36411.47,
+          "total_ms": 53290.07,
+          "retrieved_chunks": 5,
+          "direct_evidence": 6,
+          "context_evidence": 9,
+          "expanded_evidence": 12,
+          "embedding_input_tokens": 28,
+          "query_cached": false,
+          "llm_input_tokens": 4897,
+          "llm_output_tokens": 316,
+          "question_resolution_ms": 0,
+          "question_resolution_mode": "none"
+        },
+        "models": {
+          "llm": "gpt-5.6-luna",
+          "embedding": "text-embedding-3-large"
+        },
+        "index_version": "35f382ac90a67177244f441994175a503064199c6ce6a43c267add534e68d6c9"
+      },
+      "resolved_question": "冷靜期有多少天？從何時起算，退款有什麼限制？",
+      "service_first_text_ms": 32459.16,
+      "structural_checks": {
+        "action_matches": true,
+        "language_matches": true,
+        "original_citations_valid": true,
+        "required_reasons_present": true,
+        "reference_groups_cited": [
+          "p015-b025"
+        ],
+        "semantic_support": "manual_review_required"
+      },
+      "diagnostics": [
+        {
+          "type": "GroundedDraft",
+          "value": {
+            "action": "answered",
+            "reasons": [],
+            "claims": [
+              {
+                "text": "冷靜期為21個曆日，從以下兩個時間點中較早者起算：保單交付予您或您的代表人之日，或交付《通知書》之日；該通知書會說明保單已可領取及冷靜期屆滿日。您須在期限內以書面及簽署的要求取消保單，並連同保單退回小冊子列明的相關公司地址。",
+                "citations": [
+                  {
+                    "evidence_id": "p015-b011"
+                  },
+                  {
+                    "evidence_id": "p015-b025"
+                  }
+                ]
+              },
+              {
+                "text": "收到書面要求後，保單會被取消；小冊子列明可退回已繳保費及（適用於香港的）徵費，但不包括利息。若任何賠償已支付、將支付或即將支付，則不會退款。另請注意，這項冷靜期退款安排不同於退保價值的支付：小冊子列明公司保留將退保價值支付押後最多六個月的權利。",
+                "citations": [
+                  {
+                    "evidence_id": "p015-b011"
+                  },
+                  {
+                    "evidence_id": "p015-b025"
+                  },
+                  {
+                    "evidence_id": "p015-b016"
+                  }
+                ]
+              }
+            ]
+          },
+          "usage": {
+            "ms": 18732.89,
+            "model_ttft_ms": 15581.01,
+            "input_tokens": 2653,
+            "output_tokens": 297
+          },
+          "evidence_ids": [
+            "p015-b011",
+            "p015-b025",
+            "p015-b016",
+            "p014-b003",
+            "p012-b007",
+            "p010-b005",
+            "p010-b006",
+            "p010-b013",
+            "p012-b011"
+          ]
+        },
+        {
+          "type": "Verification",
+          "value": {
+            "supported": true,
+            "explanation": "",
+            "reason": "supported"
+          },
+          "usage": {
+            "ms": 17678.58,
+            "model_ttft_ms": null,
+            "input_tokens": 2244,
+            "output_tokens": 19
+          },
+          "evidence_ids": [
+            "p015-b011",
+            "p015-b025",
+            "p015-b016",
+            "p014-b003",
+            "p012-b007",
+            "p010-b005",
+            "p010-b006",
+            "p010-b013",
+            "p012-b011"
+          ]
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "backend/app/services/answer.py": "d5d518cf0369529d4c498d0abc00e0842c7eb085edba12d0156c9f63eddde2a6",
+    "backend/app/services/responses.py": "9794de1b47569994e91274f94fd6683e75ad05e2dea8eeb7f427414b5adb11a4",
+    "backend/app/services/answer_text.py": "4e73e072bdf897262c2cbceaddd74a0766d0b7e2d197a4d9afc8f559d4c88dd6",
+    "evaluation/answer_regression.json": "52bc61a0e82748e02000a2ab369bf9fd4a8acf12ccf66d1f39b586a75dd3d118"
+  },
+  "code_commit": "6972151",
+  "summary": {
+    "executed_cases": 5,
+    "returned_and_source_review_passed": 4,
+    "verification_failed": 1,
+    "limits": [
+      "Targeted follow-up run, not a fresh 26-case pass rate.",
+      "Codex source review, not independent expert review.",
+      "Latency rose across both embedding and Responses calls; do not hide or attribute it to a confirmed cause."
+    ]
+  }
+}

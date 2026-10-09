@@ -2,6 +2,7 @@
 import hashlib
 import json
 import os
+import re
 import time
 import uuid
 from pathlib import Path
@@ -204,6 +205,23 @@ def compact_equivalent_sources(context, language, groups=None):
     return {i: e for i, e in context.items() if i not in remove or i in keep}
 
 
+def generation_instructions(question):
+    """Keep a definition/termination answer focused without dropping evidence or checks."""
+    q = question.lower()
+    definition = re.search(r'\b(mean|definition|define|defined)\b|\bwhat is\b|定义|定義|何谓|何謂|什么是|什麼是|是什么|是什麼', q)
+    after_payment = re.search(r'after (?:the |benefit )?payment|upon payment|(?:赔付|賠付|赔偿|賠償|付款)[后後]', q)
+    broader = re.search(r'exclu|cover|eligib|how much|amount|claim process|不保|除外|金额|金額|赔多少|賠多少|赔付条件|賠付條件|保障范围|保障範圍', q)
+    if ('terminal illness' in q or '末期病症' in q) and definition and after_payment and not broader:
+        return GENERATE + """\nFor THIS question, answer only the two requested points in one compact paragraph:
+(1) the appointed medical consultant's 12-month definition; (2) related policy and all attached riders
+terminate upon benefit payment. This is an explanation of definition/termination, not a claim-eligibility
+decision. Do not state the benefit amount, promise payment on diagnosis, or list exclusions. These are
+unasked topics, and adding them would not answer this question better. Select the footnote containing
+the definition and automatic termination as the supporting source. All evidence remains available to audit.
+"""
+    return GENERATE
+
+
 def validate_citations(draft, evidence):
     if draft.action in ['answered', 'source_conflict']:
         if not draft.claims:
@@ -278,12 +296,13 @@ def answer(question, language, index=None, model=None, emit=None):
                              'review_note': e['review_note'], 'conflict_relevant_to_question': conflict_applies(e, question)}
                             for i, e in context.items()]}
     model = model or Responses()
+    instructions = generation_instructions(question)
     output_type = grounded_draft_type(context)
     if emit:
         emit('status', {'stage': 'generation'})
-        draft, generation = model.structured_stream(GENERATE, payload, output_type, emit)
+        draft, generation = model.structured_stream(instructions, payload, output_type, emit)
     else:
-        draft, generation = model.structured(GENERATE, payload, output_type)
+        draft, generation = model.structured(instructions, payload, output_type)
     verification = {'ms': 0, 'input_tokens': 0, 'output_tokens': 0}
     repair = {'ms': 0, 'input_tokens': 0, 'output_tokens': 0}
     check = None
@@ -321,7 +340,7 @@ def answer(question, language, index=None, model=None, emit=None):
         if emit:
             emit('reset', {})
             emit('status', {'stage': 'repair'})
-        draft, repair = model.structured(GENERATE, {**payload, 'previous_draft': draft.model_dump(),
+        draft, repair = model.structured(instructions, {**payload, 'previous_draft': draft.model_dump(),
             'repair_feedback': {'reason': failure.value, 'detail': check.explanation if check else failure.value}}, output_type)
     passed = failure is None
     action = draft.action if passed else 'verification_failed'

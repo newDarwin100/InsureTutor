@@ -27,5 +27,5 @@ results/ 保存真实固定测试的排名、耗时、usage 和生成结果，�
 
 两组首轮已真实运行：[26题原文核对](results/answer-regression.md)、[small/large检索对比](results/embedding-comparison.md)。26题动作符合24题，但逐题核对仍发现显示与条件问题，不作为24/26答案正确率。基于12题条件覆盖保留large。原始失败不覆盖。
 
-四题保存输出的[免费回放](results/answer-replay.json)只验证引用显示、简繁转换和冲突判定修复，不能计成新的模型生成。R02/R10/R11/R13/R15的提示词修正仍待定点真实复测。全部核对是开发期间Codex对照原文，未经独立保险专业审校。
+四题保存输出的[免费回放](results/answer-replay.json)只验证引用显示、简繁转换和冲突判定修复，不能计成新的模型生成。[五题定点真实复测](results/answer-regression-fixes.md)已执行：R02/R10/R11/R15符合，R13仍失败且继续修正范围指令；原失败和明显偏慢的API计时都保留。全部核对是开发期间Codex对照原文，未经独立保险专业审校。
 付费入口及发送数据说明见 [README](../README.md)；不要覆盖结果美化指标。
