@@ -32,6 +32,8 @@ Do not use `docker compose down -v` unless you intend to delete both the saved c
 
 **Validation status:** initialization and reuse are covered by offline tests. Docker is not installed on the development machine; an actual image build and fresh-volume run remain unverified.
 
+GitHub Actions runs offline tests, builds the production image and checks its compiled page, health routes and PDF byte ranges. CI uses no API key: RAG readiness must return 503, and normal startup must stop without configuration. This checks the container packaging; it does not verify paid first-time indexing or insurance answers. See [CI runs](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml).
+
 ## Try the demo
 
 - “Is the 4% interest rate guaranteed?”
