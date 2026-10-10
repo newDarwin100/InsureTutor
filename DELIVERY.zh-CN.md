@@ -2,7 +2,7 @@
 
 基于 **FLEXI-ULife Prime Saver** 产品资料的保险问答 Demo。用户可以用简体中文、繁体中文或英文提问、继续追问，并点击引用核对 PDF 原文。系统解释资料中的条款和历史数字，不提供个人投保建议。
 
-**[代码仓库](https://github.com/newDarwin100/InsureTutor)** · **[启动与配置](../README.md)** · **[开发与取舍记录](EXECUTION.md)**  
+**[代码仓库](https://github.com/newDarwin100/InsureTutor)** · **[启动与配置](README.md)** · **[开发与取舍记录](docs/EXECUTION.md)**  
 **演示视频：待补链接**（补充材料；题目正式交付要求为仓库和 README）。
 
 ## 1. 怎么运行，完成了什么
@@ -50,23 +50,24 @@ InsureTutor/
 │   └── history/                # 本地聊天库，不入 Git
 ├── evaluation/                 # 参考题、证据与真实测试报告
 ├── scripts/                    # 启动、建库与验证
-├── docs/                       # 原始 PDF、执行与交付说明
+├── docs/                       # 原始 PDF、执行记录与录屏稿
 ├── .github/workflows/          # CI
 ├── Dockerfile
 ├── docker-compose.yml
 ├── .env.example                # 配置模板
+├── DELIVERY.zh-CN.md            # 中文交付说明
 └── README.md                   # 启动与设计说明
 ```
 
-![资料准备与问答流程](assets/delivery/pipeline.svg)
+![资料准备与问答流程](docs/assets/delivery/pipeline.svg)
 
 后端使用 Python / FastAPI，前端使用 Vue 3 / TypeScript / Vite；Chroma 保存向量，SQLite 保存聊天。模型输出证据 ID，服务端填入对应原文和页码，避免由模型自行编写出处。
 
 ## 3. 产品界面与值得展示的场景
 
-![聊天、会话列表与 PDF 引用](assets/delivery/chat-citations.jpg)
+![聊天、会话列表与 PDF 引用](docs/assets/delivery/chat-citations.jpg)
 
-![请求阶段耗时与平均占比](assets/delivery/performance.jpg)
+![请求阶段耗时与平均占比](docs/assets/delivery/performance.jpg)
 
 *截图使用当前界面回放已保存的 D01 / D04 固定测试结果；图中耗时来自历史运行，不代表当前版本的新测速，也不包含个人聊天。*
 
@@ -96,12 +97,12 @@ InsureTutor/
 | `text-embedding-3-large` / 3072 维 | 87.50% | 100% |
 | `text-embedding-3-small` / 1536 维 | 66.67% | 79.17% |
 
-因此保留 large，优先找齐保证边界与适用限制。这里模型和维度同时不同；小样本检索覆盖率不能当作答案正确率。[原始比较与逐题结果](../evaluation/results/embedding-comparison.md)。
+因此保留 large，优先找齐保证边界与适用限制。这里模型和维度同时不同；小样本检索覆盖率不能当作答案正确率。[原始比较与逐题结果](evaluation/results/embedding-comparison.md)。
 
 ## 5. 验证结果与当前边界
 
 - **工程验证：**85 项后端、11 项前端离线测试通过，类型检查与构建通过；[CI](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml) 检查测试、生产镜像及免费接口。本机空卷建库成功，重建容器后索引复用、测试聊天恢复；健康检查、PDF Range 与私有文件隔离通过。
-- **问答验证：**[六道示例](../evaluation/results/demo-answers.md)保留三语、失业、提款和追问的真实结果。更广的 [26 题首轮回归](../evaluation/results/answer-regression.md)暴露了条件遗漏与误拦；随后 [五题定点复测](../evaluation/results/answer-regression-fixes.md)有四题通过，末期疾病定义题 R13 后续修正仍待真实复测。没有全题通过的结论。
+- **问答验证：**[六道示例](evaluation/results/demo-answers.md)保留三语、失业、提款和追问的真实结果。更广的 [26 题首轮回归](evaluation/results/answer-regression.md)暴露了条件遗漏与误拦；随后 [五题定点复测](evaluation/results/answer-regression-fixes.md)有四题通过，末期疾病定义题 R13 后续修正仍待真实复测。没有全题通过的结论。
 - **边界：**图片中未提取成文字的 32 个块未入库；原文确有跨语言差异，保留并提示，不能直接“翻译修平”。安全规则与模型核对仍可能误判。当前为本地单实例 Demo，无账号登录、跨设备同步、生产压测或独立保险专家验收。
 
 ## 6. 用户与资料增加后，怎么扩展
@@ -116,4 +117,4 @@ InsureTutor/
 
 ---
 
-**提交材料：仓库链接 + README + 本说明。** 可补一段约 3 分钟视频，按[录屏逐字稿](VIDEO_SCRIPT.zh-CN.md)演示三语回答、脚注限制、同会话追问、PDF 跳转、越界请求和性能图表；提交前补视频链接，并按邀请邮件确认评审账号的仓库访问权限。
+**提交材料：仓库链接 + README + 本说明。** 可补一段约 3 分钟视频，按[录屏逐字稿](docs/VIDEO_SCRIPT.zh-CN.md)演示三语回答、脚注限制、同会话追问、PDF 跳转、越界请求和性能图表；提交前补视频链接，并按邀请邮件确认评审账号的仓库访问权限。
