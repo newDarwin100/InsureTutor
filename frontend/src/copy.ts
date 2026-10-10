@@ -1,7 +1,7 @@
 import type { Language } from './api/client'
 const hans = {
   savedChatRuns: '已保存的聊天',
-  breakdown: '每次请求，时间花在哪？', timeShare: '平均耗时占比', trendAndDistribution: '查看趋势和耗时分布', otherModel: '其他模型耗时', otherTime: '其他 / 未分项', breakdownNote: '生成、核对和改写已包含在模型耗时中，不重复累计；灰色部分是其他或未分项时间。',
+  breakdown: '每次请求，时间花在哪？', slowestFirst: '耗时降序', timeShare: '平均耗时占比', trendAndDistribution: '查看趋势和耗时分布', otherModel: '其他模型耗时', otherTime: '其他 / 未分项', breakdownNote: '生成、核对和改写已包含在模型耗时中，不重复累计；灰色部分是其他或未分项时间。',
   vectorCached: '复用问题向量',
   ttft: '首字响应', generation: '生成', verification: '依据核对', resolution: '追问改写', streaming: '正在整理回答…', streamChecking: '正在核对原文…', retrieving: '正在查找原文…', resolving: '正在理解追问…', ttftNote: '当前首字响应包含依据核对：从发送到收到最终答案，不含加载提示。旧记录可能测量草稿首字，不能直接比较；不保证2秒内完成。',
   heroKicker: '以原文为依据', heroTitle: '关于这份保单，你想了解什么？', heroDescription: '把不清楚的条款交给我们，回答和原文一起看。', rateTopic: '收益保证', rateExample: '4% 的利率是保证的吗？', rateQuestion: '4% 的利率是保证的吗？定期提款有什么条件？', withdrawTopic: '提款条件', withdrawExample: '定期提款有什么要求？', withdrawQuestion: '定期提款有什么条件？', unemploymentTopic: '失业保障', unemploymentExample: '被裁员后，可以停缴多久？', unemploymentQuestion: '被裁员后能停缴多久？附加保障也适用吗？',
@@ -20,7 +20,7 @@ const hans = {
 }
 const hant: Record<keyof typeof hans, string> = {
   savedChatRuns: '已儲存的聊天',
-  breakdown: '每次請求，時間花在哪？', timeShare: '平均耗時佔比', trendAndDistribution: '查看趨勢和耗時分佈', otherModel: '其他模型耗時', otherTime: '其他 / 未分項', breakdownNote: '生成、核對和改寫已包含在模型耗時中，不重複累計；灰色部分是其他或未分項時間。',
+  breakdown: '每次請求，時間花在哪？', slowestFirst: '耗時降序', timeShare: '平均耗時佔比', trendAndDistribution: '查看趨勢和耗時分佈', otherModel: '其他模型耗時', otherTime: '其他 / 未分項', breakdownNote: '生成、核對和改寫已包含在模型耗時中，不重複累計；灰色部分是其他或未分項時間。',
   vectorCached: '復用問題向量',
   ttft: '首字回應', generation: '生成', verification: '依據核對', resolution: '追問改寫', streaming: '正在整理回答…', streamChecking: '正在核對原文…', retrieving: '正在查找原文…', resolving: '正在理解追問…', ttftNote: '目前首字回應包含依據核對：從發送到收到最終答案，不含載入提示。舊記錄可能量度草稿首字，不能直接比較；不保證2秒內完成。',
   heroKicker: '以原文為依據', heroTitle: '關於這份保單，你想了解甚麼？', heroDescription: '把不清楚的條款交給我們，回答和原文一起看。', rateTopic: '收益保證', rateExample: '4% 的利率是保證的嗎？', rateQuestion: '4% 的利率是保證的嗎？定期提款有什麼條件？', withdrawTopic: '提款條件', withdrawExample: '定期提款有甚麼要求？', withdrawQuestion: '定期提款有什麼條件？', unemploymentTopic: '失業保障', unemploymentExample: '被裁員後，可以停繳多久？', unemploymentQuestion: '被裁員後能停繳多久？附加保障也適用嗎？',
@@ -31,7 +31,7 @@ const hant: Record<keyof typeof hans, string> = {
 }
 const en: Record<keyof typeof hans, string> = {
   savedChatRuns: 'Saved chat',
-  breakdown: 'Where does each request spend time?', timeShare: 'Average time by stage', trendAndDistribution: 'View trend and latency distribution', otherModel: 'Other model time', otherTime: 'Other / unmeasured stages', breakdownNote: 'Generation, verification and rewriting are already included in model time; they are not added twice. Gray shows remaining or unmeasured stages.',
+  breakdown: 'Where does each request spend time?', slowestFirst: 'Slowest first', timeShare: 'Average time by stage', trendAndDistribution: 'View trend and latency distribution', otherModel: 'Other model time', otherTime: 'Other / unmeasured stages', breakdownNote: 'Generation, verification and rewriting are already included in model time; they are not added twice. Gray shows remaining or unmeasured stages.',
   vectorCached: 'Query vector reused',
   ttft: 'First text', generation: 'Generation', verification: 'Evidence check', resolution: 'Follow-up rewrite', streaming: 'Preparing the answer…', streamChecking: 'Checking source passages…', retrieving: 'Finding source passages…', resolving: 'Resolving the follow-up…', ttftNote: 'Current first-text time includes verification: submission to receiving the final answer, excluding loading indicators. Historical records may measure draft text and are not directly comparable. Completion within two seconds is not guaranteed.',
   heroKicker: 'Grounded in the brochure', heroTitle: 'What would you like to understand?', heroDescription: 'Ask about a clause. Read the answer alongside its source.', rateTopic: 'Guaranteed returns', rateExample: 'Is the 4% rate guaranteed?', rateQuestion: 'Is the 4% rate guaranteed? What are the periodic withdrawal conditions?', withdrawTopic: 'Withdrawals', withdrawExample: 'What are the withdrawal conditions?', withdrawQuestion: 'What are the periodic withdrawal conditions?', unemploymentTopic: 'Unemployment', unemploymentExample: 'How long can premiums be deferred?', unemploymentQuestion: 'How long is the unemployment premium grace period? Does it apply to riders?',

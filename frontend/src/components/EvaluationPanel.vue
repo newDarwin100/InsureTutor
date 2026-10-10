@@ -35,7 +35,7 @@ const ticks = computed(() => [0, ceiling.value / 2, ceiling.value])
 const countTicks = computed(() => [...new Set([0, Math.ceil(maxBin.value / 2), maxBin.value])])
 const requestTicks = computed(() => [...new Set([0, Math.floor((samples.value.length - 1) / 2), samples.value.length - 1])])
 const barWidth = computed(() => 626 / Math.max(1, bins.value.length))
-const breakdown = computed(() => latencyBreakdown(rows.value))
+const breakdown = computed(() => latencyBreakdown(rows.value).sort((a, b) => b.total - a.total))
 const breakdownMax = computed(() => chartCeiling(Math.max(0, ...breakdown.value.map(item => item.span))))
 const averageParts = computed(() => averageBreakdown(breakdown.value))
 const averageTotal = computed(() => latencyStats(breakdown.value.map(item => item.total)).average)
@@ -80,7 +80,7 @@ onMounted(load)
 
     <div v-if="breakdown.length" class="chart-grid breakdown-grid">
       <article class="chart-card">
-        <div class="chart-heading"><h3>{{ t.breakdown }}</h3><span>{{ t.total }} · s</span></div>
+        <div class="chart-heading"><h3>{{ t.breakdown }}</h3><span>{{ t.total }} · s · {{ t.slowestFirst }}</span></div>
         <div class="chart-legend phase-legend"><span v-for="part in averageParts" :key="part.stage"><i class="legend-dot" :style="{ background: partColors[part.stage] }"></i>{{ partLabels[part.stage] }}</span></div>
         <div class="breakdown-axis"><span>0</span><span>{{ seconds(breakdownMax / 2) }}</span><span>{{ seconds(breakdownMax) }} s</span></div>
         <div class="request-bars">
