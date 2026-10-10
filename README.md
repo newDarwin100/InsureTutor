@@ -1,10 +1,14 @@
 # InsureTutor
 
+[![Checks](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml/badge.svg)](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml)
+
 A conversational tutor for the **FLEXI-ULife Prime Saver** brochure. Ask in English, Simplified Chinese or Traditional Chinese, inspect the cited text and open its PDF page.
 
 Vue 3 + TypeScript · FastAPI + Python · persistent Chroma. API keys stay on the backend.
 
 [English delivery guide](DELIVERY.en.md) · [中文交付说明](DELIVERY.zh-CN.md) — screenshots, architecture and decisions
+
+**[Watch the demo · 5:57](https://youtu.be/3IaAkS59meo)** — English introduction with a mainly Chinese walkthrough. The examples were run before recording; saved answers and measured timings are shown.
 
 ## Run with Docker
 

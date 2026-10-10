@@ -3,7 +3,7 @@
 基于 **FLEXI-ULife Prime Saver** 产品资料的保险问答 Demo。用户可以用简体中文、繁体中文或英文提问、继续追问，并点击引用核对 PDF 原文。系统解释资料中的条款和历史数字，不提供个人投保建议。
 
 **[代码仓库](https://github.com/newDarwin100/InsureTutor)** · **[启动与配置](README.md)** · **[开发与取舍记录](docs/EXECUTION.md)** · **[English](DELIVERY.en.md)**
-**演示视频：待补链接**（补充材料；题目正式交付要求为仓库和 README）。
+**[演示视频 · 5 分 57 秒](https://youtu.be/3IaAkS59meo)**：英文开场，主要用中文讲解（补充材料；题目正式交付要求为仓库和 README）。
 
 ## 1. 怎么运行，完成了什么
 
@@ -120,4 +120,4 @@ InsureTutor/
 
 ---
 
-**提交材料：仓库链接 + README + 本说明。** 可补一段约 3 分钟视频，按[录屏逐字稿](docs/VIDEO_SCRIPT.zh-CN.md)演示三语回答、脚注限制、同会话追问、PDF 跳转、越界请求和性能图表；提交前补视频链接，并按邀请邮件确认评审账号的仓库访问权限。
+**提交材料：仓库链接 + README + 本说明 + [演示视频](https://youtu.be/3IaAkS59meo)。** 视频展示提前运行的案例及实际记录的耗时。仓库已公开，视频为不公开列出，持链接即可访问，无需登录；[录屏参考稿](docs/VIDEO_SCRIPT.zh-CN.md)也保留在仓库。提交方式按邀请邮件要求执行。

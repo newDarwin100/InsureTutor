@@ -3,7 +3,7 @@
 A conversational tutor for the **FLEXI-ULife Prime Saver** brochure. Users can ask in English, Simplified Chinese or Traditional Chinese, continue a conversation, and open the cited PDF page. The demo explains the brochure's terms and historical figures; it does not provide personal insurance recommendations.
 
 **[Repository](https://github.com/newDarwin100/InsureTutor)** · **[Setup](README.md)** · **[Development decisions](docs/EXECUTION.md)** · **[中文](DELIVERY.zh-CN.md)**
-**Demo video: link to be added.** The video is supplementary; the required submission is the repository and README.
+**[Watch the demo video · 5:57](https://youtu.be/3IaAkS59meo).** English introduction with a mainly Chinese walkthrough. The video is supplementary; the required submission is the repository and README.
 
 ## 1. Run the demo and review the deliverables
 
@@ -120,4 +120,4 @@ These are proposed extensions, not implemented or load-tested features. Use conc
 
 ---
 
-**Submission: repository link + README + this guide.** An optional three-minute video can follow the [recording script](docs/VIDEO_SCRIPT.zh-CN.md), showing trilingual answers, footnote restrictions, follow-ups, PDF navigation, scope checks and performance charts. Add the video link before submission and confirm reviewer access against the invitation email.
+**Submission: repository link + README + this guide + [demo video](https://youtu.be/3IaAkS59meo).** The video shows prepared conversations and their actual recorded timings. The repository is public, and the video is unlisted and accessible by link without signing in. The [recording script](docs/VIDEO_SCRIPT.zh-CN.md) is also included for reference; follow the invitation email's submission instructions.
