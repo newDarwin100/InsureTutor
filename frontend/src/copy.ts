@@ -1,5 +1,6 @@
 import type { Language } from './api/client'
 const hans = {
+  out_of_scope: '超出范围', unsafe_request: '安全拦截', source_conflict: '资料冲突', no_evidence: '依据不足', clarify: '需要澄清',
   savedChatRuns: '已保存的聊天',
   breakdown: '每次请求，时间花在哪？', slowestFirst: '耗时降序', timeShare: '平均耗时占比', trendAndDistribution: '查看趋势和耗时分布', otherModel: '其他模型耗时', otherTime: '其他 / 未分项', breakdownNote: '生成、核对和改写已包含在模型耗时中，不重复累计；灰色部分是其他或未分项时间。',
   vectorCached: '复用问题向量',
@@ -19,6 +20,7 @@ const hans = {
   direct: '直接召回', expanded: '关联补齐覆盖', pilot: '12块小样本 · 三语言题', full_trilingual: '143块全文 · 三语言题', full_gold: '143块全文 · 参考题', answers: '单轮回答实测', all: '全部', retrievalOnly: '仅检索', answerRuns: '回答', real: '真实实测', not_run: '未执行', answered: '生成通过', verification_failed: '核对失败', error: '错误', retrieval_only: '仅检索', date: '测量时间', result: '结果', sourceReport: '来源报告', cached: '复用原始查询结果', loadError: '报告暂时无法读取。', empty: '暂无报告', missing: '缺失报告', model: '模型',
 }
 const hant: Record<keyof typeof hans, string> = {
+  out_of_scope: '超出範圍', unsafe_request: '安全攔截', source_conflict: '資料衝突', no_evidence: '依據不足', clarify: '需要釐清',
   savedChatRuns: '已儲存的聊天',
   breakdown: '每次請求，時間花在哪？', slowestFirst: '耗時降序', timeShare: '平均耗時佔比', trendAndDistribution: '查看趨勢和耗時分佈', otherModel: '其他模型耗時', otherTime: '其他 / 未分項', breakdownNote: '生成、核對和改寫已包含在模型耗時中，不重複累計；灰色部分是其他或未分項時間。',
   vectorCached: '復用問題向量',
@@ -30,6 +32,7 @@ const hant: Record<keyof typeof hans, string> = {
    tagline:'讀懂條款，找到依據', preview:'開發預覽 · 多輪問答', projectStatus:'項目狀態', backend:'後端', connected:'已連接', disconnected:'未連接', material:'資料', pdfReady:'PDF 已就緒', checking:'檢查中', evidence:'來源證據', chunks:'檢索分塊', tutor:'保險問答', ready:'問答已就緒', notReady:'未就緒', refresh:'刷新狀態', knowledge:'知識來源', originalPdf:'原始保險文件 · 20 頁', pdfPage:'PDF 實際頁碼（包含封面）', openPdf:'打開 PDF', pdfNote:'引用附原文及實際頁碼，跳頁取決於瀏覽器閱讀器支援。', chatTitle:'保險資料問答', memory:'自動配合提問語言 · 每個對話獨立記憶', clear:'清空', start:'從一個條款問題開始', example:'例如：4% 的利率是保證的嗎？定期提款有什麼條件？', historical:'僅依據這份產品資料回答；歷史數字不代表當前利率。', you:'你', viewCitation:'查看引用', failure:'查看未通過原因', auditNote:'核對說明（模型判斷，可能誤判）', classification:'分類', request:'請求', sources:'查看依據', pages:'頁', page:'頁碼', passages:'段原文', openPage:'打開 PDF 此頁 ↗', originalNote:'整理後的原文，保留資料原來的語言', elapsed:'耗時', seconds:'秒', runtime:'查看運行資料', retrieval:'檢索', llm:'模型', total:'總計', inputTokens:'輸入 tokens', outputTokens:'輸出 tokens', embedding:'向量輸入 tokens', waiting:'正在檢索資料、生成回答並核對依據…', question:'保險問題', language:'介面語言', placeholder:'輸入保險條款問題…', answering:'回答中', send:'發送', connectionError:'後端暫時無法連接，請確認啟動腳本正在運行。', requestError:'請求失敗，請手動重試。', clearError:'清空失敗，請重試。', expired:'這個對話已刪除或無法使用，請建立新對話。', busy:'當前會話正在處理，請稍後重試。', modelError:'模型暫時未返回有效結果，請稍後重試。', ragError:'資料或索引未就緒，請檢查後端。', limit:'會話數量達到上限，請稍後再試。', dashboard:'評測看板', reportNote:'僅讀取已保存報告，打開看板不會調用模型。', limitations:'歷史樣本，不代表當前版本整體品質。檢索命中不等於答案正確；快取耗時保留原始測量值。複合問題曾通過模型核對，但人工發現遺漏條件。模擬測試不計入品質通過率。', direct:'直接召回', expanded:'關聯補齊覆蓋', pilot:'12塊小樣本 · 三語題', full_trilingual:'143塊全文 · 三語題', full_gold:'143塊全文 · 參考題', answers:'單輪回答實測', all:'全部', retrievalOnly:'僅檢索', answerRuns:'回答', real:'真實實測', not_run:'未執行', answered:'生成通過', verification_failed:'核對失敗', error:'錯誤', retrieval_only:'僅檢索', date:'測量時間', result:'結果', sourceReport:'來源報告', cached:'復用原始查詢結果', loadError:'報告暫時無法讀取。', empty:'暫無報告', missing:'缺失報告', model:'模型',
 }
 const en: Record<keyof typeof hans, string> = {
+  out_of_scope: 'Out of scope', unsafe_request: 'Blocked for safety', source_conflict: 'Source conflict', no_evidence: 'Insufficient evidence', clarify: 'Clarification needed',
   savedChatRuns: 'Saved chat',
   breakdown: 'Where does each request spend time?', slowestFirst: 'Slowest first', timeShare: 'Average time by stage', trendAndDistribution: 'View trend and latency distribution', otherModel: 'Other model time', otherTime: 'Other / unmeasured stages', breakdownNote: 'Generation, verification and rewriting are already included in model time; they are not added twice. Gray shows remaining or unmeasured stages.',
   vectorCached: 'Query vector reused',

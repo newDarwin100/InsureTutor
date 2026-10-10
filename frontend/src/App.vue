@@ -12,7 +12,7 @@ const error = ref('')
 const input = ref('')
 const busy = ref(false)
 const page = ref(8)
-const language = ref<Language>('zh-Hans')
+const language = ref<Language>('zh-Hant')
 const t = computed(() => copies[language.value])
 const prompts = computed(() => [
   { icon: 'shield', title: t.value.rateTopic, text: t.value.rateExample, question: t.value.rateQuestion },
@@ -337,7 +337,7 @@ function documentUrl() {
         <button id="chat-tab" role="tab" :aria-selected="activeView === 'chat'" aria-controls="chat-view" :class="{ active: activeView === 'chat' }" @click="activeView = 'chat'"><Icon name="chat" />{{ t.conversation }}</button>
         <button id="performance-tab" role="tab" :aria-selected="activeView === 'performance'" aria-controls="performance-view" :class="{ active: activeView === 'performance' }" @click="activeView = 'performance'"><Icon name="chart" />{{ t.performance }}<span v-if="runs.length" class="tab-count">{{ runs.length }}</span></button>
       </div>
-      <label class="language-label"><Icon name="globe" /><span class="sr-only">{{ t.language }}</span><select v-model="language" :disabled="busy"><option value="zh-Hans">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option></select></label>
+      <label class="language-label"><Icon name="globe" /><span class="sr-only">{{ t.language }}</span><select v-model="language" :disabled="busy"><option value="zh-Hant">繁體中文</option><option value="zh-Hans">简体中文</option><option value="en">English</option></select></label>
       </div>
     </header>
     <div id="chat-view" v-show="activeView === 'chat'" class="chat-workspace" :class="{ 'sidebar-open': sidebarOpen }" role="tabpanel" aria-labelledby="chat-tab">

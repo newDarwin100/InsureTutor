@@ -42,7 +42,7 @@ GitHub Actions runs offline tests, builds the production image and checks its co
 - “被裁员后能停缴多久？附加保障也适用吗？”
 - “定期提款有什么条件？” — then “那每年提款呢？”
 
-Language selection changes the interface. Answers automatically match each question's Simplified Chinese, Traditional Chinese or English text. Script detection uses local OpenCC dictionaries; ambiguous shared Chinese characters keep the chat's preceding Chinese script (a new chat defaults to Simplified Chinese). Mixed Chinese/English text is treated as Chinese. Quotations retain their original language. Click a citation number to reveal its text and PDF link. Page numbers count the cover; direct PDF jumping depends on browser support.
+The interface opens in Traditional Chinese; the top-right selector switches between Traditional Chinese, Simplified Chinese and English. Answers automatically match each question's Simplified Chinese, Traditional Chinese or English text. Script detection uses local OpenCC dictionaries; ambiguous shared Chinese characters keep the chat's preceding Chinese script (a new chat defaults to Simplified Chinese). Mixed Chinese/English text is treated as Chinese. Quotations retain their original language. Click a citation number to reveal its text and PDF link. Page numbers count the cover; direct PDF jumping depends on browser support.
 
 The left sidebar lists saved conversations. Titles start with the first question; rename them, create a new chat, or reopen an older one. SQLite stores questions, returned answers, citations, timings and failed/interrupted requests at `data/history/chats.sqlite3`. Refreshing the page or restarting the backend keeps the transcript and bounded follow-up context. Deleting a chat requires a confirmation and removes its messages too.
 
