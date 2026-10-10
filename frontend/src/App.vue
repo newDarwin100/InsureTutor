@@ -177,7 +177,6 @@ function recordRun(reply: ChatReply, question: string, id: string, source: strin
     ttft_ms: reply.metrics.client_ttft_ms ?? reply.metrics.ttft_ms ?? null,
     generation_ms: reply.metrics.generation_ms ?? null, verification_ms: reply.metrics.verification_ms ?? null,
     question_resolution_ms: reply.metrics.question_resolution_ms ?? null })
-  runs.value.sort((a, b) => Date.parse(a.measured_at!) - Date.parse(b.measured_at!))
   if (runs.value.length > 200) runs.value.splice(0, runs.value.length - 200)
 }
 
