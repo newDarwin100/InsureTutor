@@ -4,7 +4,7 @@ A conversational tutor for the **FLEXI-ULife Prime Saver** brochure. Ask in Engl
 
 Vue 3 + TypeScript · FastAPI + Python · persistent Chroma. API keys stay on the backend.
 
-[中文交付说明 · screenshots, architecture and decisions](DELIVERY.zh-CN.md)
+[English delivery guide](DELIVERY.en.md) · [中文交付说明](DELIVERY.zh-CN.md) — screenshots, architecture and decisions
 
 ## Run with Docker
 

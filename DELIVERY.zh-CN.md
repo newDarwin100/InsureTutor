@@ -2,7 +2,7 @@
 
 基于 **FLEXI-ULife Prime Saver** 产品资料的保险问答 Demo。用户可以用简体中文、繁体中文或英文提问、继续追问，并点击引用核对 PDF 原文。系统解释资料中的条款和历史数字，不提供个人投保建议。
 
-**[代码仓库](https://github.com/newDarwin100/InsureTutor)** · **[启动与配置](README.md)** · **[开发与取舍记录](docs/EXECUTION.md)**  
+**[代码仓库](https://github.com/newDarwin100/InsureTutor)** · **[启动与配置](README.md)** · **[开发与取舍记录](docs/EXECUTION.md)** · **[English](DELIVERY.en.md)**
 **演示视频：待补链接**（补充材料；题目正式交付要求为仓库和 README）。
 
 ## 1. 怎么运行，完成了什么
@@ -55,6 +55,7 @@ InsureTutor/
 ├── Dockerfile
 ├── docker-compose.yml
 ├── .env.example                # 配置模板
+├── DELIVERY.en.md              # 英文交付说明
 ├── DELIVERY.zh-CN.md            # 中文交付说明
 └── README.md                   # 启动与设计说明
 ```
@@ -67,9 +68,11 @@ InsureTutor/
 
 ![聊天、会话列表与 PDF 引用](docs/assets/delivery/chat-citations.jpg)
 
-![请求阶段耗时与平均占比](docs/assets/delivery/performance.jpg)
+*聊天截图使用当前界面回放已保存的 D01 / D04 固定测试结果，引用保留原文语言。*
 
-*截图使用当前界面回放已保存的 D01 / D04 固定测试结果；图中耗时来自历史运行，不代表当前版本的新测速，也不包含个人聊天。*
+![26 条请求的阶段耗时与平均占比](docs/assets/delivery/performance.jpg)
+
+*看板回放 10 月 9 日首轮回归的全部 26 条记录，保留失败与安全拦截；图中耗时来自历史运行，不代表当前版本的新测速，不包含个人聊天。最短 0.00 秒是规则拦截后的四舍五入值，不是生成答案的速度。*
 
 建议演示时按这三个场景走：
 
