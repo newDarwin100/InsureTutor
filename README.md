@@ -1,5 +1,7 @@
 # InsureTutor
 
+**[Open the interactive walkthrough · 打开中英文演示](https://newdarwin100.github.io/InsureTutor/)** — architecture, RAG pipelines, code structure and deployment. Switch between Chinese and English in the top-right corner; speaker notes are optional. This is a static presentation, not the live chatbot. [HTML source](presentation/index.html).
+
 [![Checks](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml/badge.svg)](https://github.com/newDarwin100/InsureTutor/actions/workflows/checks.yml)
 
 A conversational tutor for the **FLEXI-ULife Prime Saver** brochure. Ask in English, Simplified Chinese or Traditional Chinese, inspect the cited text and open its PDF page.
